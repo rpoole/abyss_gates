@@ -219,3 +219,6 @@ Install.vbs
 PhysicsReadme.txt
 fix.bat
 Server Copy.bat
+
+# dota2 specific files
+thumbnail_cache.bin
