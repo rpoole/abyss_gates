@@ -1,0 +1,13 @@
+"AddonInfo"
+{
+	"addonSteamAppID"				"816"
+	"addontitle"					"Abyss_Gates"
+	"addonversion"					"0.1"
+	"addontagline"					"Abyss_Gates"
+	"addonauthor"					"XXX"
+	"addonSteamGroupName"			""
+	"addonauthorSteamID"			""
+	"addonContent_Campaign"			"0"
+	"addonURL0"						""
+	"addonDescription"				"Abyss_Gates"
+}
