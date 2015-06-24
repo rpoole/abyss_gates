@@ -69,9 +69,9 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"5"
 		"Ability1"				"test_subject_test_ability1"
-		"Ability2"				"test_ability2"
-		"Ability3"				"test_ability3"
-		"Ability4"				"test_ability4"
+		"Ability2"				"test_subject_test_ability2"
+		"Ability3"				"test_subject_test_ability3"
+		"Ability4"				"test_subject_test_ability4"
 		"Ability6"				"test_ability5"
 		"Ability5"				"test_ability6"
 		"Ability7"				"test_ability7"
