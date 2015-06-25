@@ -1,0 +1,105 @@
+{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"shadow_shaman_mass_serpent_ward"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
+
+		//Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"5"
+
+		//Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ward_count"			"10"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_max"			"50 50"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"20"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min"			"50 50"
+			}
+
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_place_distance"	"500"
+			}
+
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"5"
+			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"100"
+			}
+
+		}
+
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_shadowshaman/shadow_shaman_ward_base_attack.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_test_hero1/wall_serpent_ward.lua"
+			"Function"				"WallSpellStart"
+			"NumWallElements"		"%num_wall_elements"
+			"WallElementSpacing"	"%wall_element_spacing"
+			"WallPlaceDistance"		"%wall_place_distance"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_serpent_ward"
+		{
+			"IsHidden"		"1"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_test_hero1/wall_serpent_ward.lua"
+					"Function"		"SetWardDamage"
+				}
+			}
+		}
+	}
+}

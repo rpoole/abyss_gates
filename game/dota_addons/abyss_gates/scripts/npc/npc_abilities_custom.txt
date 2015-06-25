@@ -187,7 +187,7 @@
 	// Test Subject: test_ability1
 	//=================================================================================================================
 	"test_subject_test_ability1"
-	{
+{
 		//General
 		//-------------------------------------------------------------------------------------------------------------
 
@@ -455,142 +455,105 @@
 		//-------------------------------------------------------------------------------------------------------------
 
 		"BaseClass"						"ability_datadriven"
-		"AbilityTextureName"			"omniknight_repel"
+		"AbilityTextureName"			"shadow_shaman_mass_serpent_ward"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AOERadius"						"%radius"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		
 
-		// Casting
+		//Casting
 		//-------------------------------------------------------------------------------------------------------------
 
-		"AbilityCastRange"				"0"
+		"AbilityCastRange"				"600"
 		"AbilityCastPoint"				"0"
-		"AbilityChannelTime"			"5"
-		"AbilityDuration"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"5"
 
-
-
-		// Time
-		//-------------------------------------------------------------------------------------------------------------
-		
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"1 2 3 4"
-		
-
-
-		// Special
+		//Special
 		//-------------------------------------------------------------------------------------------------------------
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"duration"			"5.0"
+				"var_type"				"FIELD_INTEGER"
+				"ward_count"			"10"
 			}
 
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"radius"			"700"
+				"var_type"				"FIELD_INTEGER"
+				"damage_max"			"50 50"
 			}
 
 			"03"
 			{
-				"var_type"			"FIELD_FLOAT"
-				"buff_interval"		"0.1"
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"20"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_min"			"50 50"
+			}
+
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_place_distance"	"500"
+			}
+
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"num_wall_elements"		"5"
+			}
+
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"wall_element_spacing"	"50"
+			}
+
+		}
+
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_shadowshaman/shadow_shaman_ward_base_attack.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_shadowshaman.vsndevts"
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"			"heroes/hero_test_hero1/wall_serpent_ward.lua"
+			"Function"				"WallSpellStart"
+			"NumWallElements"		"%num_wall_elements"
+			"WallElementSpacing"	"%wall_element_spacing"
+			"WallPlaceDistance"		"%wall_place_distance"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_serpent_ward"
+		{
+			"IsHidden"		"1"
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_test_hero1/wall_serpent_ward.lua"
+					"Function"		"SetWardDamage"
+				}
 			}
 		}
-
-
-		// Precache
-		//-------------------------------------------------------------------------------------------------------------
-
-		"precache"
-		{
-			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
-			"particle"  "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
-		}
-
-		"OnSpellStart"
-		{
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"CASTER"
-					"Radius" 	"%radius"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-			
-				"Action"    
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_test"
-						"Target" 		"TARGET"
-					}
-
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_test"
-						"Target" 		"CASTER"
-					}
-				}
-			}
-		}	
-
-		"OnChannelInterrupted"
-		{
-			"ActOnTargets"
-			{
-				"Target"
-				{
-					"Center"  	"CASTER"
-					"Radius" 	"%radius * 10"
-					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				}
-			
-				"Action"    
-				{
-					"RemoveModifier"
-					{
-						"ModifierName"	"modifier_test"
-						"Target" 		"TARGET"
-					}
-				}
-			}
-		}
-
-
-
-		"Modifiers"
-		{
-			"modifier_test"
-			{
-				"Duration"      	"%duration"
-  				"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
-				"EffectAttachType"  "follow_origin"
-    			"Properties"
-    			{
-        			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-20"
-    			}
-
-    			"States"
-    			{
-    				"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
-    				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
-    			}
-    		}
-		}
-
-
-						
+	}
 }
 
 	"test_subject_test_ability3"
@@ -638,7 +601,6 @@
 			"Aura_Radius" 	"%aura_radius"
 			"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 			"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 		}
 
 
@@ -654,6 +616,7 @@
 				"Heal"
 				{
 					"HealAmount"	"%aura_heal"
+					"TARGET"		"TARGET"
 				}
 			}
 		}
