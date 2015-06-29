@@ -1,5 +1,9 @@
 --print ('[ABYSS_GATES] abyss_gates.lua' )
 
+
+CORPSE_MODEL = "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl"
+CORPSE_DURATION = 88
+
 ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = false             -- Should the main shop contain Secret Shop items as well as regular items
 ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
@@ -64,6 +68,33 @@ end
 if Abyss_Gates == nil then
 	--print ( '[ABYSS_GATES] creating abyss_gates game mode' )
 	Abyss_Gates = class({})
+end
+
+
+-- Custom Corpse Mechanic
+function LeavesCorpse( unit )
+	
+	-- Heroes don't leave corpses (includes illusions)
+	if unit:IsHero() then
+		return false
+
+	-- Ignore units that start with dummy keyword	
+	elseif string.find(unit:GetUnitName(), "dummy") then
+		return false
+
+	-- Ignore units that were specifically set to leave no corpse
+	elseif unit.no_corpse then
+		return false
+
+	-- Leave corpse
+	else
+		print("Leave corpse")
+		return true
+	end
+end
+
+function SetNoCorpse( event )
+	event.target.no_corpse = true
 end
 
 function Abyss_Gates:PostLoadPrecache()
@@ -427,6 +458,33 @@ function Abyss_Gates:OnEntityKilled( keys )
 	end
 
 	-- Put code here to handle when an entity gets killed
+
+	-- If the unit is supposed to leave a corpse, create a dummy_unit to use abilities on it.
+	Timers:CreateTimer(1, function() 
+	if LeavesCorpse( killedUnit ) then
+			-- Create and set model
+			local corpse = CreateUnitByName("dummy_unit", killedUnit:GetAbsOrigin(), true, nil, nil, killedUnit:GetTeamNumber())
+			corpse:SetModel(CORPSE_MODEL)
+
+			-- Set the corpse invisible until the dota corpse disappears
+			corpse:AddNoDraw()
+			
+			-- Keep a reference to its name and expire time
+			corpse.corpse_expiration = GameRules:GetGameTime() + CORPSE_DURATION
+			corpse.unit_name = killedUnit:GetUnitName()
+
+			-- Set custom corpse visible
+			Timers:CreateTimer(3, function() corpse:RemoveNoDraw() end)
+
+			-- Remove itself after the corpse duration
+			Timers:CreateTimer(CORPSE_DURATION, function()
+				if corpse and IsValidEntity(corpse) then
+					print("removing corpse")
+					corpse:RemoveSelf()
+				end
+			end)
+		end
+	end)
 end
 
 

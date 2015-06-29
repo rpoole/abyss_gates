@@ -39,4 +39,17 @@ Skull Spear 				Yes 						No 					No 						Replace Powershot
 
 Bleed Earth 				Half 						No 					No 						Deals damage, no corpse spawning yet
 
-Shatter Bones 				Yes							
+Shatter Bones 				Yes
+
+
+
+Raise Skeleton 				Half						Half										No corpse requirement. % chance spawn mechanism works, but only one type of unit so far. Spell fizzles after max # skeletons
+																									instead of replacing. Autocast doesn't work.
+
+Skeleton Mastery 			
+
+Corpse Explosion
+
+Raise Skeleton Mage
+
+The Creature							

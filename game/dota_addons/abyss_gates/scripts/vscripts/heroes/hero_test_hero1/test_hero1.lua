@@ -1,9 +1,11 @@
-function test_ability1(keys)
--- vars
+function TestTarget ( keys )
+	local ability = keys.ability
 	local caster = keys.caster
-	local target = keys.target_points[1]
-	local damage = keys.damage
-	local radius = keys.radius
-	local test_ability1Level = caster:GetAbilityByIndex(0):GetLevel() --[[Returns:handle
-	Retrieve an ability by index from the unit.
-	]]
+	local target = keys.target
+
+	local caster_name = caster:GetUnitName()
+	local target_name = caster:GetUnitName()
+
+	print (caster_name)
+	print (target_name)
+end 
