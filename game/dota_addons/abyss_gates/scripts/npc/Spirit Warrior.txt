@@ -1,0 +1,25 @@
+Spirit Warrior
+
+TIER 1				Spirit Warrior Arts of Self					Spirit Warrior Arts of Striking:					Spirit Warrior Arts of spirit:
+					Reduces the dmg he takes from each attack.  	 Gives stealth that deals bonus dmg on first attack and provides a charge 	gives small amount of str stat on each kill
+															
+
+
+TIER 2					Crit on chance					Charge blade with posion dmg and lifesteal on 1 attack. 			Life on kill.	
+
+														Stacks up to 3 charges. 3 charge attack has aoe				
+
+
+TIER 3				Gives passive lifesteal, but reduces his armor slightly 	Charge blade with frost dmg and slow on 1 attack. Small aoe		gives small amount of agi stat on each kill																		
+				
+														Stacks up to 3 charges. 3 charge attack has aoe
+
+
+TIER 4				Classic blademaster image split				Charge blade with lightning dmg and bounces to targets on 1 attack.		Chance to raise slain enemy from the dead to fight for you.
+
+						3 images, percentage of total dmg			Stacks up to 3 charges. 3 charge attack has aoe
+						takes same hero dmg
+
+
+TIER 5			pushes all units nearby a target away instantly,		Charge blade with fire dmg. Full charges have huge destructive area.		basic swiftblade whirlwind, grants small amount of life of kill while spinning
+			 and lowers the amrmor of the target significantly.														units under 45% health die instantly.
