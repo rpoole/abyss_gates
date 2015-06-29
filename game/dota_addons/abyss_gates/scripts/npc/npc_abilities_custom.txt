@@ -1737,128 +1737,495 @@
 
 
 	//=================================================================================================================
-	// Scott: Scott Three
+	// Grim Magus
 	//=================================================================================================================
 
 	//=================================================================================================================
-	// Scotttwo: Scotttwo Ability 4
+	// Grim Magus: Destruction Tier 1: Bloodshed
 	//=================================================================================================================
-	"scottthree_ability1"
+	"grim_magus_bloodshed"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"doom_bringer_scorched_earth"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"bloodseeker_rupture"
 		
 		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+		}
+
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"5"
 		"AbilityCastRange"				"600"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"aura_radius"		"600"		
-			}
-			"02"
-			{
 				"var_type"			"FIELD_FLOAT"
 				"damage_per_second"	"50"
 			}
-			"03"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"aura_heal_interval"		"0.2" 
-			}
 
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_cost"			"10"
-			}
-
-			"05"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"mana_per_second"	"1"
-			}
-
-			"06"
+			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
 				"damage_tick"		"1.0"
 			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"30"
+			}
 		}
 
 		
-		"OnToggleOn"
+		"OnSpellStart"
 		{
 			"ApplyModifier"
 			{
-				"ModifierName"	"modifier_immolate_aura"
-				"Target" 		"CASTER"
+				"ModifierName"	"modifier_bloodshed"
+				"Target" 		"TARGET"
 			}
 
-			"RunScript"
+			"AttachEffect"
 			{
-				"ScriptFile"	"scripts/vscripts/heroes/hero_scottthree/immolate.lua"
-				"Function"		"immolate_start"
-			}
-		}
-
-		"OnToggleOff"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_immolate_aura"
-				"Target" 		"CASTER"
-			}
-
-			"RunScript"
-			{
-				"ScriptFile"	"scripts/vscripts/heroes/hero_scottthree/immolate.lua"
-				"Function"		"immolate_stop"
+				"EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
 			}
 		}
 
 		"Modifiers"
 		{
-			"modifier_immolate_aura"
+			"modifier_bloodshed"
 			{
-				"IsBuff"		"1"
-
-				"Aura" 			"modifier_immolate_damage"
-				"Aura_Radius" 	"%aura_radius"
-				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
-				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_ApplyToCaster"	"1"
-			}
-
-
-			"modifier_immolate_damage"
-			{
-				"IsDebuff"	"1"
-				"IsHidden"	"0"
-
-				"ThinkInterval"	"1.0"
-
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particle_name"
+				"EffectAttachType"	"follow_origin"
+		
+				
+				"ThinkInterval"			"%damage_tick"
 				"OnIntervalThink"
 				{
 					"Damage"
 					{
-						"Damage"	"%damage_per_second"
-						"Type"		"DAMAGE_TYPE_MAGICAL"
 						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_per_second"
+					}
+				}
+
+				"Duration"				"%duration"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Grim Magus: Destruction Tier 2: Darkbolt
+	//=================================================================================================================
+	"grim_magus_darkbolt"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"witch_doctor_paralyzing_cask"
+		
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_witchdoctor/witchdoctor_cask.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"600"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"200"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"stun_duration"		"2.5"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bolt_speed"		"1500"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"TrackingProjectile"
+			{
+				"Target"           	"TARGET"
+				"EffectName"		"particles\units\heroes\hero_witchdoctor\witchdoctor_cask.vpcf"
+				"Dodgeable"			"1"
+				"ProvidesVision"	"1"
+				"VisionRadius"		"0"
+				"MoveSpeed"        	"%bolt_speed"
+				"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"1"
+				
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_bolt_hit"
+				"Target" 		"TARGET"
+				"Duration"		"%stun_duration"		
+			}
+
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%damage"
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_bolt_hit"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+					
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Grim Magus: Destruction Tier 3: Skull Spear
+	//=================================================================================================================
+	"grim_magus_skull_spear"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"windrunner_powershot"
+		
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_windrunner.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"3000"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"			"200"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"range"				"3000"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_speed"		"1000"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spear_width"		"125"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+			    "Target"      	 "POINT"
+				"EffectName"	 "particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
+				"MoveSpeed"		 "%spear_speed"
+				"StartRadius"	 "%spear_width"
+				"StartPosition"  "attach_attack1"
+				"EndRadius"      "%spear_width"
+				"HasFrontalCone" "0"
+				"FixedDistance"  "%range"
+				"TargetTeams"	 "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"	 "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"	 "DOTA_UNIT_TARGET_FLAG_NONE"						
+			    "ProvidesVision" "1"
+			    "VisionRadius" 	 "0"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"false"
+		
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"%damage"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Grim Magus: Destruction Tier 4: Bleed Earth
+	//=================================================================================================================
+	"grim_magus_bleed_earth"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"batrider_sticky_napalm"
+		"AOERadius"						"600"
+		
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_leshrac/leshrac_split_earth.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"3000"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_second"			"100"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"				"600"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"corpse_number"		"5"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_interval"		"1.0"
+			}
+
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"10"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_bleed_earth_thinker"
+				"Target" 		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_bleed_earth_thinker"
+			{
+				"Aura"				"modifier_bleed_earth"
+				"Aura_Radius"		"%radius"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/econ/items/warlock/warlock_staff_glory/warlock_upheaval_infernal_lava_slab.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+					}
+				}
+			}
+
+			"modifier_bleed_earth"
+			{
+				"ThinkInterval"  "%damage_interval"
+				"OnIntervalThink"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_bleed_earth_spawner"
+						"Target" 		"TARGET"
+						"Duration"		"%debuff_duration"
+					}
+
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_per_second"
+					}				
+				}
+			}
+
+			"modifier_bleed_earth_spawner"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"0"
+			}
+			
+		}
+	}
+
+
+	//=================================================================================================================
+	// Grim Magus: Destruction Tier 5: Shatter Bones
+	//=================================================================================================================
+	"grim_magus_shatter_bones"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"leshrac_diabolic_edict"
+		"AOERadius"						"600"
+		
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"3000"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"				"600"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"999"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"health_percent"		"33 33 33 33"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_grim_magus_destruction/shatter_bones.lua"
+						"Function"		"ShatterBones"
 					}
 				}
 			}
 		}
 	}
+
+
+
+	
 //-------------------
 // Dummy stuff
 //-------------------

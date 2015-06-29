@@ -1,0 +1,38 @@
+GRIM MAGUS
+
+
+TIER 1				Bloodshed  								Raise Skeleton 										Fear
+
+					Single-target 30 second DoT 			Summons skeletal warrior							20% miss chance in small AoE. CURSE
+															30% chance to be archer
+															Very small chance for burning archer / warrior
+
+
+
+TIER 2				Darkbolt								Skeleton Mastery 									Amplify Damage
+
+					Single target stun + damage 			Increases dmg + hp of skeletons 					Very small AoE. Increases damage taken by 100%
+
+
+
+
+TIER 3				Skull Spear 							Corpse Explosion 									Life Tap
+
+					Line damage 							Blows up corpse. Damage relative to max HP
+															of corpse
+
+
+TIER 4				Bleed Earth 							Raise Skeleton Mage 								Mana Rip
+
+					Small AoE DoT (acidspray)				Summons a skeleton mage, three different types 		On afflicted unit kill, killer gets 5% of units
+					Spawns corpses							Fire, Ice, Lightning. Max skeleton mages  			max HP as mana
+															increase per level									
+
+
+TIER 5				Shatter Bones 							The Creature 										Taint Resistance
+
+					Reduce units HP to 33% in a small AoE 	Spawns an abomination. AoE ground target, 			Spell Damage taken increased by 200%
+					Range increases per level 				strength of abom is based off number of corpses
+															in AoE selection
+															Has Consume Corpse: increases abom level by 1 and
+															heals by 40% max HP							
