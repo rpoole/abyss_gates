@@ -1,0 +1,42 @@
+SPELL NOTES
+
+
+Name 						Working						Animation	 		Tooltip					Notes
+
+Heal Aura 					Yes							Yes					No						Heals, does not increase HP Regen. Might need to be changed. Animation might be too intrusive.
+
+Immune AOE Channel 			Yes							Yes					No 						Gives physical and magical immunity. Enemies will ignore afflicted targets. Might need to be changed.
+
+Root Treant Spawn			Yes							Yes					No 						Not sure about root animation duration. Treant spawns but is controllable. Will need to be fixed.					
+
+Heal Over Time				Yes							Yes					No 						100%						
+
+Perm Attribute Buff			Yes							Yes					No 						Buffs do not consolidate. Either hide buff or find a way to merge. Buffs persist through death. 
+																									Is that correct? Maybe make animation more flashy						
+
+Volcano						Half						Half				No 						Animation is probably too small, don't know correct radius. Multiple volcanoes only deal one source
+																									of damage. Does radius increase based off of life time or volcano instance?
+
+Reflect Shield				Yes							No 					No 						Abaddon shield animation not showing. Need explosion animation too. 						
+
+Stone Fist					Yes							No 					No 						Needs all animation 						
+
+Divine Light				Yes							No 					No 						Needs all animation
+
+Fire Aura 					Yes 						No 					No 						Needs all animation. If you spam toggle it drains additive mana per second
+
+
+
+
+GRIM MAGUS
+====================================================================================================================================================================================================
+
+Bloodshed 					Yes 						Yes 				No 						100%
+
+Darkbolt 					Yes 						Yes 				No 						Projectile looks ugly. Stun duration full length regardless of enemy
+
+Skull Spear 				Yes 						No 					No 						Replace Powershot
+
+Bleed Earth 				Half 						No 					No 						Deals damage, no corpse spawning yet
+
+Shatter Bones 				Yes							

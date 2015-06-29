@@ -658,16 +658,17 @@
 						"Target"		"TARGET"
 					}
 				}
-			}
 
-				"OnDestroy"
+				"OnCreated"
 				{
-					"RemoveModifier"
+					"AttachEffect"
 					{
-						"ModifierName"	"modifier_heartstopper_debuff_visibility"
-						"Target" 		"TARGET"
+						"EffectName"        "particles/heal_aura.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
 					}
 				}
+			}
 
 			"modifier_heartstopper_debuff_visibility"
 			{
@@ -844,6 +845,12 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+		}
 		
 
 		//Casting
@@ -929,7 +936,7 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"			"particles/units/heroes/hero_treant/treant_overgrowth.vpcf"
+						"EffectName"			"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
 						"EffectAttachType"		"follow_origin"
 						"Target"            	"TARGET"
 					}
@@ -1095,6 +1102,13 @@
 		"AbilityCooldown"				"5"
 		"AbilityCastRange"				"600"
 
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		}
+
 		//Special
 		//--------------------------------------------
 
@@ -1139,6 +1153,16 @@
 						"Target"		"TARGET"
 					}
 				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
 			}
 		}
 	}
@@ -1168,6 +1192,12 @@
 		"AbilityCooldown"				"5"
 		"AbilityCastRange"				"600"
 
+		"precache"
+		{
+			"particle"  "particles/econ/courier/courier_dolfrat_and_roshinante/courier_dolfrat_and_roshinante.vpcf"
+		}
+
+
 		//Special
 		//--------------------------------------------
 
@@ -1193,12 +1223,15 @@
 				"Target" 		"TARGET"		
 			}
 		}
+			
 
 
 		"Modifiers"
 		{
 			"modifier_stat_boost"
 			{
+				"IsHidden"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"1"
@@ -1207,9 +1240,19 @@
 				}
 				
 				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/econ/courier/courier_dolfrat_and_roshinante/courier_dolfrat_and_roshinante.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
 			}
 		}
-	}
+	}	
 
 	//=================================================================================================================
 	// Scott: Scott Two
