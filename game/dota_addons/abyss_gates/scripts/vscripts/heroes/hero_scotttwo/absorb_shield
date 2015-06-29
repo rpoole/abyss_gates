@@ -1,0 +1,17 @@
+--[[
+	Author: Noya
+	Date: 9.1.2015.
+	Reflects damage up to the max Reflect, substracting from the shield until removed.
+]]
+
+function ReflectShield( event )
+
+	local damage = event.DamageTaken
+	local caster = event.caster
+	local ability = event.ability
+	local numberOfHits = 0
+
+		if damage then
+			numberOfHits = numberOfHits + 1
+		end
+end
