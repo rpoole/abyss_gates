@@ -2509,7 +2509,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityTextureName"			"life_stealer_rage"
@@ -2529,7 +2529,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_hp"			"100 100 100 100" 
+				"bonus_health"			"100 100 100 100" 
 			}
 			
 			"03"
@@ -2546,71 +2546,704 @@
 
 		}
 
-		"Modifiers"
+		"OnUpgrade"
 		{
-			"modifier_skeleton_mastery"
+			"RunScript"
 			{
-				"Passive"		"1"
-				"IsHidden"		"1"
-
-				"Aura" 			"modifier_skeleton_mastery_debuff"
-				"Aura_Radius" 	"%aura_radius"
-				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+				"ScriptFile"	"heroes/hero_grim_magus_demonology/skeleton_mastery.lua"
+				"Function"		"SkeletonSelect"
+				"modifier"		"modifier_skeleton_mastery_buff"
 			}
+		}
 
 
-			"modifier_skeleton_mastery_debuff"
-			{
-				"IsDebuff"	"1"
-				"IsHidden"	"1"
-
-				"ThinkInterval"	"%think_interval"
-
-				"OnIntervalThink"
-				{
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_skeleton_mastery_buff"
-						"Target" 		"TARGET"
-						"Duration"		"%think_interval"
-					}
-
-					"Heal"
-					{
-						"Target"        "TARGET"
-						"HealAmount"	"10"
-					}
-				}
-
-				"OnCreated"
-				{
-					"AttachEffect"
-					{
-						"EffectName"        "particles/heal_aura.vpcf"
-						"EffectAttachType"  "follow_origin"
-						"Target"            "CASTER"
-					}
-				}
-			}
-				
-
+		"Modifiers"
+		{	
 			"modifier_skeleton_mastery_buff"
 			{
-				"IsBuff"		"1"
-				"IsPurgable"	"0"
+				"Passive"	"1"
+				"IsHidden"	"1"
 
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE" 		"%bonus_damage"
-				    "MODIFIER_PROPERTY_HEALTH_BONUS" 				"%bonus_hp" 
+				}
+
+				"Attributes"
+				{
+					"MODIFIER_ATTRIBUTE_PERMANENT"	"1"
 				}
 			}
 		}
 	}
 
-	
+
+
+	//=================================================================================================================
+	// Grim Magus: Demonology Tier 3: Corpse Explosion
+	//=================================================================================================================
+	"grim_magus_corpse_explosion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"necrolyte_death_pulse"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AOERadius"						"600"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"1200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"600"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_multiplier"	"5"
+			}
+			
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"base_damage"		"50 50 50 50" 
+			}
+
+
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_grim_magus_demonology/corpse_explosion.lua"
+				"Function"			"CorpseSelect"
+				"modifier"			"modifier_corpse_explosion_damage"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Grim Magus: Demonology Tier 4: Raise Skeleton Mage
+	//=================================================================================================================
+	"grim_magus_raise_skeleton_mage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityTextureName"			"skeletonking_vampiricaura"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"0"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_skeletons"			"50"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"fire_chance"			"33"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"999"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"ice_chance"			"50"	
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"Random"
+			{
+				"Chance"			"%fire_chance"
+				"OnSuccess"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"undead_skeleton_warrior"
+						"Target" 		"CASTER"
+						"Duration"		"%duration"
+						"UnitCount"		"1"
+						"UnitLimit"		"%max_skeletons"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"OnSpawn"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_phased"
+								"Target"		"TARGET"
+								"Duration"		"0.03"
+							}
+						}
+					}
+				}
+				"OnFailure"
+				{
+					"Random"
+					{
+						"Chance"			"%ice_chance"
+						"OnSuccess"
+						{
+							"SpawnUnit"
+							{
+								"UnitName"		"undead_skeleton_warrior"
+								"Target" 		"CASTER"
+								"Duration"		"%duration"
+								"UnitCount"		"1"
+								"UnitLimit"		"%max_skeletons"
+								"GrantsGold"	"1"
+								"GrantsXP"		"1"
+								"SpawnRadius"	"10"
+								"OnSpawn"
+								{
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_phased"
+										"Target"		"TARGET"
+										"Duration"		"0.03"
+									}
+
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_burning_success"
+										"Target" 		"TARGET"
+										"Duration"		"10"
+									}
+								}
+							}
+						}
+
+						"OnFailure"
+						{
+							"SpawnUnit"
+							{
+								"UnitName"		"undead_skeleton_warrior"
+								"Target" 		"CASTER"
+								"Duration"		"%duration"
+								"UnitCount"		"1"
+								"UnitLimit"		"%max_skeletons"
+								"GrantsGold"	"1"
+								"GrantsXP"		"1"
+								"SpawnRadius"	"10"
+								"OnSpawn"
+								{
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_phased"
+										"Target"		"TARGET"
+										"Duration"		"0.03"
+									}
+
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_archer_success"
+										"Target" 		"TARGET"
+										"Duration"		"10"
+									}
+								}
+							}
+						}
+					}	
+				}
+			}
+		}
+
+
+
+		"Modifiers"
+		{
+			"modifier_burning_success"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+				
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+			}
+
+			"modifier_archer_success"
+			{
+				"IsBuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+				"EffectAttachType"	"follow_overhead"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Grim Magus: Demonology Tier 5: The Creature
+	//=================================================================================================================
+	"grim_magus_the_creature"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"skeletonking_vampiricaura"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"5"
+
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"999"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"SpawnUnit"
+			{
+				"UnitName"		"undead_skeleton_warrior"
+				"Target" 		"POINT"
+				"Duration"		"%duration"
+				"UnitCount"		"1"
+				"UnitLimit"		"1"
+				"GrantsGold"	"0"
+				"GrantsXP"		"0"
+				"SpawnRadius"	"10"
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_grim_magus_demonology/the_creature"
+						"Function"		"SetLevel"
+						"modifier"		"modifier_corpse_stack"
+					}
+				}
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_corpse_stack"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Grim Magus: Affliction Tier 1: Fear
+	//=================================================================================================================
+	"grim_magus_fear"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"rubick_null_field"
+		"AOERadius"						"600"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"600"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"miss_chance"		"20"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"60"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_fear_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_fear_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MISS_PERCENTAGE" "%miss_chance"
+				}
+
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Grim Magus: Affliction Tier 2: Amplify Damage
+	//=================================================================================================================
+	"grim_magus_amplify_damage"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"slardar_amplify_damage"
+		"AOERadius"						"300"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"amplify_damage"	"100"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"60"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_amplify_damage_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_amplify_damage_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%amplify_damage"
+				}
+
+				"AttachEffect"
+				{
+					"EffectName"        "particles/generic_gameplay/generic_silenced.vpcf"
+					"EffectAttachType"  "follow_overhead"
+					"Target"            "TARGET"
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Grim Magus: Affliction Tier 3: Life Tap
+	//=================================================================================================================
+	"grim_magus_life_tap"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"undying_soul_rip"
+		"AOERadius"						"300"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_hp_leech"		"20"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"60"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_life_tap_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_life_tap_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_grim_magus_affliction/life_tap.lua"
+						"Function"		"LifeTapHeal"
+						"modifier"		"modifier_life_tap_debuff"
+						"heal_percent"	"%max_hp"
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Grim Magus: Affliction Tier 4: Mana Rip
+	//=================================================================================================================
+	"grim_magus_mana_rip"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
+		"AOERadius"						"300"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"max_hp_leech"		"20"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"60"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_mana_rip_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_mana_rip_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"OnDeath"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_grim_magus_affliction/mana_rip.lua"
+						"Function"		"ManaRipRegen"
+						"modifier"		"modifier_mana_rip_debuff"
+						"heal_percent"	"%max_mana"
+					}
+				}
+			}
+		}
+	}
+
 //-------------------
 // Dummy stuff
 //-------------------
@@ -2658,7 +3291,7 @@
 					"MODIFIER_STATE_FLYING"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_NOT_ON_MINIMAP"	"MODIFIER_STATE_VALUE_ENABLED"
 					"MODIFIER_STATE_UNSELECTABLE"	"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_OUT_OF_GAME"	"MODIFIER_STATE_VALUE_DISABLED"
 					"MODIFIER_STATE_NO_HEALTH_BAR"		   "MODIFIER_STATE_VALUE_ENABLED"
 				}
 			}

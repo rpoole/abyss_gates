@@ -167,7 +167,7 @@
 		
 		// Team
 		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_NEUTRAL"
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
@@ -274,6 +274,7 @@
 	"dummy_unit"
 	{
 		"BaseClass"					"npc_dota_creature"
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
 		"VisionDaytimeRange"		"0"	
 		"VisionNighttimeRange"		"0"

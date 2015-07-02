@@ -1,28 +1,44 @@
 function SkeletonSelect ( keys )
 	local caster = keys.caster
-	local target = keys.target
+	
+
+	local skeletonUnits = FindUnitsInRadius(DOTA_TEAM_GOODGUYS,
+                              Vector(0, 0, 0),
+                              nil,
+                              FIND_UNITS_EVERYWHERE,
+                              DOTA_UNIT_TARGET_TEAM_FRIENDLY,
+                              DOTA_UNIT_TARGET_ALL,
+                              DOTA_UNIT_TARGET_FLAG_NONE,
+                              FIND_ANY_ORDER,
+                              false)
+
 	local ability = keys.ability
 	local ability_level = ability:GetLevel() - 1
+	local duration = 999
+	local health_gain = ability:GetLevelSpecialValueFor("bonus_health", ability:GetLevel() - 1)
 
-	local modifier = event.modifier
-	local duration = ability:GetLevelSpecialValueFor("think_interval", ability_level) 
-	local caster_owner = caster:GetPlayerOwner()
-	local target_owner = target:GetPlayerOwner()
-	local target_name = target:GetUnitName()
+	local modifier = keys.modifier
 	local caster_name = caster:GetUnitName() 
 
 	local unit_skeleton_warrior = keys.unit_skeleton_warrior
 
-	print (caster_name)
-	print (target_name)
+	for _, unit in pairs(skeletonUnits) do
 
-	local all_units = ability:GetLevelSpecialValueFor("all_units", (ability:GetLevel() - 1))
+		print(unit:GetUnitName())
 
-	if all_units == 1 then all_units = true else all_units = false end
+		if string.find(unit:GetUnitName(), "skeleton") then
+			ability:ApplyDataDrivenModifier(caster, unit, modifier, {Duration = duration})
+			unit.OldHealth = unit:GetMaxHealth()
 
-	if all_units then
-		if target_owner == caster_owner then
-			ability:ApplyDataDrivenModifier(caster, target, modifier, {Duration = duration})
+			print(unit.OldHealth)
+
+			print(health_gain)
+
+			unit.NewHealth = unit.OldHealth + health_gain
+
+			print(unit.NewHealth)
+
+			unit:SetMaxHealth(unit.NewHealth)
 		end
 	end
 end

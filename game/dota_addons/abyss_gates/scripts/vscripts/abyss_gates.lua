@@ -472,6 +472,11 @@ function Abyss_Gates:OnEntityKilled( keys )
 			-- Keep a reference to its name and expire time
 			corpse.corpse_expiration = GameRules:GetGameTime() + CORPSE_DURATION
 			corpse.unit_name = killedUnit:GetUnitName()
+			corpse.max_health = killedUnit:GetMaxHealth()
+
+			corpse:SetMaxHealth(corpse.max_health)
+
+			print(corpse:GetMaxHealth())
 
 			-- Set custom corpse visible
 			Timers:CreateTimer(3, function() corpse:RemoveNoDraw() end)

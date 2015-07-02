@@ -46,10 +46,23 @@ Shatter Bones 				Yes
 Raise Skeleton 				Half						Half										No corpse requirement. % chance spawn mechanism works, but only one type of unit so far. Spell fizzles after max # skeletons
 																									instead of replacing. Autocast doesn't work.
 
-Skeleton Mastery 			
+Skeleton Mastery 			Half						No 					No  					Applies only to existing skeletons. Damage bonus works fine.  Health bonus needs to be reworked, only applies first rank bonus.
 
-Corpse Explosion
+Corpse Explosion 			Half						No 					No 						Distance from target point works. Need to iterate through units and compare distance for closest to target
+																									point			
 
-Raise Skeleton Mage
+Raise Skeleton Mage 		Yes 						No 					No 						Summoning / random chance system in place. Need to create mage units.
 
-The Creature							
+The Creature
+
+
+
+Fear 						Yes  						No  				No 						100%  should it go through magic immunity?
+
+Amplify Damage 				Yes 						No 					No 						100%
+
+Life Tap 					Yes 						No 					No 						Currently heals Grim Magus only. Should it heal killer instead?
+
+Mana Rip 					Yes							No 					No 						Currently gives mana to Grim Magus only.	
+
+Taint Resistance							
