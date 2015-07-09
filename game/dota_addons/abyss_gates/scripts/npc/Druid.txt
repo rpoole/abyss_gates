@@ -1,0 +1,86 @@
+Druid				Druidic Battle Skills					Natures Touch										Natures Voice
+
+
+TIER 1				Fury Strike 							Feral Shield 										Feral Spirit
+
+					Chance to deal additional dmg & stun	magic immunity. slightly boosts armor				pair of wolves
+					Single target																				gain new abilities each lvl
+					
+Lvl 1														4 armor - 40s dur. 60 mana
+	2 														+1 armor - +1 dur - +3
+	3
+	4
+	5
+	6
+	7
+	8
+	9
+	10															
+
+
+TIER 2				Thorns									Dire Grasp		 									Drain Voice
+
+					returns fixed amount of damage 			single target root. 								infinite silence and DoT
+															spawns ent on target death							reduces target attk dmg
+
+Lvl 1																											10dps 10% dmg reduc. 70 mana
+	2 																											12	   13			 76
+	3 																											15     16			 82
+	4 																											19     19			 88
+	5 																											24     22			 94
+	6 																											30	   25			 100
+	7 																											37     28			 106
+	8 																											45     31			 112
+	9																											54     34			 118
+	10 																											64     37			 124
+
+
+TIER 3				Power Strike 							Rejuvenation 										Tame
+
+					Castable sweeping strike				HoT													Take control of unit. 																									Gets bonus abilities + 																									normal unit abilities																							endurance aura. ms and attk speed
+Lvl 1 																		Apprentice Tamer: 30% dmg reduc, +2 armor 200 mana
+	2 																						  ''	''		''		''	''
+	3 																						  40%            4
+	4 																						  ''    ''       ''      ''  ''
+	5 																						  50 			 7
+	6 																						  ''	''		''		'	''	
+	7 																						  ''     ''      ''		''	''
+	8 																						  lvl 8 max
+	9
+	10
+
+
+
+TIER 4				Earth Totem 							Purify 												Nightwatcher's Aura
+
+					Immoible ranged atking untit			1 to all stats. targetable							gain mana each cast
+					gains levels adnd abilities																	and movementspeed
+					based on xp gain. invul.
+
+Lvl 1 														180s cd												4%ms, 16 mana each cast
+	2 														-10s												+4    +4
+	3 																											
+	4
+	5
+	6
+	7
+	8
+	9
+	10
+
+TIER 5				Bloodied Fury (passive)							Tyr's Rage											Tyr's Might
+
+					gains frenzy after kiling unit 			DoT in area around caster							buff shout increasing dmg
+					increased attk and ms for short period	while draining druid health and mana				aoe all friendly units
+					gains passive agility and str bonuses
+
+Lvl 1 				6str&agi 75% atk speed. 30% ms 3s dur									50dmg, 5 armor, 45s hero 20s unit dur 150mana
+	2 				+3 		 +15		   +10	   0										+15     +1       ''       ''           +15
+	3 				
+	4
+	5
+	6
+	7
+	8
+	9
+	10
