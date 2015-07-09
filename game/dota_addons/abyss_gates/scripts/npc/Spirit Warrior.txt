@@ -1,25 +1,46 @@
 Spirit Warrior
 
-TIER 1				Spirit Warrior Arts of Self					Spirit Warrior Arts of Striking:					Spirit Warrior Arts of spirit:
-					Reduces the dmg he takes from each attack.  	 Gives stealth that deals bonus dmg on first attack and provides a charge 	gives small amount of str stat on each kill
+
+					Spirit Warrior Arts of Self								Spirit Warrior Arts of Striking						Spirit Warrior Arts of Spirit
+
+
+TIER 1				Hardened Skin 											Hidden Strike										Retribution
+
+					Flat damage reduction from physical attacks  			Stealth + Bonus Damage on attack 					Increases Str on kill
+																			Grants 1 charge when attacking out of Stealth
+																			Large move speed buff while Stealthed
 															
 
+TIER 2				Critical Strike											Serpent Strike 										Salvation
 
-TIER 2					Crit on chance					Charge blade with posion dmg and lifesteal on 1 attack. 			Life on kill.	
+					Chance for Critical Strike 								Spirit Spell:										Heals for flat amount on unit kill
 
-														Stacks up to 3 charges. 3 charge attack has aoe				
+																			1st Charge: SingleTarget DoT
+																			2nd Charge: 30% Spirit Warrior Max HP leech
+																			3rd Charge: AoE Poison Damage + DoT															
+					
 
+TIER 3				Vampirism 												Freezing Strike   									Purification
 
-TIER 3				Gives passive lifesteal, but reduces his armor slightly 	Charge blade with frost dmg and slow on 1 attack. Small aoe		gives small amount of agi stat on each kill																		
+					Gives passive lifesteal 								Spirit Spell:										Increases Agi on kill
+					but reduces his armor slightly							1st Charge: SingleTarget Bonus Damage
+																			2nd Charge: SingleTarget (Bonus Damage x 2)
+																			3rd Charge: AoE Bonus Damage										
 				
-														Stacks up to 3 charges. 3 charge attack has aoe
 
+TIER 4				Spirit Image 											Storm Strike 										Conversion
 
-TIER 4				Classic blademaster image split				Charge blade with lightning dmg and bounces to targets on 1 attack.		Chance to raise slain enemy from the dead to fight for you.
+					Spawn three illusions. Damage approaches 100% 			Spirit Spell										Chance to raise unit on kill as friendly summon for 60 seconds
+					based on level											1st Charge: 1 Lightning Bolt
+																			2nd Charge: 2 Lightning Bolts
+																			3rd Charge: 3 Lightning Bolts
 
-						3 images, percentage of total dmg			Stacks up to 3 charges. 3 charge attack has aoe
-						takes same hero dmg
+																			Lightning bolts have infinite jumps, 10% dmg
+																			reduction per jump
 
+TIER 5				True Focus 												Firestorm Strike 									Tel'Qeres
 
-TIER 5			pushes all units nearby a target away instantly,		Charge blade with fire dmg. Full charges have huge destructive area.		basic swiftblade whirlwind, grants small amount of life of kill while spinning
-			 and lowers the amrmor of the target significantly.														units under 45% health die instantly.
+					AoE Knockback around target unit. Significantly 		Spirit Spell:										1 second Juggernaut spin. Instantly kills all units below 50% hp
+					reduces armor of those knocked back. 					1st Charge: SingleTarget Bonus Damage 				and heals the Spirit Warrior for a flat amount. Deals a flat amount
+																			2nd Charge: AoE Bonus Damage 						of damage to units over 50% hp.
+																			3rd Charge: AoE Bonus Damage + AoE Ground DoT 		Kill threshold increases per level, Heal and Damage also increase.

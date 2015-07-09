@@ -713,6 +713,29 @@ function Abyss_Gates:OnConnectFull(keys)
 	end
 end
 
+function DealDamage(source, target, damage, dType, flags)
+	local dTable = {
+		victim = target,
+		attacker = source,
+		damage = damage,
+		damage_type = dType,
+		damage_flags = flags,
+		ability = nil
+	}
+	ApplyDamage(dTable)
+end
+-- a function to quickly create an appropriate dummy
+function FastDummy(target, team)
+	local dummy = CreateUnitByName("npc_dummy_unit", target, false, nil, nil, team)
+	dummy:SetAbsOrigin(target) -- CreateUnitByName uses only the x and y coordinates so we have to move it with SetAbsOrigin()
+	dummy:GetAbilityByIndex(0):SetLevel(1)
+	dummy:SetDayTimeVisionRange(250)
+	dummy:SetNightTimeVisionRange(250)
+	dummy:AddNewModifier(dummy, nil, "modifier_phased", { duration = 9999})
+	dummy:AddNewModifier(dummy, nil, "modifier_invulnerable", { duration = 9999})
+	return dummy
+end
+
 -- This is an example console command
 function Abyss_Gates:ExampleConsoleCommand()
 	--print( '******* Example Console Command ***************' )

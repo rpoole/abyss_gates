@@ -37,7 +37,7 @@ Darkbolt 					Yes 						Yes 				No 						Projectile looks ugly. Stun duration fu
 
 Skull Spear 				Yes 						No 					No 						Replace Powershot
 
-Bleed Earth 				Half 						No 					No 						Deals damage, no corpse spawning yet
+Bleed Earth 				Half 						Half				No 						Deals damage, no corpse spawning yet. Add blood to animation.
 
 Shatter Bones 				Yes
 
@@ -66,3 +66,31 @@ Life Tap 					Yes 						No 					No 						Currently heals Grim Magus only. Should
 Mana Rip 					Yes							No 					No 						Currently gives mana to Grim Magus only.	
 
 Taint Resistance							
+
+
+
+
+SPIRIT WARRIOR
+====================================================================================================================================================================================================
+
+Hardened Skin 				Yes 						No 					No 						100%  block number pops up every attack. does it work against magic?
+
+Critical Strike 			Yes 						No 					No 						Percentages are off, animation is weird
+
+Vampirism 					Yes 						No 					No 						100%
+
+Spirit Image 				Half 						No 					No 						Lots and lots of bugs
+
+True Focus 					Half						No 					No 						Knockback is weird, no damage
+
+
+Hidden Strike 				Yes 						No 					No 						Does not build a charge
+
+Serpent Strike 				Yes							No 					No 						Needs to remove self after attack
+
+Freezing Strike 			Yes 						No 					No 						Needs to remove self after attack
+
+Storm Strike 				Half 						No 					No 						Bounces can re-bounce, need to figure out how to remove bounce cap, also reduce damage after each bounce
+
+Firestorm Strike 			Yes 						No 					No 						Needs to remove self after attack
+
