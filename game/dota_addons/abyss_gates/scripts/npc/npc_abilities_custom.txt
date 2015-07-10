@@ -4430,6 +4430,302 @@
 			}
 		}
 	}
+
+	//=================================================================================================================
+	// Spirit Warrior: Arts of Spirit Tier 1: Retribution
+	//=================================================================================================================
+	"spirit_warrior_retribution"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"sven_warcry"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"Modifiers"
+		{	
+			"modifier_retribution_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_spirit_warrior_spirit/stat_stack.lua"
+						"Function"		"StrStack"
+						"modifier_one"	"modifier_retribution_stack"
+						"modifier_two"	"modifier_retribution_buff"
+					}
+				}
+			}
+
+			"modifier_retribution_stack"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+			}
+
+			"modifier_retribution_buff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "1"
+				}
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spirit Warrior: Arts of Spirit Tier 2: Salvation
+	//=================================================================================================================
+	"spirit_warrior_salvation"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"dazzle_shadow_wave"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heal_amount"			"50"
+			}
+		}
+
+		"Modifiers"
+		{	
+			"modifier_salvation_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnKill"
+				{
+					"Heal"
+					{
+						"Target"        "CASTER"
+						"HealAmount"	"%heal_amount"
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Spirit Warrior: Arts of Spirit Tier 3: Purification
+	//=================================================================================================================
+	"spirit_warrior_purification"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"slark_essence_shift"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"Modifiers"
+		{	
+			"modifier_purification_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnKill"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_spirit_warrior_spirit/stat_stack.lua"
+						"Function"		"StrStack"
+						"modifier_one"	"modifier_purification_stack"
+						"modifier_two"	"modifier_purification_buff"
+					}
+				}
+			}
+
+			"modifier_purification_stack"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+			}
+
+			"modifier_purification_buff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "1"
+				}
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spirit Warrior: Arts of Spirit Tier 4: Conversion
+	//=================================================================================================================
+	"spirit_warrior_conversion"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"enchantress_enchant"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"res_chance"			"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"60.0"
+			}
+		}
+
+		"Modifiers"
+		{	
+			"modifier_conversion_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnKill"
+				{
+					"Random"
+					{
+						"Chance"			"%res_chance"
+						"OnSuccess"
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/hero_spirit_warrior_spirit/conversion.lua"
+								"Function"		"ResUnit"
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Spirit Warrior: Arts of Spirit Tier 5: Tel`Qeres
+	//=================================================================================================================
+	"spirit_warrior_tel_qeres"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"juggernaut_blade_fury"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"50"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"1"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"kill_threshold"	"0.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heal_amount"		"100"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"600"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_tel_qeres"
+				"Target" 		"CASTER"
+				"Duration"		"%duration"
+			}
+		}
+
+		"Modifiers"
+		{	
+			"modifier_tel_qeres"
+			{
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"CASTER"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+				
+						"Action"    
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_MAGICAL"
+								"Damage"		"%damage"
+							}
+						}
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_spirit_warrior_spirit/tel_qeres.lua"
+						"Function"		"InstaKill"
+						"radius"		"%radius"
+					}
+				}	
+			}
+		}
+	}
 //-------------------
 // Dummy stuff
 //-------------------
