@@ -1,0 +1,122 @@
+PALADIN SUPPORT AURA SKILLS																			
+
+
+TIER 1		Regeneration Aura	Increases nearbly friendly units' life regeneration by +2 HP / Second	
+								
+			
+			Mana Cost			Cooldown				Damage			Damage Type					Effect				Effect Duration			Max Targets			Radius
+
+RANK 1		--					--						--				--							+2HP / Second		--						--					~600
+
+RANK 2		''					''						''				''							(+1.25 / Second)	''						''					''
+
+RANK 3													
+
+RANK 4													
+
+RANK 5													
+
+RANK 6													
+
+RANK 7													
+
+RANK 8													
+
+RANK 9													
+
+RANK 10													
+
+
+
+
+TIER 2		Stoneskin Aura			Increases the armor of friendly units by 1
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect				Effect Duration			Max Targets			Radius
+
+RANK 1		--					--						--				''				--							+2 Armor			--						--					~600
+
+RANK 2		''					''						''				''				''							(+0.5)				''						''					''
+
+RANK 3															
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8													
+
+RANK 9												
+
+RANK 10
+
+
+
+TIER 3		Might Aura			Gives bonus attack damage to nearby melee units
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		--					--						--				--				--							+10% Attack Damage			--						--					~600
+
+RANK 2		''					''						''				''				''							(+6%)						''						''					''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 4		Warmth Aura 		Increases nearby friendly units' mana regeneration by 1
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		--					--						--				--				--							+1 Mana Regen / Second		--						--					~600
+
+RANK 2		''					''						''				''				''							(+0.5)						''						''					''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 5		Cold Aura		Strikes nearby targets for 25% of the paladin's damage. Passive bonus armor of 1
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		--					--						--				--				--							+5% MS / +15% AS			--						--					~600
+
+RANK 2		''					''						''				''				''							(+5% / +5%)					''						''					''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6															
