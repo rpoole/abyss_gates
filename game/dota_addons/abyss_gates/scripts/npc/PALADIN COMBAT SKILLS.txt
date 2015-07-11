@@ -1,0 +1,122 @@
+PALADIN COMBAT SKILLS																			
+
+
+TIER 1		Stone Fist			Smashes an enemy for 100 damage, stunning the targetted enemy for 12 seconds and all other units in an area for 4 seconds.
+								
+			
+			Mana Cost			Cooldown				Damage			Damage Type					Effect				Effect Duration			Max Targets			Radius
+
+RANK 1		35					5						100				Magical						Stun				12 Target / 4 AoE		--					~600
+
+RANK 2		39					''						150				''							''					''						''					''
+
+RANK 2		43											210
+
+RANK 2		47											280
+
+RANK 2		51											360
+
+RANK 2		55											450
+
+RANK 2		60											550
+
+RANK 2		65											660
+
+RANK 2		70											780
+
+RANK 2		76											900	
+
+
+
+
+TIER 2		Divine Light			Restores 240 Health to nearby friendly heroes.
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect				Effect Duration			Max Targets			Radius
+
+RANK 1		70					10						--				240				--							--					--						--					~600
+
+RANK 2		(+6.0)				(-0.5)					''				(+80)			''							''					''						''					''
+
+RANK 3															
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8													
+
+RANK 9												
+
+RANK 10
+
+
+
+TIER 3		Zeal			Activates a 3 second burst of speed that increases your attack rate to 400%.
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		45					12						--				--				--							Set Attack Speed to 225%	3						--					Self
+
+RANK 2		(+5.0)				(-0.5)					''				''				''							(+25%)						''						''					''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 4		Charge		Charges an enemy with a blow that deals 400% damage and stuns for 3 seconds.
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		40					12						400%			--				Physical					Stun						3						--					--
+
+RANK 2		(+6.0)				(-0.5)					(+33%)			''				''							''							''						''					''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 5		Purify Hammer		Strikes nearby targets for 25% of the paladin's damage. Passive bonus armor of 1
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		--					--						25% cleave		--				Physical					Bonus Armor + 1				--						--					~150
+
+RANK 2		''					''						(+6%)			''				''							(+1)						''						''					''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6															

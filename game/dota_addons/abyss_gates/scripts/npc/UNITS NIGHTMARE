@@ -1,0 +1,87 @@
+UNITS NIGHTMARE
+
+
+Unit 				Wave 		Health 		Damage 		Melee / Ranged		Speed				Magic Immune 	Special Ability 				Model 				Max Mana 		Armor
+
+Boar  				1			146			5-7			Melee	Normal		Very Fast			No 				None 							Boar				--				0	Medium
+
+Corrupted Boar 		1 			274 		10-15 		Melee	Normal		Very Fast			No 				Regeneration Aura 				Red Boar			--				0 	Medium
+
+Grasper 			2 			201 		5-11 		Melee	Normal		Very Fast			No 				None 							Murloc				--				0 	Medium
+
+Grasper Venomancer 	2 			412 		10-16 		Melee	Normal 		Very Fast			No 				Poison DoT 						Green Murloc		--				0 	Medium
+
+Mervian Clasper 	3 			293 		11-19 		Melee 	Normal		Very Fast			No 				None 							Big Lobster			--				1	Medium
+
+Mervian Mauler      3 			366 		21-25 		Melee 	Normal		Very Fast			No 				None 							Big Red Lobster		--				1	Medium
+
+Kerrang 			3 			4575 		188-220 	Melee 					No 				Bash / Blink 					Giant Crab
+
+Dryad 				4 			205 		18-24 		Ranged 	Piercing	Slow				No 				Slow Poison	70%					Enchantress			--				0	Medium
+
+Nightshade Huntress	4 			1098 		21-30 		Melee 	Normal		Very Fast			No 				Invisibility 					Luna				--				2	Medium
+
+Harlequin Spider 	5 			366 		19-34 		Melee 					Yes 			None 							Spider
+
+Arachnesser 		5 			549 		20-24 		Ranged 					No 				Spawn Spiderlings				Naga Siren
+
+Spiderling 			- 			146 		28-48 		Melee 					No 				Health Degen 					Spiderling
+
+T'Garri the Ancient 6 			12810	  	148-180 	Melee 					No 				Splits at certain HP% 			Tree of Life
+
+Great Turtle 		7 			457 		32-42 		Melee 					No 				None 							Turtle
+
+Ancient Turtle 		7 			1684 		-- 			-- 						No 				No attack, runs at throne		Large Turtle
+
+Centaur Hunter 		8 			421 		29-49 		Melee 					No 				10sec Zeal(as/ms) after         Centaur
+																								acquiring target
+
+Centaur Shaman 		8 			256 		81-93 		Ranged 					No 				Ressurects Centaur Hunters 		Bluish Centaur
+
+Oghmar Grayskin 	9 			8235 		83-128 		Melee 					No 				Regen Aura 						Earthshaker
+
+Tauren Warrior 		9 			961 		23-56 		Melee 					No 				None 							Mini Earthshaker
+
+Tauren Cleanser 	9 			732 		105-160 	Ranged 					No 				Launches ground target 			Spiritbreaker
+ 																								mortars
+
+Urmgot 				10 			476 		-- 			-- 						No 				Runs at throne 					Small Wendigos
+
+Megremoros 			10 			2196 		64-76 		Melee 					No 				None 							Wendigos
+
+Enfrit 				11 			805 		47-57 		Melee 					No 				None 							Invoker Ember Spirits
+
+Fire Priest 		11 			1647 		76-88 		Ranged 					No 				Slow moving auto projectile 	Eredar
+																								Immolate Aura
+																								Ressurects Enfrits
+
+Pyramourn 			11 			57187 		304-348		Melee 					No 				Ressurects area of Enfrits 		Ragnaros
+																								Insta casts at certain %
+																								33% or so ressurects 4
+																								Greater Fire Priests
+
+Greater Fire Priest -- 			2928 		106-118  	Ranged 					No 				Same 							Eredar
+
+Corrupt Troll 		12 			1555 		20-32 		Melee 					No 				Very Fast atk speed / 2xcrit 	Troll Warlord
+
+Troll Shadowpriest 	12 			2013 		53-78 		Ranged 					No 				Single Target Mana Burn 		Dazzle
+																								Faerie Fire
+
+Docile Vgg'ngg 		13 			1098 		1-1 		Melee 					No 				Enrages after acquiring target 	Zergling
+
+Enraged Vgg`ngg 	13 			1098 		54-74 		Melee 					No 				Fast move speed 				Zergling
+
+Docile Zgg`zgg 		13 			2562 		1-1 		Ranged  				No 				Enrages after acquiring target 	Venomancer
+
+Enraged Zgg`zgg 	13 			2562 		68-124 		Ranged 					No 				Fast move speed 				Venomancer
+
+Purnecros 			13 			18300 		114-134 	Ranged 					No 				Single Target dmg + stun 		Warlock
+																								Autoatk dodgable
+
+Gurgmoth 			14 			1098 		84-104 		Melee 					No 				Splits like 10 times 			Tiny
+
+Reanimated 			15 			1281 		52-72 		Melee 					No 				Ressurects themselves once 		Zombie
+
+Reanimator 			15 			1281 		68-88 		Melee 					Yes 			
+
+

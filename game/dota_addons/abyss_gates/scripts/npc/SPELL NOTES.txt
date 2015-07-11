@@ -94,3 +94,5 @@ Storm Strike 				Half 						No 					No 						Bounces can re-bounce, need to figu
 
 Firestorm Strike 			Yes 						No 					No 						Needs to remove self after attack
 
+
+
