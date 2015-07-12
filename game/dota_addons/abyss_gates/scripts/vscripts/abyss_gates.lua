@@ -177,8 +177,17 @@ function Abyss_Gates:OnGameInProgress()
 
 	Timers:CreateTimer(30, function() -- Start this timer 30 game-time seconds later
 		--print("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
+
+		SpawnCreeps()
 		return 30.0 -- Rerun this timer every 30 game-time seconds
 	end)
+end
+
+
+function SpawnCreeps()
+	local point = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local unit = CreateUnitByName("creature_boar", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_corrupted_boar", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
 end
 
 function Abyss_Gates:PlayerSay( keys )

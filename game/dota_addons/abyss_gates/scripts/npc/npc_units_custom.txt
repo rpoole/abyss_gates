@@ -190,7 +190,7 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/courier/mighty_boar/mighty_boar.vmdl"
-        "ModelScale"            "0.8"
+        "ModelScale"            "0.5"
         "Level"                 "1"
 
         "StatusHealth"          "146"
@@ -198,7 +198,7 @@
         "StatusMana"            "0"
         "StatusManaRegen"       "0"
         
-        "ArmorPhysical"         "2"
+        "ArmorPhysical"         "0"
         "MagicalResistance"     "0"
         
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
@@ -250,7 +250,416 @@
         "ModelScale"            "0.8"
         "Level"                 "1"
 
-        "StatusHealth"          "146"
+        "StatusHealth"          "274"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "10.0"
+        "AttackDamageMax"       "15.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+        "Ability1"              "corrupted_boar_aura"
+        "Ability2"				"color_red"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 2: Grasper
+	//=================================================================================
+	"creature_grasper"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "201"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "5.0"
+        "AttackDamageMax"       "11.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 2: Grasper Venomancer
+	//=================================================================================
+	"creature_grasper_venomancer"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "412"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "10.0"
+        "AttackDamageMax"       "16.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "non_lethal_poison"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 3: Mervian Clasper
+	//=================================================================================
+	"creature_mervian_clasper"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "293"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "1"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "11.0"
+        "AttackDamageMax"       "19.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 3: Mervian Mauler
+	//=================================================================================
+	"creature_mervian_mauler"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "366"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "1"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "21.0"
+        "AttackDamageMax"       "25.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 3: Kerrang
+	//=================================================================================
+	"creature_kerrang"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "4575"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "188.0"
+        "AttackDamageMax"       "220.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 4: Dryad
+	//=================================================================================
+	"creature_dryad"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "205"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"       "18.0"
+        "AttackDamageMax"       "24.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 4: Nightshade Huntress
+	//=================================================================================
+	"creature_nightshade_huntress"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1098"
         "StatusHealthRegen"     "0.25"
         "StatusMana"            "0"
         "StatusManaRegen"       "0"
@@ -259,8 +668,1469 @@
         "MagicalResistance"     "0"
         
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
-        "AttackDamageMin"       "5.0"
-        "AttackDamageMax"       "7.0"
+        "AttackDamageMin"       "11.0"
+        "AttackDamageMax"       "19.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 5: Harlequin Spider
+	//=================================================================================
+	"creature_harlequin_spider"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "366"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "19.0"
+        "AttackDamageMax"       "34.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 5: Arachnesser
+	//=================================================================================
+	"creature_arachnesser"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "549"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "20.0"
+        "AttackDamageMax"       "24.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 5: Spiderling
+	//=================================================================================
+	"creature_spiderling"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "146"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "28.0"
+        "AttackDamageMax"       "48.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 6: T'Garri the Ancient
+	//=================================================================================
+	"creature_tgarri"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "12810"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "148.0"
+        "AttackDamageMax"       "180.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 7: Great Turtle
+	//=================================================================================
+	"creature_great_turtle"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "457"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "32.0"
+        "AttackDamageMax"       "42.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 7: Ancient Turtle
+	//=================================================================================
+	"creature_ancient_turtle"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1684"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "0.0"
+        "AttackDamageMax"       "0.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 8: Centaur Hunter
+	//=================================================================================
+	"creature_centaur_hunter"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "421"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "29.0"
+        "AttackDamageMax"       "49.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 8: Centaur Shaman
+	//=================================================================================
+	"creature_centaur_shaman"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "256"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "81.0"
+        "AttackDamageMax"       "93.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 9: Oghmar Grayskin
+	//=================================================================================
+	"creature_oghmar_grayskin"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "8235"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "83.0"
+        "AttackDamageMax"       "128.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 9: Tauren Warrior
+	//=================================================================================
+	"creature_tauren_warrior"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "961"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "23.0"
+        "AttackDamageMax"       "56.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 9: Tauren Cleanser
+	//=================================================================================
+	"creature_tauren_cleanser"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "732"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "105.0"
+        "AttackDamageMax"       "160.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 10: Urmgot
+	//=================================================================================
+	"creature_urmgot"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "476"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "0.0"
+        "AttackDamageMax"       "0.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 10: Megremoros
+	//=================================================================================
+	"creature_megremoros"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "2196"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "64.0"
+        "AttackDamageMax"       "76.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 11: Enfrit
+	//=================================================================================
+	"creature_enfrit"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "805"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "47.0"
+        "AttackDamageMax"       "57.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 11: Fire Priest
+	//=================================================================================
+	"creature_mervian_clasper"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1647"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "76.0"
+        "AttackDamageMax"       "88.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 11: Pyramourn
+	//=================================================================================
+	"creature_mervian_clasper"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "57187"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "304.0"
+        "AttackDamageMax"       "348.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 11: Greater Fire Priest
+	//=================================================================================
+	"creature_greater_fire_priest"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "2928"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "106.0"
+        "AttackDamageMax"       "118.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 12: Corrupt Troll
+	//=================================================================================
+	"creature_corrupt_troll"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1555"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "20.0"
+        "AttackDamageMax"       "32.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 12: Troll Shadowpriest
+	//=================================================================================
+	"creature_troll_shadowpriest"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "2013"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"       "53.0"
+        "AttackDamageMax"       "78.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 13: Vgg'ngg
+	//=================================================================================
+	"creature_vggngg"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1098"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "1.0"
+        "AttackDamageMax"       "1.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 13: Zgg'zgg
+	//=================================================================================
+	"creature_zggzgg"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "2562"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "1.0"
+        "AttackDamageMax"       "1.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Wave 13: Purnecros
+	//=================================================================================
+	"creature_purnecros"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "18300"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "114.0"
+        "AttackDamageMax"       "134.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 14: Gurgmoth
+	//=================================================================================
+	"creature_gurgmoth"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1098"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "84.0"
+        "AttackDamageMax"       "104.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 15: Reanimated
+	//=================================================================================
+	"creature_reanimated"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1281"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "52.0"
+        "AttackDamageMax"       "72.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "human_defend"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+
+	//=================================================================================
+	// Wave 15: Reanimator
+	//=================================================================================
+	"creature_reanimator"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "ModelScale"            "0.8"
+        "Level"                 "1"
+
+        "StatusHealth"          "1281"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "69.0"
+        "AttackDamageMax"       "88.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
         "AttackAcquisitionRange" "500"

@@ -1836,6 +1836,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"bloodseeker_rupture"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		
 		"precache"
@@ -1930,6 +1931,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"witch_doctor_paralyzing_cask"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		
 		"precache"
@@ -1961,7 +1963,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bolt_speed"		"1500"
+				"bolt_speed"		"1000"
 			}
 		}
 
@@ -1996,6 +1998,20 @@
 				"Target"		"TARGET"
 				"Type"			"DAMAGE_TYPE_MAGICAL"
 				"Damage"		"%damage"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_witchdoctor/witchdoctor_cask_explosion.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_witchdoctor/witchdoctor_cask_explosion_flash_c.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
 			}
 		}
 		
@@ -2037,7 +2053,7 @@
 		
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+			"particle"  "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
 
@@ -2080,10 +2096,10 @@
 			"LinearProjectile"
 			{
 			    "Target"      	 "POINT"
-				"EffectName"	 "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf"
+				"EffectName"	 "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
 				"MoveSpeed"		 "%spear_speed"
 				"StartRadius"	 "%spear_width"
-				"StartPosition"  "attach_attack1"
+				"StartPosition"  "attach_origin"
 				"EndRadius"      "%spear_width"
 				"HasFrontalCone" "0"
 				"FixedDistance"  "%range"
@@ -2097,7 +2113,7 @@
 
 		"OnProjectileHitUnit"
 		{
-			"DeleteOnHit"	"false"
+			"DeleteOnHit"	"0"
 		
 			"Damage"
 			{
@@ -5848,6 +5864,150 @@
 			}
 		}
 	}
+
+
+	//=================================================================================================================
+	// Units
+	//=================================================================================================================
+	
+	"corrupted_boar_aura"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"necrolyte_heartstopper_aura"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"MaxLevel" 						"1"
+		"AbilityCastRange"				"800"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"health_regen"		"2.00"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"800"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_regen_mechanic"
+			{
+				"Passive"			"1"
+
+				"Aura"          	"modifier_regen_aura"
+				"Aura_Radius"   	"%radius"
+				"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+				"Aura_ApplyToCaster" "1"
+			}
+
+			"modifier_regen_aura"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"				
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"%health_regen"
+				}
+			}
+		}
+	}
+
+
+	"color_red"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"lion_hex"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"1"
+
+		"precache"
+		{
+			"particle"			"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_red_color"
+			{
+				"Passive"			"1"
+
+				"AttachEffect"
+				{
+					"EffectName"        "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "CASTER"
+				}
+			}
+		}
+	}
+
+
+	"non_lethal_poison"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"venomancer_poison_sting"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"1"
+
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+		}
+
+		"OnAttack"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_poison"
+				"Target" 		"TARGET"
+				"Duration"		"30"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_poison"
+			{
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"10"
+					}
+				}
+
+				"IsDebuff"			"1"
+
+				"AttachEffect"
+				{
+					"EffectName"        "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "CASTER"
+				}
+			}
+		}
+	}
+
+
+
+
 
 
 
