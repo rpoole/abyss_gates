@@ -13,9 +13,9 @@ Grasper Venomancer 	2 			412 		10-16 		Melee	Normal 		Very Fast			No 				Poison 
 
 Mervian Clasper 	3 			293 		11-19 		Melee 	Normal		Very Fast			No 				None 							Big Lobster			--				1	Medium
 
-Mervian Mauler      3 			366 		21-25 		Melee 	Normal		Very Fast			No 				None 							Big Red Lobster		--				1	Medium
+Mervian Mauler      3 			366 		21-25 		Melee 	Normal		Very Fast			No 				Bash 							Big Red Lobster		--				1	Medium
 
-Kerrang 			3 			4575 		188-220 	Melee 					No 				Bash / Blink 					Giant Crab
+Kerrang 			3 			4575 		188-220 	Melee 	Normal		Very Slow			No 				100% Bash / Blink				Giant Crab			-- 				6 	Medium
 
 Dryad 				4 			205 		18-24 		Ranged 	Piercing	Slow				No 				Slow Poison	70%					Enchantress			--				0	Medium
 

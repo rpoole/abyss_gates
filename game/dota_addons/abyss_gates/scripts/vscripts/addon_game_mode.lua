@@ -14,6 +14,8 @@ function Precache( context )
 	print("[ABYSS_GATES] Performing pre-load precache")
 
 	PrecacheUnitByNameSync("creature_boar", context)
+	PrecacheUnitByNameSync("creature_grasper_venomancer", context)
+	PrecacheUnitByNameSync("creature_great_turtle", context)
 	-- Particles can be precached individually or by folder
 	-- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed
 	--PrecacheResource("particle", "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf", context)

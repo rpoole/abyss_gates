@@ -634,7 +634,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "human_defend"
+        "Ability1"              "crippling_poison"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -692,7 +692,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "human_defend"
+        "Ability1"              "passive_invisibility"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -750,7 +750,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "human_defend"
+        "Ability1"              "magic_immunity"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -808,7 +808,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "human_defend"
+        "Ability1"              "spawn_spiderlings"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -888,7 +888,7 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/treant_protector/treant_protector.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -934,7 +934,19 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "227"}
+       			"Wearable2"		{ "ItemDef" "228"}
+       			"Wearable3"		{ "ItemDef" "229"}
+        		"Wearable4"		{ "ItemDef" "230"}
+        	}
+      	}    
 	}
 
 
@@ -946,8 +958,8 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
-        "ModelScale"            "0.8"
+        "Model"                 "models/items/courier/nexon_turtle_11_blue/nexon_turtle_11_blue.vmdl"
+        "ModelScale"            "2.0"
         "Level"                 "1"
 
         "StatusHealth"          "457"
@@ -1704,7 +1716,7 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/troll_warlord/troll_warlord.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -1750,7 +1762,22 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
+         "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "373"}
+       			"Wearable2"		{ "ItemDef" "374"}
+       			"Wearable3"		{ "ItemDef" "379"}
+        		"Wearable4"		{ "ItemDef" "380"}
+        		"Wearable5"		{ "ItemDef" "410"}
+       			"Wearable6"		{ "ItemDef" "411"}
+       			"Wearable7"		{ "ItemDef" "412"}
+        	}
+      	}      
 	}
 
 

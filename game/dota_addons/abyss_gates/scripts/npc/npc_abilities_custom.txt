@@ -5968,42 +5968,208 @@
 			"particle"			"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
 		}
 
-		"OnAttack"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_poison"
-				"Target" 		"TARGET"
-				"Duration"		"30"
-			}
-		}
-
 		"Modifiers"
 		{
+			"modifier_poison_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_poison"
+						"Target" 		"TARGET"
+						"Duration"		"30"
+					}
+				}
+			}
+
 			"modifier_poison"
 			{
 				"ThinkInterval"  "0.1"
 				"OnIntervalThink"
 				{
-					"Damage"
+					"RunScript"
 					{
-						"Target"		"TARGET"
-						"Type"			"DAMAGE_TYPE_MAGICAL"
-						"Damage"		"10"
+						"ScriptFile"	"heroes/creature_abilities/poison_sting.lua"
+						"Function"		"PoisonSting"
 					}
 				}
-
 				"IsDebuff"			"1"
+				"IsHidden"			"0"
+			}
+		}
+	}
 
-				"AttachEffect"
+
+	"crippling_poison"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"venomancer_venomous_gale"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"1"
+
+		"precache"
+		{
+			"particle"			"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_crippling_poison_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnAttackLanded"
 				{
-					"EffectName"        "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "CASTER"
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_crippling_poison"
+						"Target" 		"TARGET"
+						"Duration"		"10"
+					}
+				}
+			}
+
+			"modifier_crippling_poison"
+			{
+				"IsDebuff"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-70"
 				}
 			}
 		}
 	}
+
+	"passive_invisibility"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"riki_permanent_invisibility"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"1"
+
+		"Modifiers"
+		{
+			"modifier_passive_invis_mechanic"
+			{
+				"Passive"	"1"
+				"IsHidden"	"0"
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_remove_invis"
+						"Target" 		"CASTER"
+						"Duration"		"3"
+					}
+				}
+				
+				"OnCreated"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invis"
+						"Target" 		"CASTER"
+						"Duration"		"10"
+					}
+				}
+			}
+
+			"modifier_remove_invis"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"		
+
+				"OnCreated"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_invis"
+						"Target" 		"CASTER"
+					}
+				}
+
+				"OnDestroy"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invis"
+						"Target" 		"CASTER"
+						"Duration"		"10"
+					}
+				}
+			}
+
+			"modifier_invis"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+
+				"States"
+				{
+					"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+
+
+	"magic_immunity"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"omniknight_repel"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"1"
+
+		"Modifiers"
+		{
+			"modifier_magic_immunity"
+			{
+				"Passive"	"1"
+				"IsHidden"	"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+				}	
+			}		
+		}
+	}
+
+
+	"spawn_spiderlings"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"broodmother_spawn_spiderlings"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"MaxLevel" 						"1"
+
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"8.0"
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/creature_abilities/spawn_spiderlings.lua"
+				"Function"		"SpawnSpiderlings"
+			}
+		}
+
+			
+		}
+	}
+
 
 
 
