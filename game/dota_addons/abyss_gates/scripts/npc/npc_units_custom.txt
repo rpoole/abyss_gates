@@ -308,7 +308,7 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/heroes/venomancer/venomancer.vmdl"
-        "ModelScale"            "0.8"
+        "ModelScale"            "0.7"
         "Level"                 "1"
 
         "StatusHealth"          "201"
@@ -353,7 +353,19 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"  
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "291"}
+       			"Wearable2"		{ "ItemDef" "292"}
+       			"Wearable3"		{ "ItemDef" "293"}
+        		"Wearable4"		{ "ItemDef" "294"}
+        	}
+      	}            
 	}
 
 
@@ -366,7 +378,7 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/heroes/venomancer/venomancer.vmdl"
-        "ModelScale"            "0.8"
+        "ModelScale"            "1.0"
         "Level"                 "1"
 
         "StatusHealth"          "412"
@@ -411,7 +423,18 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "6933"}
+       			"Wearable2"		{ "ItemDef" "6940"}
+       			"Wearable3"		{ "ItemDef" "6942"}
+        		"Wearable4"		{ "ItemDef" "6943"}
+        	}
+      	}        
 	}
 
 
@@ -423,7 +446,7 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/slardar/slardar.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -469,7 +492,17 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "7999"}
+        	}
+      	}  
+
+
 	}
 
 
@@ -481,8 +514,8 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
-        "ModelScale"            "0.8"
+        "Model"                 "models/heroes/slardar/slardar.vmdl"
+        "ModelScale"            "1.0"
         "Level"                 "1"
 
         "StatusHealth"          "366"
@@ -527,7 +560,20 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "7857"}
+        		"Wearable2"		{ "ItemDef" "7858"}
+        		"Wearable3"		{ "ItemDef" "7859"}
+        		"Wearable4"		{ "ItemDef" "8133"}
+        	}
+      	}        
 	}
 
 
@@ -539,8 +585,8 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
-        "ModelScale"            "0.8"
+        "Model"                 "models/heroes/tidehunter/tidehunter.vmdl"
+        "ModelScale"            "2.0"
         "Level"                 "1"
 
         "StatusHealth"          "4575"
@@ -585,7 +631,20 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "7148"}
+        		"Wearable2"		{ "ItemDef" "7149"}
+        		"Wearable3"		{ "ItemDef" "7150"}
+        		"Wearable4"		{ "ItemDef" "7151"}
+        		"Wearable5"		{ "ItemDef" "7469"}
+        	}
+      	}        
 	}
 
 
@@ -597,7 +656,7 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/enchantress/enchantress.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -613,12 +672,11 @@
         "AttackDamageMin"       "18.0"
         "AttackDamageMax"       "24.0"
         "AttackRate"            "1.35"
-        "AttackAnimationPoint"  "0.5"
+        "AttackAnimationPoint"  "0.2"
         "AttackAcquisitionRange" "500"
-        "AttackRange"           "90"
+        "AttackRange"           "600"
 
-        "ProjectileModel"		""
-		"ProjectileSpeed"		"900"
+        "ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_base_attack.vpcf"
 
         "BountyGoldMin"         "26.0"
         "BountyGoldMax"         "38.0"
@@ -643,7 +701,16 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT" 
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "6857"}
+        		"Wearable1"		{ "ItemDef" "5021"}
+        	}
+      	}       
 	}
 
 
@@ -655,7 +722,7 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/luna/luna.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -667,7 +734,7 @@
         "ArmorPhysical"         "2"
         "MagicalResistance"     "0"
         
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
         "AttackDamageMin"       "11.0"
         "AttackDamageMax"       "19.0"
         "AttackRate"            "1.35"
@@ -701,7 +768,20 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "7269"}
+        		"Wearable2"		{ "ItemDef" "7270"}
+        		"Wearable3"		{ "ItemDef" "7271"}
+        		"Wearable4"		{ "ItemDef" "7272"}
+        		"Wearable5"		{ "ItemDef" "7273"}
+        	}
+      	}       
 	}
 
 
@@ -713,8 +793,8 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
-        "ModelScale"            "0.8"
+        "Model"                 "models/heroes/broodmother/spiderling.vmdl"
+        "ModelScale"            "1.0"
         "Level"                 "1"
 
         "StatusHealth"          "366"
@@ -771,7 +851,7 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/weaver/weaver.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -783,16 +863,15 @@
         "ArmorPhysical"         "0"
         "MagicalResistance"     "0"
         
-        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
         "AttackDamageMin"       "20.0"
         "AttackDamageMax"       "24.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
         "AttackAcquisitionRange" "500"
-        "AttackRange"           "90"
+        "AttackRange"           "600"
 
-        "ProjectileModel"		""
-		"ProjectileSpeed"		"900"
+        "ProjectileModel"		"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
 
         "BountyGoldMin"         "26.0"
         "BountyGoldMax"         "38.0"
@@ -817,8 +896,24 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "6130"}
+        		"Wearable2"		{ "ItemDef" "6131"}
+        		"Wearable3"		{ "ItemDef" "6132"}
+        		"Wearable4"		{ "ItemDef" "6133"}
+        		"Wearable5"		{ "ItemDef" "6134"}
+        	}
+      	}          
 	}
+
+
+
 
 
 

@@ -5,6 +5,7 @@ requires = {
 	'lib.statcollection',
 	'abilities',
 	'abyss_gates',
+	'base_trigger',
 }
 
 function Precache( context )
@@ -14,8 +15,17 @@ function Precache( context )
 	print("[ABYSS_GATES] Performing pre-load precache")
 
 	PrecacheUnitByNameSync("creature_boar", context)
+	PrecacheUnitByNameSync("creature_grasper", context)
 	PrecacheUnitByNameSync("creature_grasper_venomancer", context)
 	PrecacheUnitByNameSync("creature_great_turtle", context)
+	PrecacheUnitByNameSync("creature_mervian_clasper", context)
+	PrecacheUnitByNameSync("creature_mervian_mauler", context)
+	PrecacheUnitByNameSync("creature_kerrang", context)
+	PrecacheUnitByNameSync("creature_dryad", context)
+	PrecacheUnitByNameSync("creature_nightshade_huntress", context)
+	PrecacheUnitByNameSync("creature_harlequin_spider", context)
+	PrecacheUnitByNameSync("creature_arachnesser", context)
+	PrecacheUnitByNameSync("dummy_unit", context)
 	-- Particles can be precached individually or by folder
 	-- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed
 	--PrecacheResource("particle", "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf", context)

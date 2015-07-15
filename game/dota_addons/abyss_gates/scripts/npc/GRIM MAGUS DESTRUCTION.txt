@@ -1,0 +1,122 @@
+GRIM MAGUS DESTRUCTION																		
+
+
+TIER 1		Bloodshed			Rips blood from a target for a period of time, dealing 24 damage per second for 20 seconds
+								
+			
+			Mana Cost			Cooldown				Damage			Damage Type					Effect				Effect Duration			Max Targets			Radius				Range
+
+RANK 1		30					5						24 / second		Magical						--					20						--					~600				1000
+
+RANK 2		(+3)				(-0.5)					30 / second		''							''					''						''					''
+
+RANK 2		43											38 / second
+
+RANK 2		47											48
+
+RANK 2		51											60
+
+RANK 2		55											74
+
+RANK 2		60											90
+
+RANK 2		65											108
+
+RANK 2		70											128
+
+RANK 2		76											150
+
+
+
+
+TIER 2		Darkbolt 			Fires a bolt of dark energy, stunning the target upon impact. Stuns for 3 seconds, deals 160 damage
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect				Effect Duration			Max Targets			Range
+
+RANK 1		40					3						160				--				Magical						Stun				3						--					600
+
+RANK 2		(+8.0)										240				''				''							''					(+1.0)					''					''
+
+RANK 3													340			
+
+RANK 4													460
+
+RANK 5													600
+
+RANK 6													760
+
+RANK 7													940
+
+RANK 8													1140
+
+RANK 9													1360
+
+RANK 10		105											1600
+
+
+
+TIER 3		Skull Spear			Casts forth an energetic skull that damages all enemies it touches for 180 damage.
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius 			Range
+
+RANK 1		90					5						180				--				--							--							--						--					200				1000
+
+RANK 2		(+5.0)				(-0.5)					(+40)			''				''							''							''						''					''				''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 4		Bleed Earth			Violently releases blood from the earth to deal 100 damage per second over 7 seconds. Spawns 1 Corpse
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius 			Range
+
+RANK 1		250					65						100 / second	--				Magical						Spawn 1 Corpse				--						--					300 			700
+
+RANK 2		(+25.0)				(-5)					(+30)			''				''							''							''						''					'' 				''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 5		Shatter Bones		Blasts an area with a powerful energy beam, reducing the life of basic creatures in a target area to 33%, and unique creatures to 75%.
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		500					70						66% / 25% Max HP--				Pure						--							--						--					600
+
+RANK 2		(+60)				(-5)					--				''				''							''							''						''					(+50)
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6															

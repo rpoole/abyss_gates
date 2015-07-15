@@ -186,7 +186,8 @@ end
 
 function SpawnCreeps()
 	local point = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
-	local unit = CreateUnitByName("creature_great_turtle", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_harlequin_spider", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_arachnesser", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
 end
 
 function Abyss_Gates:PlayerSay( keys )

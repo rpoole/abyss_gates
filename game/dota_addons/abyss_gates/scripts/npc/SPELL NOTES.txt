@@ -33,9 +33,9 @@ GRIM MAGUS
 
 Bloodshed 					Yes 						Yes 				No 						100%
 
-Darkbolt 					Yes 						Yes 				No 						Projectile looks ugly. Stun duration full length regardless of enemy
+Darkbolt 					Yes 						Yes 				No 						100%
 
-Skull Spear 				Yes 						No 					No 						Replace Powershot
+Skull Spear 				Yes 						No 					No 						100% Replace Powershot
 
 Bleed Earth 				Half 						Half				No 						Deals damage, no corpse spawning yet. Add blood to animation.
 

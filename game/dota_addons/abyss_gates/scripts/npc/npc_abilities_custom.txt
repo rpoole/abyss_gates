@@ -1837,6 +1837,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"bloodseeker_rupture"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"MaxLevel"						"10"
 		
 		
 		"precache"
@@ -1847,9 +1848,9 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"5"
-		"AbilityCastRange"				"600"
+		"AbilityCooldown"				"4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0 0.5 0.0"
+		"AbilityManaCost"				"30 33 36 39 42 45 48 51 54 57"
+		"AbilityCastRange"				"1000"
 
 		"AbilitySpecial"
 		{
@@ -1868,7 +1869,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"30"
+				"duration"			"20"
 			}
 		}
 
@@ -1932,6 +1933,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"witch_doctor_paralyzing_cask"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"MaxLevel"						"10"
 		
 		
 		"precache"
@@ -1942,8 +1944,8 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"3.0"
+		"AbilityManaCost"				"40 46 52 58 64 70 76 82 88 94"
 		"AbilityCastRange"				"600"
 
 		"AbilitySpecial"
@@ -1951,13 +1953,13 @@
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage"			"200"
+				"damage"			"160 240 340 460 600 760 940 1140 1360 1600"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"stun_duration"		"2.5"
+				"stun_duration"		"3 4 5 6 7 8 9 10 11 12"
 			}
 
 			"03"
@@ -2053,28 +2055,27 @@
 		
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0"
+		"AbilityCooldown"				"5.0 4.5 4.0 3.5 3.0 2.5 2.0 1.5"
 		"AbilityManaCost"				"5"
-		"AbilityCastRange"				"3000"
+		"AbilityCastRange"				"1000"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage"			"200"
+				"damage"			"180 220 260 300 340 380 420 460"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"range"				"3000"
+				"range"				"1000"
 			}
 
 			"03"
@@ -2096,10 +2097,10 @@
 			"LinearProjectile"
 			{
 			    "Target"      	 "POINT"
-				"EffectName"	 "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+				"EffectName"	 "particles/skull_spear.vpcf"
 				"MoveSpeed"		 "%spear_speed"
 				"StartRadius"	 "%spear_width"
-				"StartPosition"  "attach_origin"
+				"StartPosition"  "attach_attack1"
 				"EndRadius"      "%spear_width"
 				"HasFrontalCone" "0"
 				"FixedDistance"  "%range"
@@ -2138,7 +2139,8 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"batrider_sticky_napalm"
-		"AOERadius"						"600"
+		"AOERadius"						"300"
+		"MaxLevel"						"8"
 		
 		
 		"precache"
@@ -2147,28 +2149,28 @@
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"5"
-		"AbilityCastRange"				"3000"
+		"AbilityCooldown"				"65 60 55 50 45 40 35 30"
+		"AbilityManaCost"				"250 275 300 325 350 375 400 425"
+		"AbilityCastRange"				"700"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_per_second"			"100"
+				"damage_per_second"			"100 130 160 190 220 250 280 310"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"radius"				"600"
+				"radius"				"300"
 			}
 
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"corpse_number"		"5"
+				"corpse_number"		"1 2 3 4 5 6 7 8"
 			}
 
 			"04"
@@ -2208,9 +2210,16 @@
 				{
 					"AttachEffect"
 					{
-						"EffectName"		"particles/bleed_earth.vpcf"
+						"EffectName"		"particles/bleed_earth2.vpcf"
 						"EffectAttachType"	"follow_origin"
 						"Target"			"TARGET"
+					}
+
+					"AttachEffect"
+					{
+						"EffectName"        "particles/bleed_earth.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
 					}
 				}
 			}
@@ -2259,27 +2268,28 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"leshrac_diabolic_edict"
-		"AOERadius"						"600"
+		"AOERadius"						"600 650 700 750 800 850"
+		"MaxLevel"						"6"
 		
 		
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_brewmaster/brewmaster_thunder_clap.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+			"particle"  "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
 		}
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"8.0"
-		"AbilityManaCost"				"5"
-		"AbilityCastRange"				"3000"
+		"AbilityCooldown"				"70.0 65.0 60.0 55.0 50.0 45.0"
+		"AbilityManaCost"				"500 560 620 680 740 800"
+		"AbilityCastRange"				"1000"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"radius"				"600"
+				"radius"				"600 650 700 750 800 850"
 			}
 
 			"02"
@@ -2317,6 +2327,13 @@
 					}
 				}
 			}
+
+			"FireEffect"
+				{
+					"EffectName"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare.vpcf"
+					"EffectAttachType"  "world_origin"
+					"Target"            "POINT"
+				}
 		}
 	}
 
