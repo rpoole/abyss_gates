@@ -14,6 +14,12 @@ function Precache( context )
 
 	print("[ABYSS_GATES] Performing pre-load precache")
 
+	PrecacheUnitByNameSync("creature_tgarri", context)
+	PrecacheUnitByNameSync("creature_tgarri_first_split", context)
+	PrecacheUnitByNameSync("creature_tgarri_second_split", context)
+	PrecacheUnitByNameSync("creature_tgarri_third_split", context)
+	PrecacheUnitByNameSync("creature_tgarri_fourth_split", context)
+	PrecacheUnitByNameSync("creature_spiderling", context)
 	PrecacheUnitByNameSync("undead_burning_skeleton_archer", context)
 	PrecacheUnitByNameSync("undead_skeleton_archer", context)
 	PrecacheUnitByNameSync("undead_skeleton_warrior", context)

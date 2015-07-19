@@ -468,7 +468,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "human_defend"
+        "Ability1"              "mervian_bash"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -539,7 +539,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "human_defend"
+        "Ability1"              "kerrang_bash"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -774,8 +774,8 @@
 
         "StatusHealth"          "549"
         "StatusHealthRegen"     "0.25"
-        "StatusMana"            "0"
-        "StatusManaRegen"       "0"
+        "StatusMana"            "5"
+        "StatusManaRegen"       "0.5"
         
         "ArmorPhysical"         "0"
         "MagicalResistance"     "0"
@@ -826,6 +826,19 @@
         		"Wearable4"		{ "ItemDef" "6133"}
         		"Wearable5"		{ "ItemDef" "6134"}
         	}
+
+        	"DefaultState"       "Invade"
+			"States"
+			{
+			    "Invade"
+			    {
+			        "Name"          "Invade"
+			        "Aggression"    "100.0"
+			        "Avoidance"     "0.0"
+			        "Support"       "0.0"
+			        "RoamDistance"  "0.0"
+			    }
+			}
       	}          
 	}
 
@@ -842,12 +855,12 @@
         // Custom
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
-        "Model"                 "models/heroes/venomancer/venomancer.vmdl"
+        "Model"                 "models/heroes/broodmother/spiderling.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
         "StatusHealth"          "146"
-        "StatusHealthRegen"     "0.25"
+        "StatusHealthRegen"     "-2.0"
         "StatusMana"            "0"
         "StatusManaRegen"       "0"
         
@@ -901,6 +914,254 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/heroes/treant_protector/treant_protector.vmdl"
+        "ModelScale"            "2.0"
+        "Level"                 "1"
+
+        "StatusHealth"          "12810"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "148.0"
+        "AttackDamageMax"       "180.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "tgarri_first_split"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "7059"}
+       			"Wearable2"		{ "ItemDef" "7060"}
+       			"Wearable3"		{ "ItemDef" "7061"}
+        		"Wearable4"		{ "ItemDef" "7062"}
+        	}
+      	}    
+	}
+
+
+
+	//=================================================================================
+	// Wave 6: T'Garri the Ancient - First Split
+	//=================================================================================
+	"creature_tgarri_first_split"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/items/furion/treant/fungal_lord_shroomthing/fungal_lord_shroomthing.vmdl"
+        "ModelScale"            "2.0"
+        "Level"                 "1"
+
+        "StatusHealth"          "2013"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "26.0"
+        "AttackDamageMax"       "38.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "tgarri_second_split"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+
+
+	//=================================================================================
+	// Wave 6: T'Garri the Ancient - Second Split
+	//=================================================================================
+	"creature_tgarri_second_split"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/items/furion/treant/father_treant/father_treant.vmdl"
+        "ModelScale"            "1.5"
+        "Level"                 "1"
+
+        "StatusHealth"          "1098"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "19.0"
+        "AttackDamageMax"       "27.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "tgarri_third_split"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+
+
+	//=================================================================================
+	// Wave 6: T'Garri the Ancient - Third Split
+	//=================================================================================
+	"creature_tgarri_third_split"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/items/furion/treant/eternalseasons_treant/eternalseasons_treant.vmdl"
+        "ModelScale"            "1.2"
+        "Level"                 "1"
+
+        "StatusHealth"          "366"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
+        "AttackDamageMin"       "16.0"
+        "AttackDamageMax"       "24.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "90"
+
+        "ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "tgarri_fourth_split"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	}
+
+
+
+	//=================================================================================
+	// Wave 6: T'Garri the Ancient - Fourth Split
+	//=================================================================================
+	"creature_tgarri_fourth_split"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/items/furion/treant/shroomling_treant/shroomling_treant.vmdl"
         "ModelScale"            "0.8"
         "Level"                 "1"
 
@@ -946,19 +1207,7 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-
-
-        "Creature"
-       	{
-        	"AttachWearables"
-        	{
-        		"Wearable1"		{ "ItemDef" "227"}
-       			"Wearable2"		{ "ItemDef" "228"}
-       			"Wearable3"		{ "ItemDef" "229"}
-        		"Wearable4"		{ "ItemDef" "230"}
-        	}
-      	}    
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"  
 	}
 
 

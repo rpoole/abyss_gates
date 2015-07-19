@@ -29,6 +29,12 @@ Spiderling 			- 			146 		28-48 		Melee 					No 				Health Degen 					Spiderling
 
 T'Garri the Ancient 6 			12810	  	148-180 	Melee 					No 				Splits at certain HP% 			Tree of Life
 
+T'Garri Split 1					2013		26-38		Melee
+
+T'Garri Split 2					1098		19-27
+
+T'Garri Split 3 				366 		16-24
+
 Great Turtle 		7 			457 		32-42 		Melee 					No 				None 							Turtle
 
 Ancient Turtle 		7 			1684 		-- 			-- 						No 				No attack, runs at throne		Large Turtle

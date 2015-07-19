@@ -6172,14 +6172,29 @@
 		"MaxLevel" 						"1"
 
 		"AbilityManaCost"				"5"
-		"AbilityCooldown"				"8.0"
+		"AbilityCooldown"				"20.0"
 
 		"OnSpellStart"
 		{
-			"RunScript"
+			"SpawnUnit"
 			{
-				"ScriptFile"	"heroes/creature_abilities/spawn_spiderlings.lua"
-				"Function"		"SpawnSpiderlings"
+				"UnitName"		"creature_spiderling"
+				"Target" 		"CASTER"
+				"Duration"		"999"
+				"UnitCount"		"2"
+				"UnitLimit"		"50"
+				"GrantsGold"	"1"
+				"GrantsXP"		"1"
+				"SpawnRadius"	"10"
+				"OnSpawn"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_phased"
+						"Target"		"TARGET"
+						"Duration"		"0.03"
+					}
+				}
 			}
 		}
 	}
@@ -6296,6 +6311,313 @@
 	}
 
 
+	"mervian_bash"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"doom_scorched_earth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_chance"			"25"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mervian_bash"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%bash_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_bash_stun"
+								"Target" 		"TARGET"
+								"Duration"		"1.5"
+							}
+						}
+					}
+				}
+			}
+
+
+			"modifier_bash_stun"
+			{
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+			}
+		}
+	}
+
+
+	"kerrang_bash"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"doom_scorched_earth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_chance"			"100"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mervian_bash"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%bash_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_bash_stun"
+								"Target" 		"TARGET"
+								"Duration"		"1.5"
+							}
+						}
+					}
+				}
+			}
+
+
+			"modifier_bash_stun"
+			{
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+			}
+		}
+	}
+
+
+	"tgarri_first_split"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"treant_overgrowth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"Modifiers"
+		{
+			"modifier_first_split"
+			{
+				"Passive"		"1"
+				"IsHidden"		"0"
+
+				"OnDeath"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"creature_tgarri_first_split"
+						"Target"
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"UnitCount"		"3"
+						"Duration"		"999"
+						"UnitLimit"		"20"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"OnSpawn"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_phased"
+								"Target"		"TARGET"
+								"Duration"		"0.03"
+							}
+						}
+					}
+				}
+			}		
+		}
+	}
+
+
+	"tgarri_second_split"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"treant_overgrowth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"Modifiers"
+		{
+			"modifier_second_split"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"OnDeath"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"creature_tgarri_second_split"
+						"Target"
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"UnitCount"		"4"
+						"Duration"		"999"
+						"UnitLimit"		"20"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"OnSpawn"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_phased"
+								"Target"		"TARGET"
+								"Duration"		"0.03"
+							}
+						}
+					}
+				}
+			}		
+		}
+	}
+
+
+	"tgarri_third_split"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"treant_overgrowth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"Modifiers"
+		{
+			"modifier_third_split"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"OnDeath"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"creature_tgarri_third_split"
+						"Target"
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"UnitCount"		"8"
+						"Duration"		"999"
+						"UnitLimit"		"20"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"OnSpawn"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_phased"
+								"Target"		"TARGET"
+								"Duration"		"0.03"
+							}
+						}
+					}
+				}
+			}		
+		}
+	}
+
+
+
+	"tgarri_fourth_split"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"treant_overgrowth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"Modifiers"
+		{
+			"modifier_fourth_split"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"OnDeath"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"creature_tgarri_fourth_split"
+						"Target"
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+						"UnitCount"		"2"
+						"Duration"		"999"
+						"UnitLimit"		"20"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"OnSpawn"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_phased"
+								"Target"		"TARGET"
+								"Duration"		"0.03"
+							}
+						}
+					}
+				}
+			}		
+		}
+	}
 
 
 
