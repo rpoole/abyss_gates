@@ -95,90 +95,7 @@
 	}
 
 
-	//=================================================================================
-	// Creature: Skeleton Warrior
-	//=================================================================================
-	"undead_skeleton_warrior"
-	{
-		// General
-		//----------------------------------------------------------------
-		"BaseClass"					"npc_dota_creature"
-		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
-		"ModelScale"				"1"
-		"Level"						"1"
-		"HealthBarOffset"			"140"
-		
-		// Abilities
-		//----------------------------------------------------------------
-		"AbilityLayout"				"4"
-		
-		// Armor
-		//----------------------------------------------------------------
-		"ArmorPhysical"				"1"
-		"MagicalResistance"			"0"
-		
-		// Attack
-		//----------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-		"AttackDamageMin"			"14.0"
-		"AttackDamageMax"			"15.0"
-		"AttackRate"				"2"
-		"AttackAnimationPoint"		"0.56"
-		"AttackAcquisitionRange"	"500"
-		"AttackRange"				"90"
-		
-		// Bounty
-		//----------------------------------------------------------------
-		"BountyGoldMin"				"6.0"
-		"BountyGoldMax"				"12.0"
-		
-		// Bounds
-		//----------------------------------------------------------------
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		"RingRadius"				"70"
-		"CollisionSize"				"31"
-		"FormationRank"				"0"
-		
-		// Building Cost Stats
-		//----------------------------------------------------------------
-		"GoldCost"					"0"
-		"LumberCost"				"0"
-		"FoodCost"					"0"
-		"BuildTime"					"18"
-		
-		// Movement
-		//----------------------------------------------------------------
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"270"
-		"MovementTurnRate"			"0.5"
-		
-		// Status
-		//----------------------------------------------------------------
-		"StatusHealth"				"180"
-		"StatusHealthRegen"			"2"
-		"StatusMana"				"0"
-		"StatusManaRegen"			"0"
-		
-		// Vision
-		//----------------------------------------------------------------
-		"VisionDaytimeRange"		"800"
-		"VisionNighttimeRange"		"600"
-		
-		// Team
-		//----------------------------------------------------------------
-		"TeamName"					"DOTA_TEAM_GOODGUYS"
-		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
-		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		
-		// Creature Data
-		//----------------------------------------------------------------
-		"Creature"
-		{
-			"DisableClumpingBehavior"	"1"
-		}
-	}
+	
 
 
 	//=================================================================================
@@ -2285,6 +2202,346 @@
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
         "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+	}
+
+
+	//=================================================================================
+	// Grim Magus Summon: Undead Skeleton Warrior
+	//=================================================================================
+	"undead_skeleton_warrior"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+		"ModelScale"				"1"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"4"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"			"27.0"
+		"AttackDamageMax"			"27.0"
+		"AttackRate"				"2"
+		"AttackAnimationPoint"		"0.56"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"90"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"6.0"
+		"BountyGoldMax"				"12.0"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"31"
+		"FormationRank"				"0"
+		
+		// Building Cost Stats
+		//----------------------------------------------------------------
+		"GoldCost"					"0"
+		"LumberCost"				"0"
+		"FoodCost"					"0"
+		"BuildTime"					"18"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"300"
+		"StatusHealthRegen"			"1"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"600"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Ability1"					"skeleton_mastery"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableClumpingBehavior"	"1"
+
+
+			"HPGain"                    "30"
+			"DamageGain"                "9"
+		}
+	}
+	
+
+
+
+	//=================================================================================
+	// Grim Magus Summon: Undead Burning Skeleton Warrior
+	//=================================================================================
+	"undead_burning_skeleton_warrior"
+	{
+		// General
+		//----------------------------------------------------------------
+		"BaseClass"					"npc_dota_creature"
+		"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+		"ModelScale"				"1"
+		"Level"						"1"
+		"HealthBarOffset"			"140"
+		
+		// Abilities
+		//----------------------------------------------------------------
+		"AbilityLayout"				"4"
+		
+		// Armor
+		//----------------------------------------------------------------
+		"ArmorPhysical"				"1"
+		"MagicalResistance"			"0"
+		
+		// Attack
+		//----------------------------------------------------------------
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+		"AttackDamageMin"			"14.0"
+		"AttackDamageMax"			"15.0"
+		"AttackRate"				"2"
+		"AttackAnimationPoint"		"0.56"
+		"AttackAcquisitionRange"	"500"
+		"AttackRange"				"90"
+		
+		// Bounty
+		//----------------------------------------------------------------
+		"BountyGoldMin"				"6.0"
+		"BountyGoldMax"				"12.0"
+		
+		// Bounds
+		//----------------------------------------------------------------
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"RingRadius"				"70"
+		"CollisionSize"				"31"
+		"FormationRank"				"0"
+		
+		// Building Cost Stats
+		//----------------------------------------------------------------
+		"GoldCost"					"0"
+		"LumberCost"				"0"
+		"FoodCost"					"0"
+		"BuildTime"					"18"
+		
+		// Movement
+		//----------------------------------------------------------------
+		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"				"270"
+		"MovementTurnRate"			"0.5"
+		
+		// Status
+		//----------------------------------------------------------------
+		"StatusHealth"				"180"
+		"StatusHealthRegen"			"2"
+		"StatusMana"				"0"
+		"StatusManaRegen"			"0"
+		
+		// Vision
+		//----------------------------------------------------------------
+		"VisionDaytimeRange"		"800"
+		"VisionNighttimeRange"		"600"
+		
+		// Team
+		//----------------------------------------------------------------
+		"TeamName"					"DOTA_TEAM_GOODGUYS"
+		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"Ability1"             		"skeleton_burning"
+		"Ability2"					"skeleton_mastery"
+		
+		// Creature Data
+		//----------------------------------------------------------------
+		"Creature"
+		{
+			"DisableClumpingBehavior"	"1"
+
+
+			"HPGain"                    "60"
+			"DamageGain"                "12"
+		}
+	}
+
+
+	//=================================================================================
+	// Grim Magus Summons: Undead Skeleton Archer
+	//=================================================================================
+	"undead_skeleton_archer"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/clinkz/clinkz.vmdl"
+        "ModelScale"            "0.7"
+        "Level"                 "1"
+
+        "StatusHealth"          "201"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"       "5.0"
+        "AttackDamageMax"       "11.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "600"
+
+        "ProjectileModel"		"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"              "spawn_spiderlings"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"  
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "5151"}
+       			"Wearable2"		{ "ItemDef" "5152"}
+       			"Wearable3"		{ "ItemDef" "5153"}
+        		"Wearable4"		{ "ItemDef" "5154"}
+        		"Wearable5"		{ "ItemDef" "5155"}
+        	}
+
+			"DisableClumpingBehavior"	"1"
+
+
+			"HPGain"                    "16"
+			"DamageGain"                "18"
+      	}            
+	}
+
+
+
+	//=================================================================================
+	// Grim Magus Summons: Burning Undead Skeleton Archer
+	//=================================================================================
+	"undead_burning_skeleton_archer"
+	{
+        // Custom
+        //----------------------------------------------------------------
+        "BaseClass"             "npc_dota_creature"
+        "Model"                 "models/heroes/clinkz/clinkz.vmdl"
+        "ModelScale"            "0.7"
+        "Level"                 "1"
+
+        "StatusHealth"          "201"
+        "StatusHealthRegen"     "0.25"
+        "StatusMana"            "0"
+        "StatusManaRegen"       "0"
+        
+        "ArmorPhysical"         "0"
+        "MagicalResistance"     "0"
+        
+        "AttackCapabilities"    "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"       "5.0"
+        "AttackDamageMax"       "11.0"
+        "AttackRate"            "1.35"
+        "AttackAnimationPoint"  "0.5"
+        "AttackAcquisitionRange" "500"
+        "AttackRange"           "600"
+
+        "ProjectileModel"		"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"
+		"ProjectileSpeed"		"900"
+
+        "BountyGoldMin"         "26.0"
+        "BountyGoldMax"         "38.0"
+        "BountyXP"				"10.0"
+
+        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "RingRadius"            "70"
+
+        "MovementSpeed"         "270"
+        "MovementTurnRate"      "0.6"
+
+
+       
+        // Generic
+        //----------------------------------------------------------------
+        "Ability1"             	"skeleton_burning"
+       	"HealthBarOffset"       "140"
+       	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
+       	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
+       	"VisionDaytimeRange"    "1400"
+        "VisionNighttimeRange"  "800"
+        "TeamName"              "DOTA_TEAM_NEUTRALS"
+        "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
+        "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"  
+
+
+        "Creature"
+       	{
+        	"AttachWearables"
+        	{
+        		"Wearable1"		{ "ItemDef" "5151"}
+       			"Wearable2"		{ "ItemDef" "5152"}
+       			"Wearable3"		{ "ItemDef" "5153"}
+        		"Wearable4"		{ "ItemDef" "5154"}
+        		"Wearable5"		{ "ItemDef" "5155"}
+        	}
+
+        	"DisableClumpingBehavior"	"1"
+
+
+			"HPGain"                    "16"
+			"DamageGain"                "11"   
+      	}            
 	}
 
 

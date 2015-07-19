@@ -17,28 +17,20 @@ function SkeletonSelect ( keys )
 	local duration = 999
 	local health_gain = ability:GetLevelSpecialValueFor("bonus_health", ability:GetLevel() - 1)
 
-	local modifier = keys.modifier
 	local caster_name = caster:GetUnitName() 
 
 	local unit_skeleton_warrior = keys.unit_skeleton_warrior
 
 	for _, unit in pairs(skeletonUnits) do
-
-		print(unit:GetUnitName())
-
 		if string.find(unit:GetUnitName(), "skeleton") then
-			ability:ApplyDataDrivenModifier(caster, unit, modifier, {Duration = duration})
-			unit.OldHealth = unit:GetMaxHealth()
-
-			print(unit.OldHealth)
-
-			print(health_gain)
-
-			unit.NewHealth = unit.OldHealth + health_gain
-
-			print(unit.NewHealth)
-
-			unit:SetMaxHealth(unit.NewHealth)
+			current_level = unit:GetLevel()
+			if current_level < ability_level + 1 then
+				unit:CreatureLevelUp(1)
+				if current_level >= 2 then
+					unit_ability = unit:GetAbilityByIndex(0)
+					unit_ability:SetLevel(2)
+				end
+			end
 		end
 	end
 end

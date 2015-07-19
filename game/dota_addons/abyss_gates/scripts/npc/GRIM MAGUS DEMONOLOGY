@@ -1,14 +1,16 @@
-GRIM MAGUS DESTRUCTION																		
+GRIM MAGUS DEMONOLOGY																	
 
 
-TIER 1		Bloodshed			Rips blood from a target for a period of time, dealing 24 damage per second for 20 seconds
+TIER 1		Summon Skeleton Warrior		Raises a skeleton warrior, maximum of 1 skeleton alive at all times. Skeleton has a 4(+1)% chance to be burning. 6(+1.5)% with Cryptic Charm
 								
 			
-			Mana Cost			Cooldown				Damage			Damage Type					Effect				Effect Duration			Max Targets			Radius				Range
+			Mana Cost			Cooldown	Type		Damage								Effect				Effect Duration			Max Units			Radius				Range			Unit Ability 1  					Unit Ability 2
 
-RANK 1		30					5						24 / second		Magical						--					20						--					~600				1000
-
-RANK 2		(+3)				(-0.5)					30 / second		''							''					''						''					''
+RANK 1		60					0			War Burn	35-38 Very Fast	Normal	 	8 Medium 600hp		Summon Skeleton		--						1					~600				1000		Bash - 10% chance 40 dmg / 1.5 stun	Steel Plating - 16 dmg block
+											Archer		51-70 Fast 		Piercing 	1 Medium 160hp 
+											Arch Burn	31-40 Very Fast Piercing 	1 Medium 320hp
+											Warrior		22-32 Slow 		Normal 		4 Heavy  300hp
+RANK 2		(+3)				''						30 / second									''					''						''					''							Bash - 10% chance 40 dmg / 1.5 stun	Steel Plating - 16 dmg block
 
 RANK 2		43											38 / second
 
@@ -29,7 +31,7 @@ RANK 2		76											150
 
 
 
-TIER 2		Darkbolt 			Fires a bolt of dark energy, stunning the target upon impact. Stuns for 3 seconds, deals 160 damage
+TIER 2		Skeleton Mastery 			Increases skeleton max HP by 10(+10)%, damage by 30(+30)%. Gives 4(+1)% chance to spawn burning skeletons.
 								
 			
 			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect				Effect Duration			Max Targets			Range
@@ -56,14 +58,14 @@ RANK 10
 
 
 
-TIER 3		Skull Spear			Casts forth an energetic skull that damages all enemies it touches for 180 damage.
+TIER 3		Corpse Explosion	Explodes the corpse closest to the center of the targetted area, dealing 20(+2)-30(+4)% of that corpses maximum life.
 								
 			
 			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius 			Range
 
-RANK 1		90					5						180				--				--							--							--						--					200				1000
+RANK 1		100					5						180				--				--							--							--						--					200				1000
 
-RANK 2		(+5.0)				(-0.5)					(+40)			''				''							''							''						''					''				''
+RANK 2		(+20.0)										(+40)			''				''							''							''						''					''				''
 
 RANK 3																																										
 
@@ -80,14 +82,13 @@ RANK 8
 
 
 
-TIER 4		Bleed Earth			Violently releases blood from the earth to deal 100 damage per second over 7 seconds. Spawns 1 Corpse
+TIER 4		Skeleton Mage		Raise a skeleton mage. Skeleton mages teleport beside Grim Magus when summoned. Max of 1(+1) Mage. Fire single target high speed, lightning average speed 1 bounce, cold average speed skadi passive
 								
 			
 			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius 			Range
 
-RANK 1		250					65						100 / second	--				Magical						Spawn 1 Corpse				--						--					300 			700
-
-RANK 2		(+25.0)				(-5)					(+30)			''				''							''							''						''					'' 				''
+RANK 1		80					--						
+RANK 2											
 
 RANK 3																																										
 
@@ -104,7 +105,8 @@ RANK 8
 
 
 
-TIER 5		Shatter Bones		Blasts an area with a powerful energy beam, reducing the life of basic creatures in a target area to 33%, and unique creatures to 75%.
+TIER 5		The Creature		Creates an extremely powerful creature from the corpses of a target area. Creature level (hp(+500) / dmg(+60)) is based on number of corpses used up to a maximum of 4 (+1 / +2 / +3 etc). Has autocast skill (40sec cd) that consumes a corpse, heals for
+								40% max hp and increases level by 1.  Thick skinned - gives the creature a 20% chance to avoid all damage from a physical attack.
 								
 			
 			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius

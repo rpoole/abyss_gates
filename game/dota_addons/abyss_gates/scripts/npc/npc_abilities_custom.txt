@@ -2050,11 +2050,12 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"skeletonking_hellfireblast"
+		"AbilityTextureName"			"skeleton_king_hellfire_blast"
 		
 		
 		"precache"
 		{
+			"particle"	"particles/skull_spear.vpcf"
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
 		}
 
@@ -2347,31 +2348,38 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityTextureName"			"skeletonking_vampiricaura"
+		"AbilityTextureName"			"skeleton_king_vampiric_aura"
+		"MaxLevel"						"10"
+
+		"precache"
+		{
+			"particle"  "particles/burning.vpcf"
+		}
+
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"60 63 66 69 72 75 78 81 84 87"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_skeletons"			"5	"
+				"max_skeletons"			"1 2 3 4 5 6 7 8 9 10"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"archer_chance"			"50"
+				"archer_chance"			"10"
 			}
 
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"burning_chance"		"25"
+				"burning_chance"		"4 5 6 7 8 9 10 11 12 13"
 			}
 
 			"04"
@@ -2396,7 +2404,7 @@
 						{
 							"SpawnUnit"
 							{
-								"UnitName"		"undead_skeleton_warrior"
+								"UnitName"		"undead_burning_skeleton_archer"
 								"Target" 		"CASTER"
 								"Duration"		"%duration"
 								"UnitCount"		"1"
@@ -2413,11 +2421,69 @@
 										"Duration"		"0.03"
 									}
 
+									"RunScript"
+									{
+										"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+										"Function"		"SetOwner"
+									}
+								}
+							}
+						}
+						"OnFailure"
+						{
+							"SpawnUnit"
+							{
+								"UnitName"		"undead_skeleton_archer"
+								"Target" 		"CASTER"
+								"Duration"		"%duration"
+								"UnitCount"		"1"
+								"UnitLimit"		"%max_skeletons"
+								"GrantsGold"	"1"
+								"GrantsXP"		"1"
+								"SpawnRadius"	"10"
+								"OnSpawn"
+								{
 									"ApplyModifier"
 									{
-										"ModifierName"	"modifier_burning_success"
-										"Target" 		"TARGET"
-										"Duration"		"10"
+										"ModifierName"	"modifier_phased"
+										"Target"		"TARGET"
+										"Duration"		"0.03"
+									}
+
+									"RunScript"
+									{
+										"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+										"Function"		"SetOwner"
+									}
+								}
+							}
+						}
+					}
+				}
+				"OnFailure"
+				{
+					"Random"
+					{
+						"Chance"			"%burning_chance"
+						"OnSuccess"
+						{
+							"SpawnUnit"
+							{
+								"UnitName"		"undead_burning_skeleton_warrior"
+								"Target" 		"CASTER"
+								"Duration"		"%duration"
+								"UnitCount"		"1"
+								"UnitLimit"		"%max_skeletons"
+								"GrantsGold"	"1"
+								"GrantsXP"		"1"
+								"SpawnRadius"	"10"
+								"OnSpawn"
+								{
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_phased"
+										"Target"		"TARGET"
+										"Duration"		"0.03"
 									}
 
 									"RunScript"
@@ -2448,13 +2514,6 @@
 										"Target"		"TARGET"
 										"Duration"		"0.03"
 									}
-							
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_archer_success"
-										"Target" 		"TARGET"
-										"Duration"		"10"
-									}
 
 									"RunScript"
 									{
@@ -2466,68 +2525,13 @@
 						}
 					}
 				}
-				"OnFailure"
-				{
-					"SpawnUnit"
-					{
-						"UnitName"		"undead_skeleton_warrior"
-						"Target" 		"CASTER"
-						"Duration"		"%duration"
-						"UnitCount"		"1"
-						"UnitLimit"		"%max_skeletons"
-						"GrantsGold"	"1"
-						"GrantsXP"		"1"
-						"SpawnRadius"	"10"
-						"OnSpawn"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_phased"
-								"Target"		"TARGET"
-								"Duration"		"0.03"
-							}
-
-							"RunScript"
-							{
-								"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
-								"Function"		"SetOwner"
-							}
-						}
-					}
-				}
 			}
 		}
 		
 
 		"Modifiers"
 		{
-			"modifier_burning_success"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"1"
 
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				
-				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"  "follow_overhead"
-			}
-
-			"modifier_archer_success"
-			{
-				"IsBuff"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
-				"EffectAttachType"	"follow_overhead"
-			}
 		}
 	}
 
@@ -2544,6 +2548,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityTextureName"			"life_stealer_rage"
+		"MaxLevel"						"10"
 		
 		
 		// Casting
@@ -2560,13 +2565,13 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_health"			"100 100 100 100" 
+				"bonus_health"			"10 20 30 40 50 60 70 80 90 100" 
 			}
 			
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"bonus_damage"		"50 50 50 50" 
+				"bonus_damage"		"30 60 90 120 150 180 210 240 270 300" 
 			}
 
 			"04"
@@ -2577,15 +2582,6 @@
 
 		}
 
-		"OnUpgrade"
-		{
-			"RunScript"
-			{
-				"ScriptFile"	"heroes/hero_grim_magus_demonology/skeleton_mastery.lua"
-				"Function"		"SkeletonSelect"
-				"modifier"		"modifier_skeleton_mastery_buff"
-			}
-		}
 
 
 		"Modifiers"
@@ -2594,6 +2590,16 @@
 			{
 				"Passive"	"1"
 				"IsHidden"	"1"
+
+				"ThinkInterval"  "0.1"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"heroes/hero_grim_magus_demonology/skeleton_mastery.lua"
+						"Function"		"SkeletonSelect"
+					}
+				}
 
 				"Properties"
 				{
@@ -2622,35 +2628,29 @@
 		"AbilityTextureName"			"necrolyte_death_pulse"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AOERadius"						"600"
+		"MaxLevel"						"8"
 		
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"5"
+		"AbilityManaCost"				"100 120 140 160 180 200 220 240"
 		"AbilityCooldown"				"5"
-		"AbilityCastRange"				"1200"
+		"AbilityCastRange"				"1000"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
+				"radius"			"600 600"
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"damage_multiplier"	"5"
+				"var_type"			"FIELD_FLOAT"
+				"damage_multiplier"	"25 28 31 34 37 40 43 46"
 			}
-			
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"base_damage"		"50 50 50 50" 
-			}
-
-
 		}
+
 
 		"OnSpellStart"
 		{
@@ -2672,7 +2672,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityTextureName"			"skeletonking_vampiricaura"
+		"AbilityTextureName"			"skeleton_king_vampiric_aura"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -2849,7 +2849,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityTextureName"			"skeletonking_vampiricaura"
+		"AbilityTextureName"			"skeleton_king_vampiric_aura"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -6182,10 +6182,119 @@
 				"Function"		"SpawnSpiderlings"
 			}
 		}
+	}
 
-			
+
+	"skeleton_burning"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"doom_scorched_earth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"1"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_warlock/golem_ambient_fire_mane_fallback_mid.vpcf"
+		}
+
+		"Modifiers"
+		{
+			"modifier_burning"
+			{
+				"Passive"		"1"
+				"IsHidden"		"0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/burning2.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+				}
+			}
 		}
 	}
+
+
+	"skeleton_mastery"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"doom_scorched_earth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel" 						"2"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_chance"			"0 10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_block"		"0 16"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bash_damage"		"0 40"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_skeleton_mastery_buff"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"%bash_chance"
+						"OnSuccess"
+						{
+							"Damage"
+							{
+								"Target"		"TARGET"
+								"Type"			"DAMAGE_TYPE_PHYSICAL"
+								"Damage"		"%bash_damage"
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_bash_stun"
+								"Target" 		"TARGET"
+								"Duration"		"1.5"
+							}
+						}
+					}
+				}
+			}
+
+
+			"modifier_bash_stun"
+			{
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+			}
+		}
+	}
+
 
 
 
@@ -6232,6 +6341,7 @@
 			"dummy_modifier"
 			{
 				"Passive"	"1"
+				"IsHidden"	"0"
 				"States"
 				{
 					"MODIFIER_STATE_NO_UNIT_COLLISION"	"MODIFIER_STATE_VALUE_ENABLED"
