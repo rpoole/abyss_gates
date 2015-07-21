@@ -2,72 +2,7 @@
 {
 	"consumables"
 	{
-		"item" "item_small_health_vial"
-		"item" "item_small_mana_vial"
-	}
-
-	"combat_consumables"
-	{
-		"item"	"item_might_of_the_troll_warlord"
-		"item"  "item_emblem_of_the_rogue_knight"
-	}
-
-	"boots"
-	{
-		"item"	"item_worn_work_boots" 
+		"item" "item_potion_of_healing"
 	}
 	
-	"defensive_items"
-	{
-		"item"	"item_jaw_of_the_lifestealer"
-		"item"  "item_mask_of_the_vengeful_spirit"
-	}	
-	
-	// Level 1 - Green Recipes
-	"basics"
-	{
-
-	}
-
-	// Level 2 - Blue Recipes
-	"support"
-	{
-
-	}
-	
-	"magics"
-	{
-
-	}
-	
-	// Level 3 - Purple Recipes
-	"defense"
-	{
-		
-	}
-	
-	"weapons"
-	{
-		
-	}
-	
-	// Level 4 - Orange / Orb / Artifacts
-	"artifacts"
-	{
-
-	}
-
-	"sideshop1"
-	{
-	
-	}
-	"sideshop2"
-	{
-
-	}
-	
-	"secretshop"
-	{
-
-	}
 }

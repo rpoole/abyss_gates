@@ -1,0 +1,255 @@
+SHOPS AND ITEMS
+
+
+Ugor's Advanced Weaponsmithing
+
+
+Name 					Cost		Damage 			Class 			Slot 			Special 									Attribute Req
+
+Ascension Sword 		7600		45				Melee Weapon	Main Hand		10% chance to cast Frost Nova on attack		28 Strength
+
+War Claws 				14000		80				Melee Weapon	Main Hand		-5 Armor on attack							12 Strength / 22 Agi
+
+Moon Glaive				16000		100				''				''				20% increased attack speed					30 Str / 24 Agi
+
+Serpent Blade			23000		160				''				''				30% to slow enemy 33% on attack				44 Str
+
+Kheragian Axe			12500		160				''				2handed			15% 2x crit									30 Str
+
+Warhammer				18000		160				''				''				15 2x Crit, 15% Bash, -5 Armor on attack	34 Str
+
+Celestial Blade			20000		300				''				''				15 2x Crit									40 Str / 30 agi
+
+War Fork				30000		360				''				''				15 2x Crit, 15% Crippling Strike			40 Str / 24 agi
+
+
+
+
+Uglad's Armor Shop
+
+
+Name 					Cost		Armor	Health	Mana	Class 		Slot 		Special 							Attribute Req
+
+Aegis Plating			10000		7		1250	300		Armor		Chest		12 Sec Spell Shield					26 Str / 24 Int
+
+Opal Scales				13500		11		1800	--		Armor		Chest		+10 HP / Sec						32 Str
+
+Choromeir Scales		16500		16		2000	--		Armor		Chest		+8 Block / -15% Movement			40 Str
+
+Salamander Skin			22000		14		2600	--		''			''			+12 HP / Sec						40 Str
+
+Alistar Shield			8500		8		--		--		Shield		Off Hand	34% Block 							26 Str
+
+Corog Shield			15000		2		--		--		''			''			40% Block							38 Str
+
+Storm Shield			12000		4		--		--		''			''			6sec Spell Shield, 50 Thorns		30 Str
+
+Guardian Helm			3000		2		--		--		Misc		Misc		+10 Str, +4 HP / Sec				--
+
+Hood of Cunning			8000		--		--		--		''			''			+2 Str / Int, +12 Agi, +40 dmg		--
+
+Egron's Hold			4500		--		--		--		''			''			+2 Str / Agi / Int, +20% spell damage reduction
+
+
+
+
+Accessory Specialties Shop
+
+
+Name 					Cost		Armor	Health	Mana	Class 		Slot 		Special 							Attribute Req
+
+Lumber					7500		--		--		--		--			--			Can be spent on skills / items		--
+
+Fury Gauntlets			10000		--		--		--		--			--			+16 Agi, +12 Str, gives a charge to Spirit Warrior when used (20CD)
+
+Mortred Amulet			10000		--		--		--		--			--			Periodically absorbs a nearby corpse, restoring 12% of the heroes
+																					maximum HP / Mana. +8 int, +16 dmg. Does not stack
+
+Celestial Charm			8000		--		--		--		--			--			Increases the power of level 1 Cabalist abilities.
+																					+20% evasion, +4 strength, +12 int. Does not stack
+
+Dark Elven Charm		16000		--		--		--		--			--			All summoned units gain 15% evasion, 15% 2x crit. 
+																					+4 Str / Agi / Int
+
+Cryptic Charm			10000		--		--		--		--			--			Increases chance of burning skeletons. +20 int, +45 damage.
+																					Does not stack.
+
+Ruby Heart				5000		2		--		--		--			--			GRIM MAGUS THE CREATURE ONLY. +30% movement, +20% AS, +2 armor
+
+Sapphire Heart			8000		5		--		--		--			--			GRIM MAGUS THE CREATURE ONLY. +20% Magic resist, skadi, +5 armor
+
+Obsidian Heart			10000		7		--		--		--			--			GRIM MAGUS THE CREATURE ONLY. 15% 2x crit, 15% 500dmg carrion swarm
+																					+7 armor.
+
+
+
+
+Magi Elite
+
+
+Name 					Cost		Damage	Health	Mana	Class 		Slot 		Special 									Attribute Req
+
+Erament Staff			11000		40		--		--		Staff		2Handed		220 Mana / 300 healing to Area				22 Int
+
+Widow Staff				12000		65		--		--		''			''			12.5 Mana / Sec, Strangle active			24 Int
+
+Icecrown Staff			23000		100		--		--		''			''			18 Mana / Sec, Glacial Armor active			38 Int
+
+Gul'Dans Orb			6000		--		--		--		Shield		Offhand		8 Mana / Sec, 24% Magic resist, 20% Block	30 Int
+
+Marichald Orb			10000		--		--		--		''			''			12.5/ Sec, 33% Magic resist, 28% Block		40 Int
+
+Zirklumm Robes			6000		--		500		600		Armor		Chest		5 Armor, 12sec Spell Shield					36 Int
+
+Celestial Robes			11500		--		800		850		Armor		Chest		8 Armor, 6sec Spell Shield					44 Int
+
+Tome of Fire			15000		8		--		--		Tome		Mainhand	Meteo, Flame Breath, Fire Shield actives	30 Int
+
+
+
+
+
+Zirmsn's Poition Emporium
+
+
+
+Name 						Cost		Damage	Health	Mana	Class 		Slot 		Special 									Attribute Req
+
+Potion of Healing			120			--		500
+
+Greater Potion of Healing	500			--		1500
+
+Stone of Healing			6000				3200
+
+Potion of Mana				250							300
+
+Stone of Mana				14000		--		--		800								50 sec CD
+
+
+
+
+Accessories etc.
+
+
+Name 						Cost		Damage	Health	Mana	Class 		Slot 		Special 									Attribute Req
+
+Ring of Power				800			+3 Str / 4 Dmg
+
+Ring of Dominance			2400		+8 Str
+
+Anklet of Dexterity			600			+3 Agi
+
+Anklet of Quickness			2000		+8 Agi
+
+Ring of Intelligence		900			+6 Int
+
+Ring of the Archmagi		2200		+14 Int
+
+Stone Ring					200			+2 Armor / +50 Hp
+
+Ring of the Blessed			3800		+10 Mana on unit kill. Does not stack
+
+Bracers of Triumph			3000		+20 HP on unit kill. Does not stack
+
+
+
+
+Kaine's Bazaar
+
+
+Name 						Cost		Damage	Health	Mana	Class 		Slot 		Special 									Attribute Req
+
+Gloves of Haste				2000		+15% Attack Speed
+
+Beryl Gauntlets				1350		+3 Str / +16 Damage
+
+Ruby Gauntlets				4000		+12% Bash, +8 damage
+
+Cursed Gauntlets			3700		+6 Str / +10 Agi / -10 Int
+
+Boots of Haste				2000		+70 Movement. Does not stack with other movement speed items
+
+Ninja Slippers				3000		+110 Movement / +8 Agi ^^
+
+
+
+Pselli's Shop of Magecraft
+
+
+Name 						Cost		Damage	Health	Mana	Class 		Slot 		Special 									Attribute Req
+
+Marrenwood Staff			80			8		--		--		Staff		2Handed		3 Mana / Sec
+
+Mesa Staff					2250		28		--		--		''			''			5 Mana / Sec								16 Int
+
+Staff of Perseus			4800		40		--		--		''			''			8 Mana / Sec								20 Int
+
+Tome of Ice					5000		4		--		--		Tome		Mainhand	Blizzard, Frost Breath actives				25 Int
+
+Wand of Tranquility			600			8		--		--		Wand		Mainhand	Dispel active								9 Int
+
+Skullhead Wand				2400		8		--		--		Wand		Mainhand	Summon Skeletal Orc active					14 Int
+
+Wand of Restoration			3200		8		--		--		Wand		''			Heal for 600 / 1200 to summoned				22 Int
+
+Sirrus Orb					2000		--		--		--		Shield		Offhand		7 Mana / Sec, 20% Magic resist, 20% block	22 Int
+
+Cloak of the Apprentice		180			--		--		60		Armor		Chest		1 Armor
+
+Magi Robes					1000		--		50		220		Armor		Chest		4 Armor										10 Int
+
+Magi Mantle					3000		--		360		400		Armor		Chest		5 Armor										22 Int
+
+
+
+
+Meragon's Armor Shop
+
+
+Name 						Cost		Armor	Health	Mana	Class 		Slot 		Special 									Attribute Req
+
+Leather Armor				120			3		50				Armor		Chest		+2 HP / Sec
+
+Studded Leather Armor		600			5		180				Armor		Chest		+4 HP / Sec									8 Str
+
+Lizard Scale				3200		8		500				''			''			+6 HP / Sec									16 Str
+
+Splint Mail					5000		9		1250			''			''			+8 HP / Sec									24 Str
+
+Scale Mail					3500		7		500				''			''			4 dmg reduc, -15% attack speed				18 Str
+
+Small Shield				160			1		--		--		Shield		Offhand		20% Block									6 Str
+
+Large Shield				850			3		--		--		''			''			28% Block									11 Str
+
+Reinforced Shield			2600		5		--		--		Shield		Offhand		32% Block									18 Str
+
+
+
+
+Gehrhart's Weapon Shop
+
+
+Name 						Cost		Damage	Health	Mana	Class 			Slot 		Special 									Attribute Req
+
+Pickaxe						80			8		''		''		Melee Weapon	Mainhand	
+
+Long Sword					450			16		''		''		''				''														8 Str
+
+Battle Hammer				1800		28		''		''		''				''			15% Bash									13 Str
+
+Battle Claws				4600		45						''				''														6 Str / 13 Agi
+
+Terra-Blade					400			20						''				2Handed		15% 2x crit									6 Str / 6 Agi
+
+Battleaxe					1400		40						''				''			''											13 Str
+
+Venus Blade					4600		84						''				''			''											16 Str / 18 Agi
+
+Trident						8000		112						''				''			''											24 Str / 20 Agi
+
+
+
+
+
+

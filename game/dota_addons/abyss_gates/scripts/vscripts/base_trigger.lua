@@ -17,19 +17,11 @@ Triggers._badLives = 30
 print("hello world")
 
 
-function OnStartTouch(trigger)
-	if trigger.activator:IsCreature() then
-		print("Is Creature")
-		if trigger.activator:GetTeam() == DOTA_TEAM_BADGUYS then
-			Triggers._goodLives = Triggers._goodLives - 1
-			trigger.activator:ForceKill(true)
-			GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, Triggers._goodLives)
-			if Triggers._goodLives == 0 then
-				GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
-				return
-			end
-		end
-	end
+function OnStartTouch(key)
+	print(key.activator) --The entity that triggered the event to happen
+    print(key.caller) -- The entity that called for the event to happen
+
+    killEntity(key.activator)
 end
 
 function DireLoseLife(trigger)
@@ -44,4 +36,29 @@ function DireLoseLife(trigger)
 			end
 		end
 	end
+end
+
+function killEntity(key)
+
+    unitName = key:GetUnitName() -- Retrieves the name that the unit has, such as listed in "npc_units_custom.txt"
+
+    print("Unit '" .. unitName .. "' has entered the killbox")
+
+    if (key:IsOwnedByAnyPlayer() ) then -- Checks to see if the entity is a player controlled unit
+        print("Is player owned - Ignore")
+
+    elseif unitName == "dummy_unit" then
+    	print("Is corpse - Ignore")
+
+    else
+        print("Is not owned by player - Terminate")
+        key:ForceKill(true) -- Kills the unit
+        Triggers._goodLives = Triggers._goodLives - 1
+		GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, Triggers._goodLives)
+		if Triggers._goodLives == 0 then
+			GameRules:MakeTeamLose( DOTA_TEAM_GOODGUYS )
+			return
+		end
+    end
+
 end
