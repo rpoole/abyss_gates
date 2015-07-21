@@ -1,0 +1,53 @@
+//=================================================================================================================
+// Paladin: Combat Skills Tier 5: Purify Hammer
+//=================================================================================================================
+
+"paladin_purify_hammer"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"spirit_breaker_greater_bash"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"6"
+
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"cleave_percent"	"25 31 37 43 49 55"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"armor_bonus"		"1 2 3 4 5 6"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_cleave_buff"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+			"IsBuff"			"1"				
+
+			"OnAttackLanded"
+			{
+				"CleaveAttack"
+				{
+					"CleavePercent"         "%cleave_percent"
+					"CleaveRadius"          "400"
+					"CleaveEffect"          "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+				}
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_bonus" 
+			}
+		}
+	
+	}
+}

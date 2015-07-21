@@ -1,0 +1,53 @@
+//=================================================================================================================
+// HERO: SPIRIT WARRIOR: Arts of Self
+//=================================================================================================================
+"npc_dota_hero_sven_abyss_gates"
+{
+	"override_hero"				"npc_dota_hero_sven"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+	// Abilities
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityLayout"				"5"
+	"Ability1"				"spirit_warrior_hardened_skin"
+	"Ability2"				"spirit_warrior_critical_strike"
+	"Ability3"				"spirit_warrior_vampirism"
+	"Ability4"				"spirit_warrior_spirit_image"
+	"Ability6"				"spirit_warrior_true_focus"
+	"Ability5"				"test_ability6"
+	"Ability7"				"test_ability7"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"1"									// Physical protection. // 2.94
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"2.5"									// Damage range min.
+	"AttackDamageMax"			"9.5"									// Damage range max.
+	"AttackRate"				"1.7"									// Speed of attack.
+	"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+	"AttackRange"				"600"									// Range within a target can be attacked.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"9"									// Base strength
+	"AttributeStrengthGain"		"3"									// Strength bonus per level.
+	"AttributeBaseAgility"		"6"									// Base agility
+	"AttributeAgilityGain"		"2"									// Agility bonus per level.
+	"AttributeBaseIntelligence"	"3"									// Base intelligence
+	"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementSpeed"				"350"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+	
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"10"
+	"StatusMana"				"1"
+
+}

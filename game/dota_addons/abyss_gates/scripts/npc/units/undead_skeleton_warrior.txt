@@ -1,0 +1,89 @@
+//=================================================================================
+// Grim Magus Summon: Undead Skeleton Warrior
+//=================================================================================
+"undead_skeleton_warrior"
+{
+	// General
+	//----------------------------------------------------------------
+	"BaseClass"					"npc_dota_creature"
+	"Model"						"models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_skeleton_melee.vmdl"
+	"ModelScale"				"1"
+	"Level"						"1"
+	"HealthBarOffset"			"140"
+	
+	// Abilities
+	//----------------------------------------------------------------
+	"AbilityLayout"				"4"
+	
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"				"4"
+	"MagicalResistance"			"0"
+	
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+	"AttackDamageMin"			"27.0"
+	"AttackDamageMax"			"27.0"
+	"AttackRate"				"2"
+	"AttackAnimationPoint"		"0.56"
+	"AttackAcquisitionRange"	"500"
+	"AttackRange"				"90"
+	
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyGoldMin"				"6.0"
+	"BountyGoldMax"				"12.0"
+	
+	// Bounds
+	//----------------------------------------------------------------
+	"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+	"RingRadius"				"70"
+	"CollisionSize"				"31"
+	"FormationRank"				"0"
+	
+	// Building Cost Stats
+	//----------------------------------------------------------------
+	"GoldCost"					"0"
+	"LumberCost"				"0"
+	"FoodCost"					"0"
+	"BuildTime"					"18"
+	
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+	"MovementSpeed"				"270"
+	"MovementTurnRate"			"0.5"
+	
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"300"
+	"StatusHealthRegen"			"1"
+	"StatusMana"				"0"
+	"StatusManaRegen"			"0"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"800"
+	"VisionNighttimeRange"		"600"
+	
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_GOODGUYS"
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
+	"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"Ability1"					"skeleton_mastery"
+	
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+	{
+		"DisableClumpingBehavior"	"1"
+
+
+		"HPGain"                    "30"
+		"DamageGain"                "9"
+	}
+}

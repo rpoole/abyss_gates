@@ -1,0 +1,75 @@
+"skeleton_mastery"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"doom_scorched_earth"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"2"
+
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bash_chance"			"0 10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_block"		"0 16"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bash_damage"		"0 40"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_skeleton_mastery_buff"
+		{
+			"Passive"		"1"
+			"IsHidden"		"1"
+
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"			"%bash_chance"
+					"OnSuccess"
+					{
+						"Damage"
+						{
+							"Target"		"TARGET"
+							"Type"			"DAMAGE_TYPE_PHYSICAL"
+							"Damage"		"%bash_damage"
+						}
+
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_bash_stun"
+							"Target" 		"TARGET"
+							"Duration"		"1.5"
+						}
+					}
+				}
+			}
+		}
+
+
+		"modifier_bash_stun"
+		{
+			"IsDebuff"			"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"  "follow_overhead"
+		}
+	}
+}

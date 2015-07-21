@@ -1,0 +1,87 @@
+//=================================================================================================================
+// Grim Magus: Destruction Tier 3: Skull Spear
+//=================================================================================================================
+"grim_magus_skull_spear"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"skeleton_king_hellfire_blast"
+	
+	
+	"precache"
+	{
+		"particle"	"particles/skull_spear.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"5.0 4.5 4.0 3.5 3.0 2.5 2.0 1.5"
+	"AbilityManaCost"				"5"
+	"AbilityCastRange"				"1000"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage"			"180 220 260 300 340 380 420 460"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"range"				"1000"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"spear_speed"		"1000"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"spear_width"		"125"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"LinearProjectile"
+		{
+		    "Target"      	 "POINT"
+			"EffectName"	 "particles/skull_spear.vpcf"
+			"MoveSpeed"		 "%spear_speed"
+			"StartRadius"	 "%spear_width"
+			"StartPosition"  "attach_attack1"
+			"EndRadius"      "%spear_width"
+			"HasFrontalCone" "0"
+			"FixedDistance"  "%range"
+			"TargetTeams"	 "DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"TargetTypes"	 "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			"TargetFlags"	 "DOTA_UNIT_TARGET_FLAG_NONE"						
+		    "ProvidesVision" "1"
+		    "VisionRadius" 	 "0"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"0"
+	
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%damage"
+		}
+	}
+}

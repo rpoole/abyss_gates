@@ -1,0 +1,92 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Spirit Tier 5: Tel`Qeres
+//=================================================================================================================
+"spirit_warrior_tel_qeres"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"juggernaut_blade_fury"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"50"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"1"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"kill_threshold"	"0.5"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"heal_amount"		"100"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"600"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_tel_qeres"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{	
+		"modifier_tel_qeres"
+		{
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"CASTER"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+			
+					"Action"    
+					{
+						"Damage"
+						{
+							"Target"		"TARGET"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
+							"Damage"		"%damage"
+						}
+					}
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_spirit_warrior_spirit/tel_qeres.lua"
+					"Function"		"InstaKill"
+					"radius"		"%radius"
+				}
+			}	
+		}
+	}
+}

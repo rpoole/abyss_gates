@@ -1,0 +1,195 @@
+//=================================================================================================================
+// Grim Magus: Demonology Tier 1: Raise Skeleton
+//=================================================================================================================
+"grim_magus_raise_skeleton"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityTextureName"			"skeleton_king_vampiric_aura"
+	"MaxLevel"						"10"
+
+	"precache"
+	{
+		"particle"  "particles/burning.vpcf"
+	}
+
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"60 63 66 69 72 75 78 81 84 87"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_skeletons"			"1 2 3 4 5 6 7 8 9 10"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"archer_chance"			"10"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"burning_chance"		"4 5 6 7 8 9 10 11 12 13"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"999"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"Random"
+		{
+			"Chance"			"%archer_chance"
+			"OnSuccess"
+			{
+				"Random"
+				{
+					"Chance"			"%burning_chance"
+					"OnSuccess"
+					{
+						"SpawnUnit"
+						{
+							"UnitName"		"undead_burning_skeleton_archer"
+							"Target" 		"CASTER"
+							"Duration"		"%duration"
+							"UnitCount"		"1"
+							"UnitLimit"		"%max_skeletons"
+							"GrantsGold"	"1"
+							"GrantsXP"		"1"
+							"SpawnRadius"	"10"
+							"OnSpawn"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_phased"
+									"Target"		"TARGET"
+									"Duration"		"0.03"
+								}
+
+								"RunScript"
+								{
+									"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+									"Function"		"SetOwner"
+								}
+							}
+						}
+					}
+					"OnFailure"
+					{
+						"SpawnUnit"
+						{
+							"UnitName"		"undead_skeleton_archer"
+							"Target" 		"CASTER"
+							"Duration"		"%duration"
+							"UnitCount"		"1"
+							"UnitLimit"		"%max_skeletons"
+							"GrantsGold"	"1"
+							"GrantsXP"		"1"
+							"SpawnRadius"	"10"
+							"OnSpawn"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_phased"
+									"Target"		"TARGET"
+									"Duration"		"0.03"
+								}
+
+								"RunScript"
+								{
+									"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+									"Function"		"SetOwner"
+								}
+							}
+						}
+					}
+				}
+			}
+			"OnFailure"
+			{
+				"Random"
+				{
+					"Chance"			"%burning_chance"
+					"OnSuccess"
+					{
+						"SpawnUnit"
+						{
+							"UnitName"		"undead_burning_skeleton_warrior"
+							"Target" 		"CASTER"
+							"Duration"		"%duration"
+							"UnitCount"		"1"
+							"UnitLimit"		"%max_skeletons"
+							"GrantsGold"	"1"
+							"GrantsXP"		"1"
+							"SpawnRadius"	"10"
+							"OnSpawn"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_phased"
+									"Target"		"TARGET"
+									"Duration"		"0.03"
+								}
+
+								"RunScript"
+								{
+									"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+									"Function"		"SetOwner"
+								}
+							}
+						}
+					}
+					"OnFailure"
+					{
+						"SpawnUnit"
+						{
+							"UnitName"		"undead_skeleton_warrior"
+							"Target" 		"CASTER"
+							"Duration"		"%duration"
+							"UnitCount"		"1"
+							"UnitLimit"		"%max_skeletons"
+							"GrantsGold"	"1"
+							"GrantsXP"		"1"
+							"SpawnRadius"	"10"
+							"OnSpawn"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_phased"
+									"Target"		"TARGET"
+									"Duration"		"0.03"
+								}
+
+								"RunScript"
+								{
+									"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+									"Function"		"SetOwner"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+
+	"Modifiers"
+	{
+
+	}
+}

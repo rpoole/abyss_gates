@@ -1,0 +1,51 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Spirit Tier 1: Retribution
+//=================================================================================================================
+"spirit_warrior_retribution"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"sven_warcry"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"Modifiers"
+	{	
+		"modifier_retribution_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_spirit_warrior_spirit/stat_stack.lua"
+					"Function"		"StrStack"
+					"modifier_one"	"modifier_retribution_stack"
+					"modifier_two"	"modifier_retribution_buff"
+				}
+			}
+		}
+
+		"modifier_retribution_stack"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+		}
+
+		"modifier_retribution_buff"
+		{
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS" "1"
+			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+		}
+	}
+}

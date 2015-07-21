@@ -4,9 +4,9 @@ SHOPS AND ITEMS
 Ugor's Advanced Weaponsmithing
 
 
-Name 					Cost		Damage 			Class 			Slot 			Special 									Attribute Req
+Name 					Cost		Damage 			Class 			Slot 			Special 									Attribute Req				Note
 
-Ascension Sword 		7600		45				Melee Weapon	Main Hand		10% chance to cast Frost Nova on attack		28 Strength
+Ascension Sword 		7600		45				Melee Weapon	Main Hand		10% chance to cast Frost Nova on attack		28 Strength					Small radius ~200 dmg
 
 War Claws 				14000		80				Melee Weapon	Main Hand		-5 Armor on attack							12 Strength / 22 Agi
 

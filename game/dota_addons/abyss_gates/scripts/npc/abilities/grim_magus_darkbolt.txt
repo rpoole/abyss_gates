@@ -1,0 +1,118 @@
+//=================================================================================================================
+// Grim Magus: Destruction Tier 2: Darkbolt
+//=================================================================================================================
+"grim_magus_darkbolt"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"witch_doctor_paralyzing_cask"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"MaxLevel"						"10"
+	
+	
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_witchdoctor/witchdoctor_cask.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_witchdoctor.vsndevts"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"3.0"
+	"AbilityManaCost"				"40 46 52 58 64 70 76 82 88 94"
+	"AbilityCastRange"				"600"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage"			"160 240 340 460 600 760 940 1140 1360 1600"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"stun_duration"		"3 4 5 6 7 8 9 10 11 12"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bolt_speed"		"1000"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"TrackingProjectile"
+		{
+			"Target"           	"TARGET"
+			"EffectName"		"particles\units\heroes\hero_witchdoctor\witchdoctor_cask.vpcf"
+			"Dodgeable"			"1"
+			"ProvidesVision"	"1"
+			"VisionRadius"		"0"
+			"MoveSpeed"        	"%bolt_speed"
+			"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+		}
+	}
+
+	"OnProjectileHitUnit"
+	{
+		"DeleteOnHit"	"1"
+			
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_bolt_hit"
+			"Target" 		"TARGET"
+			"Duration"		"%stun_duration"		
+		}
+
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%damage"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_witchdoctor/witchdoctor_cask_explosion.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_witchdoctor/witchdoctor_cask_explosion_flash_c.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+		}
+	}
+	
+
+	"Modifiers"
+	{
+		"modifier_bolt_hit"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			
+			"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"  "follow_overhead"
+				
+		}
+	}
+}

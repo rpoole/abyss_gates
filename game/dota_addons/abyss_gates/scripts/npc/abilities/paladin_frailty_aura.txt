@@ -1,0 +1,56 @@
+//=================================================================================================================
+// Paladin: Offensive Aura Skills: Tier 2: Frailty Aura
+//=================================================================================================================
+
+"paladin_frailty_aura"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"nevermore_dark_lord"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"MaxLevel" 						"10"
+	"AbilityCastRange"				"800"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"armor_reduction"			"-1.00 -1.33 -1.66 -2.00 -2.33 -2.66 -3.00 -3.33 -3.66 -4.00"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"800"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_frailty_mechanic"
+		{
+			"Passive"			"1"
+
+			"Aura"          	"modifier_frailty_aura"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			"Aura_ApplyToCaster" "0"
+		}
+
+		"modifier_frailty_aura"
+		{
+			"IsHidden"			"0"
+			"IsDebuff"			"1"				
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
+			}
+		}
+	}
+}

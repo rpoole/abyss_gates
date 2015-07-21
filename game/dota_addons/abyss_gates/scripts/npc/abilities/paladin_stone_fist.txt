@@ -1,0 +1,129 @@
+//=================================================================================================================
+// Paladin: Combat Skills Tier 1: Stone Fist
+//=================================================================================================================
+
+"paladin_stone_fist"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"earth_spirit_rolling_boulder"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AOERadius"						"600"
+	"MaxLevel"						"10"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"35 39 43 47 51 55 60 65 70 76"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration_main"				"12"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration_aoe"			"4.0"		
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"100 150 210 280 360 450 550 660 780 900"
+		}
+
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"600"
+		}
+
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_stone_fist"
+			"Target" 		"TARGET"
+			"Duration"		"%duration_main"
+		}
+
+		"Damage"
+		{
+			"Target"		"TARGET"
+			"Type"			"DAMAGE_TYPE_MAGICAL"
+			"Damage"		"%damage"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_stone_fist"
+		{
+			"OnCreated"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_stone_fist_aoe"
+							"Target" 		"TARGET"
+							"Duration"		"%duration_aoe"
+						}
+					}
+				}
+			}
+
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+		}
+
+		"modifier_stone_fist_aoe"
+		{
+			
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

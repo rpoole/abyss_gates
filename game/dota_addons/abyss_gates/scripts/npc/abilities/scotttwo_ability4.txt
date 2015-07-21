@@ -1,0 +1,128 @@
+//=================================================================================================================
+// Scotttwo: Scotttwo Ability 4
+//=================================================================================================================
+
+// Single Target long stun + damage, AoE splash shorter stun 
+
+"scotttwo_ability4"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"earth_spirit_rolling_boulder"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AOERadius"						"700"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration_main"				"10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration_aoe"			"5.0"		
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"			"100"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"reflect_chance"		"50"
+		}
+
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"700"
+		}
+
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_stone_fist"
+			"Target" 		"TARGET"
+			"Duration"		"%duration_main"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_stone_fist"
+		{
+			"OnCreated"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_stone_fist_aoe"
+							"Target" 		"TARGET"
+							"Duration"		"%duration_aoe"
+						}
+					}
+				}
+			}
+
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+		}
+
+		"modifier_stone_fist_aoe"
+		{
+			
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

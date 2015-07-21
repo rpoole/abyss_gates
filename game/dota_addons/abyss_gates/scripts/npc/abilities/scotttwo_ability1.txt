@@ -1,0 +1,90 @@
+//=================================================================================================================
+// Scott: Scott Two
+//=================================================================================================================
+
+//=================================================================================================================
+// Scotttwo: Scotttwo Ability 1
+//=================================================================================================================
+
+// AoE Heal around and including Caster
+
+"scotttwo_ability1"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"omniknight_purification"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+	"precache"
+	{
+		"particle"  "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl"
+	}
+
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"heal_amount"				"100"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"				"500"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"CASTER"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		
+			"Action"    
+			{
+				"Heal"
+				{
+					"Target"        "TARGET"
+					"HealAmount"	"%heal_amount"
+				}
+			}
+		}
+
+		"FireEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "CASTER"
+		}
+	}
+
+
+	"Modifiers"
+	{
+	}
+}

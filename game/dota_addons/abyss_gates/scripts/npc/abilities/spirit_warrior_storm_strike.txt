@@ -1,0 +1,177 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Striking Tier 4: Storm Strike
+//=================================================================================================================
+
+"spirit_warrior_storm_strike"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"zuus_arc_lightning"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_zuus/"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts"
+	}
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_one_charge"		"100"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_two_charge"		"200"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_three_charge"	"100"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"				"100"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_speed_bonus"		"100"
+		}
+
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"poison_duration"		"10.0"
+		}
+
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"poison_damage"			"50"
+		}
+
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"poison_interval"		"1.0"
+		}
+
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"600"
+		}
+
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"poison_instant_damage"	"300"
+		}
+
+		"11"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bounces"				"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_spirit_warrior_striking/spirit_stack.lua"
+			"Function"			"SpiritCheck"
+			"modifier_one"		"modifier_one_charge"
+			"modifier_two"		"modifier_two_charge"
+			"modifier_three"	"modifier_three_charge"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_one_charge"
+		{
+			"IsBuff"	"1"
+			"IsHidden"	"0"
+
+			"OnAttackLanded"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"heroes/hero_spirit_warrior_striking/chain_lightning.lua"
+					"Function"			"LightningJump"
+					"damage"			"%damage"
+					"bounces"			"%bounces"
+				}
+			}
+
+		}
+
+		"modifier_two_charge"
+		{
+			"IsBuff"	"1"
+			"IsHidden"	"0"
+
+			"OnAttackLanded"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage_two_charge"
+				}
+			}
+		}
+
+		"modifier_three_charge"
+		{
+			"IsBuff"	"1"
+			"IsHidden"	"0"
+
+			"OnAttackLanded"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"TARGET"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"Damage"
+						{
+							"Target"		"TARGET"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
+							"Damage"		"%damage_one_charge"
+						}
+					}
+				}
+			}
+		}
+	}
+}

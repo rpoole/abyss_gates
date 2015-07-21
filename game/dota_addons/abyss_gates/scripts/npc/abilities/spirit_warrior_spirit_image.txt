@@ -1,0 +1,55 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Self Tier 3: Vampirism
+//=================================================================================================================
+"spirit_warrior_spirit_image"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"chaos_knight_phantasm"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"AbilityCastPoint"			"0.1"
+	"AbilityCooldown"			"5"
+	"AbilityManaCost"			"5"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"image_count"		"3"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"			"60"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"outgoing_damage"	"50"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"incoming_damage"	"100"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_spirit_warrior_self/spirit_image.lua"
+			"Function"		"SpawnImages"
+		}
+	}
+}

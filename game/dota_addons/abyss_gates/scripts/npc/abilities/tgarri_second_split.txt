@@ -1,0 +1,45 @@
+"tgarri_second_split"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"treant_overgrowth"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel"						"1"
+
+	"Modifiers"
+	{
+		"modifier_second_split"
+		{
+			"Passive"		"1"
+			"IsHidden"		"1"
+
+			"OnDeath"
+			{
+				"SpawnUnit"
+				{
+					"UnitName"		"creature_tgarri_second_split"
+					"Target"
+					{
+						"Center"	"UNIT"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+					"UnitCount"		"4"
+					"Duration"		"999"
+					"UnitLimit"		"20"
+					"GrantsGold"	"1"
+					"GrantsXP"		"1"
+					"SpawnRadius"	"10"
+					"OnSpawn"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_phased"
+							"Target"		"TARGET"
+							"Duration"		"0.03"
+						}
+					}
+				}
+			}
+		}		
+	}
+}

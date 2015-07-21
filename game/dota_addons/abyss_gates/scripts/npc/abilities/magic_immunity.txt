@@ -1,0 +1,22 @@
+"magic_immunity"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"omniknight_repel"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"1"
+
+	"Modifiers"
+	{
+		"modifier_magic_immunity"
+		{
+			"Passive"	"1"
+			"IsHidden"	"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}	
+		}		
+	}
+}

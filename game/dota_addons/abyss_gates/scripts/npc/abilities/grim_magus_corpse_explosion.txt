@@ -1,0 +1,46 @@
+//=================================================================================================================
+// Grim Magus: Demonology Tier 3: Corpse Explosion
+//=================================================================================================================
+"grim_magus_corpse_explosion"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"			"necrolyte_death_pulse"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AOERadius"						"600"
+	"MaxLevel"						"8"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100 120 140 160 180 200 220 240"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"1000"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"600 600"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_multiplier"	"25 28 31 34 37 40 43 46"
+		}
+	}
+
+
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"heroes/hero_grim_magus_demonology/corpse_explosion.lua"
+			"Function"			"CorpseSelect"
+			"modifier"			"modifier_corpse_explosion_damage"
+		}
+	}
+}

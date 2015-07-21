@@ -1,0 +1,32 @@
+"skeleton_burning"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"doom_scorched_earth"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"1"
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_warlock/golem_ambient_fire_mane_fallback_mid.vpcf"
+	}
+
+	"Modifiers"
+	{
+		"modifier_burning"
+		{
+			"Passive"		"1"
+			"IsHidden"		"0"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/burning2.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "CASTER"
+				}
+			}
+		}
+	}
+}

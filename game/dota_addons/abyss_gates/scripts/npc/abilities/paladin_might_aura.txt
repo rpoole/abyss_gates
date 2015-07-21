@@ -1,0 +1,56 @@
+//=================================================================================================================
+// Paladin: Support Aura Skills: Tier 3: Might Aura
+//=================================================================================================================
+
+"paladin_might_aura"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"vengeful_spirit_command_aura"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"MaxLevel" 						"8"
+	"AbilityCastRange"				"800"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"percent_damage_bonus"		"10 16 22 28 34 40 46 52"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"800"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_might_mechanic"
+		{
+			"Passive"			"1"
+
+			"Aura"          	"modifier_might_aura"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"
+			"Aura_ApplyToCaster" "1"
+		}
+
+		"modifier_might_aura"
+		{
+			"IsHidden"			"0"
+			"IsBuff"			"1"				
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%percent_damage_bonus"
+			}
+		}
+	}
+}

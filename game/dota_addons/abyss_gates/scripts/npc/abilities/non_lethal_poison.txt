@@ -1,0 +1,47 @@
+"non_lethal_poison"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"venomancer_poison_sting"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"1"
+
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_gale_poison_debuff.vpcf"
+	}
+
+	"Modifiers"
+	{
+		"modifier_poison_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_poison"
+					"Target" 		"TARGET"
+					"Duration"		"30"
+				}
+			}
+		}
+
+		"modifier_poison"
+		{
+			"ThinkInterval"  "0.1"
+			"OnIntervalThink"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/creature_abilities/poison_sting.lua"
+					"Function"		"PoisonSting"
+				}
+			}
+			"IsDebuff"			"1"
+			"IsHidden"			"0"
+		}
+	}
+}

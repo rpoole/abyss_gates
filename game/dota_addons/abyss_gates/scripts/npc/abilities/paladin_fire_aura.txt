@@ -1,0 +1,100 @@
+//=================================================================================================================
+// Paladin: Offensive Aura Skills: Tier 3: Fire Aura
+//=================================================================================================================
+
+"paladin_fire_aura"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"ember_spirit_flame_guard"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE"
+	"MaxLevel" 						"8"
+	"AbilityCastRange"				"800"
+	"AbilityManaCost"				"35"
+	"AbilityCooldown"				"1"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage_per_second"			"10 13 16 19 22 25 28 31"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"300"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"initial_mana_cost"	"35"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"mana_per_second"	"2 3 4 5 6 7 8 9"
+		}
+	}
+
+
+	"OnToggleOn"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_fire_mechanic"
+			"Target" 		"CASTER"
+		}
+	}
+
+	"OnToggleOff"
+	{
+		"RemoveModifier"
+		{
+			"ModifierName"	"modifier_fire_mechanic"
+			"Target" 		"CASTER"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_fire_mechanic"
+		{
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"ActOnTargets"
+				{
+					"Target"
+					{
+						"Center"  	"CASTER"
+						"Radius" 	"%radius"
+						"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+						"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+					}
+				
+					"Action"    
+					{
+						"Damage"
+						{
+							"Target"		"TARGET"
+							"Type"			"DAMAGE_TYPE_MAGICAL"
+							"Damage"		"%damage_per_second"
+						}
+					}
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_paladin_offensive_aura_skills/fire_aura.lua"
+					"Function"		"ManaDrain"
+					"modifier"		"%mana_per_second"
+				}
+			}
+		}
+	}
+}

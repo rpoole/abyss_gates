@@ -1,0 +1,176 @@
+//=================================================================================================================
+// Grim Magus: Demonology Tier 4: Raise Skeleton Mage
+//=================================================================================================================
+"grim_magus_raise_skeleton_mage"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityTextureName"			"skeleton_king_vampiric_aura"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"0"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"max_skeletons"			"50"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"fire_chance"			"33"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"999"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"ice_chance"			"50"	
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"Random"
+		{
+			"Chance"			"%fire_chance"
+			"OnSuccess"
+			{
+				"SpawnUnit"
+				{
+					"UnitName"		"undead_skeleton_warrior"
+					"Target" 		"CASTER"
+					"Duration"		"%duration"
+					"UnitCount"		"1"
+					"UnitLimit"		"%max_skeletons"
+					"GrantsGold"	"1"
+					"GrantsXP"		"1"
+					"SpawnRadius"	"10"
+					"OnSpawn"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_phased"
+							"Target"		"TARGET"
+							"Duration"		"0.03"
+						}
+					}
+				}
+			}
+			"OnFailure"
+			{
+				"Random"
+				{
+					"Chance"			"%ice_chance"
+					"OnSuccess"
+					{
+						"SpawnUnit"
+						{
+							"UnitName"		"undead_skeleton_warrior"
+							"Target" 		"CASTER"
+							"Duration"		"%duration"
+							"UnitCount"		"1"
+							"UnitLimit"		"%max_skeletons"
+							"GrantsGold"	"1"
+							"GrantsXP"		"1"
+							"SpawnRadius"	"10"
+							"OnSpawn"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_phased"
+									"Target"		"TARGET"
+									"Duration"		"0.03"
+								}
+
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_burning_success"
+									"Target" 		"TARGET"
+									"Duration"		"10"
+								}
+							}
+						}
+					}
+
+					"OnFailure"
+					{
+						"SpawnUnit"
+						{
+							"UnitName"		"undead_skeleton_warrior"
+							"Target" 		"CASTER"
+							"Duration"		"%duration"
+							"UnitCount"		"1"
+							"UnitLimit"		"%max_skeletons"
+							"GrantsGold"	"1"
+							"GrantsXP"		"1"
+							"SpawnRadius"	"10"
+							"OnSpawn"
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_phased"
+									"Target"		"TARGET"
+									"Duration"		"0.03"
+								}
+
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_archer_success"
+									"Target" 		"TARGET"
+									"Duration"		"10"
+								}
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
+
+
+
+	"Modifiers"
+	{
+		"modifier_burning_success"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			
+			"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"  "follow_overhead"
+		}
+
+		"modifier_archer_success"
+		{
+			"IsBuff"			"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+			"EffectAttachType"	"follow_overhead"
+		}
+	}
+}

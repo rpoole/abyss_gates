@@ -1,0 +1,161 @@
+//=================================================================================================================
+// Scotttwo: Scotttwo Ability 2
+//=================================================================================================================
+
+// AoE Ground DoT, propagates on Unit Kill
+
+"scotttwo_ability2"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"phoenix_fire_spirits"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AOERadius"						"500"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_per_second"			"50"		
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius_min"		"500"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius_max"			"500"
+		}
+
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_interval"		"0.5"
+		}
+
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"debuff_duration"		"0.1"
+		}
+	}
+
+
+	"OnSpellStart"
+	{
+		"CreateThinker"
+		{
+			"ModifierName"	"modifier_volcano_thinker"
+			"Target" 		"POINT"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_volcano_thinker"
+		{
+			"Aura"				"modifier_volcano"
+			"Aura_Radius"		"%radius_min"
+			"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Duration"			"%duration"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/dire_fx/dire_lava_gloops_13sec.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"TARGET"
+				}
+			}
+		}
+
+		"modifier_volcano_thinker_two"
+		{
+			"Aura"				"modifier_volcano"
+			"Aura_Radius"		"%radius_min"
+			"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Duration"			"%duration"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/dire_fx/dire_lava_gloops_13sec.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"CASTER"
+				}
+			}
+		}
+
+		"modifier_volcano"
+		{
+			"ThinkInterval"  "%damage_interval"
+			"OnIntervalThink"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_volcano_spawner"
+					"Target" 		"TARGET"
+					"Duration"		"%debuff_duration"
+				}
+
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage_per_second"
+				}				
+			}
+		}
+
+		"modifier_volcano_spawner"
+		{
+			"IsDebuff"	"1"
+			"IsHidden"	"0"
+
+			"OnDeath"
+			{
+				"CreateThinker"
+				{
+					"ModifierName"	"modifier_volcano_thinker"
+					"Target"
+					{
+						"Center"  	"UNIT"
+						"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+					}
+				}
+			}
+		}
+	}
+}

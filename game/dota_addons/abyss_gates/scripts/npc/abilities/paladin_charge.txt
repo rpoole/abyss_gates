@@ -1,0 +1,98 @@
+//=================================================================================================================
+// Paladin: Combat Skills Tier 4: Charge
+//=================================================================================================================
+
+"paladin_charge"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"spirit_breaker_charge_of_darkness"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"MaxLevel" 						"8"
+	"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0 9.5 9.0 8.5"
+	"AbilityManaCost"				"40 46 52 58 64 70 76 82"
+
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_increase"	"400 433 466 500 533 566 600 633"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"3.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_charge_buff"
+			"Target" 		"CASTER"
+		}
+
+		"RunScript"
+		{
+			"ScriptFile"	"heroes/hero_paladin_combat_skills/paladin_charge.lua"
+			"Function"		"PaladinCharge"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_charge_buff"
+		{
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%damage_increase"	
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_CONSTANT" "522" 
+			}
+
+			"States"
+			{
+				"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			
+
+			"OnAttack"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_charge_buff"
+					"Target" 		"CASTER"
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_charge_stun"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}
+
+		"modifier_charge_stun"
+		{
+			"IsDebuff"		"1"
+
+			"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"	"follow_overhead"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

@@ -1,0 +1,56 @@
+//=================================================================================================================
+// Paladin: Support Aura Skills: Tier 2: Stoneskin Aura
+//=================================================================================================================
+
+"paladin_stoneskin_aura"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"timbersaw_reactive_armor"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"MaxLevel" 						"10"
+	"AbilityCastRange"				"800"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"armor_bonus"		"2.0 2.5 3.0 3.5 4.0 4.5 5.0 5.5 6.0 6.5"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"800"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_stoneskin_mechanic"
+		{
+			"Passive"			"1"
+
+			"Aura"          	"modifier_stoneskin_aura"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			"Aura_ApplyToCaster" "1"
+		}
+
+		"modifier_stoneskin_aura"
+		{
+			"IsHidden"			"0"
+			"IsBuff"			"1"				
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_bonus"
+			}
+		}
+	}
+}

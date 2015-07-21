@@ -1,0 +1,105 @@
+//=================================================================================================================
+// Paladin: Offensive Aura Skills: Tier 4: Blinding Light Aura
+//=================================================================================================================
+
+"paladin_blinding_light_aura"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"wisp_overcharge"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"8"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"max_targets"				"3 4 4 5 5 6 6 7"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"750"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_percentage"	"25"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"percent_chance"	"40 45 50 55 60 65 70 75"
+		}
+	}
+
+
+	
+
+	"Modifiers"
+	{
+		"modifier_blinding_light_mechanic"
+		{
+			"Passive"		"1"
+			"IsHidden"		"0"
+
+			"ThinkInterval"  "8.0"
+			"OnIntervalThink"
+			{
+				"Random"
+				{
+					"Chance"			"100"
+					"OnSuccess"
+					{
+						"ActOnTargets"
+						{
+							"Target"
+							{
+								"Center"  	"CASTER"
+								"Radius" 	"%radius"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+								"MaxTargets" "%max_targets"
+								"Random"     "1"
+							}
+						
+							"Action"    
+							{
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_blinding_light_debuff"
+									"Target" 		"TARGET"
+									"Duration"		"3"
+								}
+							}
+						}
+					}
+				}
+			}
+		}			
+
+
+
+		"modifier_blinding_light_debuff"
+		{
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_paladin_offensive_aura_skills/blinding_light.lua"
+					"Function"		"CurrentHealth"
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,53 @@
+//=================================================================================================================
+// HERO: PALADIN: Offensive Aura Skills
+//=================================================================================================================
+"npc_dota_hero_enigma_abyss_gates"
+{
+	"override_hero"				"npc_dota_hero_enigma"
+	"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
+	// Abilities
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityLayout"				"5"
+	"Ability1"				"paladin_weakness_aura"
+	"Ability2"				"paladin_frailty_aura"
+	"Ability3"				"paladin_fire_aura"
+	"Ability4"				"paladin_blinding_light_aura"
+	"Ability6"				"paladin_cold_aura"
+	"Ability5"				"test_ability6"
+	"Ability7"				"test_ability7"
+
+	// Armor
+	//-------------------------------------------------------------------------------------------------------------
+	"ArmorPhysical"				"1"									// Physical protection. // 2.94
+
+	// Attack
+	//-------------------------------------------------------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"100"									// Damage range min.
+	"AttackDamageMax"			"105"									// Damage range max.
+	"AttackRate"				"1.7"									// Speed of attack.
+	"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
+	"AttackRange"				"600"									// Range within a target can be attacked.
+
+	// Attributes
+	//-------------------------------------------------------------------------------------------------------------
+	"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
+	"AttributeBaseStrength"		"9"									// Base strength
+	"AttributeStrengthGain"		"3"									// Strength bonus per level.
+	"AttributeBaseAgility"		"6"									// Base agility
+	"AttributeAgilityGain"		"2"									// Agility bonus per level.
+	"AttributeBaseIntelligence"	"3"									// Base intelligence
+	"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
+
+	// Movement
+	//-------------------------------------------------------------------------------------------------------------
+	"MovementSpeed"				"350"									// Speed.
+	"MovementTurnRate"			"0.5"									// Turning rate.
+	
+	// Status
+	//-------------------------------------------------------------------------------------------------------------
+	"StatusHealth"				"10"
+	"StatusMana"				"1"
+
+}

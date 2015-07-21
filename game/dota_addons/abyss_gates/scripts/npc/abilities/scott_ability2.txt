@@ -1,0 +1,99 @@
+//=================================================================================================================
+// Scott: Scott Ability 2
+//=================================================================================================================
+
+// Single-Target DoT + Silence
+
+"scott_ability2"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"axe_battle_hunger"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_per_second"		"50.0"
+		}
+	}
+
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_curse"
+			"Target" 		"TARGET"
+			"Duration"		"%duration"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_curse"
+		{
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+	
+			"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+			"EffectAttachType"	"follow_overhead"
+			"Duration"			"%duration"	
+
+
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"ThinkInterval"  "1.0"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage_per_second"
+				}
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+					"EffectAttachType"	"follow_overhead"
+					"Target"			"TARGET"
+					"Duration"			"%duration"
+				}
+			}
+	
+		}
+	}
+}

@@ -1,0 +1,78 @@
+//=================================================================================================================
+// Grim Magus: Demonology Tier 5: The Creature
+//=================================================================================================================
+"grim_magus_the_creature"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"			"skeleton_king_vampiric_aura"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"5"
+
+	"AbilitySpecial"
+	{
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"999"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"SpawnUnit"
+		{
+			"UnitName"		"undead_skeleton_warrior"
+			"Target" 		"POINT"
+			"Duration"		"%duration"
+			"UnitCount"		"1"
+			"UnitLimit"		"1"
+			"GrantsGold"	"0"
+			"GrantsXP"		"0"
+			"SpawnRadius"	"10"
+			"OnSpawn"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_phased"
+					"Target"		"TARGET"
+					"Duration"		"0.03"
+				}
+
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_grim_magus_demonology/the_creature"
+					"Function"		"SetLevel"
+					"modifier"		"modifier_corpse_stack"
+				}
+			}
+		}
+	}
+	
+
+	"Modifiers"
+	{
+		"modifier_corpse_stack"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+
+			"States"
+			{
+				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			
+			"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+			"EffectAttachType"  "follow_overhead"
+		}
+	}
+}

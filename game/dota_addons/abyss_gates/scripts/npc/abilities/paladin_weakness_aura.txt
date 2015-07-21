@@ -1,0 +1,56 @@
+//=================================================================================================================
+// Paladin: Offensive Aura Skills: Tier 1: Weakness Aura
+//=================================================================================================================
+
+"paladin_weakness_aura"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"undying_flesh_golem"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"MaxLevel" 						"10"
+	"AbilityCastRange"				"800"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"attack_damage_reduction"	"-2 -4 -6 -8 -10 -12 -14 -16 -18 -20"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"800"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_weakness_mechanic"
+		{
+			"Passive"			"1"
+
+			"Aura"          	"modifier_weakness_aura"
+			"Aura_Radius"   	"%radius"
+			"Aura_Teams"    	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
+			"Aura_ApplyToCaster" "0"
+		}
+
+		"modifier_weakness_aura"
+		{
+			"IsHidden"			"0"
+			"IsDebuff"			"1"				
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%attack_damage_reduction"
+			}
+		}
+	}
+}

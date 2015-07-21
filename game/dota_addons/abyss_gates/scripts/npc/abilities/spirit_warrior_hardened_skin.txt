@@ -1,0 +1,39 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Self Tier 1: Hardened Skin
+//=================================================================================================================
+"spirit_warrior_hardened_skin"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"tiny_craggy_exterior"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_reduction"	"100"
+		}
+	}
+
+	
+	"Modifiers"
+	{
+		"modifier_block"
+		{
+			"Passive"			"1"
+			"IsHidden"			"0"
+			"IsBuff"			"1"
+	
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_TOTAL_CONSTANT_BLOCK" "%damage_reduction" 
+			}
+		}
+	}
+}

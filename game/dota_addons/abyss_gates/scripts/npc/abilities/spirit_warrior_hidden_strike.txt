@@ -1,0 +1,126 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Striking Tier 1: Hidden Strike
+//=================================================================================================================
+
+"spirit_warrior_hidden_strike"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"bounty_hunter_jinada"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"				"1000"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_speed_bonus"		"100"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_hidden_strike"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"
+		}
+
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_spirit_mechanic"
+			"Target"		"CASTER"
+		}
+	}
+
+
+	"Modifiers"
+	{
+		"modifier_hidden_strike"
+		{
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+			"IsPurgable"	"0"
+
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_UNIT_COLLISION" "MODIFIER_STATE_VALUE_ENABLED"
+			}
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movement_speed_bonus"
+				"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"%damage"
+			}
+
+			"OnAttackLanded"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_hidden_strike"
+					"Target" 		"CASTER"
+				}
+			}
+		}
+
+		"modifier_spirit_charge"
+		{
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+			"IsPurgable"	"0"
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5" 
+			}
+
+		}
+
+		"modifier_spirit_mechanic"
+		{
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+			"IsPurgable"	"0"
+			"Passive"		"1"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_spirit_warrior_striking/spirit_stack.lua"
+					"Function"		"SpiritStack"
+					"modifier"		"modifier_spirit_charge"
+				}
+			}
+		}
+	}
+}

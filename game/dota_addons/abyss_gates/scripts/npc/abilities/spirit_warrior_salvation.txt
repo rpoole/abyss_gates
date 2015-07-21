@@ -1,0 +1,42 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Spirit Tier 2: Salvation
+//=================================================================================================================
+"spirit_warrior_salvation"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"dazzle_shadow_wave"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"heal_amount"			"50"
+		}
+	}
+
+	"Modifiers"
+	{	
+		"modifier_salvation_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnKill"
+			{
+				"Heal"
+				{
+					"Target"        "CASTER"
+					"HealAmount"	"%heal_amount"
+				}
+			}
+		}
+	}
+}

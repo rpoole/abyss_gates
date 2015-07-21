@@ -1,0 +1,119 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Self Tier 5: True Focus
+//=================================================================================================================
+
+"spirit_warrior_true_focus"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"brewmaster_thunder_clap"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage"				"100"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"armor_reduction"		"-10"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"knockback_distance"	"400"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"knockback_height"		"50"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"knockback_duration"	"0.4"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"				"700"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"10"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"TARGET"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_BOTH"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		
+			"Action"    
+			{
+				"Knockback"
+				{
+					"Target"            "TARGET"
+					"Center" 	        "POINT"
+					"Distance"	        "%knockback_distance"
+					"Duration"	        "%knockback_duration"
+					"Height"	        "%knockback_height"
+					"IsFixedDistance"	"1"
+					"ShouldStun"        "1"	
+				}
+
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_true_focus_debuff"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_true_focus_debuff"
+		{
+			"IsDebuff"		"1"
+			"IsHidden"		"0"
+			"IsPurgable"	"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" 	"%armor_reduction"
+			}
+		}
+	}
+}

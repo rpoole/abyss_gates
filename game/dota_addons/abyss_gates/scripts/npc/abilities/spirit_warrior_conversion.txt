@@ -1,0 +1,54 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Spirit Tier 4: Conversion
+//=================================================================================================================
+"spirit_warrior_conversion"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"enchantress_enchant"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"res_chance"			"50"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"duration"			"60.0"
+		}
+	}
+
+	"Modifiers"
+	{	
+		"modifier_conversion_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnKill"
+			{
+				"Random"
+				{
+					"Chance"			"%res_chance"
+					"OnSuccess"
+					{
+						"RunScript"
+						{
+							"ScriptFile"	"heroes/hero_spirit_warrior_spirit/conversion.lua"
+							"Function"		"ResUnit"
+						}
+					}
+				}	
+			}
+		}
+	}
+}

@@ -1,0 +1,89 @@
+//=================================================================================================================
+// Scott: Scott Ability 4
+//=================================================================================================================
+
+// Single-Target Stat Permanent / Multiple Instance Buff
+
+"scott_ability4"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"dazzle_weave"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityManaCost"				"5"
+	"AbilityCooldown"				"5"
+	"AbilityCastRange"				"600"
+
+	"precache"
+	{
+		"particle"  "particles/econ/courier/courier_dolfrat_and_roshinante/courier_dolfrat_and_roshinante.vpcf"
+	}
+
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"10"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"heal_per_second"		"50.0"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_stat_boost"
+			"Target" 		"TARGET"		
+		}
+	}
+		
+
+
+	"Modifiers"
+	{
+		"modifier_stat_boost"
+		{
+			"IsHidden"		"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"1"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
+			}
+			
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
+
+			"OnCreated"
+			{
+				"FireEffect"
+				{
+					"EffectName"        "particles/econ/courier/courier_dolfrat_and_roshinante/courier_dolfrat_and_roshinante.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "TARGET"
+				}
+			}
+		}
+	}
+}	

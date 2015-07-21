@@ -1,0 +1,67 @@
+//=================================================================================================================
+// Paladin: Combat Skills Tier 3: Zeal
+//=================================================================================================================
+
+"paladin_zeal"
+{
+	//General
+	//-------------------------------------------------------------------------------------------------------------
+
+	"BaseClass"						"ability_datadriven"
+	"AbilityTextureName"			"troll_warlord_fervor"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"MaxLevel"						"8"
+	
+
+	//Casting
+	//------------------------------------------
+
+	"AbilityCastPoint"				"0.1"
+	"AbilityManaCost"				"45 50 55 60 65 70 75 80"
+	"AbilityCooldown"				"12.0 11.5 11.0 10.5 10.0 9.5 9.0 8.5"
+
+	//Special
+	//--------------------------------------------
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"3"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"attack_speed"		"225"
+		}
+	}
+
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_zeal_boost"
+			"Target" 		"CASTER"
+			"Duration"		"%duration"		
+		}
+	}
+		
+
+
+	"Modifiers"
+	{
+		"modifier_zeal_boost"
+		{
+			
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
+			}	
+		}
+	}
+}

@@ -1,0 +1,42 @@
+"crippling_poison"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"venomancer_venomous_gale"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"1"
+
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_venomous_gale.vpcf"
+	}
+
+	"Modifiers"
+	{
+		"modifier_crippling_poison_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_crippling_poison"
+					"Target" 		"TARGET"
+					"Duration"		"10"
+				}
+			}
+		}
+
+		"modifier_crippling_poison"
+		{
+			"IsDebuff"		"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-70"
+			}
+		}
+	}
+}

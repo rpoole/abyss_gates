@@ -3,6 +3,129 @@
 	"consumables"
 	{
 		"item" "item_potion_of_healing"
+		"item" "item_ascension_sword"
+		"item" "item_greater_potion_of_healing"
+		"item" "item_stone_of_healing"
+		"item" "item_potion_of_mana"
+		"item" "item_greater_potion_of_mana"
+	}
+
+	"attributes"
+	{
+		"item" "item_ring_of_power"
+		"item" "item_ring_of_dominance"
+		"item" "item_anklet_of_dexterity"
+		"item" "item_anklet_of_quickness"
+		"item" "item_ring_of_intelligence"
+		"item" "item_ring_of_the_archmagi"
+		"item" "item_stone_ring"
+		"item" "item_ring_of_the_blessed"
+		"item" "item_bracers_of_triumph"
+	}
+
+	"Ugor's Advanced Weaponsmithing"
+	{
+		"item" "item_ascension_sword"
+		"item" "item_war_claws"
+		"item" "item_moon_glaive"
+		"item" "item_serpent_blade"
+		"item" "item_kheragian_axe"
+		"item" "item_warhammer"
+		"item" "item_celestial_blade"
+		"item" "item_war_fork"
 	}
 	
+	"Uglad's Armor Shop"
+	{
+		"item" "item_aegis_plating"
+		"item" "item_opal_scales"
+		"item" "item_choromeir_scales"
+		"item" "item_salamander_skin"
+		"item" "item_alistar_shield"
+		"item" "item_corog_shield"
+		"item" "item_storm_shield"
+		"item" "item_guardian_helm"
+		"item" "item_hood_of_cunning"
+		"item" "item_egrons_hold"
+	}
+
+	"Magi Elite"
+	{
+		"item" "item_erament_staff"
+		"item" "item_widow_staff"
+		"item" "item_icecrown_staff"
+		"item" "item_guldans_orb"
+		"item" "item_marichald_orb"
+		"item" "item_zirklumm_robes"
+		"item" "item_celestial_robes"
+		"item" "item_tome_of_fire"
+	}
+
+	"Kaine's Bazaar"
+	{
+		"item" "item_gloves_of_haste"
+		"item" "item_beryl_gauntlets"
+		"item" "item_ruby_gauntlets"
+		"item" "item_cursed_gauntlets"
+		"item" "item_boots_of_haste"
+		"item" "item_ninja_slippers"
+	}
+
+	"Pselli's Shop of Magecraft"
+	{
+		"item" "item_marrenwood_staff"
+		"item" "item_mesa_staff"
+		"item" "item_staff_of_perseus"
+		"item" "item_tome_of_ice"
+		"item" "item_wand_of_tranquility"
+		"item" "item_skullhead_wand"
+		"item" "item_wand_of_restoration"
+		"item" "item_sirrus_orb"
+		"item" "item_cloak_of_the_apprentice"
+		"item" "item_magi_robes"
+		"item" "item_magi_mantle"
+	}
+
+	"Meragon's Armor Shop"
+	{
+		"item" "item_marrenwood_staff"
+		"item" "item_mesa_staff"
+		"item" "item_staff_of_perseus"
+		"item" "item_tome_of_ice"
+		"item" "item_wand_of_tranquility"
+		"item" "item_skullhead_wand"
+		"item" "item_wand_of_restoration"
+		"item" "item_sirrus_orb"
+		"item" "item_cloak_of_the_apprentice"
+		"item" "item_magi_robes"
+		"item" "item_magi_mantle"
+	}
+
+
+	"Gehrhart's Weapon Shop"
+	{
+		"item" "item_pickaxe"
+		"item" "item_long_sword"
+		"item" "item_battle_hammer"
+		"item" "item_battle_claws"
+		"item" "item_terra_blade"
+		"item" "item_battleaxe"
+		"item" "item_venus_blade"
+		"item" "item_trident"
+	}
+
+
+	"Accessory Specialties Shop"
+	{
+		"item" "item_lumber"
+		"item" "item_fury_gauntlets"
+		"item" "item_mortred_amulet"
+		"item" "item_celestial_charm"
+		"item" "item_dark_elven_charm"
+		"item" "item_cryptic_charm"
+		"item" "item_ruby_heart"
+		"item" "item_sapphire_heart"
+		"item" "item_obsidian_heart"
+	}
+
 }

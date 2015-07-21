@@ -1,0 +1,51 @@
+//=================================================================================================================
+// Spirit Warrior: Arts of Spirit Tier 3: Purification
+//=================================================================================================================
+"spirit_warrior_purification"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"slark_essence_shift"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+
+	"Modifiers"
+	{	
+		"modifier_purification_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnKill"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"heroes/hero_spirit_warrior_spirit/stat_stack.lua"
+					"Function"		"StrStack"
+					"modifier_one"	"modifier_purification_stack"
+					"modifier_two"	"modifier_purification_buff"
+				}
+			}
+		}
+
+		"modifier_purification_stack"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+		}
+
+		"modifier_purification_buff"
+		{
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS" "1"
+			}
+
+			"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+		}
+	}
+}

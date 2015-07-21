@@ -1,0 +1,88 @@
+//=================================================================================================================
+// Grim Magus: Affliction Tier 2: Amplify Damage
+//=================================================================================================================
+"grim_magus_amplify_damage"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityTextureName"			"slardar_amplify_damage"
+	"AOERadius"						"300"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+	"AbilityManaCost"				"5"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.3"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"radius"			"300"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"amplify_damage"	"100"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"			"60"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"ActOnTargets"
+		{
+			"Target"
+			{
+				"Center"  	"POINT"
+				"Radius" 	"%radius"
+				"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			}
+		
+			"Action"    
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_amplify_damage_debuff"
+					"Target" 		"TARGET"
+					"Duration"		"%duration"
+				}
+			}
+		}
+	}
+	
+
+	"Modifiers"
+	{
+		"modifier_amplify_damage_debuff"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%amplify_damage"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"        "particles/generic_gameplay/generic_silenced.vpcf"
+				"EffectAttachType"  "follow_overhead"
+				"Target"            "TARGET"
+			}
+		}
+	}
+}

@@ -1,0 +1,73 @@
+"passive_invisibility"
+{
+	"BaseClass"             		"ability_datadriven"
+	"AbilityTextureName"			"riki_permanent_invisibility"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"MaxLevel" 						"1"
+
+	"Modifiers"
+	{
+		"modifier_passive_invis_mechanic"
+		{
+			"Passive"	"1"
+			"IsHidden"	"0"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_remove_invis"
+					"Target" 		"CASTER"
+					"Duration"		"3"
+				}
+			}
+			
+			"OnCreated"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_invis"
+					"Target" 		"CASTER"
+					"Duration"		"10"
+				}
+			}
+		}
+
+		"modifier_remove_invis"
+		{
+			"IsDebuff"		"1"
+			"IsHidden"		"0"		
+
+			"OnCreated"
+			{
+				"RemoveModifier"
+				{
+					"ModifierName"	"modifier_invis"
+					"Target" 		"CASTER"
+				}
+			}
+
+			"OnDestroy"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_invis"
+					"Target" 		"CASTER"
+					"Duration"		"10"
+				}
+			}
+		}
+
+		"modifier_invis"
+		{
+			"IsBuff"		"1"
+			"IsHidden"		"0"
+
+			"States"
+			{
+				"MODIFIER_STATE_INVISIBLE"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+	}
+}

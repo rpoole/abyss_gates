@@ -1,0 +1,127 @@
+//=================================================================================================================
+// Grim Magus: Destruction Tier 4: Bleed Earth
+//=================================================================================================================
+"grim_magus_bleed_earth"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"batrider_sticky_napalm"
+	"AOERadius"						"300"
+	"MaxLevel"						"8"
+	
+	
+	"precache"
+	{
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"65 60 55 50 45 40 35 30"
+	"AbilityManaCost"				"250 275 300 325 350 375 400 425"
+	"AbilityCastRange"				"700"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_per_second"			"100 130 160 190 220 250 280 310"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"radius"				"300"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"corpse_number"		"1 2 3 4 5 6 7 8"
+		}
+
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"damage_interval"		"1.0"
+		}
+
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"				"10"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"CreateThinker"
+		{
+			"ModifierName"	"modifier_bleed_earth_thinker"
+			"Target" 		"POINT"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_bleed_earth_thinker"
+		{
+			"Aura"				"modifier_bleed_earth"
+			"Aura_Radius"		"%radius"
+			"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+			"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Duration"			"%duration"
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"		"particles/bleed_earth2.vpcf"
+					"EffectAttachType"	"follow_origin"
+					"Target"			"TARGET"
+				}
+
+				"AttachEffect"
+				{
+					"EffectName"        "particles/bleed_earth.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "TARGET"
+				}
+			}
+		}
+
+		"modifier_bleed_earth"
+		{
+			"ThinkInterval"  "%damage_interval"
+			"OnIntervalThink"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_bleed_earth_spawner"
+					"Target" 		"TARGET"
+					"Duration"		"%debuff_duration"
+				}
+
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage_per_second"
+				}				
+			}
+		}
+
+		"modifier_bleed_earth_spawner"
+		{
+			"IsDebuff"	"1"
+			"IsHidden"	"0"
+		}
+		
+	}
+}

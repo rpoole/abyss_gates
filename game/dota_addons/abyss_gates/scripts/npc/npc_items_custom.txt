@@ -1,14 +1,87 @@
-// DataDriven Item Guide: https://moddota.com/forums/discussion/4/datadriven-items
-
 "DOTAAbilities"
 {
+	//===============================================
+	// Ascension Sword
+	//===============================================
+	"item_ascension_sword"
+	{
+		"ID"                            "1050"
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"ascension_sword"
+	
+		"ItemQuality"					"component"
+		"ItemCost"                      "40" 		
+		"ItemShopTags"					"damage"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	
+		"OnEquip"
+		{
+			"ApplyModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_ascension_sword"
+			}
+	
+		}
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"Target" 			"CASTER"
+				"ModifierName"		"modifier_ascension_sword"
+			}
+	
+		}
+		"Modifiers"
+		{
+			"modifier_ascension_sword"
+			{
+				"IsHidden"			"1"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"45"
+				}
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"10"
+						"OnSuccess"
+						{
+							"ActOnTargets"
+							{
+								"Target"
+								{
+									"Center"  	"TARGET"
+									"Radius" 	"300"
+									"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+									"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+								}
+							
+								"Action"    
+								{
+									"Damage"
+									{
+										"Target"		"TARGET"
+										"Type"			"DAMAGE_TYPE_MAGICAL"
+										"Damage"		"200"
+									}
+	 								}
+							}
+						}
+					}
+				}	
+			}
+		}
+	}
 	//=================================================================================================================
 	// Potion of Healing
 	//=================================================================================================================
 	"item_potion_of_healing"
 	{
 		"ID"							"1027"
-
+	
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
@@ -21,12 +94,12 @@
 		//"ItemStockMax"					"5"
 		//"ItemStockInitial"				"5"
 		//"ItemStockTime"					"24.0"
-
+	
 		// Stats
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"100"
 		"AbilityCastPoint"				"0.0"
-
+	
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
@@ -38,7 +111,7 @@
 		"ItemPermanent"					"0"
 		"ItemInitialCharges"			"2"
 		"SideShop"						"1"
-
+	
 		"OnSpellStart"
 		{
 			"RunScript"
@@ -47,7 +120,7 @@
 				"Function"			"Heal"
 				"Target"			"UNIT"
 				"heal_amount"		"%heal_amount"
-
+	
 			}
 			"FireSound"
 			{
@@ -57,7 +130,7 @@
 			"SpendCharge"
 			{}
 		}
-
+	
 		// Special	
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -70,16 +143,3 @@
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

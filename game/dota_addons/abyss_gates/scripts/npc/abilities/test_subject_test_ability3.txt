@@ -1,0 +1,91 @@
+//=================================================================================================================
+// Test Subject: test_ability3
+//=================================================================================================================
+
+// Heal Aura
+
+"test_subject_test_ability3"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"necrolyte_heartstopper_aura"
+	
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"aura_radius"		"1200"		// If you change this, also change the AbilityCastRange above
+		}
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"aura_heal"		"10 20 30 40" 
+		}
+		"03"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"aura_heal_interval"		"0.2" 
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_heartstopper_aura_datadriven"
+		{
+			"Passive"		"1"
+			"IsHidden"		"1"
+
+			"Aura" 			"modifier_heartstopper_debuff_datadriven"
+			"Aura_Radius" 	"%aura_radius"
+			"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+			"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		}
+
+
+		"modifier_heartstopper_debuff_datadriven"
+		{
+			"IsDebuff"	"1"
+			"IsHidden"	"1"
+
+			"ThinkInterval"	"%aura_heal_interval"
+
+			"OnIntervalThink"
+			{
+				"Heal"
+				{
+					"HealAmount"	"%aura_heal"
+					"Target"		"TARGET"
+				}
+			}
+
+			"OnCreated"
+			{
+				"AttachEffect"
+				{
+					"EffectName"        "particles/heal_aura.vpcf"
+					"EffectAttachType"  "follow_origin"
+					"Target"            "CASTER"
+				}
+			}
+		}
+
+		"modifier_heartstopper_debuff_visibility"
+		{
+			"IsDebuff"		"1"
+			"IsHidden"		"0"
+			"IsPurgable" 	"0"
+			"Passive"		"0"
+		}
+	}
+}

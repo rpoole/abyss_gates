@@ -1,0 +1,98 @@
+//=================================================================================================================
+// Grim Magus
+//=================================================================================================================
+
+//=================================================================================================================
+// Grim Magus: Destruction Tier 1: Bloodshed
+//=================================================================================================================
+"grim_magus_bloodshed"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"bloodseeker_rupture"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	"MaxLevel"						"10"
+	
+	
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+	}
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"4.5 4.0 3.5 3.0 2.5 2.0 1.5 1.0 0.5 0.0"
+	"AbilityManaCost"				"30 33 36 39 42 45 48 51 54 57"
+	"AbilityCastRange"				"1000"
+
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_per_second"	"50"
+		}
+
+		"02"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"damage_tick"		"1.0"
+		}
+
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"duration"			"20"
+		}
+	}
+
+	
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"	"modifier_bloodshed"
+			"Target" 		"TARGET"
+		}
+
+		"AttachEffect"
+		{
+			"EffectName"        "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+		}
+	}
+
+	"Modifiers"
+	{
+		"modifier_bloodshed"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+	
+			"EffectName"		"particle_name"
+			"EffectAttachType"	"follow_origin"
+	
+			
+			"ThinkInterval"			"%damage_tick"
+			"OnIntervalThink"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"%damage_per_second"
+				}
+			}
+
+			"Duration"				"%duration"
+		}
+	}
+}
