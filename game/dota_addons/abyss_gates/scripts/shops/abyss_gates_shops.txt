@@ -6,6 +6,7 @@
 		"item" "item_ascension_sword_main_hand"
 		"item" "item_second_sword_main_hand"
 		"item" "item_example_main_hand"
+		"item" "item_example_off_hand"
 		"item" "item_greater_potion_of_healing"
 		"item" "item_stone_of_healing"
 		"item" "item_potion_of_mana"

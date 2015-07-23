@@ -288,47 +288,65 @@ end
 
 -- An item was purchased by a player
 function Abyss_Gates:OnItemPurchased( keys )
-        --print ( '[ABYSS_GATES] OnItemPurchased' )
-        --PrintTable(keys)
+    --print ( '[ABYSS_GATES] OnItemPurchased' )
+    --PrintTable(keys)
  
-        -- The playerID of the hero who is buying something
-        local plyID = keys.PlayerID
-        local player = PlayerResource:GetPlayer(plyID)
-        local hero = player:GetAssignedHero()
-        if not plyID then return end
+    -- The playerID of the hero who is buying something
+    local plyID = keys.PlayerID
+    local player = PlayerResource:GetPlayer(plyID)
+    local hero = player:GetAssignedHero()
+    if not plyID then return end
  
-        local itemName = keys.itemname
-        print(itemName)
+    local itemName = keys.itemname
  
-        -- The cost of the item purchased
-        local itemcost = keys.itemcost
-        print(itemcost)
+    -- The cost of the item purchased
+    local itemcost = keys.itemcost
  
-       	local modifierCount = hero:GetModifierStackCount("modifier_weapon_stack", ability)
-       	print(modifierCount)
+    local mainHandCheck = hero:GetModifierStackCount("modifier_main_hand", ability)
+    local offHandCheck = hero:GetModifierStackCount("modifier_off_hand", ability)
+    local twoHandCheck = hero:GetModifierStackCount("modifier_two_hand", ability)
+    local chestCheck = hero:GetModifierStackCount("modifier_chest_armor", ability)
+    print(mainHandCheck)
+    print(offHandCheck)
+    print(twoHandCheck)
+    print(chestCheck)
 
-        if modifierCount > 1 then
-                local foundMainHandItem = false
-                for i=0,5 do
-                        local item = hero:GetItemInSlot(i)
-                        if item then
-                                local item_name = item:GetAbilityName()
-                                print(item_name)
-                                if foundMainHandItem and string.find(item_name, "main_hand") then
-                                        hero:SellItem(item)
-                                end
+    if mainHandCheck > 1 then
+        local foundMainHandItem = false
+        for i=0,5 do
+            local item = hero:GetItemInSlot(i)
+            if item then
+                local item_name = item:GetAbilityName()
+                print(item_name)
+                if foundMainHandItem and string.find(item_name, "main_hand") then
+                    hero:SellItem(item)
+                end
  
-                                if string.find(item_name, "main_hand") then
-                                        foundMainHandItem = true
-                                end
-                        end
+                if string.find(item_name, "main_hand") then
+                    foundMainHandItem = true
                 end
+            end
         end
-        --[[if hero:HasModifier("modifier_main_hand") then
-                if string.find(itemName, "main_hand") then
-                        hero:DropItemAtPosition(hero:GetAbsOrigin(), itemName)
+    end
+
+
+    if offHandCheck > 1 then
+        local foundOffHandItem = false
+        for i=0,5 do
+            local item = hero:GetItemInSlot(i)
+            if item then
+                local item_name = item:GetAbilityName()
+                print(item_name)
+                if foundOffHandItem and string.find(item_name, "off_hand") then
+                    hero:SellItem(item)
                 end
-        end]]--
+ 
+                if string.find(item_name, "off_hand") then
+                    foundOffHandItem = true
+                end
+            end
+        end
+    end
 end
 
 -- An ability was used by a player

@@ -147,6 +147,40 @@
 	}
 
 
+	"item_test_off_hand"
+	{
+		"ID"                            "1056"								
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_stone_axe"
+	
+		"ItemQuality"					"component"
+		"ItemCost"                      "40" 		
+		"ItemShopTags"					"damage"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+	
+		}
+	
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	}
+
 		
 	//=================================================================================================================
 	// Potion of Healing
@@ -223,7 +257,7 @@
 	//	
 	// Main Hand that gives +50 damage and 15% chance to critically strike for 2x damage
 	//=================================================================================================================
-	"item_example_main_hand" // TOM   game\dota_addons\abyss_gates\scripts\shops\abyss_gates_shops.txt   Place the item into "consumables"
+	"item_example_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
 	{
 		//========
 		// Unique
@@ -241,7 +275,7 @@
 			{
 				"ScriptFile"	"equipmentSystem.lua"
 				"Function"		"Mainhand"
-				"modifier"		"modifier_weapon_stack"
+				"modifier"		"modifier_main_hand"
 			}
 			// DONT TOUCH =====================================
 
@@ -258,7 +292,189 @@
 		"Modifiers"
 		{
 			// DONT TOUCH ===============================================
-			"modifier_weapon_stack"
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+			// DONT TOUCH ===============================================
+
+
+			// TOM
+			"modifier_example_damage_crit"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "50"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_example_crit_buff"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_example_crit_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200" 	// Is a percentage. 200 = 200%
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_example_crit_buff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Item Template: Off Hand TOM
+	//	
+	// Off Hand that gives +10 Armor and 30% chance to Block (Evade)
+	//=================================================================================================================
+	"item_example_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1054"							// TOM Use between 1053-2000, make sure ID isn't already in use.
+		"ItemCost"						"200"							// TOM Gold cost
+		"AbilityTextureName"			"item_example_off_hand"			// TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+
+		"OnEquip"														
+		{
+			// DONT TOUCH ======================================
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+			// DONT TOUCH =====================================
+
+
+			// TOM
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_example_armor_block"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			// DONT TOUCH ===============================================
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+			// DONT TOUCH ===============================================
+
+
+			// TOM
+			"modifier_example_armor_block"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"10"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"30"		// Block = Evasion		    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+
+	//=================================================================================================================
+	// Item Template: Two Hand TOM
+	//	
+	// Two Hand that gives +75 Damage and 15% chance to critically strike for 2x damage.
+	//=================================================================================================================
+	"item_example_two_hand" // TOM   Name NEEDS to have two_hand in the name. item_desolator_two_hand, item_skadi_two_hand, item_ak47_two_hand
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1054"							// TOM Use between 1053-2000, make sure ID isn't already in use.
+		"ItemCost"						"200"							// TOM Gold cost
+		"AbilityTextureName"			"item_example_two_hand"			// TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+
+		"OnEquip"														
+		{
+			// DONT TOUCH ======================================
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
+			// DONT TOUCH =====================================
+
+
+			// TOM
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_example_damage_crit"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			// DONT TOUCH ===============================================
+			"modifier_two_hand"
 			{
 				"IsHidden"		"0"
 
