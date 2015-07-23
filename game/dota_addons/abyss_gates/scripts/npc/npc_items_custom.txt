@@ -3,12 +3,12 @@
 	//===============================================
 	// Ascension Sword
 	//===============================================
-	"item_ascension_sword"
+	"item_ascension_sword_main_hand"
 	{
 		"ID"                            "1050"
 		"BaseClass"                     "item_datadriven"
 		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityTextureName"			"ascension_sword"
+		"AbilityTextureName"			"stone_axe"
 	
 		"ItemQuality"					"component"
 		"ItemCost"                      "40" 		
@@ -22,6 +22,12 @@
 				"Target" 			"CASTER"
 				"ModifierName"		"modifier_ascension_sword"
 			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_main_hand"
+				"Target" 		"CASTER"
+			}
 	
 		}
 		"OnUnequip"
@@ -30,6 +36,12 @@
 			{
 				"Target" 			"CASTER"
 				"ModifierName"		"modifier_ascension_sword"
+			}
+
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_main_hand"
+				"Target" 		"CASTER"
 			}
 	
 		}
@@ -67,14 +79,75 @@
 										"Type"			"DAMAGE_TYPE_MAGICAL"
 										"Damage"		"200"
 									}
-	 								}
+	 							}
 							}
 						}
 					}
 				}	
 			}
+
+
+			"modifier_main_hand"
+			{
+				"Passive"		"1"
+				"IsHidden"		"0"
+			}
 		}
 	}
+
+
+
+	"item_second_sword_main_hand"
+	{
+		"ID"                            "1051"								
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_stone_axe"
+	
+		"ItemQuality"					"component"
+		"ItemCost"                      "40" 		
+		"ItemShopTags"					"damage"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_weapon_stack"
+			}
+	
+		}
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_main_hand"
+				"Target" 		"CASTER"
+			}
+	
+		}
+		"Modifiers"
+		{
+			"modifier_weapon_stack"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	}
+
+
+		
 	//=================================================================================================================
 	// Potion of Healing
 	//=================================================================================================================
@@ -141,5 +214,113 @@
 				"heal_amount"				"600"
 			}
 		}
+	}
+
+
+
+	//=================================================================================================================
+	// Item Template: Main Hand TOM
+	//	
+	// Main Hand that gives +50 damage and 15% chance to critically strike for 2x damage
+	//=================================================================================================================
+	"item_example_main_hand" // TOM   game\dota_addons\abyss_gates\scripts\shops\abyss_gates_shops.txt   Place the item into "consumables"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1053"							// TOM Use between 1053-2000, make sure ID isn't already in use.
+		"ItemCost"						"200"							// TOM Gold cost
+		"AbilityTextureName"			"item_example_main_hand"		// TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+
+		"OnEquip"														
+		{
+			// DONT TOUCH ======================================
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_weapon_stack"
+			}
+			// DONT TOUCH =====================================
+
+
+			// TOM
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_example_damage_crit"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			// DONT TOUCH ===============================================
+			"modifier_weapon_stack"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+			// DONT TOUCH ===============================================
+
+
+			// TOM
+			"modifier_example_damage_crit"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "50"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_example_crit_buff"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_example_crit_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200" 	// Is a percentage. 200 = 200%
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_example_crit_buff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	}
 }

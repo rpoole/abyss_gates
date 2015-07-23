@@ -186,7 +186,6 @@ end
 
 function SpawnCreeps()
 	local point = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
-	local unit = CreateUnitByName("creature_boar", point, true, nil, nil, DOTA_TEAM_NEUTRALS)
 end
 
 function Abyss_Gates:PlayerSay( keys )
@@ -289,19 +288,47 @@ end
 
 -- An item was purchased by a player
 function Abyss_Gates:OnItemPurchased( keys )
-	--print ( '[ABYSS_GATES] OnItemPurchased' )
-	--PrintTable(keys)
+        --print ( '[ABYSS_GATES] OnItemPurchased' )
+        --PrintTable(keys)
+ 
+        -- The playerID of the hero who is buying something
+        local plyID = keys.PlayerID
+        local player = PlayerResource:GetPlayer(plyID)
+        local hero = player:GetAssignedHero()
+        if not plyID then return end
+ 
+        local itemName = keys.itemname
+        print(itemName)
+ 
+        -- The cost of the item purchased
+        local itemcost = keys.itemcost
+        print(itemcost)
+ 
+       	local modifierCount = hero:GetModifierStackCount("modifier_weapon_stack", ability)
+       	print(modifierCount)
 
-	-- The playerID of the hero who is buying something
-	local plyID = keys.PlayerID
-	if not plyID then return end
-
-	-- The name of the item purchased
-	local itemName = keys.itemname
-
-	-- The cost of the item purchased
-	local itemcost = keys.itemcost
-
+        if modifierCount > 1 then
+                local foundMainHandItem = false
+                for i=0,5 do
+                        local item = hero:GetItemInSlot(i)
+                        if item then
+                                local item_name = item:GetAbilityName()
+                                print(item_name)
+                                if foundMainHandItem and string.find(item_name, "main_hand") then
+                                        hero:SellItem(item)
+                                end
+ 
+                                if string.find(item_name, "main_hand") then
+                                        foundMainHandItem = true
+                                end
+                        end
+                end
+        end
+        --[[if hero:HasModifier("modifier_main_hand") then
+                if string.find(itemName, "main_hand") then
+                        hero:DropItemAtPosition(hero:GetAbsOrigin(), itemName)
+                end
+        end]]--
 end
 
 -- An ability was used by a player

@@ -1,0 +1,46 @@
+"item_second_sword_main_hand"
+	{
+		"ID"                            "1051"								
+		"BaseClass"                     "item_datadriven"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"item_stone_axe"
+	
+		"ItemQuality"					"component"
+		"ItemCost"                      "40" 		
+		"ItemShopTags"					"damage"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	
+		"OnEquip"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_weapon_stack"
+			}
+		}
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_weapon_stack"
+				"Target" 		"CASTER"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_weapon_stack"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+	}
