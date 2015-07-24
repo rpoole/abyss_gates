@@ -160,7 +160,7 @@ function Abyss_Gates:OnHeroInGame(hero)
     ShowGenericPopupToPlayer(hero.player, "#abyss_gates_instructions_title", "#abyss_gates_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 
 	-- This line for example will set the starting gold of every hero to 500 unreliable gold
-	hero:SetGold(500, false)
+	hero:SetGold(1000000, false)
 
 	-- These lines will create an item and add it to the player, effectively ensuring they start with the item
 	local item = CreateItem("item_example_item", hero, hero)
@@ -305,7 +305,7 @@ function Abyss_Gates:OnItemPurchased( keys )
     local mainHandCheck = hero:GetModifierStackCount("modifier_main_hand", ability)
     local offHandCheck = hero:GetModifierStackCount("modifier_off_hand", ability)
     local twoHandCheck = hero:GetModifierStackCount("modifier_two_hand", ability)
-    local chestCheck = hero:GetModifierStackCount("modifier_chest_armor", ability)
+    local chestCheck = hero:GetModifierStackCount("modifier_chest", ability)
     print(mainHandCheck)
     print(offHandCheck)
     print(twoHandCheck)
@@ -343,6 +343,25 @@ function Abyss_Gates:OnItemPurchased( keys )
  
                 if string.find(item_name, "off_hand") then
                     foundOffHandItem = true
+                end
+            end
+        end
+    end
+
+
+    if chestCheck > 1 then
+        local foundChestItem = false
+        for i=0,5 do
+            local item = hero:GetItemInSlot(i)
+            if item then
+                local item_name = item:GetAbilityName()
+                print(item_name)
+                if foundChestItem and string.find(item_name, "chest") then
+                    hero:SellItem(item)
+                end
+ 
+                if string.find(item_name, "chest") then
+                    foundChestItem = true
                 end
             end
         end

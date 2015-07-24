@@ -539,4 +539,1987 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	}
+
+
+
+	//=================================================================================================================
+        // Item: Ascension Sword
+        //     
+        // Main Hand that gives +45 damage and 10% chance to cast frost nova
+        //=================================================================================================================
+        "item_ascension_sword_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1054"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "7600"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_ascension_sword_main_hand"// TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+                // Scott check Frost Nova... probably doesn't work
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_example_damage_frost_nova"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+                "AbilitySpecial"
+                {
+                        "01"
+                        {
+                                "var_type"                      "FIELD_INTEGER"
+                                "%bonus_damage"                 "45"
+                        }
+                        "02"
+                        {
+                                "var_type"                      "FIELD_INTEGER"
+                                "%bonus_chance"         "10"
+                        }
+                        "03"
+                        {
+                                "var_type"                      "FIELD_INTEGER"
+                                "%radius"                       "200"
+                        }
+                        "04"
+                        {
+                                "var_type"                      "FIELD_INTEGER"
+                                "slow_movement_speed" "-30"
+                        }
+                        "05"
+                        {
+                                "var_type"                      "FIELD_INTEGER"
+                                "slow_attack_speed"             "-20"
+                        }
+                        "06"
+                                "var_type"                      "FIELD_INTEGER"
+                                "aoe_damage"            "200"
+                        "07"
+                        {
+                                "var_type"                      "FIELD_INTEGER"
+                                "Duration"                      "5"
+                        }
+ 
+                }
+ 
+                //Time===========================================
+                "AbilityDuration" "6"
+                //Time===========================================
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "1"
+                                "Attributes"    "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_example_damage_frost_nova"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "%bonus_damage"                                 
+                                }
+ 
+                                "OnAttackLanded"
+                                {
+                                        "Random"
+                                        {
+                                                "Chance"                        "%bonus_chance"
+                                                "OnSuccess"
+                                                {
+                                                        "ApplyModifier"
+                                                        {
+                                                                "ModifierName"  "modifier_example_frost_nova"
+                                                                "Target"                "Target"
+                                                                {
+                                                                        "Center"        "TARGET"
+                                                                        "Radius"        "%radius"
+                                                                        "Teams"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+                                                                        "Types"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+                                                                }
+                                                        }
+                                                        "Action"
+                                                        {
+                                                                "Damage"
+                                                                {
+                                                                "Type"          "DAMAGE_TYPE_MAGICAL"
+                                                                "Target"        "TARGET"
+                                                                "Damage"        "%aoe_damage"
+                                                                }
+                                                                "FireEffect"
+                                                                {
+                                                                "EffectName"            "particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+                                                                "EffectAttachType"      "follow_origin"
+                                                                "Target"       
+                                                                }
+                                                                "FireSound"
+                                                                {
+                                                                "EffectName"    "Ability.FrostNova"
+                                                                "Target"                "TARGET"
+                                                                }
+                                                }
+                                        }
+                                }
+                        }
+                        "modifier_example_frost_nova_slow"
+                        {
+                                "IsDebuff"              "1"
+ 
+                                "StatusEffectName"              "particles/status_fx/status_effect_frost_lich.vpcf"
+                                "StatusEffectPriority"  "10"
+ 
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "%slow_movement_speed"
+                                        "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"  "%slow_attack_speed"
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: War Claw
+        //     
+        // Main Hand that gives +80 damage and -5 armor on attack
+        //=================================================================================================================
+        "item_war_claw_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+                "ID"                                                    "1055"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "14000"                                                 // TOM Gold cost
+                "AbilityTextureName"                    "item_desolator"                                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        "AbilitySpecial"
+                        {
+                                "01"
+                                {
+                                        "var_type"                              "FIELD_INTEGER"
+                                        "bonus_damage"                  "80"
+                                }
+                                "02"
+                                {
+                                        "var_type"                              "FIELD_INTEGER"
+                                        "corruption_armor"              "-5"
+                                }
+                                "03"
+                                {
+                                        "var_type"                              "FIELD_FLOAT"
+                                        "corruption_duration"   "15.0"
+                                }
+                        }
+       
+                "Modifiers"
+                {
+                        "modifier_item_desolator_datadriven"
+                        {
+                                "Passive"                       "1"
+                                "IsHidden"                      "1"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"                                              "%bonus_damage"
+                                }
+                               
+                                "Orb"
+                                {
+                                        "Priority"                              "DOTA_ORB_PRIORITY_ITEM"
+                                        "ProjectileName"                "particles/items_fx/desolator_projectile.vpcf"
+                                        "CastAttack"                    "0"
+                                }
+ 
+                                "OnOrbImpact"
+                                {
+                                        "ApplyModifier"
+                                        {
+                                                "Target"                        "TARGET"
+                                                "ModifierName"          "modifier_item_desolator_datadriven_corruption"
+                                        }
+                                       
+                                        "FireSound"
+                                        {
+                                                "EffectName"            "Item_Desolator.Target"
+                                                "Target"                        "TARGET"
+                                        }
+                                }
+                        }
+                        "modifier_item_desolator_datadriven_corruption"
+                        {
+                                "Duration"                              "%corruption_duration"
+                                "Passive"                               "0"
+                                "IsHidden"                              "0"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"                "%corruption_armor"
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Moon Glaive
+        //     
+        // Main Hand that gives +100 damage and 20% attack speed
+        //=================================================================================================================
+        "item_moon_glaive_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1055"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "16000"                                                 // TOM Gold cost
+                "AbilityTextureName"                    "item_moonglaive_main_hand"             // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+                       
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+                        // TOM
+               
+                       
+                        "modifier_item_moon_glaive"
+                        {
+                                "Passive"                       "1"
+                                "IsHidden"                      "1"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"                      "100"
+                                        "MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"          "20"
+                                }
+                        }
+                       
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Serpent Sword
+        //     
+        // Main Hand that gives +160 damage and on hit slows enemies by 30% move speed and 33% attack speed.
+        //=================================================================================================================
+        "item_serpent_sword_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1056"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "200"                                                   // TOM Gold cost
+                "AbilityTextureName"                    "item_example_main_hand"                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_serpent_sword"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_serpent_sword"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "160"                                   
+                                }
+ 
+                                "OnAttackLanded"
+                                {
+                                        "ApplyModifier"
+                                                {
+                                                        "ModifierName"  "modifier_serpent_sword_debuff"
+                                                        "Target"                "CASTER"
+                                                }      
+                                }
+                        }
+ 
+                        "modifier_serpent_sword_debuff"
+                        {
+                                "IsHidden"                      "0"
+                                "IsBuff"                        "1"
+ 
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE"    "-33"
+                                        "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"  "-30"
+                                }
+ 
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+ 
+        //=================================================================================================================
+        // Item Template: Tome of Fire
+        //     
+        // Main Hand that gives +8 damage and lets caster cast: Meteo, Flame Breathe, and Fire Shield
+        //=================================================================================================================
+        "item_tome_of_fire_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1057"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "15000"                                                 // TOM Gold cost
+                "AbilityTextureName"                    "item_example_main_hand"                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+//Scott
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_tome_of_fire"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_tome_of_fire"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "8"                             
+                                }
+ 
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Tome of Ice //Scott
+ 
+        // Main Hand that gives +4 damage and lets caster cast: Blizzard and frost breathe.
+        //=================================================================================================================
+        "item_tome_of_ice_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1057"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "5000"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_example_main_hand"                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+//Scott
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_tome_of_ice"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_tome_of_ice"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "4"                             
+                                }
+ 
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Wand of Tranquility //Scott
+ 
+        // Main Hand that gives +8 damage and lets caster cast: dispel
+        //=================================================================================================================
+        "item_wand_of_tranquility_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1058"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "600"                                                   // TOM Gold cost
+                "AbilityTextureName"                    "item_example_main_hand"                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+//Scott
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_wand_of_tranquility"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_wand_of_tranqulity"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "8"                             
+                                }
+ 
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Skullhead Wand //Scott
+ 
+        // Main Hand that gives +8 damage and lets caster cast: Summon Skeletal Orc.
+        //=================================================================================================================
+        "item_skullhead_wand_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1059"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "2400"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_example_main_hand"                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+//Scott
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_skullhead_wand"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_skullhead_wand"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "4"                             
+                                }
+ 
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+ 
+        //=================================================================================================================
+        // Item Template: Wand of Restoration //Scott
+ 
+        // Main Hand that gives +8 damage and lets caster cast: Heal -- 600 HP to a hero, or 1200 to a summon
+        //=================================================================================================================
+        "item_wand_of_restoration_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1060"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "3200"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_example_main_hand"                // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+//Scott
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_wand_of_restoration"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_main_hand"
+                        {
+                                "IsHidden"                      "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_wand_of_restoration"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "4"                             
+                                }
+ 
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Pickaxe
+ 
+        // Main Hand that gives +8 damage
+        //=================================================================================================================
+        "item_pickaxe_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1061"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "80"                                                    // TOM Gold cost
+                "AbilityTextureName"                    "item_ogre_axe"                                 // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_pickaxe"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        "modifier_pickaxe"
+                        {
+                                "Passive"                       "1"
+                                "IsHidden"                      "1"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"              "8"
+                                }
+                        }
+                }
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Long Sword
+ 
+        // Main Hand that gives +16 damage
+        //=================================================================================================================
+        "item_long_sword_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1062"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "450"                                                   // TOM Gold cost
+                "AbilityTextureName"                    "item_broadsword"               // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_long_sword"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        "modifier_long_Sword"
+                        {
+                                "Passive"                       "1"
+                                "IsHidden"                      "1"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"              "16"
+                                }
+                        }
+                }
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Battle Hammer
+ 
+        // Main Hand that gives +28 damage and 15% Bash //Scott
+        //=================================================================================================================
+        "item_battle_hammer_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1063"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "1800"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_mithril_hammer"           // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_battle_hammer"
+                                "Target"                "CASTER"
+                        }
+                }
+                "Modifiers"
+                {
+                        "modifier_battle_hammer"
+                        {
+                                "Passive"                       "1"
+                                "IsHidden"                      "1"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"              "8"
+                                }
+                        }
+                }
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Battle Claws
+ 
+        // Main Hand that gives +45 damage
+        //=================================================================================================================
+        "item_battle_claws_main_hand" // TOM   Name NEEDS to have main_hand in the name. item_desolator_main_hand, item_skadi_main_hand, item_ak47_main_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1064"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "4600"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_blades_of_attack"         // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_main_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_battle_claws"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        "modifier_battle_claws"
+                        {
+                                "Passive"                       "1"
+                                "IsHidden"                      "1"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                               
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE"              "45"
+                                }
+                        }
+                }
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Off Hand TOM
+        //     
+        // Off Hand that gives +10 Armor and 30% chance to Block (Evade)
+        //=================================================================================================================
+        "item_example_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1054"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "200"                                                   // TOM Gold cost
+                "AbilityTextureName"                    "item_example_off_hand"                 // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_example_armor_block"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_example_armor_block"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "10"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "30"            // Block = Evasion                 
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+ 
+ 
+ 
+        //=================================================================================================================
+        // Item Template: Alistair Shield
+        //     
+        // Off Hand that gives +8 Armor and 34% chance to Block (Evade)
+        //=================================================================================================================
+        "item_alistair_shield_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1070"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "8500"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_buckler"                  // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_alistair_shield"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_alistair_shield"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "8"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "34"            // Block = Evasion                 
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Corog Shield
+        //     
+        // Off Hand that gives +2 Armor and 40% chance to Block (Evade)
+        //=================================================================================================================
+        "item_corog_shield_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1071"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "15000"                                                 // TOM Gold cost
+                "AbilityTextureName"                    "item_buckler"                  // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_corog_shield"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_corog_shield"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "2"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "40"            // Block = Evasion                 
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Storm Shield Thorns
+        //     
+        // Off Hand that gives +4 Armor and 6s spell shield, 50 damage thorns //Scott
+        //=================================================================================================================
+        "item_storm_shield_thorns_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1072"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "12000"                                                 // TOM Gold cost
+                "AbilityTextureName"                    "item_sphere"                   // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_storm_shield_thorns"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_storm_shield_thorns"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "4"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "34"            // Block = Evasion                 
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Gul'Dans Orb
+        //     
+        // Off Hand that gives +8 m/s, 20% chance to Block (Evade), 24% magic resists
+        //=================================================================================================================
+        "item_guldans_orb_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1073"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "6000"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_pers"                     // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_guldans_orb"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_guldans_orb"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "8"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"             "20"           // Block = Evasion               
+                                        "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "24"  
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Marichald Orb
+        //     
+        // Off Hand that gives +12.5 m/s, 28% chance to Block (Evade), 33% magic resists
+        //=================================================================================================================
+        "item_marichald_orb_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1074"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "10000"                                                 // TOM Gold cost
+                "AbilityTextureName"                    "item_ultimate_orb"                     // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_marichald_orb"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_marichald_orb"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "12.5"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"             "28"           // Block = Evasion               
+                                        "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "33"  
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Sirrus Orb
+        //     
+        // Off Hand that gives +7 m/s, 20% chance to Block (Evade), 20% magic resists
+        //=================================================================================================================
+        "item_sirrus_orb_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1075"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "2000"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_energy_booster"                   // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_sirrus_orb"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_sirrus_orb"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"          "7"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"             "20"           // Block = Evasion               
+                                        "MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS" "20"  
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Small Shield
+        //     
+        // Off Hand that gives 1 armor and 20% chance to Block (Evade)
+        //=================================================================================================================
+        "item_small_shield_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1076"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "160"                                                   // TOM Gold cost
+                "AbilityTextureName"                    "item_buckler"                  // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_small_shield"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_small_shield"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "1"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "20"            // Block = Evasion       
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Large Shield
+        //     
+        // Off Hand that gives 3 armor and 28% chance to Block (Evade)
+        //=================================================================================================================
+        "item_large_shield_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1077"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "850"                                                   // TOM Gold cost
+                "AbilityTextureName"                    "item_buckler"                  // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_large_shield"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_large_shield"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "3"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "28"            // Block = Evasion     
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+        //=================================================================================================================
+        // Item Template: Reinforced Shield
+        //     
+        // Off Hand that gives 5 armor and 32% chance to Block (Evade)
+        //=================================================================================================================
+        "item_reinforced_shield_off_hand" // TOM   Name NEEDS to have off_hand in the name. item_desolator_off_hand, item_skadi_off_hand, item_ak47_off_hand
+        {
+                //========
+                // Unique
+                //========
+ 
+               
+                "ID"                                                    "1077"                                                  // TOM Use between 1053-2000, make sure ID isn't already in use.
+                "ItemCost"                                              "2600"                                                  // TOM Gold cost
+                "AbilityTextureName"                    "item_buckler"                  // TOM game\dota_addons\abyss_gates\resource\flash3\images\items  for unique icons. Otherwise just use dota2 ones (item_desolator)
+ 
+                "OnEquip"                                                                                                              
+                {
+                        // DONT TOUCH ======================================
+                        "RunScript"
+                        {
+                                "ScriptFile"    "equipmentSystem.lua"
+                                "Function"              "Mainhand"
+                                "modifier"              "modifier_off_hand"
+                        }
+                        // DONT TOUCH =====================================
+ 
+ 
+                        // TOM
+                        "ApplyModifier"
+                        {
+                                "ModifierName"  "modifier_reinforced_shield"
+                                "Target"                "CASTER"
+                        }
+                }
+ 
+ 
+                "Modifiers"
+                {
+                        // DONT TOUCH ===============================================
+                        "modifier_off_hand"
+                        {
+                                "IsHidden"              "0"
+ 
+                                "Attributes"            "MODIFIER_ATTRIBUTE_MULTIPLE"
+                        }
+                        // DONT TOUCH ===============================================
+ 
+ 
+                        // TOM
+                        "modifier_reinforced_shield"
+                        {
+                                "Properties"
+                                {
+                                        "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"        "5"
+                                        "MODIFIER_PROPERTY_EVASION_CONSTANT"            "32"            // Block = Evasion     
+                                }
+                        }
+                }
+ 
+                //=========
+                // Generic
+                //=========
+ 
+                "ItemShopTags"                                  "damage"                                               
+                "ItemQuality"                                   "component"            
+                "BaseClass"                                             "item_datadriven"
+                "AbilityBehavior"                               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+                "ItemShareability"                              "ITEM_NOT_SHAREABLE"
+        }
+
+
+
+	//=================================================================================================================
+	// Accessory: Fury Gauntlets
+	//=================================================================================================================
+	"item_fury_gauntlets"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1100"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_blades_of_attack"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_fury_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_spirit_warrior_striking/spirit_stack.lua"
+				"Function"		"SpiritStack"
+				"modifier"		"modifier_spirit_charge"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_fury_gauntlets"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"12"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"16"			    
+				}
+			}
+
+			"modifier_spirit_charge"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5" 
+				}
+
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCooldown"				"20"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Mortred Amulet
+	//=================================================================================================================
+	"item_mortred_amulet"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1101"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_orb_of_venom"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_mortred_amulet"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_mortred_amulet"
+			{
+				"Passive"		"1"
+
+				"ThinkInterval"  "15.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"MortredAmulet"
+						"modifier"      "modifier_mortred_amulet"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"8"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"16"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Dark Elven Charm
+	//=================================================================================================================
+	"item_dark_elven_charm"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1102"							
+		"ItemCost"						"16000"							
+		"AbilityTextureName"			"item_dark_elven_charm"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_dark_elven_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_dark_elven_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_dark_elven_charm"
+			{
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"DarkElvenCharm"
+						"modifier"      "modifier_dark_elven_charm_buff"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"8"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"16"			    
+				}
+			}
+
+			"modifier_dark_elven_charm_buff"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "15" 
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_dark_elven_charm_crit_buff"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_dark_elven_charm_crit_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200" 	// Is a percentage. 200 = 200%
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_dark_elven_charm_crit_buff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
 }

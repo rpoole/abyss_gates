@@ -6620,6 +6620,143 @@
 	}
 
 
+	"ascension_sword"
+	{
+		"modifier_frost_nova"
+		{
+			"Passive"		"1"
+
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"			"10"
+					"OnSuccess"
+					{
+						"ActOnTargets"
+						{
+							"Target"
+							{
+								"Center"  	"TARGET"
+								"Radius" 	"200"
+								"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+								"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							}
+						
+							"Action"    
+							{
+								"Damage"
+								{
+									"Target"		"TARGET"
+									"Type"			"DAMAGE_TYPE_MAGICAL"
+									"Damage"		"200"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	"war_claws"
+	{
+		"modifier_war_claws"
+		{
+			"Passive"		"1"
+
+			"OnAttackLanded"
+			{
+				"ApplyModifier"
+				{
+					"ModifierName"	"modifier_war_claws_debuff"
+					"Target" 		"TARGET"
+					"Duration"		"5"
+				}
+			}
+		}
+
+		"modifier_war_claws_debuff"
+		{
+			"IsDebuff"			"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "-5"
+			}
+		}
+	}
+
+
+	"moon_glaive"
+	{
+		"modifier_moon_glaive"
+		{
+			"Passive"		"1"
+
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "20"
+			}
+		}
+	}
+
+
+	"serpent_blade"
+	{
+		"modifier_serpent_blade"
+		{
+			"Passive"		"1"
+
+			"OnAttackLanded"
+			{
+				"Random"
+				{
+					"Chance"			"30"
+					"OnSuccess"
+					{
+						"ApplyModifier"
+						{
+							"ModifierName"	"modifier_serpent_blade_debuff"
+							"Target" 		"TARGET"
+							"Duration"		"5"
+						}
+					}
+				}
+			}
+		}
+
+		"modifier_serpent_blade_debuff"
+		{
+			"IsDebuff"		"1"
+
+			"Properties"
+			{
+			    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-33" 
+			}
+		}
+	}
+
+	"storm_shield"
+	{
+		"modifier_storm_shield"
+		{
+			"Passive"		"1"
+
+			"OnAttacked"
+			{
+				"Damage"
+				{
+					"Target"		"TARGET"
+					"Type"			"DAMAGE_TYPE_MAGICAL"
+					"Damage"		"50"
+				}
+			}
+		}
+	}	
+
+
 
 
 
