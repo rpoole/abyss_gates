@@ -1,0 +1,380 @@
+	//=================================================================================================================
+	// Accessory: Fury Gauntlets
+	//=================================================================================================================
+	"item_fury_gauntlets"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1100"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_blades_of_attack"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_fury_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_spirit_warrior_striking/spirit_stack.lua"
+				"Function"		"SpiritStack"
+				"modifier"		"modifier_spirit_charge"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_fury_gauntlets"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"12"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"16"			    
+				}
+			}
+
+			"modifier_spirit_charge"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5" 
+				}
+
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCooldown"				"20"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Mortred Amulet
+	//=================================================================================================================
+	"item_mortred_amulet"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1101"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_orb_of_venom"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_mortred_amulet"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_mortred_amulet"
+			{
+				"Passive"		"1"
+
+				"ThinkInterval"  "15.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"MortredAmulet"
+						"modifier"      "modifier_mortred_amulet"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"8"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"16"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Dark Elven Charm
+	//=================================================================================================================
+	"item_dark_elven_charm"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1102"							
+		"ItemCost"						"16000"							
+		"AbilityTextureName"			"item_dark_elven_charm"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_dark_elven_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_dark_elven_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_dark_elven_charm"
+			{
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"DarkElvenCharm"
+						"modifier"      "modifier_dark_elven_charm_buff"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"8"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"16"			    
+				}
+			}
+
+			"modifier_dark_elven_charm_buff"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "15" 
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_dark_elven_charm_crit_buff"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_dark_elven_charm_crit_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200" 	// Is a percentage. 200 = 200%
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_dark_elven_charm_crit_buff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Cryptic Charm
+	//=================================================================================================================
+	"item_cryptic_charm"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1103"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_cryptic_charm"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_cryptic_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_cryptic_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_cryptic_charm"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"20"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"45"			    
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Ruby Heart
+	//=================================================================================================================
+	"item_ruby_heart"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1103"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_cryptic_charm"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"RubyHeart"
+				"modifier"		"modifier_ruby_heart"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ruby_heart"
+				"Target" 		"CASTER"
+			}
+
+
+		"Modifiers"
+		{
+			"modifier_ruby_heart"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"20"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"2"	    
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}

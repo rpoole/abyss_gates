@@ -41,3 +41,14 @@ function DarkElvenCharm ( event )
 		end
 	end
 end
+
+
+function RubyHeart ( event )
+	local caster = event.caster
+	local modifier = event.modifier
+	local ability = event.ability
+
+	if caster:GetUnitName() == "the_creature" then
+		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
+	end
+end
