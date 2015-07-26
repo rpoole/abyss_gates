@@ -2842,6 +2842,7 @@
         // Generic
         //----------------------------------------------------------------
         "Ability1"              "the_creature_devour"
+        "Ability2"              "the_creature_carrion_swarm"
         "HealthBarOffset"       "140"
         "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"

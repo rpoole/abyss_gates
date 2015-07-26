@@ -6674,6 +6674,58 @@
 		}
 	}
 
+
+	"the_creature_carrion_swarm"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"death_prophet_crypt_swarm"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"MaxLevel"						"1"
+
+		"AbilityCooldown"				"1.0"
+		"AbilityCastRange"				"1000"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"LinearProjectile"
+			{
+			    "Target"      	 "POINT"
+				"EffectName"	 "particles/units/heroes/hero_mirana/mirana_spell_arrow.vpcf"
+				"MoveSpeed"		 "1000"
+				"StartRadius"	 "200"
+				"StartPosition"  "attach_attack1"
+				"EndRadius"      "500"
+				"HasFrontalCone" "0"
+				"FixedDistance"  "1000"
+				"TargetTeams"	 "DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"TargetTypes"	 "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				"TargetFlags"	 "DOTA_UNIT_TARGET_FLAG_NONE"						
+			    "ProvidesVision" "0"
+			    "VisionRadius" 	 "0"
+			}
+		}
+
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"	"0"
+			"Damage"
+			{
+				"Target"		"TARGET"
+				"Type"			"DAMAGE_TYPE_MAGICAL"
+				"Damage"		"500"
+			}
+		}
+	}
+
+
 	"ascension_sword"
 	{
 		"modifier_frost_nova"
@@ -6809,6 +6861,9 @@
 			}
 		}
 	}
+
+
+
 
 
 

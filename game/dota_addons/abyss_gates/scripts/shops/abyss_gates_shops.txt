@@ -3,18 +3,11 @@
 	"consumables"
 	{
 		"item" "item_potion_of_healing"
-		"item" "item_ascension_sword_main_hand"
-		"item" "item_second_sword_main_hand"
 		"item" "item_example_main_hand"
 		"item" "item_example_off_hand"
-		"item" "item_example_chest"
-		"item" "item_fury_gauntlets"
-		"item" "item_mortred_amulet"
-		"item" "item_dark_elven_charm"
-		"item" "item_greater_potion_of_healing"
-		"item" "item_stone_of_healing"
-		"item" "item_potion_of_mana"
-		"item" "item_greater_potion_of_mana"
+		"item" "item_ascension_sword_main_hand"
+		"item" "item_war_claws_main_hand"
+		"item" "item_ring_of_the_blessed"
 	}
 
 	"attributes"
@@ -30,12 +23,12 @@
 		"item" "item_bracers_of_triumph"
 	}
 
-	"Ugor's Advanced Weaponsmithing"
+	"armaments"  // "Ugor's Advanced Weaponsmithing"
 	{
-		"item" "item_ascension_sword"
-		"item" "item_war_claws"
-		"item" "item_moon_glaive"
-		"item" "item_serpent_blade"
+		"item" "item_ascension_sword_main_hand"
+		"item" "item_war_claws_main_hand"
+		"item" "item_moon_glaive_main_hand"
+		"item" "item_serpent_blade_main_hand"
 		"item" "item_kheragian_axe"
 		"item" "item_warhammer"
 		"item" "item_celestial_blade"

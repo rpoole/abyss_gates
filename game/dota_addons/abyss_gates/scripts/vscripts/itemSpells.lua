@@ -52,3 +52,30 @@ function RubyHeart ( event )
 		ability:ApplyDataDrivenModifier(caster, caster, modifier, {})
 	end
 end
+
+
+function attributeCheck ( event )
+	local caster = event.caster
+	print(caster)
+	local ability = event.ability
+	print(ability)
+	local heroStrength = caster:GetStrength()
+	local heroAgility = caster:GetAgility()
+	local heroIntellect = caster:GetIntellect()
+	local strengthRequirement = event.strengthRequired
+	local agilityRequirement = event.agilityRequired
+	local intellectRequirement = event.intellectRequired
+
+	if ability then
+		if heroStrength < strengthRequirement then
+			caster:DropItemAtPosition(caster:GetAbsOrigin(), ability)
+		end
+	end
+end
+
+
+function RingOfTheBlessed ( event )
+	local caster = event.caster
+
+	caster:GiveMana(10)
+end

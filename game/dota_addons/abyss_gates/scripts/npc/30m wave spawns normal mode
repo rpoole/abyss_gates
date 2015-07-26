@@ -117,3 +117,36 @@
 29:12		8 felhounds 4 big felhounds
 29:48		8 sludges
 30:00		8 sludges 2 big sludge
+
+
+
+
+
+
+HOW TO
+
+Open: 	abyss_gates.lua
+		npc_units_custom.txt
+
+Find:	Abyss_Gates:OnGameInProgress()
+
+Edit:	Timers:CreateTimer(236, function()			
+			WaveThreeRoundEight()
+		end)
+
+
+		Replace 236 with the game time in seconds. 236 = 3:56
+		Replace WaveThreeRoundEight with the appropriate numbers.
+
+
+Write:	function WaveThreeRoundEight()
+			local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+			local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+			local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+			local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+		end
+
+		Replace WaveThreeRoundEight with the appropriate numbers.
+		Replace "creature_boar" with the name of this rounds unit. Unit names can be found in npc_units_custom.txt
+		One line = one unit
+

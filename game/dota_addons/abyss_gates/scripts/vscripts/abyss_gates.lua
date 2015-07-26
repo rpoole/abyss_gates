@@ -175,17 +175,103 @@ end
 function Abyss_Gates:OnGameInProgress()
 	--print("[ABYSS_GATES] The game has officially begun")
 
-	Timers:CreateTimer(5, function() -- Start this timer 30 game-time seconds later
+	Timers:CreateTimer(12, function() -- Start this timer 30 game-time seconds later
 		--print("This function is called 30 seconds after the game begins, and every 30 seconds thereafter")
 
-		SpawnCreeps()
-		return 30.0 -- Rerun this timer every 30 game-time seconds
+		WaveOneRoundOne()
+	end)
+
+	Timers:CreateTimer(22, function()
+		WaveOneRoundTwo()
+	end)
+
+	Timers:CreateTimer(32, function()
+		WaveOneRoundThree()
+	end)
+
+	Timers:CreateTimer(42, function()
+		WaveOneRoundFour()
+	end)
+
+	Timers:CreateTimer(52, function()
+		WaveOneRoundFive()
+	end)
+
+	Timers:CreateTimer(62, function()
+		WaveOneRoundSix()
+	end)
+
+	Timers:CreateTimer(100, function()
+		WaveTwoRoundOne()
+	end)
+
+	Timers:CreateTimer(110, function()
+		WaveTwoRoundTwo()
+	end)
+
+	Timers:CreateTimer(120, function()
+		WaveTwoRoundThree()
+	end)
+
+	Timers:CreateTimer(130, function()
+		WaveTwoRoundFour()
+	end)
+
+	Timers:CreateTimer(166, function()
+		WaveThreeRoundOne()
+	end)
+
+	Timers:CreateTimer(176, function()
+		WaveThreeRoundTwo()
+	end)
+
+	Timers:CreateTimer(186, function()
+		WaveThreeRoundThree()
+	end)
+
+	Timers:CreateTimer(196, function()
+		WaveThreeRoundFour()
+	end)
+
+	Timers:CreateTimer(206, function()
+		WaveThreeRoundFive()
+	end)
+
+	Timers:CreateTimer(216, function()
+		WaveThreeRoundSix()
+	end)
+
+	Timers:CreateTimer(226, function()
+		WaveThreeRoundSeven()
+	end)
+
+	Timers:CreateTimer(236, function()
+		WaveThreeRoundEight()
 	end)
 end
 
 
 function SpawnCreeps()
 	local point = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+end
+
+function WaveOneRoundOne()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
 end
 
 function Abyss_Gates:PlayerSay( keys )
