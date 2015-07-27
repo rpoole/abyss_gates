@@ -7,6 +7,11 @@
 		"item" "item_example_off_hand"
 		"item" "item_ascension_sword_main_hand"
 		"item" "item_war_claws_main_hand"
+		"item" "item_moon_glaive_main_hand"
+		"item" "item_serpent_blade_main_hand"
+		"item" "item_pickaxe_main_hand"
+		"item" "item_long_sword_main_hand"
+		"item" "item_battle_hammer_main_hand"
 		"item" "item_ring_of_the_blessed"
 	}
 

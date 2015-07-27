@@ -433,7 +433,7 @@
 		
 		"ID"							"1057"							
 		"ItemCost"						"7600"							
-		"AbilityTextureName"			"item_sange"
+		"AbilityTextureName"			"item_ascension_sword"
 
 		"OnEquip"														
 		{
@@ -444,8 +444,26 @@
 				"modifier"		"modifier_main_hand"
 			}
 
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"28"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
 			
 			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ascension_sword"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
 			{
 				"ModifierName"	"modifier_ascension_sword"
 				"Target" 		"CASTER"
@@ -546,7 +564,7 @@
 		
 		"ID"							"1058"							
 		"ItemCost"						"14000"							
-		"AbilityTextureName"			"item_blades_of_attack"
+		"AbilityTextureName"			"item_war_claws"
 
 		"OnEquip"														
 		{
@@ -651,7 +669,7 @@
 		
 		"ID"							"1057"							
 		"ItemCost"						"14000"							
-		"AbilityTextureName"			"luna_moon_glaive"
+		"AbilityTextureName"			"item_moon_glaive"
 
 		"OnEquip"														
 		{
@@ -738,7 +756,7 @@
 		
 		"ID"							"1060"							
 		"ItemCost"						"23000"							
-		"AbilityTextureName"			"item_yasha"
+		"AbilityTextureName"			"item_serpent_blade"
 
 		"OnEquip"														
 		{
@@ -839,6 +857,290 @@
 
 
 	//=================================================================================================================
+	// Main Hand: Pickaxe
+	//=================================================================================================================
+	"item_pickaxe_main_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1061"							
+		"ItemCost"						"80"							
+		"AbilityTextureName"			"item_pickaxe"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"0"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_pickaxe"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_pickaxe"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_pickaxe"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"8"
+				}
+			}
+			
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Main Hand: Long Sword
+	//=================================================================================================================
+	"item_long_sword_main_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1062"							
+		"ItemCost"						"450"							
+		"AbilityTextureName"			"item_long_sword"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"8"
+						"agilityRequired"		"0"
+						"intellectRequired"		"0"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_long_sword"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_long_sword"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_long_sword"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"16"
+				}
+			}
+			
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Main Hand: Battle Hammer
+	//=================================================================================================================
+	"item_battle_hammer_main_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1063"							
+		"ItemCost"						"1800"							
+		"AbilityTextureName"			"item_battle_hammer"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"13"
+						"agilityRequired"		"0"
+						"intellectRequired"		"0"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_battle_hammer"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_battle_hammer"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_battle_hammer"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"28"
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_battle_hammer_bash"
+								"Target" 		"TARGET"
+								"Duration"		"1.5"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_battle_hammer_bash"
+			{
+				"IsDebuff"		"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}			
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
 	// Two Hand: Kheragian Axe
 	//=================================================================================================================
 	"item_kheragian_axe_two_hand"
@@ -850,7 +1152,7 @@
 		
 		"ID"							"1061"							
 		"ItemCost"						"12500"							
-		"AbilityTextureName"			"item_ogre_club"
+		"AbilityTextureName"			"item_kheragian_axe"
 
 		"OnEquip"														
 		{
@@ -970,7 +1272,7 @@
 		
 		"ID"							"1062"							
 		"ItemCost"						"18000"							
-		"AbilityTextureName"			"item_mithril_hammer"
+		"AbilityTextureName"			"item_warhammer"
 
 		"OnEquip"														
 		{
@@ -1022,6 +1324,30 @@
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "160"				    
 				}
 
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_warhammer_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"5"
+					}
+
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_warhammer_bash"
+								"Target" 		"TARGET"
+								"Duration"		"1.5"
+							}
+						}
+					}
+				}
+
 				"OnAttackStart"
 				{
 					"Random"
@@ -1061,6 +1387,26 @@
 				}
 			}
 
+			"modifier_warhammer_bash"
+			{
+				"IsDebuff"		"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_warhammer_debuff"
+			{
+				"IsDebuff"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "-5"
+				}
+			}
+
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
@@ -1079,6 +1425,1626 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	}
+
+
+	//=================================================================================================================
+	// Two Hand: Celestial Blade
+	//=================================================================================================================
+	"item_celestial_blade_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1063"							
+		"ItemCost"						"20000"							
+		"AbilityTextureName"			"item_celestial_blade"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"40"
+						"agilityRequired"		"30"
+						"intellectRequired"		"0"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_celestial_blade"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_celestial_blade"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_celestial_blade"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "300"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_celestial_blade_crit"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_celestial_blade_crit"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_celestial_blade_crit"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Two Hand: War Fork
+	//=================================================================================================================
+	"item_war_fork_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1064"							
+		"ItemCost"						"30000"							
+		"AbilityTextureName"			"item_javelin"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"40"
+						"agilityRequired"		"24"
+						"intellectRequired"		"0"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_war_fork"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_war_fork"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_war_fork"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "360"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_war_fork_crit"
+								"Target" 		"CASTER"
+							}
+
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_war_fork_debuff"
+								"Target" 		"TARGET"
+								"Duration"		"5"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_war_fork_crit"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_war_fork_crit"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+
+			"modifier_war_fork_debuff"
+			{
+				"IsDebuff"		"1"
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-30" 
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Two Hand: Erament Staff
+	//=================================================================================================================
+	"item_erament_staff_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1066"							
+		"ItemCost"						"11000"							
+		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityCooldown"				"30"
+		"AbilityManaCost"				"100"
+
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"600"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"EramentStaff"
+					}
+				}
+			}
+		}
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"22"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_erament_staff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_erament_staff"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_erament_staff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"				    
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Two Hand: Widow Staff
+	//=================================================================================================================
+	"item_widow_staff_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1067"							
+		"ItemCost"						"12000"							
+		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"80"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_widow_staff_debuff"
+				"Target" 		"TARGET"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"24"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_erament_staff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_erament_staff"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_erament_staff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "65"				    
+				}
+			}
+
+			"modifier_erament_staff_debuff"
+			{
+				"IsDebuff"		"1"
+
+				"ThinkInterval"  "0.25"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"20"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_ROOTED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Two Hand: Icecrown Staff
+	//=================================================================================================================
+	"item_icecrown_staff_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1068"							
+		"ItemCost"						"23000"							
+		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"200"
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_icecrown_staff_buff"
+				"Target" 		"TARGET"
+				"Duration"		"60"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"38"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_icecrown_staff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_icecrown_staff"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_icecrown_staff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "100"				    
+				}
+			}
+
+			"modifier_icecrown_staff_buff"
+			{
+				"IsBuff"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" 		"10"
+				}
+
+				"OnAttacked"
+				{
+					"Random"
+					{
+						"Chance"			"10"
+						"OnSuccess"
+						{
+							"TrackingProjectile"
+							{
+								"Target"           	"TARGET"
+								"EffectName"		"particles/items2_fx/skadi_projectile.vpcf"
+								"Dodgeable"			"0"
+								"ProvidesVision"	"0"
+								"VisionRadius"		"0"
+								"MoveSpeed"        	"1000"
+								"SourceAttachment"	"DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+							}
+
+							"OnProjectileHitUnit"
+							{
+								"DeleteOnHit"	"1"
+								"ApplyModifier"
+								{
+									"ModifierName"	"modifier_icecrown_staff_debuff"
+									"Target" 		"TARGET"
+									"Duration"		"4"
+								}
+							}
+						}
+					}
+				}
+			}
+
+			"modifier_icecrown_staff_debuff"
+			{
+				"IsDebuff"		"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_FROZEN"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Two Hand: Marrenwood Staff
+	//=================================================================================================================
+	"item_marrenwood_staff_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1069"							
+		"ItemCost"						"80"							
+		"AbilityTextureName"			"item_quarterstaff"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"0"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_marrenwood_staff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_marrenwood_staff"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_marrenwood_staff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 	"8"		
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"3"		    
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Two Hand: Mesa Staff
+	//=================================================================================================================
+	"item_mesa_staff_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1070"							
+		"ItemCost"						"2250"							
+		"AbilityTextureName"			"item_quarterstaff"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"16"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_mesa_staff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_mesa_staff"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_mesa_staff"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 	"28"		
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"5"		    
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Two Hand: Staff of Perseus
+	//=================================================================================================================
+	"item_staff_of_perseus_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1071"							
+		"ItemCost"						"4800"							
+		"AbilityTextureName"			"item_quarterstaff"
+
+		"OnEquip"														
+		{
+			"DelayedAction"
+			{
+				"Delay"     "0.1"
+				"Action"    
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"equipmentSystem.lua"
+						"Function"		"Mainhand"
+						"modifier"		"modifier_main_hand"
+					}
+
+					"RunScript"
+					{
+						"ScriptFile"			"itemSpells.lua"
+						"Function"				"attributeCheck"
+						"strengthRequired"		"0"
+						"agilityRequired"		"0"
+						"intellectRequired"		"20"
+					}
+					
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_staff_of_perseus"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_staff_of_perseus"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_staff_of_perseus"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 	"40"		
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"		"8"		    
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Off Hand: Alistair Shield 
+	//=================================================================================================================
+	"item_alistair_shield_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1080"							
+		"ItemCost"						"8500"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"26"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_alistair_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_alistair_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_alistair_shield"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"8"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"34"		    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Off Hand: Corog Shield 
+	//=================================================================================================================
+	"item_corog_shield_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1081"							
+		"ItemCost"						"15000"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"38"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_corog_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_corog_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_corog_shield"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"2"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"		"40"		    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Off Hand: Storm Shield 
+	//=================================================================================================================
+	"item_storm_shield_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1082"							
+		"ItemCost"						"12000"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"30"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_storm_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_storm_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_storm_shield"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"4"		    
+				}
+
+				"OnAttacked"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"50"
+					}
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Off Hand: Gul'Dans Orb
+	//=================================================================================================================
+	"item_guldans_orb_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1083"							
+		"ItemCost"						"6000"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"30"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_guldans_orb"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_guldans_orb"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_guldans_orb"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"8"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"20"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"24"    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Off Hand: Marichald Orb
+	//=================================================================================================================
+	"item_marichald_orb_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1084"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"40"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_marichald_orb"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_marichald_orb"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_marichald_orb"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"13"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"28"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"33"    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Off Hand: Sirrus Orb
+	//=================================================================================================================
+	"item_sirrus_orb_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1085"							
+		"ItemCost"						"2000"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"22"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_sirrus_orb"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_sirrus_orb"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_sirrus_orb"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MANA_REGEN_CONSTANT"			"7"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"20"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"20"    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Off Hand: Small Shield
+	//=================================================================================================================
+	"item_small_shield_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1086"							
+		"ItemCost"						"160"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"6"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_small_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_small_shield"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"20"  
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Off Hand: Large Shield
+	//=================================================================================================================
+	"item_large_shield_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1087"							
+		"ItemCost"						"160"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"11"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_large_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_large_shield"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"28"  
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Off Hand: Reinforced Shield
+	//=================================================================================================================
+	"item_reinforced_shield_off_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1087"							
+		"ItemCost"						"2600"							
+		"AbilityTextureName"			"item_example_off_hand"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_off_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"18"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_reinforced_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_reinforced_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_off_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+
+			"modifier_reinforced_shield"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"32"  
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
 
 
 
@@ -1139,4 +3105,8 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
+
+
+
+
 }

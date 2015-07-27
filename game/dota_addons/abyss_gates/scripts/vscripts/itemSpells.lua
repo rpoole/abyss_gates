@@ -79,3 +79,12 @@ function RingOfTheBlessed ( event )
 
 	caster:GiveMana(10)
 end
+
+
+function EramentStaff ( keys )
+	local caster = keys.caster
+	local target = keys.target
+
+	target:Heal(300, caster)
+	target:GiveMana(220)
+end
