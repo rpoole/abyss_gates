@@ -2214,6 +2214,7 @@
 						"EffectName"		"particles/bleed_earth2.vpcf"
 						"EffectAttachType"	"follow_origin"
 						"Target"			"TARGET"
+						"EffectRadius"		"%radius"
 					}
 
 					"AttachEffect"
@@ -2221,6 +2222,7 @@
 						"EffectName"        "particles/bleed_earth.vpcf"
 						"EffectAttachType"  "follow_origin"
 						"Target"            "TARGET"
+						"EffectRadius"		"%radius"
 					}
 				}
 			}
@@ -2275,8 +2277,8 @@
 		
 		"precache"
 		{
-			"particle"  "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare.vpcf"
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_skywrath_mage.vsndevts"
+			"particle"  "particles/econ/events/ti4/teleport_start_l_ti4.vpcf"
+			"particle"  "particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
 		}
 
 		// Casting
@@ -2330,11 +2332,22 @@
 			}
 
 			"FireEffect"
+			{
+				"EffectName"        "particles/econ/events/ti4/teleport_start_l_ti4.vpcf"
+				"EffectAttachType"  "world_origin"
+				"TargetPoint"       "POINT"
+			}
+
+			"FireEffect"
+			{
+				"TargetPoint"			"POINT"
+				"EffectName"			"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+				"EffectAttachType"		"world_origin"
+				"ControlPoints"
 				{
-					"EffectName"        "particles/units/heroes/hero_skywrath_mage/skywrath_mage_mystic_flare.vpcf"
-					"EffectAttachType"  "world_origin"
-					"Target"            "POINT"
+					"01"				"%radius 2 %radius*2"
 				}
+			}
 		}
 	}
 
@@ -2347,7 +2360,7 @@
 		// General
 		//-------------------------------------------------------------------------------------------------------------
 		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"skeleton_king_vampiric_aura"
 		"MaxLevel"						"10"
 
@@ -2392,146 +2405,23 @@
 		
 		"OnSpellStart"
 		{
-			"Random"
+			"RunScript"
 			{
-				"Chance"			"%archer_chance"
-				"OnSuccess"
-				{
-					"Random"
-					{
-						"Chance"			"%burning_chance"
-						"OnSuccess"
-						{
-							"SpawnUnit"
-							{
-								"UnitName"		"undead_burning_skeleton_archer"
-								"Target" 		"CASTER"
-								"Duration"		"%duration"
-								"UnitCount"		"1"
-								"UnitLimit"		"%max_skeletons"
-								"GrantsGold"	"1"
-								"GrantsXP"		"1"
-								"SpawnRadius"	"10"
-								"OnSpawn"
-								{
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_phased"
-										"Target"		"TARGET"
-										"Duration"		"0.03"
-									}
-
-									"RunScript"
-									{
-										"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
-										"Function"		"SetOwner"
-									}
-								}
-							}
-						}
-						"OnFailure"
-						{
-							"SpawnUnit"
-							{
-								"UnitName"		"undead_skeleton_archer"
-								"Target" 		"CASTER"
-								"Duration"		"%duration"
-								"UnitCount"		"1"
-								"UnitLimit"		"%max_skeletons"
-								"GrantsGold"	"1"
-								"GrantsXP"		"1"
-								"SpawnRadius"	"10"
-								"OnSpawn"
-								{
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_phased"
-										"Target"		"TARGET"
-										"Duration"		"0.03"
-									}
-
-									"RunScript"
-									{
-										"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
-										"Function"		"SetOwner"
-									}
-								}
-							}
-						}
-					}
-				}
-				"OnFailure"
-				{
-					"Random"
-					{
-						"Chance"			"%burning_chance"
-						"OnSuccess"
-						{
-							"SpawnUnit"
-							{
-								"UnitName"		"undead_burning_skeleton_warrior"
-								"Target" 		"CASTER"
-								"Duration"		"%duration"
-								"UnitCount"		"1"
-								"UnitLimit"		"%max_skeletons"
-								"GrantsGold"	"1"
-								"GrantsXP"		"1"
-								"SpawnRadius"	"10"
-								"OnSpawn"
-								{
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_phased"
-										"Target"		"TARGET"
-										"Duration"		"0.03"
-									}
-
-									"RunScript"
-									{
-										"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
-										"Function"		"SetOwner"
-									}
-								}
-							}
-						}
-						"OnFailure"
-						{
-							"SpawnUnit"
-							{
-								"UnitName"		"undead_skeleton_warrior"
-								"Target" 		"CASTER"
-								"Duration"		"%duration"
-								"UnitCount"		"1"
-								"UnitLimit"		"%max_skeletons"
-								"GrantsGold"	"1"
-								"GrantsXP"		"1"
-								"SpawnRadius"	"10"
-								"OnSpawn"
-								{
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_phased"
-										"Target"		"TARGET"
-										"Duration"		"0.03"
-									}
-
-									"RunScript"
-									{
-										"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
-										"Function"		"SetOwner"
-									}
-								}
-							}
-						}
-					}
-				}
+				"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+				"Function"		"SummonSkeleton"
+				"modifier"		"modifier_skeleton_count"
 			}
 		}
-		
 
 		"Modifiers"
 		{
+			"modifier_skeleton_count"
+			{
+				"IsHidden"		"0"
+				"Passive"		"1"
 
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+			}
 		}
 	}
 
@@ -2647,7 +2537,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"damage_multiplier"	"25 28 31 34 37 40 43 46"
+				"damage_multiplier"	"0.25 0.28 0.31 0.34 0.37 0.40 0.43 0.46"
 			}
 		}
 
@@ -2673,136 +2563,30 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityTextureName"			"skeleton_king_vampiric_aura"
+		"MaxLevel"						"8"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"0"
+		"AbilityManaCost"				"80"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_skeletons"			"50"
-			}
-
-			"02"
-			{
-				"var_type"			"FIELD_FLOAT"
-				"fire_chance"			"33"
-			}
-
-			"03"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"duration"				"999"
-			}
-
-			"04"
-			{
-				"var_type"			"FIELD_INTEGER"
-				"ice_chance"			"50"	
-			}
+				"max_skeletons"		"1 2 3 4 5 6 7 8"
+			}		
 		}
 
 		
 		"OnSpellStart"
 		{
-			"Random"
+			"RunScript"
 			{
-				"Chance"			"%fire_chance"
-				"OnSuccess"
-				{
-					"SpawnUnit"
-					{
-						"UnitName"		"undead_skeleton_warrior"
-						"Target" 		"CASTER"
-						"Duration"		"%duration"
-						"UnitCount"		"1"
-						"UnitLimit"		"%max_skeletons"
-						"GrantsGold"	"1"
-						"GrantsXP"		"1"
-						"SpawnRadius"	"10"
-						"OnSpawn"
-						{
-							"ApplyModifier"
-							{
-								"ModifierName"	"modifier_phased"
-								"Target"		"TARGET"
-								"Duration"		"0.03"
-							}
-						}
-					}
-				}
-				"OnFailure"
-				{
-					"Random"
-					{
-						"Chance"			"%ice_chance"
-						"OnSuccess"
-						{
-							"SpawnUnit"
-							{
-								"UnitName"		"undead_skeleton_warrior"
-								"Target" 		"CASTER"
-								"Duration"		"%duration"
-								"UnitCount"		"1"
-								"UnitLimit"		"%max_skeletons"
-								"GrantsGold"	"1"
-								"GrantsXP"		"1"
-								"SpawnRadius"	"10"
-								"OnSpawn"
-								{
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_phased"
-										"Target"		"TARGET"
-										"Duration"		"0.03"
-									}
-
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_burning_success"
-										"Target" 		"TARGET"
-										"Duration"		"10"
-									}
-								}
-							}
-						}
-
-						"OnFailure"
-						{
-							"SpawnUnit"
-							{
-								"UnitName"		"undead_skeleton_warrior"
-								"Target" 		"CASTER"
-								"Duration"		"%duration"
-								"UnitCount"		"1"
-								"UnitLimit"		"%max_skeletons"
-								"GrantsGold"	"1"
-								"GrantsXP"		"1"
-								"SpawnRadius"	"10"
-								"OnSpawn"
-								{
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_phased"
-										"Target"		"TARGET"
-										"Duration"		"0.03"
-									}
-
-									"ApplyModifier"
-									{
-										"ModifierName"	"modifier_archer_success"
-										"Target" 		"TARGET"
-										"Duration"		"10"
-									}
-								}
-							}
-						}
-					}	
-				}
+				"ScriptFile"	"heroes/hero_grim_magus_demonology/raise_skeleton.lua"
+				"Function"		"SummonMage"
+				"modifier"		"modifier_skeleton_mage_count"
 			}
 		}
 
@@ -2810,32 +2594,12 @@
 
 		"Modifiers"
 		{
-			"modifier_burning_success"
+			"modifier_skeleton_mage_count"
 			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsBuff"			"1"
+				"Passive"	"1"
+				"IsHidden"	"0"
 
-				"States"
-				{
-					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-				
-				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
-				"EffectAttachType"  "follow_overhead"
-			}
-
-			"modifier_archer_success"
-			{
-				"IsBuff"			"1"
-
-				"States"
-				{
-					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
-				}
-
-				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
-				"EffectAttachType"	"follow_overhead"
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
 			}
 		}
 	}
@@ -2881,7 +2645,7 @@
 				"Target" 		"POINT"
 				"Duration"		"%duration"
 				"UnitCount"		"1"
-				"UnitLimit"		"10"
+				"UnitLimit"		"1"
 				"GrantsGold"	"0"
 				"GrantsXP"		"0"
 				"SpawnRadius"	"10"
@@ -2937,12 +2701,13 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"rubick_null_field"
-		"AOERadius"						"600"
+		"AOERadius"						"100 150 200 250 300 350 400 450 500 550"
+		"MaxLevel"						"10"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"28 30 32 34 36 38 40 42 44 46 48"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
 
@@ -2951,7 +2716,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"600"
+				"radius"			"100 150 200 250 300 350 400 450 500 550"
 			}
 
 			"02"
@@ -2963,7 +2728,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"60"
+				"duration"			"30"
 			}
 		}
 
@@ -2987,6 +2752,30 @@
 						"ModifierName"	"modifier_fear_debuff"
 						"Target" 		"TARGET"
 						"Duration"		"%duration"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_amplify_damage_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_life_tap_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_mana_rip_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_taint_resistance_debuff"
+						"Target" 		"TARGET"
 					}
 				}
 			}
@@ -3026,12 +2815,13 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"slardar_amplify_damage"
-		"AOERadius"						"300"
+		"AOERadius"						"100 150 200 250 300 350 400 450 500 550"
+		"MaxLevel"						"10"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"120 130 140 150 160 170 180 190 200 210"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
 
@@ -3040,19 +2830,19 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
+				"radius"			"100 150 200 250 300 350 400 450 500 550"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"amplify_damage"	"100"
+				"amplify_damage"	"160"
 			}
 
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"60"
+				"duration"			"30"
 			}
 		}
 
@@ -3068,14 +2858,38 @@
 					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
 					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				}
-			
+		
 				"Action"    
 				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_fear_debuff"
+						"Target" 		"TARGET"
+					}
+
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_amplify_damage_debuff"
 						"Target" 		"TARGET"
 						"Duration"		"%duration"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_life_tap_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_mana_rip_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_taint_resistance_debuff"
+						"Target" 		"TARGET"
 					}
 				}
 			}
@@ -3092,7 +2906,7 @@
 
 				"Properties"
 				{
-					"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "%amplify_damage"
+					"MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE" "%amplify_damage"
 				}
 
 				"AttachEffect"
@@ -3115,12 +2929,13 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"undying_soul_rip"
-		"AOERadius"						"300"
+		"AOERadius"						"100 150 200 250 300 350 400 450"
+		"MaxLevel"						"8"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"100 105 110 115 120 125 130 135"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
 
@@ -3129,19 +2944,19 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
+				"radius"			"100 150 200 250 300 350 400 450"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_hp_leech"		"20"
+				"max_hp_leech"		"25"
 			}
 
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"60"
+				"duration"			"30"
 			}
 		}
 
@@ -3160,11 +2975,35 @@
 			
 				"Action"    
 				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_fear_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_amplify_damage_debuff"
+						"Target" 		"TARGET"
+					}
+
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_life_tap_debuff"
 						"Target" 		"TARGET"
 						"Duration"		"%duration"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_mana_rip_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_taint_resistance_debuff"
+						"Target" 		"TARGET"
 					}
 				}
 			}
@@ -3204,12 +3043,13 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
-		"AOERadius"						"300"
+		"AOERadius"						"200 250 300 350 400 450 500 550"
+		"MaxLevel"						"8"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1"
-		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"100 110 120 130 140 150 160 170"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.3"
 
@@ -3218,13 +3058,13 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"300"
+				"radius"			"200 250 300 350 400 450 500 550"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"max_hp_leech"		"20"
+				"max_hp_leech"		"5"
 			}
 
 			"03"
@@ -3249,11 +3089,35 @@
 			
 				"Action"    
 				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_fear_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_amplify_damage_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_life_tap_debuff"
+						"Target" 		"TARGET"
+					}
+
 					"ApplyModifier"
 					{
 						"ModifierName"	"modifier_mana_rip_debuff"
 						"Target" 		"TARGET"
 						"Duration"		"%duration"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_taint_resistance_debuff"
+						"Target" 		"TARGET"
 					}
 				}
 			}
@@ -3284,6 +3148,114 @@
 
 
 	//=================================================================================================================
+	// Grim Magus: Affliction Tier 5: Taint Resistance
+	//=================================================================================================================
+	"grim_magus_taint_resistance"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityTextureName"			"keeper_of_the_light_chakra_magic"
+		"AOERadius"						"100 150 200 250 300 350"
+		"MaxLevel"						"6"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"25"
+		"AbilityManaCost"				"250 270 290 310 330 350"
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"100 150 200 250 300 350"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"spell_damage"		"200"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"30"
+			}
+		}
+
+		
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"POINT"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_fear_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_amplify_damage_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_life_tap_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_mana_rip_debuff"
+						"Target" 		"TARGET"
+					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_taint_resistance_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+		}
+		
+
+		"Modifiers"
+		{
+			"modifier_taint_resistance_debuff"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_DECREPIFY_UNIQUE" "-200" 
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
 	// Spirit Warrior: Arts of Self Tier 1: Hardened Skin
 	//=================================================================================================================
 	"spirit_warrior_hardened_skin"
@@ -3293,6 +3265,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"tiny_craggy_exterior"
+		"MaxLevel"						"10"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3302,7 +3275,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_reduction"	"100"
+				"damage_reduction"	"3 4 5 7 9 11 14 17 20 23"
 			}
 		}
 
@@ -3334,6 +3307,7 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"juggernaut_blade_dance"
+		"MaxLevel"						"10"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
@@ -3349,13 +3323,13 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_chance"		"100"
+				"crit_chance"		"5 5 6 6 7 7 8 8 9 10"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"crit_multiplier"	"200"
+				"crit_multiplier"	"200 250 300 350 400 450 500 550 600 650"
 			}
 		}
 
@@ -3416,8 +3390,64 @@
 	}
 
 
+
 	//=================================================================================================================
 	// Spirit Warrior: Arts of Self Tier 3: Vampirism
+	//=================================================================================================================
+	"spirit_warrior_vampirism"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"tiny_craggy_exterior"
+		"MaxLevel"						"8"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"lifesteal_percentage"	"10 14 18 22 26 30 34 38"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor_reduction"		"-1 -2 -2 -3 -3 -4 -4 -5"
+			}
+		}
+
+		
+		"Modifiers"
+		{
+			"modifier_vampirism"
+			{
+				"Passive"			"1"
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "%armor_reduction" 
+				}
+
+				"OnDealDamage"
+				{
+					"Lifesteal"
+					{
+						"Target"            "ATTACKER"
+						"LifestealPercent"	"%lifesteal_percentage"
+					}
+				}
+			}
+		}
+	}
+	//=================================================================================================================
+	// Spirit Warrior: Arts of Self Tier 4: Spirit Image
 	//=================================================================================================================
 	"spirit_warrior_spirit_image"
 	{
@@ -3426,32 +3456,31 @@
 		"BaseClass"						"ability_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityTextureName"			"chaos_knight_phantasm"
+		"MaxLevel"						"8"
 
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-
-		"AbilityCastPoint"			"0.1"
-		"AbilityCooldown"			"5"
-		"AbilityManaCost"			"5"
+		"AbilityCooldown"				"45"
+		"AbilityManaCost"				"120 125 130 135 140 145 150 155"
 
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"image_count"		"3"
+				"image_count"		"1 1 2 2 3 3 3 3"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"			"60"
+				"duration"			"10 10 12 12 14 15 16 17"
 			}
 
 			"03"
 			{
 				"var_type"			"FIELD_FLOAT"
-				"outgoing_damage"	"50"
+				"outgoing_damage"	"65 70 75 80 85 90 95 100"
 			}
 
 			"04"
@@ -6725,6 +6754,86 @@
 		}
 	}
 
+	"chain_lightning"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"zuus_arc_lightning"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"Modifiers"
+		{
+			"modifier_chain_lightning"
+			{
+				"Passive"	"1"
+
+				"OnAttackLanded"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  		"TARGET"
+							"Radius" 		"400"
+							"Teams" 		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+							"MaxTargets" 	"1"
+							"Random"    	"1"
+						}
+					
+						"Action"    
+						{
+							"RunScript"
+							{
+								"ScriptFile"	"heroes/creature_abilities/chain_lightning.lua"
+								"Function"		"ChainLightning"
+							}
+						}
+					}
+				}	
+			}		
+		}
+	}
+
+	"frost_attack"
+	{
+		"BaseClass"             		"ability_datadriven"
+		"AbilityTextureName"			"item_eye_of_skadi"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"MaxLevel"						"1"
+
+		"Modifiers"
+		{
+			"modifier_frost_attack"
+			{
+				"Passive"	"1"
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_frost_attack_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"3"
+					}
+				}	
+			}
+
+			"modifier_frost_attack_debuff"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "-30"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-20" 
+				}
+			}		
+		}
+	}
 
 	"ascension_sword"
 	{

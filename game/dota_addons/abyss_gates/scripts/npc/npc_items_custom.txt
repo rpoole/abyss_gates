@@ -443,21 +443,20 @@
 				"Function"		"Mainhand"
 				"modifier"		"modifier_main_hand"
 			}
-
-			"RunScript"
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ascension_sword"
+				"Target" 		"CASTER"
+			}
+  
+  			"RunScript"
 			{
 				"ScriptFile"			"itemSpells.lua"
 				"Function"				"attributeCheck"
 				"strengthRequired"		"28"
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
-			}
-
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ascension_sword"
-				"Target" 		"CASTER"
 			}
 		}
 
@@ -568,33 +567,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"28"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_war_claws"
-						"Target" 		"CASTER"
-					}
-				}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_war_claws"
+				"Target" 		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"28"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
 			}
 		}
 
@@ -667,39 +659,32 @@
 		//========
 
 		
-		"ID"							"1057"							
+		"ID"							"1059"							
 		"ItemCost"						"14000"							
 		"AbilityTextureName"			"item_moon_glaive"
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"30"
-						"agilityRequired"		"24"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_moon_glaive"
-						"Target" 		"CASTER"
-					}
-				}
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_moon_glaive"
+				"Target" 		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"30"
+				"agilityRequired"		"24"
+				"intellectRequired"		"0"
 			}
 		}
 
@@ -760,33 +745,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"44"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_serpent_blade"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"44"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_serpent_blade"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -872,33 +850,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_pickaxe"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_pickaxe"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -958,33 +929,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"8"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_long_sword"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"8"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_long_sword"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1044,33 +1008,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"13"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_battle_hammer"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"13"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_battle_hammer"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1156,33 +1113,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"30"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_kheragian_axe"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"30"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_kheragian_axe"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1276,33 +1226,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"34"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_warhammer"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"34"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_warhammer"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1443,33 +1386,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"40"
-						"agilityRequired"		"30"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_celestial_blade"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"40"
+				"agilityRequired"		"30"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_celestial_blade"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1564,33 +1500,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"40"
-						"agilityRequired"		"24"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_war_fork"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"40"
+				"agilityRequired"		"24"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_war_fork"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1728,33 +1657,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"22"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_erament_staff"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"22"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_erament_staff"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1825,33 +1747,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"24"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_erament_staff"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"24"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_erament_staff"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -1945,33 +1860,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"38"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_icecrown_staff"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"38"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_icecrown_staff"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -2084,33 +1992,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"0"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_marrenwood_staff"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_marrenwood_staff"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -2171,33 +2072,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"16"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_mesa_staff"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"16"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_mesa_staff"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -2257,33 +2151,26 @@
 
 		"OnEquip"														
 		{
-			"DelayedAction"
+			"RunScript"
 			{
-				"Delay"     "0.1"
-				"Action"    
-				{
-					"RunScript"
-					{
-						"ScriptFile"	"equipmentSystem.lua"
-						"Function"		"Mainhand"
-						"modifier"		"modifier_main_hand"
-					}
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
 
-					"RunScript"
-					{
-						"ScriptFile"			"itemSpells.lua"
-						"Function"				"attributeCheck"
-						"strengthRequired"		"0"
-						"agilityRequired"		"0"
-						"intellectRequired"		"20"
-					}
-					
-					"ApplyModifier"
-					{
-						"ModifierName"	"modifier_staff_of_perseus"
-						"Target" 		"CASTER"
-					}
-				}
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"0"
+				"agilityRequired"		"0"
+				"intellectRequired"		"20"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_staff_of_perseus"
+				"Target" 		"CASTER"
 			}
 		}
 
@@ -2864,6 +2751,15 @@
 			}
 		}
 
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_small_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
 
 		"Modifiers"
 		{
@@ -2929,6 +2825,15 @@
 			}
 
 			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_large_shield"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
 			{
 				"ModifierName"	"modifier_large_shield"
 				"Target" 		"CASTER"
@@ -3105,8 +3010,4 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
-
-
-
-
 }

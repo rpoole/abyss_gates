@@ -1,0 +1,123 @@
+GRIM MAGUS AFFLICTION																
+
+
+TIER 1		Fear		Instills fear into a group of enemies, causing them to miss attacks 20% of the time. Affects units in an area of 100(+50). 25 CD  30 duration  28 mana(+2)
+								
+			
+			Mana Cost			Cooldown	Type		Damage								Effect				Effect Duration			Max Units			Radius				Range			Unit Ability 1  					Unit Ability 2
+
+RANK 1		60					0			War Burn	35-38 Very Fast	Normal	 	8 Medium 600hp		Summon Skeleton		--						1					~600				1000		Bash - 10% chance 40 dmg / 1.5 stun	Steel Plating - 16 dmg block
+											Archer		51-70 Fast 		Piercing 	1 Medium 160hp 
+											Arch Burn	31-40 Very Fast Piercing 	1 Medium 320hp
+											Warrior		22-32 Slow 		Normal 		4 Heavy  300hp
+RANK 2		(+3)				''						30 / second									''					''						''					''							Bash - 10% chance 40 dmg / 1.5 stun	Steel Plating - 16 dmg block
+
+RANK 2		43											38 / second
+
+RANK 2		47											48
+
+RANK 2		51											60
+
+RANK 2		55											74
+
+RANK 2		60											90
+
+RANK 2		65											108
+
+RANK 2		70											128
+
+RANK 2		76											150
+
+
+
+
+TIER 2		Amplify Damage 			Causes enemies in a target area to take 160% damage from physical attacks. Affects an area of 100(+50).  25 / 30  120(+10) mana 
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect				Effect Duration			Max Targets			Range
+
+RANK 1		40					3						160				--				Magical						Stun				3						--					600
+
+RANK 2		(+6.0)				(-0.5)					240				''				''							''					''						''					''
+
+RANK 3													340			
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8													
+
+RANK 9												
+
+RANK 10
+
+
+
+TIER 3		Life Tap 			Curses the enemy with powerful magic that allows heroes to gain 25% of its max life when killed. Affects units in an area of 100. 25 / 30. 100(+5) Mana
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius 			Range
+
+RANK 1		100					5						180				--				--							--							--						--					200				1000
+
+RANK 2		(+20.0)										(+40)			''				''							''							''						''					''				''
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 4		Mana Rip 			Curses enemies in a target area, binding their life force to those the zzz the attacker will recieve 5% of that units max life as mana. Area of 200(+50). 100(+10) mana
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius 			Range
+
+RANK 1		80					--						
+RANK 2											
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6													
+
+RANK 7													
+
+RANK 8																														
+
+
+
+
+TIER 5		Taint Resistance		Lowers the magical resistance of all targets in an area, causing spells to deal 200% of their normal damage. Area effect of 100(+50). 250(+20) mana
+								
+			
+			Mana Cost			Cooldown				Damage			Heal			Damage Type					Effect						Effect Duration			Max Targets			Radius
+
+RANK 1		500					70						66% / 25% Max HP--				Pure						--							--						--					600
+
+RANK 2		(+60)				(-5)					--				''				''							''							''						''					(+50)
+
+RANK 3																																										
+
+RANK 4													
+
+RANK 5												
+
+RANK 6															

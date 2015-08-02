@@ -1,0 +1,95 @@
+"Random"
+			{
+				"Chance"			"%fire_chance"
+				"OnSuccess"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"undead_skeleton_warrior"
+						"Target" 		"CASTER"
+						"Duration"		"%duration"
+						"UnitCount"		"1"
+						"UnitLimit"		"%max_skeletons"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"OnSpawn"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_phased"
+								"Target"		"TARGET"
+								"Duration"		"0.03"
+							}
+						}
+					}
+				}
+				"OnFailure"
+				{
+					"Random"
+					{
+						"Chance"			"%ice_chance"
+						"OnSuccess"
+						{
+							"SpawnUnit"
+							{
+								"UnitName"		"undead_skeleton_warrior"
+								"Target" 		"CASTER"
+								"Duration"		"%duration"
+								"UnitCount"		"1"
+								"UnitLimit"		"%max_skeletons"
+								"GrantsGold"	"1"
+								"GrantsXP"		"1"
+								"SpawnRadius"	"10"
+								"OnSpawn"
+								{
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_phased"
+										"Target"		"TARGET"
+										"Duration"		"0.03"
+									}
+
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_burning_success"
+										"Target" 		"TARGET"
+										"Duration"		"10"
+									}
+								}
+							}
+						}
+
+						"OnFailure"
+						{
+							"SpawnUnit"
+							{
+								"UnitName"		"undead_skeleton_warrior"
+								"Target" 		"CASTER"
+								"Duration"		"%duration"
+								"UnitCount"		"1"
+								"UnitLimit"		"%max_skeletons"
+								"GrantsGold"	"1"
+								"GrantsXP"		"1"
+								"SpawnRadius"	"10"
+								"OnSpawn"
+								{
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_phased"
+										"Target"		"TARGET"
+										"Duration"		"0.03"
+									}
+
+									"ApplyModifier"
+									{
+										"ModifierName"	"modifier_archer_success"
+										"Target" 		"TARGET"
+										"Duration"		"10"
+									}
+								}
+							}
+						}
+					}	
+				}
+			}

@@ -66,9 +66,13 @@ function attributeCheck ( event )
 	local agilityRequirement = event.agilityRequired
 	local intellectRequirement = event.intellectRequired
 
+	Timers:CreateTimer(0.1, function()
+		attributeCheck()
+	end)
+
 	if ability then
 		if heroStrength < strengthRequirement then
-			caster:DropItemAtPosition(caster:GetAbsOrigin(), ability)
+			caster:SellItem(ability)
 		end
 	end
 end
