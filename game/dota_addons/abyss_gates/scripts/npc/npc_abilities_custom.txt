@@ -3634,14 +3634,14 @@
 		"AbilityTextureName"			"bounty_hunter_jinada"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"10"
 
 		//Casting
 		//------------------------------------------
 
 		"AbilityCastPoint"				"0.3"
-		"AbilityManaCost"				"5"
-		"AbilityCooldown"				"5"
-		"AbilityCastRange"				"600"
+		"AbilityManaCost"				"40 43 46 49 52 55 58 61 64 67"
+		"AbilityCooldown"				"8"
 
 
 		//Special
@@ -3652,12 +3652,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"				"1000"
+				"damage"				"150 200 270 360 470 600 750 920 1110 1320"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"duration"				"20"
+				"duration"				"8"
 			}
 			"03"
 			{
@@ -3761,13 +3761,14 @@
 		"AbilityTextureName"			"medusa_mystic_snake"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"10"
 
 		//Casting
 		//------------------------------------------
 
 		"AbilityCastPoint"				"0.3"
-		"AbilityManaCost"				"5"
-		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"20 22 25 28 31 34 37 40 43 46"
+		"AbilityCooldown"				"1"
 
 
 		//Special
@@ -3778,7 +3779,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_one_charge"		"100"
+				"damage_one_charge"		"1"
 			}
 
 			"02"
@@ -3812,7 +3813,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"poison_damage"			"50"
+				"poison_damage"			"18 22 26 30 34 38 42 46 50 54"
 			}
 
 			"08"
@@ -3899,13 +3900,6 @@
 					
 						"Action"    
 						{
-							"Damage"
-							{
-								"Target"		"TARGET"
-								"Type"			"DAMAGE_TYPE_MAGICAL"
-								"Damage"		"%poison_instant_damage"
-							}
-
 							"ApplyModifier"
 							{
 								"ModifierName"	"modifier_poison_sting"
@@ -3952,13 +3946,14 @@
 		"AbilityTextureName"			"crystal_maiden_frostbite"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"8"
 
 		//Casting
 		//------------------------------------------
 
 		"AbilityCastPoint"				"0.3"
-		"AbilityManaCost"				"5"
-		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"30 34 39 44 50 55 60 66"
+		"AbilityCooldown"				"1"
 
 
 		//Special
@@ -3969,19 +3964,19 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_one_charge"		"100"
+				"damage_one_charge"		"180 290 430 600 800 1030 1290 1580"
 			}
 
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_two_charge"		"200"
+				"damage_two_charge"		"360 580 860 1200 1600 2060 2580 3160"
 			}
 
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_three_charge"	"100"
+				"damage_three_charge"	"180 290 430 600 800 1030 1290 1580"
 			}
 			"04"
 			{
@@ -4052,6 +4047,13 @@
 						"Type"			"DAMAGE_TYPE_MAGICAL"
 						"Damage"		"%damage_one_charge"
 					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_freezing_strike_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"5"
+					}
 				}
 
 			}
@@ -4068,6 +4070,13 @@
 						"Target"		"TARGET"
 						"Type"			"DAMAGE_TYPE_MAGICAL"
 						"Damage"		"%damage_two_charge"
+					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_freezing_strike_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"5"
 					}
 				}
 			}
@@ -4097,8 +4106,26 @@
 								"Type"			"DAMAGE_TYPE_MAGICAL"
 								"Damage"		"%damage_one_charge"
 							}
+
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_freezing_strike_debuff"
+								"Target" 		"TARGET"
+								"Duration"		"5"
+							}
 						}
 					}
+				}
+			}
+
+			"modifier_freezing_strike_debuff"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-30" 
 				}
 			}
 		}
@@ -4117,6 +4144,7 @@
 		"AbilityTextureName"			"zuus_arc_lightning"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"8"
 
 		"precache"
 		{
@@ -4128,8 +4156,8 @@
 		//------------------------------------------
 
 		"AbilityCastPoint"				"0.3"
-		"AbilityManaCost"				"5"
-		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"50 54 58 62 66 70 74 78"
+		"AbilityCooldown"				"1"
 
 
 		//Special
@@ -4228,7 +4256,7 @@
 						"ScriptFile"		"heroes/hero_spirit_warrior_striking/chain_lightning.lua"
 						"Function"			"LightningJump"
 						"damage"			"%damage"
-						"bounces"			"%bounces"
+						"bounces"			"1"
 					}
 				}
 
@@ -4283,7 +4311,7 @@
 	}
 
 	//=================================================================================================================
-	// Spirit Warrior: Arts of Striking Tier 3: Firestorm Strike
+	// Spirit Warrior: Arts of Striking Tier 5: Firestorm Strike
 	//=================================================================================================================
 
 	"spirit_warrior_firestorm_strike"
@@ -4295,13 +4323,14 @@
 		"AbilityTextureName"			"lina_light_strike_array"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"MaxLevel"						"6"
 
 		//Casting
 		//------------------------------------------
 
 		"AbilityCastPoint"				"0.3"
-		"AbilityManaCost"				"5"
-		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"100"
+		"AbilityCooldown"				"1"
 
 
 		//Special
@@ -4312,7 +4341,7 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage_one_charge"		"100"
+				"damage_one_charge"		"600 800 1000 1200 1400 1600"
 			}
 
 			"02"
@@ -4346,13 +4375,13 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"fire_damage"			"50"
+				"fire_damage"			"150 200 250 300 350 400"
 			}
 
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"fire_interval"		"1.0"
+				"fire_interval"			"1.0"
 			}
 
 			"09"
@@ -4821,11 +4850,12 @@
 		"AbilityCastPoint"				"0.3"
 		"AbilityManaCost"				"70 76 82 88 94 100 106 112 118 124"
 		"AbilityCooldown"				"10.0 9.5 9.0 8.5 8.0 7.5 7.0 6.5 6.0 5.5"
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"500"
 
 		"precache"
 		{
-			"particle"  "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+			"particle"  "particles/divine_light.vpcf"
 		}
 
 
@@ -4871,7 +4901,14 @@
 			"FireEffect"
 			{
 				"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
-				"EffectAttachType"  "follow_origin"
+				"EffectAttachType"  "attach_origin"
+				"Target"            "CASTER"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/divine_light.vpcf"
+				"EffectAttachType"  "attach_origin"
 				"Target"            "CASTER"
 			}
 		}
@@ -4901,6 +4938,12 @@
 		"AOERadius"						"600"
 		"MaxLevel"						"10"
 		
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+			"particle"	"particles/stone_fist_two.vpcf"
+		}
 
 		//Casting
 		//------------------------------------------
@@ -4949,6 +4992,23 @@
 				"Target" 		"TARGET"
 				"Duration"		"%duration_main"
 			}
+
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_ursa/ursa_earthshock.vpcf"
+				"EffectAttachType"  "attach_origin"
+				"Target"            "TARGET"
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/stone_fist_two.vpcf"
+				"EffectAttachType"  "attach_origin"
+				"Target"            "TARGET"
+			}
+
+
 
 			"Damage"
 			{
@@ -5026,6 +5086,11 @@
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"MaxLevel"						"8"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
+		}
 		
 
 		//Casting
@@ -5075,7 +5140,11 @@
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attack_speed"
-				}	
+				}
+					
+				"EffectName"        "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf"
+				"EffectAttachType"  "follow_origin"
+
 			}
 		}
 	}
@@ -5191,6 +5260,10 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel" 						"6"
 	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5276,6 +5349,9 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"Aura_ApplyToCaster" "1"
+
+				"EffectName"		"particles/heal_aura.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 
 			"modifier_regen_aura"
@@ -5333,6 +5409,9 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"Aura_ApplyToCaster" "1"
+
+				"EffectName"		"particles/stone_skin_aura.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 
 			"modifier_stoneskin_aura"
@@ -5391,6 +5470,9 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_MELEE_ONLY"
 				"Aura_ApplyToCaster" "1"
+
+				"EffectName"		"particles/might_aura.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 
 			"modifier_might_aura"
@@ -5449,6 +5531,9 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"Aura_ApplyToCaster" "1"
+
+				"EffectName"		"particles/warmth_aura.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 
 			"modifier_warmth_aura"
@@ -5513,6 +5598,9 @@
 				"Aura_Types"    	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 				"Aura_Flags"    	"DOTA_UNIT_TARGET_FLAG_NONE"
 				"Aura_ApplyToCaster" "1"
+
+				"EffectName"		"particles/swiftness_aura.vpcf"
+				"EffectAttachType"	"follow_origin"
 			}
 
 			"modifier_swiftness_aura"
@@ -5543,6 +5631,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"MaxLevel" 						"10"
 		"AbilityCastRange"				"800"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_bane/bane_enfeeble.vpcf"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5583,6 +5676,9 @@
 				{
 					"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"	"%attack_damage_reduction"
 				}
+
+				"EffectName"		"particles/units/heroes/hero_bane/bane_enfeeble.vpcf"
+				"EffectAttachType"	"follow_overhead"
 			}
 		}
 	}
@@ -5601,6 +5697,11 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 		"MaxLevel" 						"10"
 		"AbilityCastRange"				"800"
+
+		"precache"
+		{
+			"particle"  "particles/items2_fx/medallion_of_courage.vpcf"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5641,6 +5742,9 @@
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"%armor_reduction"
 				}
+
+				"EffectName"		"particles/items2_fx/medallion_of_courage.vpcf"
+				"EffectAttachType"	"follow_overhead"
 			}
 		}
 	}
@@ -5982,13 +6086,12 @@
 		"BaseClass"             		"ability_datadriven"
 		"AbilityTextureName"			"lion_hex"
 		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"MaxLevel" 						"1"
 
 		"precache"
 		{
-			"particle"			"particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
+			"particle"			"particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
 		}
 
 		"Modifiers"
@@ -5996,13 +6099,9 @@
 			"modifier_red_color"
 			{
 				"Passive"			"1"
-
-				"AttachEffect"
-				{
-					"EffectName"        "particles/econ/courier/courier_greevil_red/courier_greevil_red_ambient_3.vpcf"
-					"EffectAttachType"  "follow_origin"
-					"Target"            "CASTER"
-				}
+				
+				"StatusEffectName" "particles/status_fx/status_effect_abaddon_borrowed_time.vpcf"
+   				"StatusEffectPriority" "15"
 			}
 		}
 	}
