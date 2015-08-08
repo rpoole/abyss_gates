@@ -66,10 +66,6 @@ function attributeCheck ( event )
 	local agilityRequirement = event.agilityRequired
 	local intellectRequirement = event.intellectRequired
 
-	Timers:CreateTimer(0.1, function()
-		attributeCheck()
-	end)
-
 	if ability then
 		if heroStrength < strengthRequirement then
 			caster:SellItem(ability)
@@ -91,4 +87,16 @@ function EramentStaff ( keys )
 
 	target:Heal(300, caster)
 	target:GiveMana(220)
+end
+
+function PotionOfMana ( keys )
+	local caster = keys.caster
+
+	caster:GiveMana(300)
+end
+
+function StoneOfMana ( keys )
+	local caster = keys.caster
+
+	caster:GiveMana(800)
 end

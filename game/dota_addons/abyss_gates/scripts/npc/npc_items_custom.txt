@@ -113,7 +113,150 @@
 		
 		// Item Info
 		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"20"
+		"ItemCost"						"120"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"2"
+		"SideShop"						"1"
+	
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"Target"        "CASTER"
+				"HealAmount"	"500"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Greater Potion of Healing
+	//=================================================================================================================
+	"item_greater_potion_of_healing"
+	{
+		"ID"							"1028"
+	
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_greater_salve"
+		"ItemKillable"					"0"
+		//"ItemStockMax"					"5"
+		//"ItemStockInitial"				"5"
+		//"ItemStockTime"					"24.0"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+	
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"500"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"2"
+		"SideShop"						"1"
+	
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"Target"        "CASTER"
+				"HealAmount"	"1500"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Stone of Healing
+	//=================================================================================================================
+	"item_stone_of_healing"
+	{
+		"ID"							"1029"
+	
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_greater_salve"
+		"ItemKillable"					"0"
+		//"ItemStockMax"					"5"
+		//"ItemStockInitial"				"5"
+		//"ItemStockTime"					"24.0"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"60"
+	
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"6000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"1"
+		"SideShop"						"1"
+	
+		"OnSpellStart"
+		{
+			"Heal"
+			{
+				"Target"        "CASTER"
+				"HealAmount"	"3200"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Potion of Mana
+	//=================================================================================================================
+	"item_potion_of_mana"
+	{
+		"ID"							"1030"
+	
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_greater_salve"
+		"ItemKillable"					"0"
+		//"ItemStockMax"					"5"
+		//"ItemStockInitial"				"5"
+		//"ItemStockTime"					"24.0"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+	
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"250"
 		"ItemShopTags"					"consumable"
 		"ItemQuality"					"consumable"
 		"ItemStackable"					"0"
@@ -126,29 +269,56 @@
 		{
 			"RunScript"
 			{
-				"ScriptFile"		"custom_scripted_items.lua"
-				"Function"			"Heal"
-				"Target"			"UNIT"
-				"heal_amount"		"%heal_amount"
-	
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"PotionOfMana"
 			}
-			"FireSound"
-			{
-				"Target" 		"UNIT"
-				"EffectName" 	"DOTA_Item.HealingSalve.Activate"
-			}
-			"SpendCharge"
-			{}
 		}
+	}
+
+
+	//=================================================================================================================
+	// Stone of Mana
+	//=================================================================================================================
+	"item_stone_of_mana"
+	{
+		"ID"							"1031"
 	
-		// Special	
+		// General
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"Model"							"models/props_gameplay/salve_red.vmdl"
+		"BaseClass"						"item_datadriven"
+		"AbilityTextureName"			"item_greater_salve"
+		"ItemKillable"					"0"
+		//"ItemStockMax"					"5"
+		//"ItemStockInitial"				"5"
+		//"ItemStockTime"					"24.0"
+	
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"60"
+	
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"14000"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
+		"ItemPermanent"					"1"
+		"SideShop"						"1"
+	
+		"OnSpellStart"
 		{
-			"01"
+			"RunScript"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"heal_amount"				"600"
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"StoneOfMana"
 			}
 		}
 	}
@@ -435,6 +605,27 @@
 		"ItemCost"						"7600"							
 		"AbilityTextureName"			"item_ascension_sword"
 
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"28"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
 		"OnEquip"														
 		{
 			"RunScript"
@@ -443,29 +634,14 @@
 				"Function"		"Mainhand"
 				"modifier"		"modifier_main_hand"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ascension_sword"
-				"Target" 		"CASTER"
-			}
   
   			"RunScript"
 			{
 				"ScriptFile"			"itemSpells.lua"
 				"Function"				"attributeCheck"
-				"strengthRequired"		"28"
-				"agilityRequired"		"0"
-				"intellectRequired"		"0"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ascension_sword"
-				"Target" 		"CASTER"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
 			}
 		}
 
@@ -475,13 +651,13 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 
 			"modifier_ascension_sword"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "45"				    
@@ -574,12 +750,6 @@
 				"modifier"		"modifier_main_hand"
 			}
 
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_war_claws"
-				"Target" 		"CASTER"
-			}
-
 			"RunScript"
 			{
 				"ScriptFile"			"itemSpells.lua"
@@ -590,19 +760,12 @@
 			}
 		}
 
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_war_claws"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_war_claws"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "80"
@@ -632,8 +795,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -672,12 +833,6 @@
 				"modifier"		"modifier_main_hand"
 			}
 
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_moon_glaive"
-				"Target" 		"CASTER"
-			}
-
 			"RunScript"
 			{
 				"ScriptFile"			"itemSpells.lua"
@@ -688,19 +843,12 @@
 			}
 		}
 
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_moon_glaive"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_moon_glaive"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"100"
@@ -712,8 +860,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -760,27 +906,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_serpent_blade"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_serpent_blade"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_serpent_blade"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "160"
@@ -817,8 +950,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -865,27 +996,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_pickaxe"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_pickaxe"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_pickaxe"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"8"
@@ -944,25 +1062,12 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_long_sword"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_long_sword"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
+			"Passive"		"1"
+
 			"modifier_long_sword"
 			{
 				"Properties"
@@ -975,8 +1080,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1022,21 +1125,6 @@
 				"strengthRequired"		"13"
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
-			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_battle_hammer"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_battle_hammer"
-				"Target" 		"CASTER"
 			}
 		}
 
@@ -1096,6 +1184,85 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	}
 
+	//=================================================================================================================
+	// Main Hand: Battle Claws
+	//=================================================================================================================
+	"item_battle_claws_main_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1074"							
+		"ItemCost"						"4600"							
+		"AbilityTextureName"			"item_battle_claws"
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"6"
+				"agilityRequired"		"13"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_battle_claws"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_battle_claws"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_battle_claws"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"45"
+				}
+			}		
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
 
 	//=================================================================================================================
 	// Two Hand: Kheragian Axe
@@ -1107,7 +1274,7 @@
 		//========
 
 		
-		"ID"							"1061"							
+		"ID"							"1064"							
 		"ItemCost"						"12500"							
 		"AbilityTextureName"			"item_kheragian_axe"
 
@@ -1220,7 +1387,7 @@
 		//========
 
 		
-		"ID"							"1062"							
+		"ID"							"1065"							
 		"ItemCost"						"18000"							
 		"AbilityTextureName"			"item_warhammer"
 
@@ -1380,7 +1547,7 @@
 		//========
 
 		
-		"ID"							"1063"							
+		"ID"							"1066"							
 		"ItemCost"						"20000"							
 		"AbilityTextureName"			"item_celestial_blade"
 
@@ -1494,9 +1661,9 @@
 		//========
 
 		
-		"ID"							"1064"							
+		"ID"							"1067"							
 		"ItemCost"						"30000"							
-		"AbilityTextureName"			"item_javelin"
+		"AbilityTextureName"			"item_war_fork"
 
 		"OnEquip"														
 		{
@@ -1617,6 +1784,473 @@
 
 
 	//=================================================================================================================
+	// Two Hand: Terra Blade
+	//=================================================================================================================
+	"item_terra_blade_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1075"							
+		"ItemCost"						"400"							
+		"AbilityTextureName"			"item_terra_blade"
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"6"
+				"agilityRequired"		"6"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_terra_blade"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_terra_blade"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_terra_blade"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "20"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_terra_blade_crit"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_terra_blade_crit"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_kheragian_axe_crit"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+	//=================================================================================================================
+	// Two Hand: Battleaxe
+	//=================================================================================================================
+	"item_battleaxe_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1077"							
+		"ItemCost"						"1400"							
+		"AbilityTextureName"			"item_battleaxe"
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"13"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_battleaxe"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_battleaxe"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_battleaxe"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_terra_blade_crit"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_battleaxe_crit"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_battleaxe_crit"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Two Hand: Venus Blade
+	//=================================================================================================================
+	"item_venus_blade_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1078"							
+		"ItemCost"						"4600"							
+		"AbilityTextureName"			"item_venus_blade"
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"16"
+				"agilityRequired"		"18"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_venus_blade"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_venus_blade"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_venus_blade"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "84"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_venus_blade_crit"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_venus_blade_crit"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_venus_blade_crit"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Two Hand: Trident
+	//=================================================================================================================
+	"item_trident_two_hand"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1079"							
+		"ItemCost"						"8000"							
+		"AbilityTextureName"			"item_trident"
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_main_hand"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"24"
+				"agilityRequired"		"20"
+				"intellectRequired"		"0"
+			}
+			
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_trident"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_trident"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_trident"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"				    
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_trident_crit"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_trident_crit"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200"
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_trident_crit"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+
+			"modifier_main_hand"
+			{
+				"IsHidden"		"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+
+
+	//=================================================================================================================
 	// Two Hand: Erament Staff
 	//=================================================================================================================
 	"item_erament_staff_two_hand"
@@ -1626,9 +2260,9 @@
 		//========
 
 		
-		"ID"							"1066"							
+		"ID"							"1068"							
 		"ItemCost"						"11000"							
-		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityTextureName"			"item_erament_staff"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"100"
 
@@ -1730,9 +2364,9 @@
 		//========
 
 		
-		"ID"							"1067"							
+		"ID"							"1069"							
 		"ItemCost"						"12000"							
-		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityTextureName"			"item_widow_staff"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"80"
 
@@ -1765,7 +2399,7 @@
 			
 			"ApplyModifier"
 			{
-				"ModifierName"	"modifier_erament_staff"
+				"ModifierName"	"modifier_widow_staff"
 				"Target" 		"CASTER"
 			}
 		}
@@ -1774,14 +2408,14 @@
 		{
 			"RemoveModifier"
 			{
-				"ModifierName"	"modifier_erament_staff"
+				"ModifierName"	"modifier_widow_staff"
 				"Target" 		"CASTER"
 			}
 		}
 
 		"Modifiers"
 		{
-			"modifier_erament_staff"
+			"modifier_widow_staff"
 			{
 				"Properties"
 				{
@@ -1789,7 +2423,7 @@
 				}
 			}
 
-			"modifier_erament_staff_debuff"
+			"modifier_widow_staff_debuff"
 			{
 				"IsDebuff"		"1"
 
@@ -1842,9 +2476,9 @@
 		//========
 
 		
-		"ID"							"1068"							
+		"ID"							"1070"							
 		"ItemCost"						"23000"							
-		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityTextureName"			"item_icecrown_staff"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"200"
 
@@ -1986,7 +2620,7 @@
 		//========
 
 		
-		"ID"							"1069"							
+		"ID"							"1071"							
 		"ItemCost"						"80"							
 		"AbilityTextureName"			"item_quarterstaff"
 
@@ -2066,9 +2700,9 @@
 		//========
 
 		
-		"ID"							"1070"							
+		"ID"							"1072"							
 		"ItemCost"						"2250"							
-		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityTextureName"			"item_mesa_staff"
 
 		"OnEquip"														
 		{
@@ -2145,9 +2779,9 @@
 		//========
 
 		
-		"ID"							"1071"							
+		"ID"							"1073"							
 		"ItemCost"						"4800"							
-		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityTextureName"			"item_staff_of_perseus"
 
 		"OnEquip"														
 		{
@@ -2226,7 +2860,7 @@
 		
 		"ID"							"1080"							
 		"ItemCost"						"8500"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_alistair_shield"			
 
 		"OnEquip"														
 		{
@@ -2306,7 +2940,7 @@
 		
 		"ID"							"1081"							
 		"ItemCost"						"15000"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_corog_shield"			
 
 		"OnEquip"														
 		{
@@ -2386,7 +3020,7 @@
 		
 		"ID"							"1082"							
 		"ItemCost"						"12000"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_storm_shield"			
 
 		"OnEquip"														
 		{
@@ -2477,7 +3111,7 @@
 		
 		"ID"							"1083"							
 		"ItemCost"						"6000"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_guldans_orb"			
 
 		"OnEquip"														
 		{
@@ -2560,7 +3194,7 @@
 		
 		"ID"							"1084"							
 		"ItemCost"						"10000"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_marichald_orb"			
 
 		"OnEquip"														
 		{
@@ -2642,7 +3276,7 @@
 		
 		"ID"							"1085"							
 		"ItemCost"						"2000"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_sirrus_orb"			
 
 		"OnEquip"														
 		{
@@ -2724,7 +3358,7 @@
 		
 		"ID"							"1086"							
 		"ItemCost"						"160"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_small_shield"			
 
 		"OnEquip"														
 		{
@@ -2804,7 +3438,7 @@
 		
 		"ID"							"1087"							
 		"ItemCost"						"160"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_large_shield"			
 
 		"OnEquip"														
 		{
@@ -2882,9 +3516,9 @@
 		//========
 
 		
-		"ID"							"1087"							
+		"ID"							"1088"							
 		"ItemCost"						"2600"							
-		"AbilityTextureName"			"item_example_off_hand"			
+		"AbilityTextureName"			"item_reinforced_shield"			
 
 		"OnEquip"														
 		{
@@ -2952,8 +3586,965 @@
 
 
 
+	//=================================================================================================================
+	// Accessory: Fury Gauntlets
+	//=================================================================================================================
+	"item_fury_gauntlets"
+	{
+		//========
+		// Unique
+		//========
 
-    //=================================================================================================================
+		
+		"ID"							"1100"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_fury_gauntlets"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_fury_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"heroes/hero_spirit_warrior_striking/spirit_stack.lua"
+				"Function"		"SpiritStack"
+				"modifier"		"modifier_spirit_charge"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_fury_gauntlets"
+			{
+				"Passive"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"12"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"16"			    
+				}
+			}
+
+			"modifier_spirit_charge"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT"
+
+				"Properties"
+				{
+				    "MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS" "5" 
+				}
+
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityCooldown"				"20"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Mortred Amulet
+	//=================================================================================================================
+	"item_mortred_amulet"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1101"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_mortred_amulet"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_mortred_amulet"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_mortred_amulet"
+			{
+				"Passive"		"1"
+
+				"ThinkInterval"  "15.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"MortredAmulet"
+						"modifier"      "modifier_mortred_amulet"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"8"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"16"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Dark Elven Charm
+	//=================================================================================================================
+	"item_dark_elven_charm"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1102"							
+		"ItemCost"						"16000"							
+		"AbilityTextureName"			"item_dark_elven_charm"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_dark_elven_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_dark_elven_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_dark_elven_charm"
+			{
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"itemSpells.lua"
+						"Function"		"DarkElvenCharm"
+						"modifier"      "modifier_dark_elven_charm_buff"
+					}
+				}
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"8"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"16"			    
+				}
+			}
+
+			"modifier_dark_elven_charm_buff"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_EVASION_CONSTANT" "15" 
+				}
+
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_dark_elven_charm_crit_buff"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_dark_elven_charm_crit_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200" 	// Is a percentage. 200 = 200%
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_dark_elven_charm_crit_buff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Cryptic Charm
+	//=================================================================================================================
+	"item_cryptic_charm"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1103"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_cryptic_charm"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_cryptic_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_cryptic_charm"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_cryptic_charm"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"20"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"		"45"			    
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Ruby Heart
+	//=================================================================================================================
+	"item_ruby_heart"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1104"							
+		"ItemCost"						"5000"							
+		"AbilityTextureName"			"item_ruby_heart"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"RubyHeart"
+				"modifier"		"modifier_ruby_heart"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ruby_heart"
+				"Target" 		"CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_ruby_heart"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"30"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"20"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"2"	    
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Sapphire Heart
+	//=================================================================================================================
+	"item_sapphire_heart"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1105"							
+		"ItemCost"						"8000"							
+		"AbilityTextureName"			"item_sapphire_heart"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"RubyHeart"
+				"modifier"		"modifier_sapphire_heart"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_sapphire_heart"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_sapphire_heart"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"20"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"5"	    
+				}
+
+				"OnAttackLanded"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_sapphire_heart_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"3"
+					}
+				}
+			}
+
+			"modifier_sapphire_heart_debuff"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "-30"
+				    "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-20" 
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Obsidian Heart
+	//=================================================================================================================
+	"item_obsidian_heart"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1106"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_obsidian_heart"			
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"RubyHeart"
+				"modifier"		"modifier_obsidian_heart"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"ObsidianHeartEquip"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_obsidian_heart"
+				"Target" 		"CASTER"
+			}
+
+			"RunScript"
+			{
+				"ScriptFile"	"itemSpells.lua"
+				"Function"		"ObsidianHeartUnequip"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_obsidian_heart"
+			{
+				"OnAttackStart"
+				{
+					"Random"
+					{
+						"Chance"			"15"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_example_crit_buff"
+								"Target" 		"CASTER"
+							}
+						}			
+					}
+				}
+			}
+
+			"modifier_example_crit_buff"
+			{
+				"IsHidden"			"0"
+				"IsBuff"			"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_CRITICALSTRIKE" 	"200" 	// Is a percentage. 200 = 200%
+				}
+
+				"OnAttackLanded"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_example_crit_buff"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}
+
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Ring of Power
+	//=================================================================================================================
+	"item_ring_of_power"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1107"							
+		"ItemCost"						"800"							
+		"AbilityTextureName"			"item_ring_of_power"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ring_of_power"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ring_of_power"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ring_of_power"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"3"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"4"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Ring of Dominance
+	//=================================================================================================================
+	"item_ring_of_dominance"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1108"							
+		"ItemCost"						"2400"							
+		"AbilityTextureName"			"item_ring_of_dominance"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ring_of_dominance"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ring_of_dominance"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ring_of_dominance"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"8"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Anklet of Dexterity
+	//=================================================================================================================
+	"item_anklet_of_dexterity"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1109"							
+		"ItemCost"						"600"							
+		"AbilityTextureName"			"item_anklet_of_dexterity"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_anklet_of_dexterity"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_anklet_of_dexterity"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_anklet_of_dexterity"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"3"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Anklet of Quickness
+	//=================================================================================================================
+	"item_anklet_of_quickness"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1110"							
+		"ItemCost"						"2000"							
+		"AbilityTextureName"			"item_anklet_of_quickness"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_anklet_of_quickness"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_anklet_of_quickness"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_anklet_of_quickness"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"8"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Ring of Intelligence
+	//=================================================================================================================
+	"item_ring_of_intelligence"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1111"							
+		"ItemCost"						"900"							
+		"AbilityTextureName"			"item_ring_of_intelligence"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ring_of_intelligence"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ring_of_intelligence"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ring_of_intelligence"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"6"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Ring of the Archmagi
+	//=================================================================================================================
+	"item_ring_of_the_archmagi"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1112"							
+		"ItemCost"						"2200"							
+		"AbilityTextureName"			"item_ring_of_the_archmagi"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ring_of_the_archmagi"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ring_of_the_archmagi"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ring_of_the_archmagi"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"14"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Stone Ring
+	//=================================================================================================================
+	"item_stone_ring"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1113"							
+		"ItemCost"						"200"							
+		"AbilityTextureName"			"item_stone_ring"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_stone_ring"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_stone_ring"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_stone_ring"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"2"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"50"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
 	// Accessory: Ring of the Blessed
 	//=================================================================================================================
 	"item_ring_of_the_blessed"
@@ -2963,9 +4554,9 @@
 		//========
 
 		
-		"ID"							"1113"							
+		"ID"							"1114"							
 		"ItemCost"						"3800"							
-		"AbilityTextureName"			"item_ruby_inset_ring"			
+		"AbilityTextureName"			"item_ring_of_the_blessed"			
 
 		"OnEquip"														
 		{
@@ -3010,4 +4601,433 @@
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
+
+
+	//=================================================================================================================
+	// Accessory: Bracers of Triumph
+	//=================================================================================================================
+	"item_bracers_of_triumph"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1115"							
+		"ItemCost"						"3000"							
+		"AbilityTextureName"			"item_bracers_of_triumph"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_bracers_of_triumph"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_bracers_of_triumph"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_bracers_of_triumph"
+			{
+				"OnKill"
+				{
+					"Heal"
+					{
+						"Target"        "CASTER"
+						"HealAmount"	"20"
+					}
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Gloves of Haste
+	//=================================================================================================================
+	"item_gloves_of_haste"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1116"							
+		"ItemCost"						"2000"							
+		"AbilityTextureName"			"item_gloves_of_haste"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_gloves_of_haste"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_gloves_of_haste"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_gloves_of_haste"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "15"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Beryl Gauntlets
+	//=================================================================================================================
+	"item_beryl_gauntlets"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1117"							
+		"ItemCost"						"1350"							
+		"AbilityTextureName"			"item_beryl_gauntlets"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_beryl_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_beryl_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_beryl_gauntlets"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"3"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"16"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Ruby Gauntlets
+	//=================================================================================================================
+	"item_ruby_gauntlets"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1118"							
+		"ItemCost"						"4000"							
+		"AbilityTextureName"			"item_ruby_gauntlets"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_ruby_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_ruby_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_ruby_gauntlets"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"8"
+				}
+
+				"OnAttackLanded"
+				{
+					"Random"
+					{
+						"Chance"			"12"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_bash_stun"
+								"Target" 		"TARGET"
+								"Duration"		"1.5"
+							}
+						}
+					}
+				}
+			}
+
+
+			"modifier_bash_stun"
+			{
+				"IsDebuff"			"1"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"EffectName"        "particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"  "follow_overhead"
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Cursed Gauntlets
+	//=================================================================================================================
+	"item_cursed_gauntlets"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1119"							
+		"ItemCost"						"4000"							
+		"AbilityTextureName"			"item_cursed_gauntlets"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_cursed_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_cursed_gauntlets"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_cursed_gauntlets"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"6"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"10"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"-10"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+
+	//=================================================================================================================
+	// Accessory: Boots of Haste
+	//=================================================================================================================
+	"item_boots_of_haste"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1120"							
+		"ItemCost"						"4000"							
+		"AbilityTextureName"			"item_boots_of_haste"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_movement_speed"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_movement_speed"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_movement_speed"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"	"70"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Ninja Slippers
+	//=================================================================================================================
+	"item_ninja_slippers"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1121"							
+		"ItemCost"						"3000"							
+		"AbilityTextureName"			"item_ninja_slippers"			
+
+		"OnEquip"														
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_movement_speed"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"OnUnequip"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_movement_speed"
+				"Target" 		"CASTER"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_movement_speed"
+			{
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"	"110"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"8"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
 }

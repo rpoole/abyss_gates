@@ -1535,7 +1535,13 @@ function Abyss_Gates:OnItemPurchased( keys )
                 local item_name = item:GetAbilityName()
                 print(item_name)
                 if foundMainHandItem and string.find(item_name, "main_hand") then
-                    hero:SellItem(item)
+                	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
+                	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
+                	local mainHandMessage = ColorIt("You may only have one Main Hand weapon equipped.", "red")
+                	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
+	       			GameRules:SendCustomMessage(mainHandMessage, 0, 0)
+	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
+	       			hero:SellItem(item)
                 end
  
                 if string.find(item_name, "main_hand") then
@@ -1554,6 +1560,12 @@ function Abyss_Gates:OnItemPurchased( keys )
                 local item_name = item:GetAbilityName()
                 print(item_name)
                 if foundOffHandItem and string.find(item_name, "off_hand") then
+                	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
+                	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
+                	local offHandMessage = ColorIt("You may only have one Off Hand weapon equipped.", "red")
+                	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
+	       			GameRules:SendCustomMessage(offHandMessage, 0, 0)
+	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
                     hero:SellItem(item)
                 end
  
@@ -1573,6 +1585,12 @@ function Abyss_Gates:OnItemPurchased( keys )
                 local item_name = item:GetAbilityName()
                 print(item_name)
                 if foundChestItem and string.find(item_name, "chest") then
+                	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
+                	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
+                	local chestItemMessage = ColorIt("You may only have one chest piece equipped.", "red")
+                	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
+	       			GameRules:SendCustomMessage(chestItemMessage, 0, 0)
+	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
                     hero:SellItem(item)
                 end
  
