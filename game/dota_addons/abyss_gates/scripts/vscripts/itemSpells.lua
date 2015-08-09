@@ -100,3 +100,15 @@ function StoneOfMana ( keys )
 
 	caster:GiveMana(800)
 end
+
+
+function AscensionSword ( keys )
+	local caster = keys.caster
+	local target = keys.target
+
+	print(caster:GetUnitName())
+	print(target:GetUnitName())
+
+	ParticleManager:CreateParticle("particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	target:EmitSound("Ability.FrostNova")
+end

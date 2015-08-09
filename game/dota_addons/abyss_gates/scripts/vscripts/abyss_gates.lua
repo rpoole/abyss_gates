@@ -1600,6 +1600,31 @@ function Abyss_Gates:OnItemPurchased( keys )
             end
         end
     end
+
+
+    if twoHandCheck > 1 then
+        local foundTwoHandItem = false
+        for i=0,5 do
+            local item = hero:GetItemInSlot(i)
+            if item then
+                local item_name = item:GetAbilityName()
+                print(item_name)
+                if foundTwoHandItem and string.find(item_name, "two_hand") then
+                	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
+                	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
+                	local twoHandMessage = ColorIt("You may only have one chest piece equipped.", "red")
+                	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
+	       			GameRules:SendCustomMessage(twoHandMessage, 0, 0)
+	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
+                    hero:SellItem(item)
+                end
+ 
+                if string.find(item_name, "two_hand") then
+                    foundtwoHandItem = true
+                end
+            end
+        end
+    end
 end
 
 -- An ability was used by a player

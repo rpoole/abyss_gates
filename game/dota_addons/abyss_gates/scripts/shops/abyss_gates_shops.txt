@@ -13,8 +13,7 @@
 		"item" "item_serpent_blade_main_hand"
 		"item" "item_pickaxe_main_hand"
 		"item" "item_long_sword_main_hand"
-		"item" "item_guldans_orb_off_hand"
-		"item" "item_icecrown_staff_two_hand"	
+		"item" "item_guldans_orb_off_hand"	
 	}
  
 	"attributes"
@@ -39,15 +38,66 @@
 	{
 		"item" "item_ring_of_the_blessed"
 		"item" "item_ring_of_power"
-		"item" "item_lumber"
+		"item" "item_ring_of_dominance"
+		"item" "item_anklet_of_dexterity"
+		"item" "item_anklet_of_quickness"
 		"item" "item_fury_gauntlets"
 		"item" "item_mortred_amulet"
-		"item" "item_celestial_charm"
+		"item" "item_bracers_of_triumph"
 		"item" "item_dark_elven_charm"
 		"item" "item_cryptic_charm"
 		"item" "item_ruby_heart"
 		"item" "item_sapphire_heart"
 		"item" "item_obsidian_heart"	
+	}
+
+
+	"misc"
+	{
+		"item" "item_battle_hammer_main_hand"
+		"item" "item_battle_claws_main_hand"
+		"item" "item_alistair_shield_off_hand"
+		"item" "item_corog_shield_off_hand"
+		"item" "item_storm_shield_off_hand"
+		"item" "item_marichald_orb_off_hand"
+		"item" "item_sirrus_orb_off_hand"
+		"item" "item_small_shield_off_hand"
+		"item" "item_large_shield_off_hand"
+		"item" "item_reinforced_shield_off_hand"
+		"item" "item_ring_of_intelligence"
+		"item" "item_ring_of_the_archmagi"
+		"item" "item_stone_ring"
+	}
+
+	"basics"
+	{
+		"item" "item_gloves_of_haste"
+		"item" "item_beryl_gauntlets"
+		"item" "item_ruby_gauntlets"
+		"item" "item_cursed_gauntlets"
+		"item" "item_boots_of_haste"
+		"item" "item_ninja_slippers"
+		"item" "item_guardian_helm"
+		"item" "item_hood_of_cunning"
+		"item" "item_egrons_hold"
+		"item" "item_aegis_plating_chest"
+		"item" "item_opal_scales_chest"
+		"item" "item_choromeir_scales_chest"
+		"item" "item_salamander_skin_chest"
+	}
+
+	"support"
+	{
+		"item" "item_zirklumm_robes_chest"
+		"item" "item_celestial_robes_chest"
+		"item" "item_cloak_of_the_apprentice_chest"
+		"item" "item_magi_robes_chest"
+		"item" "item_magi_mantle_chest"
+		"item" "item_leather_armor_chest"
+		"item" "item_studded_leather_armor_chest"
+		"item" "item_lizard_scale_chest"
+		"item" "item_splint_mail_chest"
+		"item" "item_scale_mail_chest"
 	}
 	
 	"Uglad's Armor Shop"

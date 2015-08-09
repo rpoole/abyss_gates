@@ -37,14 +37,14 @@
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 		}
 	}
@@ -79,7 +79,7 @@
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 		}
 	}
@@ -129,6 +129,12 @@
 				"Target"        "CASTER"
 				"HealAmount"	"500"
 			}
+
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.HealingSalve.Activate"
+				"Target" 		"TARGET"
+			}
 		}
 	}
 
@@ -162,7 +168,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"500"
 		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemQuality"					"common"
 		"ItemStackable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"0"
@@ -211,7 +217,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"6000"
 		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemQuality"					"rare"
 		"ItemStackable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"1"
@@ -223,6 +229,12 @@
 			{
 				"Target"        "CASTER"
 				"HealAmount"	"3200"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"DOTA_Item.HealingSalve.Activate"
+				"Target" 		"CASTER"
 			}
 		}
 	}
@@ -307,7 +319,7 @@
 		//-------------------------------------------------------------------------------------------------------------
 		"ItemCost"						"14000"
 		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
+		"ItemQuality"					"rare"
 		"ItemStackable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE_STACKING"
 		"ItemPermanent"					"1"
@@ -366,7 +378,7 @@
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 
 
@@ -467,7 +479,7 @@
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 
 			"modifier_example_armor_block"
@@ -531,7 +543,7 @@
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 
 			"modifier_example_damage_crit"
@@ -603,7 +615,14 @@
 		
 		"ID"							"1057"							
 		"ItemCost"						"7600"							
-		"AbilityTextureName"			"item_ascension_sword"
+		"AbilityTextureName"			"item_ascension_sword_main_hand"
+
+		"precache"
+		{
+			"particle" 	"particles/units/heroes/hero_lich/lich_frost_nova.vpcf"
+			"particle"	"particles/status_fx/status_effect_frost_lich.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+		}
 
 		"AbilitySpecial"
 		{
@@ -616,13 +635,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"agility_required"		"0"
-			}
-
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"intellect_required"	"0"
+				"frost_nova_damage"		"200"
 			}
 		}
 
@@ -639,9 +652,9 @@
 			{
 				"ScriptFile"			"itemSpells.lua"
 				"Function"				"attributeCheck"
-				"strengthRequired"		"%strength_required"
-				"agilityRequired"		"%agility_required"
-				"intellectRequired"		"%intellect_required"
+				"strengthRequired"		"28"
+				"agilityRequired"		"0"
+				"intellectRequired"		"0"
 			}
 		}
 
@@ -686,16 +699,22 @@
 									{
 										"Target"		"TARGET"
 										"Type"			"DAMAGE_TYPE_MAGICAL"
-										"Damage"		"300"
+										"Damage"		"200"
 									}
 
 									"ApplyModifier"
 									{
-										"ModifierName"	"modifier_ascension_sword_debuffs"
+										"ModifierName"	"modifier_ascension_sword_debuff"
 										"Target" 		"TARGET"
 										"Duration"		"5"
 									}
 								}
+							}
+
+							"RunScript"
+							{
+								"ScriptFile"	"itemSpells.lua"
+								"Function"		"AscensionSword"
 							}
 						}
 					}
@@ -707,10 +726,13 @@
 				"IsHidden"			"0"
 				"IsDebuff"			"1"
 
+				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
+				"StatusEffectPriority"	"10"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"-20"
-					"MODIFIER_PROPERTY_ATTACK_SPEED_BONUS_PERCENTAGE"	"-20"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"		"-20"
 				}
 			}
 		}
@@ -720,7 +742,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -739,7 +761,29 @@
 		
 		"ID"							"1058"							
 		"ItemCost"						"14000"							
-		"AbilityTextureName"			"item_war_claws"
+		"AbilityTextureName"			"item_war_claws_main_hand"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"12"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"28"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -754,8 +798,8 @@
 			{
 				"ScriptFile"			"itemSpells.lua"
 				"Function"				"attributeCheck"
-				"strengthRequired"		"28"
-				"agilityRequired"		"0"
+				"strengthRequired"		"12"
+				"agilityRequired"		"28"
 				"intellectRequired"		"0"
 			}
 		}
@@ -803,7 +847,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -822,7 +866,30 @@
 		
 		"ID"							"1059"							
 		"ItemCost"						"14000"							
-		"AbilityTextureName"			"item_moon_glaive"
+		"AbilityTextureName"			"item_moon_glaive_main_hand"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"30"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"24"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
 
 		"OnEquip"														
 		{
@@ -868,7 +935,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -887,7 +954,29 @@
 		
 		"ID"							"1060"							
 		"ItemCost"						"23000"							
-		"AbilityTextureName"			"item_serpent_blade"
+		"AbilityTextureName"			"item_serpent_blade_main_hand"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"44"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -958,7 +1047,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -977,7 +1066,29 @@
 		
 		"ID"							"1061"							
 		"ItemCost"						"80"							
-		"AbilityTextureName"			"item_pickaxe"
+		"AbilityTextureName"			"item_pickaxe_main_hand"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1014,8 +1125,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1043,7 +1152,28 @@
 		
 		"ID"							"1062"							
 		"ItemCost"						"450"							
-		"AbilityTextureName"			"item_long_sword"
+		"AbilityTextureName"			"item_long_sword_main_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"8"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1107,7 +1237,28 @@
 		
 		"ID"							"1063"							
 		"ItemCost"						"1800"							
-		"AbilityTextureName"			"item_battle_hammer"
+		"AbilityTextureName"			"item_battle_hammer_main_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"13"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1132,6 +1283,8 @@
 		{
 			"modifier_battle_hammer"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 			"28"
@@ -1168,8 +1321,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1196,7 +1347,29 @@
 		
 		"ID"							"1074"							
 		"ItemCost"						"4600"							
-		"AbilityTextureName"			"item_battle_claws"
+		"AbilityTextureName"			"item_battle_claws_main_hand"
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"6"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"13"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1215,21 +1388,6 @@
 				"agilityRequired"		"13"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_battle_claws"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_battle_claws"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
@@ -1247,8 +1405,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1257,7 +1413,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -1276,7 +1432,28 @@
 		
 		"ID"							"1064"							
 		"ItemCost"						"12500"							
-		"AbilityTextureName"			"item_kheragian_axe"
+		"AbilityTextureName"			"item_kheragian_axe_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"30"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1295,27 +1472,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_kheragian_axe"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_kheragian_axe"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_kheragian_axe"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "160"				    
@@ -1361,8 +1525,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1371,7 +1533,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -1389,7 +1551,28 @@
 		
 		"ID"							"1065"							
 		"ItemCost"						"18000"							
-		"AbilityTextureName"			"item_warhammer"
+		"AbilityTextureName"			"item_warhammer_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"34"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1408,27 +1591,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_warhammer"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_warhammer"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_warhammer"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "160"				    
@@ -1520,8 +1690,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1530,7 +1698,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -1549,7 +1717,28 @@
 		
 		"ID"							"1066"							
 		"ItemCost"						"20000"							
-		"AbilityTextureName"			"item_celestial_blade"
+		"AbilityTextureName"			"item_celestial_blade_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"40"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"30"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1568,27 +1757,14 @@
 				"agilityRequired"		"30"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_celestial_blade"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_celestial_blade"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_celestial_blade"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "300"				    
@@ -1634,8 +1810,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1644,7 +1818,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -1663,7 +1837,28 @@
 		
 		"ID"							"1067"							
 		"ItemCost"						"30000"							
-		"AbilityTextureName"			"item_war_fork"
+		"AbilityTextureName"			"item_war_fork_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"40"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"24"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1682,27 +1877,14 @@
 				"agilityRequired"		"24"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_war_fork"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_war_fork"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_war_fork"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "360"				    
@@ -1766,8 +1948,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1776,7 +1956,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -1795,7 +1975,28 @@
 		
 		"ID"							"1075"							
 		"ItemCost"						"400"							
-		"AbilityTextureName"			"item_terra_blade"
+		"AbilityTextureName"			"item_terra_blade_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"6"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"6"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1813,21 +2014,6 @@
 				"strengthRequired"		"6"
 				"agilityRequired"		"6"
 				"intellectRequired"		"0"
-			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_terra_blade"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_terra_blade"
-				"Target" 		"CASTER"
 			}
 		}
 
@@ -1882,8 +2068,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -1892,7 +2076,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -1910,7 +2094,28 @@
 		
 		"ID"							"1077"							
 		"ItemCost"						"1400"							
-		"AbilityTextureName"			"item_battleaxe"
+		"AbilityTextureName"			"item_battleaxe_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"13"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -1928,21 +2133,6 @@
 				"strengthRequired"		"13"
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
-			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_battleaxe"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_battleaxe"
-				"Target" 		"CASTER"
 			}
 		}
 
@@ -1998,7 +2188,7 @@
 			{
 				"IsHidden"		"0"
 
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+				
 			}
 		}
 
@@ -2007,7 +2197,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2026,7 +2216,28 @@
 		
 		"ID"							"1078"							
 		"ItemCost"						"4600"							
-		"AbilityTextureName"			"item_venus_blade"
+		"AbilityTextureName"			"item_venus_blade_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"16"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"18"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -2044,21 +2255,6 @@
 				"strengthRequired"		"16"
 				"agilityRequired"		"18"
 				"intellectRequired"		"0"
-			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_venus_blade"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_venus_blade"
-				"Target" 		"CASTER"
 			}
 		}
 
@@ -2113,8 +2309,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2123,7 +2317,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2143,7 +2337,28 @@
 		
 		"ID"							"1079"							
 		"ItemCost"						"8000"							
-		"AbilityTextureName"			"item_trident"
+		"AbilityTextureName"			"item_trident_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"24"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"20"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -2161,21 +2376,6 @@
 				"strengthRequired"		"24"
 				"agilityRequired"		"20"
 				"intellectRequired"		"0"
-			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_trident"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_trident"
-				"Target" 		"CASTER"
 			}
 		}
 
@@ -2230,8 +2430,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2240,7 +2438,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2262,9 +2460,30 @@
 		
 		"ID"							"1068"							
 		"ItemCost"						"11000"							
-		"AbilityTextureName"			"item_erament_staff"
+		"AbilityTextureName"			"item_erament_staff_two_hand"
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"100"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"22"
+			}
+		}
 
 		"OnSpellStart"
 		{
@@ -2306,27 +2525,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"22"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_erament_staff"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_erament_staff"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_erament_staff"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "40"				    
@@ -2336,8 +2542,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2346,7 +2550,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2366,9 +2570,30 @@
 		
 		"ID"							"1069"							
 		"ItemCost"						"12000"							
-		"AbilityTextureName"			"item_widow_staff"
+		"AbilityTextureName"			"item_widow_staff_two_hand"
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"80"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"24"
+			}
+		}
 
 		"OnSpellStart"
 		{
@@ -2396,27 +2621,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"24"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_widow_staff"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_widow_staff"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_widow_staff"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "65"				    
@@ -2448,8 +2660,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2458,7 +2668,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2478,9 +2688,30 @@
 		
 		"ID"							"1070"							
 		"ItemCost"						"23000"							
-		"AbilityTextureName"			"item_icecrown_staff"
+		"AbilityTextureName"			"item_icecrown_staff_two_hand"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"38"
+			}
+		}
 
 		"OnSpellStart"
 		{
@@ -2509,27 +2740,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"38"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_icecrown_staff"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_icecrown_staff"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_icecrown_staff"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" "100"				    
@@ -2591,8 +2809,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2601,7 +2817,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
@@ -2622,7 +2838,28 @@
 		
 		"ID"							"1071"							
 		"ItemCost"						"80"							
-		"AbilityTextureName"			"item_quarterstaff"
+		"AbilityTextureName"			"item_marrenwood_staff_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -2641,21 +2878,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_marrenwood_staff"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_marrenwood_staff"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
@@ -2672,8 +2894,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2702,7 +2922,28 @@
 		
 		"ID"							"1072"							
 		"ItemCost"						"2250"							
-		"AbilityTextureName"			"item_mesa_staff"
+		"AbilityTextureName"			"item_mesa_staff_two_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"16"
+			}
+		}
 
 		"OnEquip"														
 		{
@@ -2721,27 +2962,14 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"16"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_mesa_staff"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_mesa_staff"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
 		{
 			"modifier_mesa_staff"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE" 	"28"		
@@ -2752,8 +2980,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2781,7 +3007,7 @@
 		
 		"ID"							"1073"							
 		"ItemCost"						"4800"							
-		"AbilityTextureName"			"item_staff_of_perseus"
+		"AbilityTextureName"			"item_staff_of_perseus_two_hand"
 
 		"OnEquip"														
 		{
@@ -2800,21 +3026,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"20"
 			}
-			
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_staff_of_perseus"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_staff_of_perseus"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
@@ -2831,8 +3042,6 @@
 			"modifier_main_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 		}
 
@@ -2841,7 +3050,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2860,7 +3069,28 @@
 		
 		"ID"							"1080"							
 		"ItemCost"						"8500"							
-		"AbilityTextureName"			"item_alistair_shield"			
+		"AbilityTextureName"			"item_alistair_shield_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"26"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -2879,21 +3109,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_alistair_shield"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_alistair_shield"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -2902,8 +3117,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_alistair_shield"
@@ -2921,7 +3134,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -2940,7 +3153,28 @@
 		
 		"ID"							"1081"							
 		"ItemCost"						"15000"							
-		"AbilityTextureName"			"item_corog_shield"			
+		"AbilityTextureName"			"item_corog_shield_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"38"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -2959,22 +3193,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_corog_shield"
-				"Target" 		"CASTER"
-			}
-		}
-
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_corog_shield"
-				"Target" 		"CASTER"
-			}
 		}
 
 		"Modifiers"
@@ -2982,8 +3200,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_corog_shield"
@@ -3001,7 +3217,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -3020,7 +3236,28 @@
 		
 		"ID"							"1082"							
 		"ItemCost"						"12000"							
-		"AbilityTextureName"			"item_storm_shield"			
+		"AbilityTextureName"			"item_storm_shield_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"30"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3039,22 +3276,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_storm_shield"
-				"Target" 		"CASTER"
-			}
-		}
-
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_storm_shield"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -3063,8 +3284,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_storm_shield"
@@ -3091,7 +3310,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -3111,7 +3330,28 @@
 		
 		"ID"							"1083"							
 		"ItemCost"						"6000"							
-		"AbilityTextureName"			"item_guldans_orb"			
+		"AbilityTextureName"			"item_guldans_orb_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"30"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3130,22 +3370,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"30"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_guldans_orb"
-				"Target" 		"CASTER"
-			}
-		}
-
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_guldans_orb"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -3154,8 +3378,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_guldans_orb"
@@ -3174,7 +3396,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -3194,7 +3416,28 @@
 		
 		"ID"							"1084"							
 		"ItemCost"						"10000"							
-		"AbilityTextureName"			"item_marichald_orb"			
+		"AbilityTextureName"			"item_marichald_orb_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"40"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3213,22 +3456,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"40"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_marichald_orb"
-				"Target" 		"CASTER"
-			}
-		}
-
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_marichald_orb"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -3237,8 +3464,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_marichald_orb"
@@ -3257,7 +3482,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
@@ -3276,7 +3501,28 @@
 		
 		"ID"							"1085"							
 		"ItemCost"						"2000"							
-		"AbilityTextureName"			"item_sirrus_orb"			
+		"AbilityTextureName"			"item_sirrus_orb_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"22"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3295,22 +3541,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"22"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_sirrus_orb"
-				"Target" 		"CASTER"
-			}
-		}
-
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_sirrus_orb"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -3319,8 +3549,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_sirrus_orb"
@@ -3358,7 +3586,28 @@
 		
 		"ID"							"1086"							
 		"ItemCost"						"160"							
-		"AbilityTextureName"			"item_small_shield"			
+		"AbilityTextureName"			"item_small_shield_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"6"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3377,21 +3626,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_small_shield"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_small_shield"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -3400,8 +3634,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_small_shield"
@@ -3437,8 +3669,29 @@
 
 		
 		"ID"							"1087"							
-		"ItemCost"						"160"							
-		"AbilityTextureName"			"item_large_shield"			
+		"ItemCost"						"850"							
+		"AbilityTextureName"			"item_large_shield_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"11"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3457,31 +3710,13 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_large_shield"
-				"Target" 		"CASTER"
-			}
 		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_large_shield"
-				"Target" 		"CASTER"
-			}
-		}
-
 
 		"Modifiers"
 		{
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_large_shield"
@@ -3518,7 +3753,28 @@
 		
 		"ID"							"1088"							
 		"ItemCost"						"2600"							
-		"AbilityTextureName"			"item_reinforced_shield"			
+		"AbilityTextureName"			"item_reinforced_shield_off_hand"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"18"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}			
 
 		"OnEquip"														
 		{
@@ -3537,21 +3793,6 @@
 				"agilityRequired"		"0"
 				"intellectRequired"		"0"
 			}
-
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_reinforced_shield"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_reinforced_shield"
-				"Target" 		"CASTER"
-			}
 		}
 
 
@@ -3560,8 +3801,6 @@
 			"modifier_off_hand"
 			{
 				"IsHidden"		"0"
-
-				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
 			}
 
 			"modifier_reinforced_shield"
@@ -3654,7 +3893,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
@@ -3719,7 +3958,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3742,29 +3981,12 @@
 		"ItemCost"						"16000"							
 		"AbilityTextureName"			"item_dark_elven_charm"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_dark_elven_charm"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_dark_elven_charm"
-				"Target" 		"CASTER"
-			}
-		}
-
-
 		"Modifiers"
 		{
 			"modifier_dark_elven_charm"
 			{
+				"Passive"		"1"
+
 				"ThinkInterval"  "1.0"
 				"OnIntervalThink"
 				{
@@ -3837,7 +4059,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3860,29 +4082,13 @@
 		"ItemCost"						"10000"							
 		"AbilityTextureName"			"item_cryptic_charm"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_cryptic_charm"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_cryptic_charm"
-				"Target" 		"CASTER"
-			}
-		}
-
 
 		"Modifiers"
 		{
 			"modifier_cryptic_charm"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"20"
@@ -3897,7 +4103,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -3960,7 +4166,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4042,7 +4248,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4146,7 +4352,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"epic"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4169,28 +4375,12 @@
 		"ItemCost"						"800"							
 		"AbilityTextureName"			"item_ring_of_power"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ring_of_power"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ring_of_power"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_ring_of_power"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"3"
@@ -4204,7 +4394,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4225,28 +4415,13 @@
 		"ItemCost"						"2400"							
 		"AbilityTextureName"			"item_ring_of_dominance"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ring_of_dominance"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ring_of_dominance"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_ring_of_dominance"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"8"			    
@@ -4259,7 +4434,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4280,28 +4455,12 @@
 		"ItemCost"						"600"							
 		"AbilityTextureName"			"item_anklet_of_dexterity"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_anklet_of_dexterity"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_anklet_of_dexterity"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_anklet_of_dexterity"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"3"			    
@@ -4314,7 +4473,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4335,28 +4494,13 @@
 		"ItemCost"						"2000"							
 		"AbilityTextureName"			"item_anklet_of_quickness"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_anklet_of_quickness"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_anklet_of_quickness"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_anklet_of_quickness"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"	"8"			    
@@ -4369,7 +4513,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4390,28 +4534,12 @@
 		"ItemCost"						"900"							
 		"AbilityTextureName"			"item_ring_of_intelligence"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ring_of_intelligence"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ring_of_intelligence"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_ring_of_intelligence"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"6"			    
@@ -4424,7 +4552,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4446,28 +4574,12 @@
 		"ItemCost"						"2200"							
 		"AbilityTextureName"			"item_ring_of_the_archmagi"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ring_of_the_archmagi"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ring_of_the_archmagi"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_ring_of_the_archmagi"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"14"			    
@@ -4480,7 +4592,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4502,28 +4614,13 @@
 		"ItemCost"						"200"							
 		"AbilityTextureName"			"item_stone_ring"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_stone_ring"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_stone_ring"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_stone_ring"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"2"
@@ -4558,28 +4655,13 @@
 		"ItemCost"						"3800"							
 		"AbilityTextureName"			"item_ring_of_the_blessed"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ring_of_the_blessed"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ring_of_the_blessed"
-				"Target" 		"CASTER"
-			}
-		}
-
+		
 		"Modifiers"
 		{
 			"modifier_ring_of_the_blessed"
 			{
+				"Passive"	"1"
+
 				"OnKill"
 				{
 					"RunScript"
@@ -4596,7 +4678,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4617,28 +4699,13 @@
 		"ItemCost"						"3000"							
 		"AbilityTextureName"			"item_bracers_of_triumph"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_bracers_of_triumph"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_bracers_of_triumph"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_bracers_of_triumph"
 			{
+				"Passive"	"1"
+
 				"OnKill"
 				{
 					"Heal"
@@ -4655,7 +4722,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4676,28 +4743,13 @@
 		"ItemCost"						"2000"							
 		"AbilityTextureName"			"item_gloves_of_haste"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_gloves_of_haste"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_gloves_of_haste"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_gloves_of_haste"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT" "15"
@@ -4710,7 +4762,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4732,28 +4784,14 @@
 		"ItemCost"						"1350"							
 		"AbilityTextureName"			"item_beryl_gauntlets"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_beryl_gauntlets"
-				"Target" 		"CASTER"
-			}
-		}
 
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_beryl_gauntlets"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_beryl_gauntlets"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"3"
@@ -4767,7 +4805,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4789,28 +4827,14 @@
 		"ItemCost"						"4000"							
 		"AbilityTextureName"			"item_ruby_gauntlets"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_ruby_gauntlets"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_ruby_gauntlets"
-				"Target" 		"CASTER"
-			}
-		}
+	
 
 		"Modifiers"
 		{
 			"modifier_ruby_gauntlets"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"8"
@@ -4854,7 +4878,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4875,28 +4899,13 @@
 		"ItemCost"						"4000"							
 		"AbilityTextureName"			"item_cursed_gauntlets"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_cursed_gauntlets"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_cursed_gauntlets"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
 			"modifier_cursed_gauntlets"
 			{
+				"Passive"		"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"6"
@@ -4911,7 +4920,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4930,29 +4939,14 @@
 
 		
 		"ID"							"1120"							
-		"ItemCost"						"4000"							
+		"ItemCost"						"2000"							
 		"AbilityTextureName"			"item_boots_of_haste"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_movement_speed"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_movement_speed"
-				"Target" 		"CASTER"
-			}
-		}
 
 		"Modifiers"
 		{
+			"Passive"		"1"
+
 			"modifier_movement_speed"
 			{
 				"Properties"
@@ -4967,7 +4961,7 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"common"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
@@ -4988,28 +4982,12 @@
 		"ItemCost"						"3000"							
 		"AbilityTextureName"			"item_ninja_slippers"			
 
-		"OnEquip"														
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"	"modifier_movement_speed"
-				"Target" 		"CASTER"
-			}
-		}
-
-		"OnUnequip"
-		{
-			"RemoveModifier"
-			{
-				"ModifierName"	"modifier_movement_speed"
-				"Target" 		"CASTER"
-			}
-		}
-
 		"Modifiers"
 		{
 			"modifier_movement_speed"
 			{
+				"Passive"	"1"
+
 				"Properties"
 				{
 					"MODIFIER_PROPERTY_MOVESPEED_BONUS_UNIQUE"	"110"
@@ -5023,10 +5001,1370 @@
 		//=========
 
 		"ItemShopTags"					"damage"						
-		"ItemQuality"					"component"		
+		"ItemQuality"					"rare"		
 		"BaseClass"						"item_datadriven"
 		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Guardian Helm
+	//=================================================================================================================
+	"item_guardian_helm"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1122"							
+		"ItemCost"						"3000"							
+		"AbilityTextureName"			"item_guardian_helm"			
+
+		"Modifiers"
+		{
+			"modifier_guardian_helm"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"10"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"4"
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"2"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"rare"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Hood of Cunning
+	//=================================================================================================================
+	"item_hood_of_cunning"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1123"							
+		"ItemCost"						"8000"							
+		"AbilityTextureName"			"item_hood_of_cunning"			
+
+		"Modifiers"
+		{
+			"modifier_hood_of_cunning"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"2"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"2"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"12"
+					"MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE"	"40"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"epic"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Accessory: Egron's Hold
+	//=================================================================================================================
+	"item_egrons_hold"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1124"							
+		"ItemCost"						"4500"							
+		"AbilityTextureName"			"item_egrons_hold"			
+
+		"Modifiers"
+		{
+			"modifier_egrons_hold"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"		"2"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"		"2"
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"2"
+					"MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS"	"20"
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"rare"		
+		"BaseClass"						"item_datadriven"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Aegis Plating
+	//=================================================================================================================
+	"item_aegis_plating_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1150"							
+		"ItemCost"						"10000"							
+		"AbilityTextureName"			"item_aegis_plating_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"26"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"24"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_aegis_plating"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"7"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"1250"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"300"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"rare"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Opal Scales
+	//=================================================================================================================
+	"item_opal_scales_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1151"							
+		"ItemCost"						"13500"							
+		"AbilityTextureName"			"item_opal_scales_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"32"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_aegis_plating"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"11"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"1800"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"10"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"epic"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Chest: Choromeir Scales
+	//=================================================================================================================
+	"item_choromeir_scales_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1152"							
+		"ItemCost"						"16500"							
+		"AbilityTextureName"			"item_choromeir_scales_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"40"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_choromeir_scales"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"16"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"2000"
+					"MODIFIER_PROPERTY_EVASION_CONSTANT"			"8"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"-15"		    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"epic"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Salamander Skin
+	//=================================================================================================================
+	"item_salamander_skin_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1153"							
+		"ItemCost"						"22000"							
+		"AbilityTextureName"			"item_salamander_skin_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"40"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_aegis_plating"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"14"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"2600"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"12"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"epic"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Zirklumm Robes
+	//=================================================================================================================
+	"item_zirklumm_robes_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1154"							
+		"ItemCost"						"6000"							
+		"AbilityTextureName"			"item_zirklumm_robes_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"36"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_zirklumm_robes"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"500"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"600"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"rare"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Celestial Robes
+	//=================================================================================================================
+	"item_celestial_robes_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1155"							
+		"ItemCost"						"11500"							
+		"AbilityTextureName"			"item_celestial_robes_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"44"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_celestial_robes"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"8"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"800"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"850"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"epic"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Cloak of the Apprentice
+	//=================================================================================================================
+	"item_cloak_of_the_apprentice_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1156"							
+		"ItemCost"						"180"							
+		"AbilityTextureName"			"item_cloak_of_the_apprentice_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_cloak_of_the_apprentice"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"1"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"60"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Magi Robes
+	//=================================================================================================================
+	"item_magi_robes_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1157"							
+		"ItemCost"						"1000"							
+		"AbilityTextureName"			"item_magi_robes_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"10"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_magi_robes"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"4"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"50"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"220"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+
+	//=================================================================================================================
+	// Chest: Magi Mantle
+	//=================================================================================================================
+	"item_magi_mantle_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1158"							
+		"ItemCost"						"3000"							
+		"AbilityTextureName"			"item_magi_mantle_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"22"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_magi_mantle"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"360"
+					"MODIFIER_PROPERTY_MANA_BONUS"				"400"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"common"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Leather Armor
+	//=================================================================================================================
+	"item_leather_armor_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1159"							
+		"ItemCost"						"120"							
+		"AbilityTextureName"			"item_leather_armor_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_leather_armor"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"3"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"50"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"2"		    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Studded Leather Armor
+	//=================================================================================================================
+	"item_studded_leather_armor_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1160"							
+		"ItemCost"						"600"							
+		"AbilityTextureName"			"item_studded_leather_armor_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"8"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_studded_leather_armor"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"5"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"180"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"4"		    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"component"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Lizard Scale
+	//=================================================================================================================
+	"item_lizard_scale_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1161"							
+		"ItemCost"						"3200"							
+		"AbilityTextureName"			"item_lizard_scale_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"16"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_lizard_scale"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"8"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"500"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"6"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"common"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Splint Mail
+	//=================================================================================================================
+	"item_splint_mail_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1162"							
+		"ItemCost"						"5000"							
+		"AbilityTextureName"			"item_splint_mail_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"24"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_splint_mail"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"	"9"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"			"1250"
+					"MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT"	"8"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"common"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
+	}
+
+
+	//=================================================================================================================
+	// Chest: Scale Mail
+	//=================================================================================================================
+	"item_scale_mail_chest"
+	{
+		//========
+		// Unique
+		//========
+
+		
+		"ID"							"1163"							
+		"ItemCost"						"3500"							
+		"AbilityTextureName"			"item_scale_mail_chest"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"strength_required"		"18"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"agility_required"		"0"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"intellect_required"	"0"
+			}
+		}
+
+		"OnEquip"														
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"equipmentSystem.lua"
+				"Function"		"Mainhand"
+				"modifier"		"modifier_chest"
+			}
+  
+  			"RunScript"
+			{
+				"ScriptFile"			"itemSpells.lua"
+				"Function"				"attributeCheck"
+				"strengthRequired"		"%strength_required"
+				"agilityRequired"		"%agility_required"
+				"intellectRequired"		"%intellect_required"
+			}
+		}
+
+
+		"Modifiers"
+		{
+			"modifier_chest"
+			{
+				"IsHidden"		"0"
+			}
+
+
+			"modifier_scale_mail"
+			{
+				"Passive"	"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"7"
+					"MODIFIER_PROPERTY_HEALTH_BONUS"				"500"
+					"MODIFIER_PROPERTY_PHYSICAL_CONSTANT_BLOCK"		"4"
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"-15"			    
+				}
+			}
+		}
+
+		//=========
+		// Generic
+		//=========
+
+		"ItemShopTags"					"damage"						
+		"ItemQuality"					"common"		
+		"BaseClass"						"item_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"ItemShareability"				"ITEM_NOT_SHAREABLE"
 	}
 
 
