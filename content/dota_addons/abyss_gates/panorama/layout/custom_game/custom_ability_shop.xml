@@ -1,0 +1,15 @@
+<root>
+    <styles>
+        <include src="s2r://panorama/styles/dotastyles.vcss_c" />
+        <include src="file://{resources}/styles/custom_game/custom_ability_shop.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/custom_ability_shop.js" />
+    </scripts>
+    <Panel class="AbilityShop" hittest="false">
+        <Panel id="AbilityShopContainer" class="hidden" hittest="true" />
+        <Button id="AbilityShopButton" onactivate="ToggleAbilityShop()">
+            <Label text="Shop" />
+        </Button>
+    </Panel>
+</root>

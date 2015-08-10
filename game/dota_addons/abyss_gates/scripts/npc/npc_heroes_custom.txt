@@ -231,10 +231,10 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"5"
-		"Ability1"				"scottthree_ability1"
-		"Ability2"				"scottthree_ability2"
-		"Ability3"				"scottthree_ability3"
-		"Ability4"				"scottthree_ability4"
+		"Ability1"				""
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
 		"Ability6"				"test_ability5"
 		"Ability5"				"test_ability6"
 		"Ability7"				"test_ability7"

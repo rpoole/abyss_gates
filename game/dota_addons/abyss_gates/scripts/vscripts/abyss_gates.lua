@@ -455,9 +455,14 @@ end
 function WaveOneRoundOne()
 	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
 	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	local killBox = Entities:FindByName( nil, 'test_trigger'):GetAbsOrigin()
 
 	--[[Spawns 5 Boars in the top spawner]]
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	ExecuteOrderFromTable({ UnitIndex = unit:GetEntityIndex(),
+							OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
+							Position = killBox, Queue = true})
+	
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
@@ -1493,6 +1498,10 @@ function Abyss_Gates:OnItemPickedUp(keys)
 	local itemEntity = EntIndexToHScript(keys.ItemEntityIndex)
 	local player = PlayerResource:GetPlayer(keys.PlayerID)
 	local itemname = keys.itemname
+	local hero = player:GetAssignedHero()
+
+
+	hero:AddAbility('grim_magus_bloodshed')
 end
 
 -- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change

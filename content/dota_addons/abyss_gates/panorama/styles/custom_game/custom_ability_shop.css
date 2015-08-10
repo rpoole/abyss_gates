@@ -1,0 +1,62 @@
+.AbilityShop {
+  width: 320px; /* width of shop */
+  height: 100%;
+  horizontal-align: right;
+  vertical-align: top;
+  flow-children: down;
+}
+
+.AbilityShop #AbilityShopContainer {
+  width: 100%;
+  margin-top: 150px;
+  height: 60%; /* calc(100% - 30px);*/
+  background-color: #222;
+  flow-children: right-wrap;
+}
+
+.AbilityShop #AbilityShopButton {
+    width: 200px;
+    height: 30px;
+    line-height: 24px;
+    background-color: red;
+    margin-top: 30px;
+    horizontal-align: right;
+    margin-right: 5px;
+}
+
+.AbilityShop #AbilityShopContainer.hidden {
+    opacity: 0;
+}
+
+.AbilityShop #AbilityShopButton Label {
+    text-align: center;
+    width: 100%;
+    color: white;
+}
+
+/* width and height of 70, and margin 5 gives a total width of 80 
+ * meaning 4 spells per row if the width width of the shop is 320
+ * 320 / 80 = 4
+ */
+.AbilityShop .AbilityShopItem {
+    width: 70px;
+    height: 70px;
+    margin: 5px;
+}
+
+.AbilityShop .AbilityShopItem #AbilityCost {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px 0 #000;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    box-shadow: 0px 0px 3px #F3C909;
+    background-color: #F3C909;
+
+    padding-left: 4px;
+    padding-top: 3px;
+
+    vertical-align: bottom;
+    horizontal-align: left;
+}
