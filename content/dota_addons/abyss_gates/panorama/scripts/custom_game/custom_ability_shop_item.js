@@ -1,6 +1,15 @@
 function BuyAbility() {
-    var AbilityName = $.GetContextPanel().GetAttributeString('abilityname', '');
-    /* do your magic here */
+    var ability = $.GetContextPanel().GetAttributeString('abilityname', '');
+    var playerID = Players.GetLocalPlayer();
+    var playerName = Players.GetPlayerName(playerID);
+    var entityIndex = Players.GetPlayerHeroEntityIndex(playerID);
+
+    GameEvents.SendCustomGameEventToServer("buy_ability", {
+        ability: ability,
+        playerID: playerID,
+        playerName: playerName,
+        entityIndex: entityIndex
+    });
 }
 
 function AddAbility() {

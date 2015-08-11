@@ -165,6 +165,7 @@ function Abyss_Gates:OnHeroInGame(hero)
 	-- These lines will create an item and add it to the player, effectively ensuring they start with the item
 	local item = CreateItem("item_example_item", hero, hero)
 	hero:AddItem(item)
+
 end
 
 --[[
@@ -1500,8 +1501,6 @@ function Abyss_Gates:OnItemPickedUp(keys)
 	local itemname = keys.itemname
 	local hero = player:GetAssignedHero()
 
-
-	hero:AddAbility('grim_magus_bloodshed')
 end
 
 -- A player has reconnected to the game.  This function can be used to repaint Player-based particles or change
@@ -1893,6 +1892,9 @@ function Abyss_Gates:InitAbyss_Gates()
 	--ListenToGameEvent('dota_combatlog', Dynamic_Wrap(Abyss_Gates, 'OnCombatLogEvent'), self)
 	--ListenToGameEvent('dota_player_killed', Dynamic_Wrap(Abyss_Gates, 'OnPlayerKilled'), self)
 	--ListenToGameEvent('player_team', Dynamic_Wrap(Abyss_Gates, 'OnPlayerTeam'), self)
+	CustomGameEventManager:RegisterListener('buy_ability', onBuyAbility)
+
+	
 
 	-- Commands can be registered for debugging purposes or as functions that can be called by the custom Scaleform UI
 	Convars:RegisterCommand( "command_example", Dynamic_Wrap(Abyss_Gates, 'ExampleConsoleCommand'), "A console command example", 0 )

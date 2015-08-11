@@ -1,9 +1,0 @@
-function addAbility(playerId, hero, sourceHero, abilityName, cost, tier)
-	local slotOne = hero:GetAbilityByIndex(0)
-	local slotTwo = hero:GetAbilityByIndex(1)
-	local slotThree = hero:GetAbilityByIndex(2)
-	local slotFour = hero:GetAbilityByIndex(3)
-	local slotFive = hero:GetAbilityByIndex(4)
-
-	if slotOne ~= nil then
-		local player

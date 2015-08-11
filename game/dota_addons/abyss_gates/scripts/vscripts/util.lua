@@ -471,3 +471,6 @@ function LogDeepPrint(debugInstance, prefix)
 	prefix = prefix or ""
 	LogEndLine(LogDeepToString(debugInstance, prefix))
 end
+
+
+

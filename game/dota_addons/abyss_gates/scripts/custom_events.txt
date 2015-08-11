@@ -29,4 +29,9 @@
     "stat_collection_send"
     {
     }
+
+    "buy_ability"
+    {
+    	"ability"		"string"
+    }
 }

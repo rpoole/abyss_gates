@@ -6,6 +6,7 @@ requires = {
 	'abilities',
 	'abyss_gates',
 	'base_trigger',
+	'shop'
 }
 
 function Precache( context )

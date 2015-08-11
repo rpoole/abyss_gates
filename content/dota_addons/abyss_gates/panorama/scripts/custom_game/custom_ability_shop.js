@@ -1,8 +1,8 @@
 var Abilities = [
-    {name: 'vengefulspirit_magic_missile', cost: 20},
-    {name: 'vengefulspirit_nether_swap',   cost: 20},
-    {name: 'furion_wrath_of_nature',       cost: 50},
-    {name: 'grim_magus_bloodshed',  cost: 100}
+    {name: 'grim_magus_bloodshed',  cost: 100},
+    {name: 'grim_magus_darkbolt', cost: 20},
+    {name: 'grim_magus_skull_spear',   cost: 20},
+    {name: 'grim_magus_bleed_earth',       cost: 50}
 ];
 
 function ToggleAbilityShop() {
