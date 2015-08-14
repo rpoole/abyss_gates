@@ -1686,6 +1686,8 @@ function Abyss_Gates:OnPlayerLevelUp(keys)
 
 	local player = EntIndexToHScript(keys.player)
 	local level = keys.level
+
+
 end
 
 -- A player last hit a creep, a tower, or a hero
@@ -1893,6 +1895,10 @@ function Abyss_Gates:InitAbyss_Gates()
 	--ListenToGameEvent('dota_player_killed', Dynamic_Wrap(Abyss_Gates, 'OnPlayerKilled'), self)
 	--ListenToGameEvent('player_team', Dynamic_Wrap(Abyss_Gates, 'OnPlayerTeam'), self)
 	CustomGameEventManager:RegisterListener('buy_ability', onBuyAbility)
+	CustomGameEventManager:RegisterListener('tier_ability', tierMessage)
+	CustomGameEventManager:RegisterListener('tier_ability_two', tierMessageTwo)
+	CustomGameEventManager:RegisterListener('new_spells', newSpellsMessage)
+
 
 	
 

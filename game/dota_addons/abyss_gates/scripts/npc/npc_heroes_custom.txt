@@ -1,78 +1,21 @@
 "DOTAHeroes"
 {
-	"npc_dota_hero_ancient_apparition_abyss_gates"
-	{
-		"AbilityLayout" 		"6"
-		"override_hero"			"npc_dota_hero_ancient_apparition"
-		"SoundSet"				"0"	
-		"Ability1"				"example_ability" 
-		"Ability2"				"abyss_gates_empty2" 
-		"Ability3"				"abyss_gates_empty3" 
-		"Ability4"				"abyss_gates_empty4"
-		"Ability5"				"abyss_gates_empty5"
-		"Ability6"				"abyss_gates_empty6"
-		"Ability7"				""
-		"Ability8"				""
-		"Ability9"				""
-		"Ability10"				""
-		"Ability11"				""
-		"Ability12"				""
-		"Ability13"				""
-		"Ability14"				""
-		"Ability15"				""
-		"Ability16"				""
-
-		"ArmorPhysical"				"0"									// Physical protection.
-		"MagicalResistance"				"0"									// Magical protection (percentage).
-
-		"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
-		"AttackDamageMin"			"1"										// Damage range min.
-		"AttackDamageMax"			"1"										// Damage range max.
-
-		//"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-		"AttributeBaseStrength"		"0"										// Base strength
-		"AttributeStrengthGain"		"0"										// Strength bonus per level.
-		"AttributeBaseIntelligence"	"0"										// Base intelligence
-		"AttributeIntelligenceGain"	"0"										// Intelligence bonus per level.
-		"AttributeBaseAgility"		"0"										// Base agility
-		"AttributeAgilityGain"		"0"										// Agility bonus per level.
-
-		"BountyXP"					"0"									// Experience earn.
-		"BountyGoldMin"				"0"										// Gold earned min.
-		"BountyGoldMax"				"0"										// Gold earned max.
-
-		//"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-		//"RingRadius"				"70"
-
-		"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"				"360"									// Speed.
-		"MovementTurnRate"			"1.0"									// Turning rate.
-
-		"StatusHealth"				"981"									// Base health.
-		"StatusHealthRegen"			"0.0"									// Health regeneration rate.
-		"StatusMana"				"387"										// Base mana.
-		"StatusManaRegen"			"99.96"									// Mana regeneration rate.
-
-		"VisionNighttimeRange"		"1800"									// Range of vision at night time.
-	}
-
-
-
+	
 	//=================================================================================================================
-	// HERO: TEST SUBJECT ONE
+	// HERO: GRIM MAGUS
 	//=================================================================================================================
-	"npc_dota_hero_crystal_maiden_abyss_gates"
+	"npc_dota_hero_pugna_abyss_gates"
 	{
-		"override_hero"				"npc_dota_hero_crystal_maiden"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_crystal_maiden.vsndevts"
+		"override_hero"				"npc_dota_hero_pugna"
+		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"5"
-		"Ability1"				"test_subject_test_ability1"
-		"Ability2"				"test_subject_test_ability2"
-		"Ability3"				"test_subject_test_ability3"
-		"Ability4"				"test_subject_test_ability4"
-		"Ability6"				"dummy_passive"
+		"Ability1"				""
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
+		"Ability6"				""
 		"Ability5"				"test_ability6"
 		"Ability7"				"test_ability7"
 
@@ -103,7 +46,7 @@
 		// Movement
 		//-------------------------------------------------------------------------------------------------------------
 		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
+		"MovementTurnRate"			"1.0"									// Turning rate.
 		
 		// Status
 		//-------------------------------------------------------------------------------------------------------------
@@ -112,387 +55,12 @@
 
 	}
 
-	//=================================================================================================================
-	// HERO: SCOTT
-	//=================================================================================================================
-	"npc_dota_hero_lion_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_lion"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_lion.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"scott_ability1"
-		"Ability2"				"scott_ability2"
-		"Ability3"				"scott_ability3"
-		"Ability4"				"scott_ability4"
-		"Ability6"				"test_ability5"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
 
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
 
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
 	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
 
 	//=================================================================================================================
-	// HERO: SCOTTTWO
-	//=================================================================================================================
-	"npc_dota_hero_kunkka_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_kunkka"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"scotttwo_ability1"
-		"Ability2"				"scotttwo_ability2"
-		"Ability3"				"scotttwo_ability3"
-		"Ability4"				"scotttwo_ability4"
-		"Ability6"				"test_ability5"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-	//=================================================================================================================
-	// HERO: SCOTTTHREE
-	//=================================================================================================================
-	"npc_dota_hero_pudge_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_pudge"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				""
-		"Ability2"				""
-		"Ability3"				""
-		"Ability4"				""
-		"Ability6"				"test_ability5"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-	//=================================================================================================================
-	// HERO: GRIM MAGUS DESTRO
-	//=================================================================================================================
-	"npc_dota_hero_pugna_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_pugna"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_pugna.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"grim_magus_bloodshed"
-		"Ability2"				"grim_magus_darkbolt"
-		"Ability3"				"grim_magus_skull_spear"
-		"Ability4"				"grim_magus_bleed_earth"
-		"Ability6"				"grim_magus_shatter_bones"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-	//=================================================================================================================
-	// HERO: GRIM MAGUS DEMONOLOGY
-	//=================================================================================================================
-	"npc_dota_hero_dazzle_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_dazzle"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dazzle.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"grim_magus_raise_skeleton"
-		"Ability2"				"grim_magus_skeleton_mastery"
-		"Ability3"				"grim_magus_corpse_explosion"
-		"Ability4"				"grim_magus_raise_skeleton_mage"
-		"Ability6"				"grim_magus_the_creature"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-	//=================================================================================================================
-	// HERO: GRIM MAGUS AFFLICTION
-	//=================================================================================================================
-	"npc_dota_hero_leshrac_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_leshrac"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"grim_magus_fear"
-		"Ability2"				"grim_magus_amplify_damage"
-		"Ability3"				"grim_magus_life_tap"
-		"Ability4"				"grim_magus_mana_rip"
-		"Ability6"				"grim_magus_taint_resistance"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-	//=================================================================================================================
-	// HERO: SPIRIT WARRIOR: Arts of Self
-	//=================================================================================================================
-	"npc_dota_hero_sven_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_sven"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"spirit_warrior_hardened_skin"
-		"Ability2"				"spirit_warrior_critical_strike"
-		"Ability3"				"spirit_warrior_vampirism"
-		"Ability4"				"spirit_warrior_spirit_image"
-		"Ability6"				"spirit_warrior_true_focus"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"2.5"									// Damage range min.
-		"AttackDamageMax"			"9.5"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-	//=================================================================================================================
-	// HERO: SPIRIT WARRIOR: Arts of Striking
+	// HERO: SPIRIT WARRIOR
 	//=================================================================================================================
 	"npc_dota_hero_juggernaut_abyss_gates"
 	{
@@ -501,11 +69,11 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"5"
-		"Ability1"				"spirit_warrior_hidden_strike"
-		"Ability2"				"spirit_warrior_serpent_strike"
-		"Ability3"				"spirit_warrior_freezing_strike"
-		"Ability4"				"spirit_warrior_storm_strike"
-		"Ability6"				"spirit_warrior_firestorm_strike"
+		"Ability1"				""
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
+		"Ability6"				""
 		"Ability5"				"test_ability6"
 		"Ability7"				"test_ability7"
 
@@ -546,63 +114,11 @@
 	}
 
 
-	//=================================================================================================================
-	// HERO: SPIRIT WARRIOR: Arts of Spirit
-	//=================================================================================================================
-	"npc_dota_hero_dragon_knight_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_dragon_knight"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"spirit_warrior_retribution"
-		"Ability2"				"spirit_warrior_salvation"
-		"Ability3"				"spirit_warrior_purification"
-		"Ability4"				"spirit_warrior_conversion"
-		"Ability6"				"spirit_warrior_tel_qeres"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"									// Damage range min.
-		"AttackDamageMax"			"105"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
 	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
 
 
 	//=================================================================================================================
-	// HERO: PALADIN: Combat Skills
+	// HERO: PALADIN
 	//=================================================================================================================
 	"npc_dota_hero_omniknight_abyss_gates"
 	{
@@ -611,11 +127,11 @@
 		// Abilities
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityLayout"				"5"
-		"Ability1"				"paladin_stone_fist"
-		"Ability2"				"paladin_divine_light"
-		"Ability3"				"paladin_zeal"
-		"Ability4"				"paladin_charge"
-		"Ability6"				"paladin_purify_hammer"
+		"Ability1"				""
+		"Ability2"				""
+		"Ability3"				""
+		"Ability4"				""
+		"Ability6"				""
 		"Ability5"				"test_ability6"
 		"Ability7"				"test_ability7"
 
@@ -656,112 +172,5 @@
 	}
 
 
-	//=================================================================================================================
-	// HERO: PALADIN: Support Aura Skills
-	//=================================================================================================================
-	"npc_dota_hero_vengefulspirit_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_vengefulspirit"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_vengefulspirit.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"paladin_regeneration_aura"
-		"Ability2"				"paladin_stoneskin_aura"
-		"Ability3"				"paladin_might_aura"
-		"Ability4"				"paladin_warmth_aura"
-		"Ability6"				"paladin_swiftness_aura"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"									// Damage range min.
-		"AttackDamageMax"			"105"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
 	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
-
-
-	//=================================================================================================================
-	// HERO: PALADIN: Offensive Aura Skills
-	//=================================================================================================================
-	"npc_dota_hero_enigma_abyss_gates"
-	{
-		"override_hero"				"npc_dota_hero_enigma"
-		"GameSoundsFile"			"soundevents/game_sounds_heroes/game_sounds_enigma.vsndevts"
-		// Abilities
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityLayout"				"5"
-		"Ability1"				"paladin_weakness_aura"
-		"Ability2"				"paladin_frailty_aura"
-		"Ability3"				"paladin_fire_aura"
-		"Ability4"				"paladin_blinding_light_aura"
-		"Ability6"				"paladin_cold_aura"
-		"Ability5"				"test_ability6"
-		"Ability7"				"test_ability7"
-
-		// Armor
-		//-------------------------------------------------------------------------------------------------------------
-		"ArmorPhysical"				"1"									// Physical protection. // 2.94
-
-		// Attack
-		//-------------------------------------------------------------------------------------------------------------
-		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"			"100"									// Damage range min.
-		"AttackDamageMax"			"105"									// Damage range max.
-		"AttackRate"				"1.7"									// Speed of attack.
-		"AttackAnimationPoint"		"0.5"									// Normalized time in animation cycle to attack.
-		"AttackAcquisitionRange"	"600"									// Range within a target can be acquired.
-		"AttackRange"				"600"									// Range within a target can be attacked.
-	
-		// Attributes
-		//-------------------------------------------------------------------------------------------------------------
-		"AttributePrimary"			"DOTA_ATTRIBUTE_INTELLECT"
-		"AttributeBaseStrength"		"9"									// Base strength
-		"AttributeStrengthGain"		"3"									// Strength bonus per level.
-		"AttributeBaseAgility"		"6"									// Base agility
-		"AttributeAgilityGain"		"2"									// Agility bonus per level.
-		"AttributeBaseIntelligence"	"3"									// Base intelligence
-		"AttributeIntelligenceGain"	"1"									// Intelligence bonus per level.
-
-		// Movement
-		//-------------------------------------------------------------------------------------------------------------
-		"MovementSpeed"				"350"									// Speed.
-		"MovementTurnRate"			"0.5"									// Turning rate.
-		
-		// Status
-		//-------------------------------------------------------------------------------------------------------------
-		"StatusHealth"				"10"
-		"StatusMana"				"1"
-
-	}
 }

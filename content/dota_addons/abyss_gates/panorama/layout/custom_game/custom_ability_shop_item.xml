@@ -12,7 +12,6 @@
             onmouseout="AbilityHideTooltip()"
             onactivate="BuyAbility()">
             <DOTAAbilityImage id="AbilityImage" />
-            <Label id="AbilityCost"/>
         </Button>
     </Panel>
 </root>
