@@ -44,6 +44,28 @@ function Precache( context )
 	-- It it likely that precaching a single particle system will precache all of its children, but this may not be guaranteed
 	--PrecacheResource("particle", "particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf", context)
 	--PrecacheResource("particle_folder", "particles/test_particle", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_witchdoctor/witchdoctor_cask.vpcf", context)
+	PrecacheResource("particle", "particles/skull_spear.vpcf", context)
+	PrecacheResource("particle", "particles/bleed_earth.vpcf", context)
+	PrecacheResource("particle", "particles/bleed_earth2.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/ti4/teleport_start_l_ti4.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_phantom_assassin/phantom_assassin_crit_impact.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf", context)
+	PrecacheResource("particle", "particles/divine_light.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_ursa/ursa_earthshock.vpcf", context)
+	PrecacheResource("particle", "particles/stone_fist_two.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_life_stealer/life_stealer_rage.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sven/sven_spell_great_cleave.vpcf", context)
+	PrecacheResource("particle", "particles/heal_aura.vpcf", context)
+	PrecacheResource("particle", "particles/stone_skin_aura.vpcf", context)
+	PrecacheResource("particle", "particles/might_aura.vpcf", context)
+	PrecacheResource("particle", "particles/warmth_aura.vpcf", context)
+	PrecacheResource("particle", "particles/swiftness_aura.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bane/bane_enfeeble.vpcf", context)
+	PrecacheResource("particle", "particles/items2_fx/medallion_of_courage.vpcf", context)
+
 
 	-- Models can also be precached by folder or individually
 	--PrecacheModel should generally used over PrecacheResource for individual models

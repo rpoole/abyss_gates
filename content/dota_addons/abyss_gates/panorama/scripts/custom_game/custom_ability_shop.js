@@ -95,7 +95,6 @@ var PaladinAbilitiesTier5 = [
 
 
 
-GameEvents.Subscribe("dota_player_gained_level", UpdateAbilityShopMenu)
 
 function ToggleAbilityShop() {
     $('#AbilityShopContainer').ToggleClass('hidden');
@@ -104,10 +103,10 @@ function ToggleAbilityShop() {
 
 
 function AppendAbility(Panel, ability) {
-    var abilityPanel = $.CreatePanel( "Panel", Panel, "" );
-    abilityPanel.SetAttributeString( "abilityname", ability.name );
-    abilityPanel.SetAttributeInt( "abilitycost", ability.cost );
-    abilityPanel.BLoadLayout( "file://{resources}/layout/custom_game/custom_ability_shop_item.xml", false, false );
+        var abilityPanel = $.CreatePanel( "Panel", Panel, "" );
+        abilityPanel.SetAttributeString( "abilityname", ability.name );
+        abilityPanel.SetAttributeInt( "abilitycost", ability.cost );
+        abilityPanel.BLoadLayout( "file://{resources}/layout/custom_game/custom_ability_shop_item.xml", false, false );
 }
 
 function BuildAbilityShopMenu() {
@@ -119,7 +118,7 @@ function BuildAbilityShopMenu() {
 
     $.Msg(heroLevel)
 
-    if (heroName == 'npc_dota_hero_pugna')
+    if (heroName == 'npc_dota_hero_rubick')
     {
         for (var ability of GrimMagusAbilitiesTier1) {
         AppendAbility(Container, ability);
@@ -152,12 +151,23 @@ function UpdateAbilityShopMenu()
     var heroEntityIndex = Players.GetPlayerHeroEntityIndex(playerID);
     var heroLevel = Entities.GetLevel(heroEntityIndex);
 
-    if (heroName == 'npc_dota_hero_pugna')
+    if (heroName == 'npc_dota_hero_rubick')
     {
         if (heroLevel == 2)
         {
             for (var ability of GrimMagusAbilitiesTier2) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 6)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 6)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 2;
@@ -169,7 +179,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 9)
         {
             for (var ability of GrimMagusAbilitiesTier3) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 9)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 9)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 3;
@@ -181,7 +202,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 12)
         {
             for (var ability of GrimMagusAbilitiesTier4) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 12)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 12)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 4;
@@ -193,7 +225,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 15)
         {
             for (var ability of GrimMagusAbilitiesTier5) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 15)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 15)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 5;
@@ -208,7 +251,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 2)
         {
             for (var ability of SpiritWarriorAbilitiesTier2) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 6)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 6)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 2;
@@ -220,7 +274,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 9)
         {
             for (var ability of SpiritWarriorAbilitiesTier3) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 9)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 9)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 3;
@@ -232,7 +297,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 12)
         {
             for (var ability of SpiritWarriorAbilitiesTier4) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 12)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 12)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 4;
@@ -244,7 +320,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 15)
         {
             for (var ability of SpiritWarriorAbilitiesTier5) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 15)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 15)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 5;
@@ -259,7 +346,17 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 2)
         {
             for (var ability of PaladinAbilitiesTier2) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 6)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 6)  
+                {
+                    break;
+                }
             }
 
             var tierOne = 2;
@@ -271,7 +368,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 9)
         {
             for (var ability of PaladinAbilitiesTier3) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 9)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 9)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 3;
@@ -283,7 +391,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 12)
         {
             for (var ability of PaladinAbilitiesTier4) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 12)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 12)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 4;
@@ -295,7 +414,18 @@ function UpdateAbilityShopMenu()
         if (heroLevel == 15)
         {
             for (var ability of PaladinAbilitiesTier5) {
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 15)
+                {
+                    break;
+                }
             AppendAbility(Container, ability);
+            var childCount = $('#AbilityShopContainer').GetChildCount();
+                if (childCount == 15)
+                {
+                    
+                    break;
+                }
             }
 
             var tierOne = 5;
@@ -308,7 +438,10 @@ function UpdateAbilityShopMenu()
    
 }
 
-
 (function() {
     BuildAbilityShopMenu();
 })();
+
+
+GameEvents.Subscribe("dota_player_gained_level", UpdateAbilityShopMenu);
+

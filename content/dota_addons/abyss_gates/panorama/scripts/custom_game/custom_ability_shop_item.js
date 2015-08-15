@@ -1,4 +1,4 @@
-function BuyAbility() {
+    function BuyAbility() {
     var ability = $.GetContextPanel().GetAttributeString('abilityname', '');
     var playerID = Players.GetLocalPlayer();
     var playerName = Players.GetPlayerName(playerID);

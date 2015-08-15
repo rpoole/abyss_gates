@@ -6,14 +6,14 @@ CORPSE_DURATION = 88
 
 ENABLE_HERO_RESPAWN = true              -- Should the heroes automatically respawn on a timer or stay dead until manually respawned
 UNIVERSAL_SHOP_MODE = false             -- Should the main shop contain Secret Shop items as well as regular items
-ALLOW_SAME_HERO_SELECTION = true        -- Should we let people select the same hero as each other
+ALLOW_SAME_HERO_SELECTION = false       -- Should we let people select the same hero as each other
 
 HERO_SELECTION_TIME = 1              -- How long should we let people select their hero?
 PRE_GAME_TIME = 0                    -- How long after people select their heroes should the horn blow and the game start?
 POST_GAME_TIME = 60.0                   -- How long should we let people look at the scoreboard before closing the server automatically?
 TREE_REGROW_TIME = 60.0                 -- How long should it take individual trees to respawn after being cut down/destroyed?
 
-GOLD_PER_TICK = 4                     -- How much gold should players get per tick?
+GOLD_PER_TICK = 0                     -- How much gold should players get per tick?
 GOLD_TICK_TIME = 2                      -- How long should we wait in seconds between gold ticks?
 
 RECOMMENDED_BUILDS_DISABLED = true     -- Should we disable the recommened builds for heroes (Note: this is not working currently I believe)
@@ -46,7 +46,7 @@ END_GAME_ON_KILLS = true                -- Should the game end after a certain n
 KILLS_TO_END_GAME_FOR_TEAM = 50         -- How many kills for a team should signify an end of game?
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
-MAX_LEVEL = 50                          -- What level should we let heroes get to?
+MAX_LEVEL = 20                          -- What level should we let heroes get to?
 USE_CUSTOM_XP_VALUES = false             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
 
 Testing = true
@@ -154,7 +154,6 @@ function Abyss_Gates:OnHeroInGame(hero)
 		Say(nil, "Testing is on.", false)
 	end
 
-	InitAbilities(hero)
 
 	-- Show a popup with game instructions.
     ShowGenericPopupToPlayer(hero.player, "#abyss_gates_instructions_title", "#abyss_gates_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
@@ -163,9 +162,39 @@ function Abyss_Gates:OnHeroInGame(hero)
 	hero:SetGold(1000000, false)
 
 	-- These lines will create an item and add it to the player, effectively ensuring they start with the item
-	local item = CreateItem("item_example_item", hero, hero)
-	hero:AddItem(item)
 
+	local heroName = hero:GetUnitName()
+
+	if heroName == "npc_dota_hero_rubick" then
+		local healingPotion = CreateItem('item_potion_of_healing', hero, hero)
+		local manaPotion = CreateItem('item_potion_of_mana', hero, hero)
+		local marrenwoodStaff = CreateItem('item_marrenwood_staff_two_hand', hero, hero)
+		local apprenticeCloak = CreateItem('item_cloak_of_the_apprentice_chest', hero, hero)
+		hero:AddItem(marrenwoodStaff)
+		hero:AddItem(apprenticeCloak)
+		hero:AddItem(healingPotion)
+		hero:AddItem(manaPotion)
+	end
+
+	if heroName == "npc_dota_hero_omniknight" then
+		local healingPotion = CreateItem('item_potion_of_healing', hero, hero)		
+		local pickaxe = CreateItem('item_pickaxe_main_hand', hero, hero)
+		local smallShield = CreateItem('item_small_shield_off_hand', hero, hero)
+		local leatherArmor = CreateItem('item_leather_armor_chest', hero, hero)
+		hero:AddItem(pickaxe)
+		hero:AddItem(smallShield)
+		hero:AddItem(leatherArmor)
+		hero:AddItem(healingPotion)
+	end
+
+	if heroName == "npc_dota_hero_juggernaut" then
+		local healingPotion = CreateItem('item_potion_of_healing', hero, hero)		
+		local terraBlade = CreateItem('item_terra_blade_two_hand', hero, hero)
+		local leatherArmor = CreateItem('item_leather_armor_chest', hero, hero)
+		hero:AddItem(terraBlade)
+		hero:AddItem(leatherArmor)
+		hero:AddItem(healingPotion)
+	end
 end
 
 --[[
@@ -459,11 +488,7 @@ function WaveOneRoundOne()
 	local killBox = Entities:FindByName( nil, 'test_trigger'):GetAbsOrigin()
 
 	--[[Spawns 5 Boars in the top spawner]]
-	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
-	ExecuteOrderFromTable({ UnitIndex = unit:GetEntityIndex(),
-							OrderType = DOTA_UNIT_ORDER_MOVE_TO_POSITION,
-							Position = killBox, Queue = true})
-	
+	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)	
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
@@ -1550,10 +1575,23 @@ function Abyss_Gates:OnItemPurchased( keys )
 	       			GameRules:SendCustomMessage(mainHandMessage, 0, 0)
 	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
 	       			hero:SellItem(item)
+	       		end
+	       		if foundMainHandItem and string.find(item_name, "two_hand") then
+                	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
+                	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
+                	local mainHandMessage = ColorIt("You may only have one Main Hand weapon equipped.", "red")
+                	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
+	       			GameRules:SendCustomMessage(mainHandMessage, 0, 0)
+	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
+	       			hero:SellItem(item)
                 end
  
                 if string.find(item_name, "main_hand") then
                     foundMainHandItem = true
+                end
+
+                if string.find(item_name, "two_hand") then
+                	foundMainHandItem = true
                 end
             end
         end
@@ -1576,9 +1614,23 @@ function Abyss_Gates:OnItemPurchased( keys )
 	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
                     hero:SellItem(item)
                 end
+
+                if foundOffHandItem and string.find(item_name, "two_hand") then
+                	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
+                	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
+                	local offHandMessage = ColorIt("You may only have one Off Hand weapon equipped.", "red")
+                	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
+	       			GameRules:SendCustomMessage(offHandMessage, 0, 0)
+	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
+                    hero:SellItem(item)
+                end
  
                 if string.find(item_name, "off_hand") then
                     foundOffHandItem = true
+                end
+
+                if string.find(item_name, "two_hand") then
+                	foundOffHandItem = true
                 end
             end
         end
@@ -1620,7 +1672,7 @@ function Abyss_Gates:OnItemPurchased( keys )
                 if foundTwoHandItem and string.find(item_name, "two_hand") then
                 	GameRules.Tooltips = LoadKeyValues("resource/addon_english.txt")
                 	real_item_name = GameRules.Tooltips["Tokens"]["DOTA_Tooltip_ability_"..item_name]
-                	local twoHandMessage = ColorIt("You may only have one chest piece equipped.", "red")
+                	local twoHandMessage = ColorIt("You may only have one  weapon equipped.", "red")
                 	local itemNameMessage = real_item_name .. " " .. "has been sold."	     
 	       			GameRules:SendCustomMessage(twoHandMessage, 0, 0)
 	       			GameRules:SendCustomMessage(itemNameMessage, 0, 0)
@@ -1990,6 +2042,8 @@ function Abyss_Gates:InitAbyss_Gates()
 	if RECOMMENDED_BUILDS_DISABLED then
 		GameRules:GetGameModeEntity():SetHUDVisible( DOTA_HUD_VISIBILITY_SHOP_SUGGESTEDITEMS, false )
 	end
+
+	GameRules:GetGameModeEntity():SetStashPurchasingDisabled(true)
 
 	--print('[ABYSS_GATES] Done loading Abyss_Gates gamemode!\n\n')
 end
