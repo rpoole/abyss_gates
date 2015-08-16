@@ -34,3 +34,21 @@ function SkeletonSelect ( keys )
 		end
 	end
 end
+
+function SkeletonCount ( event )
+	local caster = event.caster
+	local owner = caster:GetOwner()
+	local ability = event.ability
+
+	local current_stack = owner:GetModifierStackCount("modifier_skeleton_count", ability)
+	owner:SetModifierStackCount("modifier_skeleton_count", ability, current_stack - 1)
+end
+
+function SkeletonMageCount ( event )
+	local caster = event.caster
+	local owner = caster:GetOwner()
+	local ability = event.ability
+
+	local current_stack = owner:GetModifierStackCount("modifier_skeleton_mage_count", ability)
+	owner:SetModifierStackCount("modifier_skeleton_mage_count", ability, current_stack - 1)
+end

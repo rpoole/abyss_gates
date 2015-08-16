@@ -2,6 +2,7 @@ function CorpseSelect ( keys )
 	local caster = keys.caster
 	local ability = keys.ability
 	local targetArea = ability:GetCursorPosition()
+  local manaCost = ability:GetManaCost(ability:GetLevel() - 1)
 	local radius = ability:GetLevelSpecialValueFor("radius", ability:GetLevel() - 1)
 	local multiplier = ability:GetLevelSpecialValueFor("damage_multiplier", ability:GetLevel() - 1)
 	local targetUnits = Entities:FindAllByModel("models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl")
@@ -23,23 +24,29 @@ function CorpseSelect ( keys )
     	end
   	end
 
-  	if closestUnit:GetUnitName() == "dummy_unit" then
-  		baseDamage = closestUnit:GetMaxHealth()
-  		realDamage = baseDamage * multiplier
-  		damageTargets = FindUnitsInRadius(	DOTA_TEAM_NEUTRALS, 
-  											targetArea, 
-  											nil, 
-  											600, 
-  											DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
-  											DOTA_UNIT_TARGET_BASIC, 
-  											DOTA_UNIT_TARGET_FLAG_NONE, 
-  											FIND_ANY_ORDER, 
-  											false )
+    if closestUnit ~= nil then
+    	if closestUnit:GetUnitName() == "dummy_unit" then
+    		baseDamage = closestUnit:GetMaxHealth()
+    		realDamage = baseDamage * multiplier
+    		damageTargets = FindUnitsInRadius(	DOTA_TEAM_NEUTRALS, 
+    											targetArea, 
+    											nil, 
+    											600, 
+    											DOTA_UNIT_TARGET_TEAM_FRIENDLY, 
+    											DOTA_UNIT_TARGET_BASIC, 
+    											DOTA_UNIT_TARGET_FLAG_NONE, 
+    											FIND_ANY_ORDER, 
+    											false )
 
-		for _, unit in pairs(damageTargets) do
-	  		print(unit:GetUnitName())
-	  		DealDamage(caster, unit, realDamage, DAMAGE_TYPE_MAGICAL, nil)
-	  	end
+  		for _, unit in pairs(damageTargets) do
+  	  		print(unit:GetUnitName())
+  	  		DealDamage(caster, unit, realDamage, DAMAGE_TYPE_MAGICAL, nil)
+  	  	end
+      end
+    else
+      caster:GiveMana(manaCost)
+      ability:EndCooldown()
 	end
+
 end
 

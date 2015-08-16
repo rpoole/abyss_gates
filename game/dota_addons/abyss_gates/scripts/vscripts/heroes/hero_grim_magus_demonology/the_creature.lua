@@ -17,7 +17,6 @@ function SetLevel ( event )
 	local corpses = Entities:FindByModelWithin(nil, "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl", caster:GetAbsOrigin(), 1000)
 	local max_level = ability:GetLevelSpecialValueFor("max_level", ability:GetLevel() - 1)
 	local currentLevel = 1
-	local theCreature = 
 
 	if corpses then
 		for _, unit in pairs(corpses) do

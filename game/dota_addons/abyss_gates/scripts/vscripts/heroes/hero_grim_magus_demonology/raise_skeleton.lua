@@ -7,11 +7,6 @@ function SetOwner ( keys )
 	local caster_name = caster:GetUnitName() 
 	local target_name = target:GetUnitName()
 
-	print (caster_owner)
-	print (target_owner)
-	print (caster_name)
-	print (target_name)
-
 	if caster_owner == target_owner then
 		print ('Success')
 	end
@@ -30,25 +25,26 @@ function SummonSkeleton ( keys )
 	local isBurning = RandomInt(0, 101)
 	local isArcher = RandomInt(0, 11)
 
-	print(isBurning)
-	print(isArcher)
 
 	local current_stack = caster:GetModifierStackCount("modifier_skeleton_count", ability)
 
     if current_stack < maxSkeletons then
     	caster:SetModifierStackCount ( modifier, ability, current_stack + 1)
-    	print(current_stack)
 		if isArcher <= 1 then
 			if isBurning < 11 then
-				CreateUnitByName("undead_burning_skeleton_archer", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				local unit_burning_archer = CreateUnitByName("undead_burning_skeleton_archer", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				unit_burning_archer:SetControllableByPlayer(caster:GetMainControllingPlayer(), true)
 			else
-				CreateUnitByName("undead_skeleton_archer", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				local unit_archer = CreateUnitByName("undead_skeleton_archer", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				unit_archer:SetControllableByPlayer(caster:GetMainControllingPlayer(), true)
 			end
 		elseif isArcher >= 2 then
 			if isBurning < 11 then
-				CreateUnitByName("undead_burning_skeleton_warrior", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				local unit_burning_warrior = CreateUnitByName("undead_burning_skeleton_warrior", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				unit_burning_warrior:SetControllableByPlayer(caster:GetMainControllingPlayer(), true)
 			else
-				CreateUnitByName("undead_skeleton_warrior", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				local unit_warrior = CreateUnitByName("undead_skeleton_warrior", caster:GetAbsOrigin(), true, caster, caster, caster:GetTeamNumber())
+				unit_warrior:SetControllableByPlayer(caster:GetMainControllingPlayer(), true)
 			end
 		end
 	else
@@ -59,14 +55,12 @@ end
 
 function SummonMage ( keys )
 	local caster = keys.caster
-	print(caster:GetUnitName())
 	local target = keys.target
 	local ability = keys.ability
 	local modifier = keys.modifier
 	local maxSkeletons = ability:GetLevelSpecialValueFor("max_skeletons", ability:GetLevel() - 1)
 	local manaCost = ability:GetManaCost(ability:GetLevel() - 1)
 	local mageType = RandomInt(1, 3)
-	print(mageType)
 	local current_stack = caster:GetModifierStackCount("modifier_skeleton_mage_count", ability)
 
 		

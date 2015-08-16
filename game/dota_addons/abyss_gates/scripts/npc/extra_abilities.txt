@@ -706,3 +706,1817 @@
 		"StatusMana"				"1"
 
 	}
+
+
+	"example_ability"
+	{
+		"ID"							"1852"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"holdout_blade_fury"
+
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"10.0"
+		"AbilityChannelTime"			"2.0 1.8 1.6 1.5"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityCastAnimation"			"ACT_DOTA_DISABLED"
+		"AbilityDamage"					"400 600 800 1000"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts"
+		}
+
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"300"
+		"SideShop"						"1"
+		
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_channel_start"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Gyrocopter.CallDown.Fire"
+				"Target"			"CASTER"
+			}
+		}
+		
+		"OnChannelSucceeded"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_channel_start"
+			}
+			"AttachEffect"
+			{
+				"EffectName"			"particles/econ/generic/generic_aoe_explosion_sphere_1/generic_aoe_explosion_sphere_1.vpcf"
+				"EffectAttachType"		"follow_origin"
+				"EffectRadius"			"%radius"
+				"EffectDurationScale"	"1"
+				"EffectLifeDurationScale" "1"
+				"EffectColorA"			"255 0 0"
+				"EffectColorB"			"255 0 0"
+				"Target"			"CASTER"
+			}
+			
+			"Damage"
+			{
+				"Type"					"DAMAGE_TYPE_PURE"
+				"Damage"				"%damage"
+				"Target"
+				{
+					"Center"			"CASTER"
+					"Radius"			"%radius"
+					"Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
+					"Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			}
+			
+			"Knockback"
+			{
+				"Center" 	"CASTER"
+				"Target"
+				{
+					"Center"	"CASTER"
+					"Radius"	"%radius"
+					"Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				}
+				"Duration"	"%duration"
+				"Distance"	"%distance"
+				"Height"	"%height"
+			}
+			
+			"FireSound"
+			{
+				"EffectName"		"Hero_Gyrocopter.CallDown.Damage"
+				"Target"			"CASTER"
+			}
+		}
+		
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"Target"				"CASTER"
+				"ModifierName"			"modifier_channel_start"
+			}
+		}
+		
+		"OnChannelInterrupted"
+		{
+			"RemoveModifier"
+			{
+				"Target"		"CASTER"
+				"ModifierName"	"modifier_channel_start"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_channel_start"
+			{
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"IsHidden" "1"
+						"EffectName"		"particles/test_particle/channel_field_2.vpcf"//"gyro_calldown_marker_c"//"gyrocopter_call_down"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+						
+						"EffectRadius"			"%radius"
+						"EffectColorA"			"255 0 0"
+						"EffectColorB"			"255 0 0"
+					
+						"ControlPoints"
+						{
+							"00"		"50 100 5"
+						}
+					}
+				}
+			}
+		}
+		
+		// Special	
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"0.5"
+			}
+			
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"400 600 800 1000"
+			}
+			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"550 550 600 650"
+			}
+			
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"distance"				"400 500 600 700"
+			}
+			
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"height"				"100 200 300 400"
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Test_Hero1: Test Subject
+	//=================================================================================================================
+
+	//=================================================================================================================
+	// Test Subject: test_ability1
+	//=================================================================================================================
+	
+	// CM Slow + Lina Stun
+
+	"test_subject_test_ability1"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"crystal_maiden_crystal_nova"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AOERadius"						"%radius"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityCastRange"				"700"
+		"AbilityCastPoint"				"0.3"
+
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"1 2 3 4"
+		"AbilityDamage"					"75 130 200 250"
+		
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"3.5 4.0 4.5 5.0"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"400"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"movespeed_slow"	"-30"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"attackspeed_slow"	"-20"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"vision_duration"	"6.0"
+			}
+			// Extra variable
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"vision_radius"		"900"
+			}
+			"07"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"light_strike_array_aoe"	"225"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"light_strike_array_delay_time"	"0.5"
+			}	
+			"09"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"light_strike_array_stun_duration"	"1.6 1.8 2.0 2.2"
+			}
+		}
+
+		// Data driven
+		//-------------------------------------------------------------------------------------------------------------
+		"precache"
+		{
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"particle"				"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+			"particle"				"particles/generic_gameplay/generic_slowed_cold.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+			"particle"				"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+			"particle"				"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+			"particle"				"particles/generic_gameplay/generic_stunned.vpcf"
+		}
+		
+		"OnSpellStart"
+		{
+			"FireEffect"
+			{
+				"TargetPoint"			"POINT"
+				"EffectName"			"particles/units/heroes/hero_crystalmaiden/maiden_crystal_nova.vpcf"
+				"EffectAttachType"		"world_origin"
+				"ControlPoints"
+				{
+					"01"				"%radius 2 %radius*2"
+				}
+			}
+			
+			"FireEffect"
+			{
+				"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+				"EffectAttachType"	"start_at_customorigin"
+				"TargetPoint"		"POINT"
+
+				"ControlPoints"
+	            {
+	            	"01"	"%light_strike_array_aoe 0 0"
+	            	"03"	"0 0 0"
+	            }
+			}
+
+
+
+			"FireSound"
+			{
+				"EffectName"			"Hero_Crystal.CrystalNova"
+				"Target"				"CASTER"
+			}
+		
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"		"POINT"
+					"Radius"		"%radius"
+					"Teams"			"DOTA_UNIT_TARGET_TEAM_ENEMY" 
+					"Type"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+				}
+				
+				"Action"
+				{
+					"Damage"
+					{
+						"Target"	"TARGET"
+						"Damage"	"%AbilityDamage"
+						"Type"		"DAMAGE_TYPE_MAGICAL"
+					}
+					
+					"ApplyModifier"
+					{
+						"Target"		"TARGET"
+						"ModifierName"	"modifier_crystal_nova_slow_datadriven"
+					}
+				}
+			}
+			
+			"DelayedAction"
+			{
+				"Delay"		"%light_strike_array_delay_time"
+
+				"Action"
+				{
+					"FireSound"
+					{
+						"EffectName"	"Ability.LightStrikeArray"
+						"Target"		"CASTER"
+					}
+
+					"FireEffect"
+					{
+						"EffectName"	"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+						"EffectAttachType"	"start_at_customorigin"
+						"TargetPoint"		"POINT"
+
+						"ControlPoints"
+			            {
+			            	"00"	"POINT"
+			            	"01"	"%light_strike_array_aoe 0 0"
+			            	"03"	"0 0 0"
+			            }
+					}
+					
+					"DestroyTrees"
+			        {
+			        	"Target"	"POINT"
+			        	"Radius"	"%light_strike_array_aoe"
+			        }
+
+					"ActOnTargets"
+					{
+						"Target"
+			            {
+			                "Center" "POINT"
+			                "Radius" "%light_strike_array_aoe"
+			                "Teams" "DOTA_UNIT_TARGET_TEAM_ENEMY" 
+			                "Types" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+			            }
+
+			            "Action"
+			            {
+			            	"Damage"
+			            	{
+			            		"Target"	"TARGET"
+			            		"Type"		"DAMAGE_TYPE_MAGICAL"
+			            		"Damage"	"%AbilityDamage"
+			            	}
+
+			            	"ApplyModifier"
+			            	{
+			            		"ModifierName"	"modifier_light_strike_array_datadriven"
+			            		"Target"		"TARGET"
+			            		"Duration"		"%light_strike_array_stun_duration"
+			            	}		            	
+			            }
+					}				
+				}
+			}
+
+
+
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_test_hero1/Test_Hero1.lua"
+				"Function"			"crystal_nova_post_vision"
+				"Target"			"POINT"
+			}
+		}
+		
+		"Modifiers"
+		{
+			"modifier_crystal_nova_slow_datadriven"
+			{
+				"Duration"				"%duration"
+				"EffectName"			"particles/generic_gameplay/generic_slowed_cold.vpcf"
+				"StatusEffectName"		"particles/status_fx/status_effect_frost_lich.vpcf"
+				"StatusEffectPriority"	"10"
+			
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT"	"%attackspeed_slow"
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%movespeed_slow"
+				}
+			}
+
+			"modifier_light_strike_array_datadriven"
+			{
+				"IsDebuff"	"1"
+				"OverrideAnimation"	"ACT_DOTA_DISABLED"
+
+				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"	"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}		
+	
+	//=================================================================================================================
+	// Test Subject: test_ability2
+	//=================================================================================================================
+	
+	// Dud AoE Invuln Aura
+
+	"test_subject_test_ability2"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"omniknight_repel"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AOERadius"						"%radius"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		"AbilityChannelTime"			"5"
+		"AbilityDuration"				"5"
+
+
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"1 2 3 4"
+		
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5.0"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_interval"		"0.1"
+			}
+		}
+
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_test"
+						"Target" 		"TARGET"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_test"
+						"Target" 		"CASTER"
+					}
+				}
+			}
+		}	
+
+		"OnChannelInterrupted"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%radius * 10"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_test"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+		}
+
+
+
+		"Modifiers"
+		{
+			"modifier_test"
+			{
+				"Duration"      	"%duration"
+  				"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+				"EffectAttachType"  "follow_origin"
+    			"Properties"
+    			{
+        			"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"      "-20"
+    			}
+
+    			"States"
+    			{
+    				"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+    				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+    			}
+    		}
+		}
+	}
+
+	//=================================================================================================================
+	// Test Subject: test_ability3
+	//=================================================================================================================
+	
+	// Heal Aura
+
+	"test_subject_test_ability3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"necrolyte_heartstopper_aura"
+		
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1200"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"		"1200"		// If you change this, also change the AbilityCastRange above
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_heal"		"10 20 30 40" 
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_heal_interval"		"0.2" 
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_heartstopper_aura_datadriven"
+			{
+				"Passive"		"1"
+				"IsHidden"		"1"
+
+				"Aura" 			"modifier_heartstopper_debuff_datadriven"
+				"Aura_Radius" 	"%aura_radius"
+				"Aura_Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_Flags"	"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+			}
+
+
+			"modifier_heartstopper_debuff_datadriven"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"1"
+
+				"ThinkInterval"	"%aura_heal_interval"
+
+				"OnIntervalThink"
+				{
+					"Heal"
+					{
+						"HealAmount"	"%aura_heal"
+						"Target"		"TARGET"
+					}
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/heal_aura.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+				}
+			}
+
+			"modifier_heartstopper_debuff_visibility"
+			{
+				"IsDebuff"		"1"
+				"IsHidden"		"0"
+				"IsPurgable" 	"0"
+				"Passive"		"0"
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Test Subject: test_ability4
+	//=================================================================================================================
+	
+	// AoE Invuln Aura
+
+	"test_subject_test_ability4"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"omniknight_repel"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AOERadius"						"%radius"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityCastRange"				"0"
+		"AbilityCastPoint"				"0"
+		"AbilityChannelTime"			"5"
+		"AbilityDuration"				"5"
+
+
+
+		// Time
+		//-------------------------------------------------------------------------------------------------------------
+		
+		"AbilityCooldown"				"8.0"
+		"AbilityManaCost"				"1 2 3 4"
+		
+
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5.0"
+			}
+
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_interval"		"0.1"
+			}
+		}
+
+
+		// Precache
+		//-------------------------------------------------------------------------------------------------------------
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_omniknight.vsndevts"
+			"particle"  "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+					{
+						"ModifierName"	"modifier_invul_aura"
+						"Target" 		"CASTER"
+					}
+		}
+
+		"OnChannelFinish"
+		{
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_invul_aura"
+				"Target" 		"CASTER"
+			}
+
+			"RemoveModifier"
+			{
+				"ModifierName"	"modifier_invul_aura_buff"
+				"Target" 		"CASTER"
+			}
+
+		}
+
+
+
+
+
+		"Modifiers"
+		{
+			"modifier_invul_aura"
+			{
+				"Aura"				"modifier_invul_aura_buff"
+				"Aura_Radius"		"%radius"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Aura_ApplyToCaster"	"0"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/invul_aura.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "CASTER"
+					}
+				}
+			}
+
+			"modifier_invul_aura_buff"
+			{
+				"IsBuff"	"1"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_repel_buff.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+
+    			"States"
+    			{
+    				"MODIFIER_STATE_ATTACK_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+    				"MODIFIER_STATE_MAGIC_IMMUNE"		"MODIFIER_STATE_VALUE_ENABLED"
+    			}
+			}
+  				
+		}
+	}
+
+
+	//=================================================================================================================
+	// Scott: Scott One
+	//=================================================================================================================
+
+	//=================================================================================================================
+	// Scott: Scott Ability 1
+	//=================================================================================================================
+	
+	// Single-Target Root + Spawn Unit
+
+	"scott_ability1"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"treant_overgrowth"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+		}
+		
+
+		//Casting
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"5"
+		"AbilityCastRange"				"700"
+		
+
+		//Special
+		//-------------------------------------------------------------------------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_second"		"500"
+			}
+
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"treant_damage"			"10"
+			}
+
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"treant_duration"		"20"
+			}
+		}
+
+		
+
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_root"
+				"Target" 		"TARGET"
+				"Duration"		"%duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_root"
+			{
+				"IsHidden"		"0"
+				"IsDebuff"		"1"
+
+				"Duration"		"%duration"
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_per_second"
+					}
+				}
+
+				"States"
+				{
+					"MODIFIER_STATE_ROOTED"				"MODIFIER_STATE_VALUE_ENABLED"
+					"MODIFIER_STATE_INVISIBLE"			"MODIFIER_STATE_VALUE_DISABLED"
+				}
+
+				
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"			"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+						"EffectAttachType"		"follow_origin"
+						"Target"            	"TARGET"
+					}
+
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_debuff"
+						"Target" 		"TARGET"
+						"Duration"		"%duration"
+					}
+				}
+			}
+
+			"modifier_debuff"
+			{
+				"IsDebuff"				"1"
+
+				"Duration"				"%duration"
+
+				"OnDeath"
+				{
+					"SpawnUnit"
+					{
+						"UnitName"		"npc_dota_furion_treant"
+						"Duration"		"%treant_duration"
+						"UnitCount"		"1"
+						"UnitLimit"		"0"
+						"GrantsGold"	"1"
+						"GrantsXP"		"1"
+						"SpawnRadius"	"10"
+						"Target"
+						{
+							"Center"	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+
+					}
+				}
+			}
+
+		}
+	}
+
+	//=================================================================================================================
+	// Scott: Scott Ability 2
+	//=================================================================================================================
+	
+	// Single-Target DoT + Silence
+
+	"scott_ability2"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"axe_battle_hunger"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_second"		"50.0"
+			}
+		}
+
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_curse"
+				"Target" 		"TARGET"
+				"Duration"		"%duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_curse"
+			{
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+		
+				"EffectName"		"particles/generic_gameplay/generic_silenced.vpcf"
+				"EffectAttachType"	"follow_overhead"
+				"Duration"			"%duration"	
+
+
+				"States"
+				{
+					"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+				"ThinkInterval"  "1.0"
+				"OnIntervalThink"
+				{
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_per_second"
+					}
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/units/heroes/hero_axe/axe_battle_hunger.vpcf"
+						"EffectAttachType"	"follow_overhead"
+						"Target"			"TARGET"
+						"Duration"			"%duration"
+					}
+				}
+		
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Scott: Scott Ability 3
+	//=================================================================================================================
+	
+	// Single-Target HoT
+
+	"scott_ability3"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"omniknight_purification"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts"
+		}
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"heal_per_second"		"50.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_heal_per_second"
+				"Target" 		"TARGET"
+				"Duration"		"%duration"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_heal_per_second"
+			{
+				"IsBuff"	"1"
+				"IsHidden"	"0"
+			
+				"ThinkInterval"	"1.0"
+
+				"OnIntervalThink"
+				{
+					"Heal"
+					{
+						"HealAmount"	"%heal_per_second"
+						"Target"		"TARGET"
+					}
+				}
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"        "particles/units/heroes/hero_oracle/oracle_purifyingflames_heal.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+			}
+		}
+	}
+
+	//=================================================================================================================
+	// Scott: Scott Ability 4
+	//=================================================================================================================
+	
+	// Single-Target Stat Permanent / Multiple Instance Buff
+
+	"scott_ability4"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"dazzle_weave"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			"particle"  "particles/econ/courier/courier_dolfrat_and_roshinante/courier_dolfrat_and_roshinante.vpcf"
+		}
+
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"heal_per_second"		"50.0"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_stat_boost"
+				"Target" 		"TARGET"		
+			}
+		}
+			
+
+
+		"Modifiers"
+		{
+			"modifier_stat_boost"
+			{
+				"IsHidden"		"1"
+
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"		"1"
+					"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"	"1"
+					"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"	"1"
+				}
+				
+				"Attributes"		"MODIFIER_ATTRIBUTE_PERMANENT | MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnCreated"
+				{
+					"FireEffect"
+					{
+						"EffectName"        "particles/econ/courier/courier_dolfrat_and_roshinante/courier_dolfrat_and_roshinante.vpcf"
+						"EffectAttachType"  "follow_origin"
+						"Target"            "TARGET"
+					}
+				}
+			}
+		}
+	}	
+
+	//=================================================================================================================
+	// Scott: Scott Two
+	//=================================================================================================================
+
+	//=================================================================================================================
+	// Scotttwo: Scotttwo Ability 1
+	//=================================================================================================================
+	
+	// AoE Heal around and including Caster
+
+	"scotttwo_ability1"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"omniknight_purification"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		"precache"
+		{
+			"particle"  "models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl"
+		}
+
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"heal_amount"				"100"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"				"500"
+			}
+		}
+
+		"OnSpellStart"
+		{
+			"ActOnTargets"
+			{
+				"Target"
+				{
+					"Center"  	"CASTER"
+					"Radius" 	"%radius"
+					"Teams" 	"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+					"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				}
+			
+				"Action"    
+				{
+					"Heal"
+					{
+						"Target"        "TARGET"
+						"HealAmount"	"%heal_amount"
+					}
+				}
+			}
+
+			"FireEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_omniknight/omniknight_purification.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "CASTER"
+			}
+		}
+
+
+		"Modifiers"
+		{
+		}
+	}
+
+	//=================================================================================================================
+	// Scotttwo: Scotttwo Ability 2
+	//=================================================================================================================
+	
+	// AoE Ground DoT, propagates on Unit Kill
+
+	"scotttwo_ability2"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"phoenix_fire_spirits"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AOERadius"						"500"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_per_second"			"50"		
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_min"		"500"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius_max"			"500"
+			}
+
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_interval"		"0.5"
+			}
+
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"debuff_duration"		"0.1"
+			}
+		}
+
+
+		"OnSpellStart"
+		{
+			"CreateThinker"
+			{
+				"ModifierName"	"modifier_volcano_thinker"
+				"Target" 		"POINT"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_volcano_thinker"
+			{
+				"Aura"				"modifier_volcano"
+				"Aura_Radius"		"%radius_min"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/dire_fx/dire_lava_gloops_13sec.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"TARGET"
+					}
+				}
+			}
+
+			"modifier_volcano_thinker_two"
+			{
+				"Aura"				"modifier_volcano"
+				"Aura_Radius"		"%radius_min"
+				"Aura_Teams"		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+				"Aura_Types"		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+				"Duration"			"%duration"
+
+				"OnCreated"
+				{
+					"AttachEffect"
+					{
+						"EffectName"		"particles/dire_fx/dire_lava_gloops_13sec.vpcf"
+						"EffectAttachType"	"follow_origin"
+						"Target"			"CASTER"
+					}
+				}
+			}
+
+			"modifier_volcano"
+			{
+				"ThinkInterval"  "%damage_interval"
+				"OnIntervalThink"
+				{
+					"ApplyModifier"
+					{
+						"ModifierName"	"modifier_volcano_spawner"
+						"Target" 		"TARGET"
+						"Duration"		"%debuff_duration"
+					}
+
+					"Damage"
+					{
+						"Target"		"TARGET"
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%damage_per_second"
+					}				
+				}
+			}
+
+			"modifier_volcano_spawner"
+			{
+				"IsDebuff"	"1"
+				"IsHidden"	"0"
+
+				"OnDeath"
+				{
+					"CreateThinker"
+					{
+						"ModifierName"	"modifier_volcano_thinker"
+						"Target"
+						{
+							"Center"  	"UNIT"
+							"Flags"		"DOTA_UNIT_TARGET_FLAG_DEAD"
+						}
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Scotttwo: Scotttwo Ability 3
+	//=================================================================================================================
+	
+	// Single Target Armor Buff, returns damage at end of duration based off number of attacks recieved. RANDOM
+
+	"scotttwo_ability3"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"abaddon_aphotic_shield"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"				"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"reflect_damage"			"50"		
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"armor_bonus"			"10"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reflect_chance"		"50"
+			}
+
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"1000"
+			}
+
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_reflect"
+				"Target" 		"TARGET"
+				"Duration"		"%duration"
+			}
+
+			"AttachEffect"
+			{
+				"EffectName"        "particles/units/heroes/hero_abaddon/abaddon_aphotic_shield.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_reflect"
+			{
+				"IsBuff"		"1"
+				
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"		"%armor_bonus"
+				}
+
+				
+				"OnTakeDamage"
+				{
+					"Random"
+					{
+						"Chance"	"%reflect_chance"
+						"OnSuccess"
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_reflect_success"
+								"Target"		"UNIT"
+								"Duration"		"%duration"
+							}
+						}
+					}
+				}
+				
+
+				"OnDestroy"
+				{
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_reflect_success"
+						"Target" 		"TARGET"
+					}
+				}
+
+			}
+
+			"modifier_reflect_success"
+			{
+				"IsBuff"		"1"
+				"IsHidden"		"0"
+				"IsPurgable"	"0"
+
+				"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
+
+				"OnDestroy"
+				{
+					"Damage"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+
+						"Type"			"DAMAGE_TYPE_MAGICAL"
+						"Damage"		"%reflect_damage"
+					}
+
+					"RemoveModifier"
+					{
+						"ModifierName"	"modifier_reflect_success"
+						"Target" 		"TARGET"
+					}
+				}
+			}
+		}
+	}
+
+
+	//=================================================================================================================
+	// Scotttwo: Scotttwo Ability 4
+	//=================================================================================================================
+	
+	// Single Target long stun + damage, AoE splash shorter stun 
+
+	"scotttwo_ability4"
+	{
+		//General
+		//-------------------------------------------------------------------------------------------------------------
+
+		"BaseClass"						"ability_datadriven"
+		"AbilityTextureName"			"earth_spirit_rolling_boulder"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AOERadius"						"700"
+		
+
+		//Casting
+		//------------------------------------------
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityManaCost"				"5"
+		"AbilityCooldown"				"5"
+		"AbilityCastRange"				"600"
+
+		//Special
+		//--------------------------------------------
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration_main"				"10"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration_aoe"			"5.0"		
+			}
+
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"100"
+			}
+
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"reflect_chance"		"50"
+			}
+
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+
+		}
+
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_stone_fist"
+				"Target" 		"TARGET"
+				"Duration"		"%duration_main"
+			}
+		}
+
+		"Modifiers"
+		{
+			"modifier_stone_fist"
+			{
+				"OnCreated"
+				{
+					"ActOnTargets"
+					{
+						"Target"
+						{
+							"Center"  	"TARGET"
+							"Radius" 	"%radius"
+							"Teams" 	"DOTA_UNIT_TARGET_TEAM_ENEMY"
+							"Types" 	"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+						}
+					
+						"Action"    
+						{
+							"ApplyModifier"
+							{
+								"ModifierName"	"modifier_stone_fist_aoe"
+								"Target" 		"TARGET"
+								"Duration"		"%duration_aoe"
+							}
+						}
+					}
+				}
+
+
+				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+
+			}
+
+			"modifier_stone_fist_aoe"
+			{
+				
+
+				"EffectName"	"particles/generic_gameplay/generic_stunned.vpcf"
+				"EffectAttachType"	"follow_overhead"
+
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}

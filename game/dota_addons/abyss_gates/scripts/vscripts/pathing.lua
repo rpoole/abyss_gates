@@ -12,7 +12,10 @@ function unitPathing()
 			thisEntity:MoveToPositionAggressive(waypoint1)
 		end
 
-		return 1.0
+		while thisEntity:IsNull() == false do
+			return 1.0
+		end
 
 	end)
+
 end

@@ -37,6 +37,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("creature_nightshade_huntress", context)
 	PrecacheUnitByNameSync("creature_harlequin_spider", context)
 	PrecacheUnitByNameSync("creature_arachnesser", context)
+	PrecacheUnitByNameSync("the_creature", context)
 	PrecacheModel("models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl", context) --[[Returns:void
 	( modelName, context ) - Manually precache a single model
 	]]
@@ -65,7 +66,19 @@ function Precache( context )
 	PrecacheResource("particle", "particles/swiftness_aura.vpcf", context)
 	PrecacheResource("particle", "particles/units/heroes/hero_bane/bane_enfeeble.vpcf", context)
 	PrecacheResource("particle", "particles/items2_fx/medallion_of_courage.vpcf", context)
-
+	PrecacheResource("particle", "particles/status_fx/status_effect_rupture.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bloodseeker/bloodseeker_rupture_nuke.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_blastup_immortal1.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_death_prophet/death_prophet_carrion_swarm.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/riki/riki_haze_atrocity/riki_versuta_eye_smoke.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_slardar/slardar_amp_damage.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/necrolyte/necronub_ambient/necrolyte_ambient_glow_ka.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_medusa/medusa_mana_shield_snakeskin_base2.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_skywrath_mage/skywrath_mage_ancient_seal_debuff.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_bloodseeker/bloodseeker_bloodbath.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_mid_egset.vpcf", context)
+	PrecacheResource("particle", "particles/econ/events/ti5/cyclone_ti5.vpcf", context)
 
 	-- Models can also be precached by folder or individually
 	--PrecacheModel should generally used over PrecacheResource for individual models
@@ -74,16 +87,13 @@ function Precache( context )
 	--PrecacheModel("models/heroes/viper/viper.vmdl", context)
 
 	-- Sounds can precached here like anything else
-	PrecacheResource("soundfile", "soundevents/game_sounds_heroes/game_sounds_gyrocopter.vsndevts", context)
 
 	-- Entire items can be precached by name
 	-- Abilities can also be precached in this way despite the name
-	PrecacheItemByNameSync("example_ability", context)
-	PrecacheItemByNameSync("item_example_item", context)
 
 	-- Entire heroes (sound effects/voice/models/particles) can be precached with PrecacheUnitByNameSync
 	-- Custom units from npc_units_custom.txt can also have all of their abilities and precache{} blocks precached in this way
-	PrecacheUnitByNameSync("npc_dota_hero_ancient_apparition", context)
+
 end
 
 -- Create the game mode when we activate

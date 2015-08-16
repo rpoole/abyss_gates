@@ -129,9 +129,9 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"100.0"
+        "BountyGoldMin"         "12.0"
+        "BountyGoldMax"         "17.0"
+        "BountyXP"				"25.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -187,9 +187,9 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "25.0"
+        "BountyGoldMax"         "35.0"
+        "BountyXP"				"60.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -198,7 +198,6 @@
         "MovementTurnRate"      "0.6"
 
         "Ability1"              "corrupted_boar_aura"
-        "Ability2"				"color_red"
 
 
        
@@ -213,7 +212,8 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"      
 	}
 
 
@@ -248,9 +248,9 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "17.0"
+        "BountyGoldMax"         "23.0"
+        "BountyXP"				"25.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -271,7 +271,8 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"  
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"  
 
 
         "Creature"
@@ -318,11 +319,11 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "30.0"
+        "BountyGoldMax"         "40.0"
+        "BountyXP"				"30.0"
 
-        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "BoundsHullName"        "DOTA_HULL_SIZE_HUGE"
         "RingRadius"            "70"
 
         "MovementSpeed"         "270"
@@ -342,6 +343,7 @@
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
         "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"
 
         "Creature"
        	{
@@ -387,9 +389,9 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "28.0"
+        "BountyGoldMax"         "32.0"
+        "BountyXP"				"25.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -411,6 +413,7 @@
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
         "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"
 
         "Creature"
        	{
@@ -447,7 +450,7 @@
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "21.0"
         "AttackDamageMax"       "25.0"
-        "AttackRate"            "1.35"
+        "AttackRate"            "2.0"
         "AttackAnimationPoint"  "0.5"
         "AttackAcquisitionRange" "500"
         "AttackRange"           "90"
@@ -455,11 +458,11 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "45.0"
+        "BountyGoldMax"         "55.0"
+        "BountyXP"				"30.0"
 
-        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "BoundsHullName"        "DOTA_HULL_SIZE_HUGE"
         "RingRadius"            "70"
 
         "MovementSpeed"         "270"
@@ -504,7 +507,7 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/heroes/tidehunter/tidehunter.vmdl"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.5"
         "Level"                 "1"
 
         "StatusHealth"          "4575"
@@ -518,7 +521,7 @@
         "AttackCapabilities"    "DOTA_UNIT_CAP_MELEE_ATTACK"
         "AttackDamageMin"       "188.0"
         "AttackDamageMax"       "220.0"
-        "AttackRate"            "1.35"
+        "AttackRate"            "2.5"
         "AttackAnimationPoint"  "0.5"
         "AttackAcquisitionRange" "500"
         "AttackRange"           "90"
@@ -528,9 +531,9 @@
 
         "BountyGoldMin"         "26.0"
         "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyXP"				"190.0"
 
-        "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
+        "BoundsHullName"        "DOTA_HULL_SIZE_TOWER"
         "RingRadius"            "70"
 
         "MovementSpeed"         "270"
@@ -550,6 +553,7 @@
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
         "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"
 
 
         "Creature"
@@ -596,9 +600,9 @@
 
         "ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_base_attack.vpcf"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "60.0"
+        "BountyGoldMax"         "70.0"
+        "BountyXP"				"40.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -619,7 +623,8 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT" 
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua" 
 
         "Creature"
        	{
@@ -663,9 +668,9 @@
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "60.0"
+        "BountyGoldMax"         "70.0"
+        "BountyXP"				"70.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -686,7 +691,8 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"   
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"   
 
 
         "Creature"
@@ -712,7 +718,7 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/heroes/broodmother/spiderling.vmdl"
-        "ModelScale"            "1.0"
+        "ModelScale"            "0.5"
         "Level"                 "1"
 
         "StatusHealth"          "366"
@@ -2531,7 +2537,7 @@
 		"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
 		"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_STRONG"
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"Ability1"					"skeleton_mastery"
+		"Ability1"                  "skeleton_count"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -2626,6 +2632,7 @@
 		"UnitRelationShipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"Ability1"             		"skeleton_burning"
 		"Ability2"					"skeleton_mastery"
+        "Ability3"                  "skeleton_count"
 		
 		// Creature Data
 		//----------------------------------------------------------------
@@ -2685,7 +2692,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "spawn_spiderlings"
+        "Ability1"              "skeleton_count"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -2764,6 +2771,7 @@
         // Generic
         //----------------------------------------------------------------
         "Ability1"             	"skeleton_burning"
+        "Ability2"              "skeleton_count"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -2839,7 +2847,7 @@
        
         // Generic
         //----------------------------------------------------------------
-        "Ability1"              "spawn_spiderlings"
+        "Ability1"              "skeleton_mage_count"
         "HealthBarOffset"       "140"
         "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -2912,6 +2920,7 @@
         // Generic
         //----------------------------------------------------------------
         "Ability1"              "chain_lightning"
+        "Ability2"              "skeleton_mage_count"
         "HealthBarOffset"       "140"
         "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -2984,6 +2993,7 @@
         // Generic
         //----------------------------------------------------------------
         "Ability1"              "frost_attack"
+        "Ability2"              "skeleton_mage_count"
         "HealthBarOffset"       "140"
         "AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
         "MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"

@@ -1817,7 +1817,7 @@ end
 -- An entity died
 function Abyss_Gates:OnEntityKilled( keys )
 	--print( '[ABYSS_GATES] OnEntityKilled Called' )
-	--PrintTable( keys )
+	PrintTable( keys )
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
@@ -1827,6 +1827,7 @@ function Abyss_Gates:OnEntityKilled( keys )
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
+
 
 	if killedUnit:IsRealHero() then
 		--print ("KILLEDKILLER: " .. killedUnit:GetName() .. " -- " .. killerEntity:GetName())
