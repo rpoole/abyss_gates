@@ -46,8 +46,10 @@ END_GAME_ON_KILLS = true                -- Should the game end after a certain n
 KILLS_TO_END_GAME_FOR_TEAM = 50         -- How many kills for a team should signify an end of game?
 
 USE_CUSTOM_HERO_LEVELS = true           -- Should we allow heroes to have custom levels?
-MAX_LEVEL = 20                          -- What level should we let heroes get to?
-USE_CUSTOM_XP_VALUES = false             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
+MAX_LEVEL = 50                          -- What level should we let heroes get to?
+USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to level up heroes, or the default Dota numbers?
+--[[XP_PER_LEVEL_TABLE = {115, 225, 453, 713, 1042, 1447, 1936, 2517, 3199, 3992, 4907, 5957, 7154, 8515, 10054, 11791, 13744}]]--
+
 
 Testing = true
 OutOfWorldVector = Vector(11000, 11000, -200)
@@ -59,10 +61,7 @@ if not Testing then
 end
 
 -- Fill this table up with the required XP per level if you want to change it
-XP_PER_LEVEL_TABLE = {}
-for i=1,MAX_LEVEL do
-	XP_PER_LEVEL_TABLE[i] = i * 100
-end
+XP_PER_LEVEL_TABLE = {0, 115, 225, 453, 713, 1042, 1447, 1936, 2517, 3199, 3992, 4907, 5957, 7154, 8515, 10054, 11791, 13744}
 
 -- Generated from template
 if Abyss_Gates == nil then
@@ -159,7 +158,7 @@ function Abyss_Gates:OnHeroInGame(hero)
     ShowGenericPopupToPlayer(hero.player, "#abyss_gates_instructions_title", "#abyss_gates_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 
 	-- This line for example will set the starting gold of every hero to 500 unreliable gold
-	hero:SetGold(1000000, false)
+	hero:SetGold(150, false)
 
 	-- These lines will create an item and add it to the player, effectively ensuring they start with the item
 
@@ -1909,6 +1908,7 @@ function Abyss_Gates:InitAbyss_Gates()
 	GameRules:SetHeroMinimapIconScale( MINIMAP_ICON_SIZE )
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
+	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
 	--print('[ABYSS_GATES] GameRules set')
 
 	InitLogFile( "log/abyss_gates.txt","")

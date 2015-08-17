@@ -123,7 +123,7 @@
         "AttackDamageMax"       "7.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -156,7 +156,7 @@
         "vscripts"              "pathing.lua"      
 	}
 
-	//=================================================================================
+	//================================================================================
 	// Wave 1: Corrupted Boar
 	//=================================================================================
 	"creature_corrupted_boar"
@@ -181,7 +181,7 @@
         "AttackDamageMax"       "15.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -242,7 +242,7 @@
         "AttackDamageMax"       "11.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -313,7 +313,7 @@
         "AttackDamageMax"       "16.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -383,7 +383,7 @@
         "AttackDamageMax"       "19.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -452,7 +452,7 @@
         "AttackDamageMax"       "25.0"
         "AttackRate"            "2.0"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -523,14 +523,14 @@
         "AttackDamageMax"       "220.0"
         "AttackRate"            "2.5"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
+        "BountyGoldMin"         "400.0"
+        "BountyGoldMax"         "400.0"
         "BountyXP"				"190.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_TOWER"
@@ -544,6 +544,7 @@
         // Generic
         //----------------------------------------------------------------
         "Ability1"              "kerrang_bash"
+        "Ability2"              "kerrang_gold"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -595,7 +596,7 @@
         "AttackDamageMax"       "24.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.2"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"		"particles/units/heroes/hero_enchantress/enchantress_base_attack.vpcf"
@@ -662,7 +663,7 @@
         "AttackDamageMax"       "19.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -734,15 +735,15 @@
         "AttackDamageMax"       "34.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "45.0"
+        "BountyGoldMax"         "55.0"
+        "BountyXP"				"40.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -763,7 +764,8 @@
         "TeamName"              "DOTA_TEAM_NEUTRALS"
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
-        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"      
+        "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"      
 	}
 
 
@@ -792,14 +794,14 @@
         "AttackDamageMax"       "24.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"		"particles/units/heroes/hero_weaver/weaver_base_attack.vpcf"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "60.0"
+        "BountyGoldMax"         "80.0"
+        "BountyXP"				"60.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -821,6 +823,7 @@
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
         "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"
 
 
         "Creature"
@@ -833,19 +836,6 @@
         		"Wearable4"		{ "ItemDef" "6133"}
         		"Wearable5"		{ "ItemDef" "6134"}
         	}
-
-        	"DefaultState"       "Invade"
-			"States"
-			{
-			    "Invade"
-			    {
-			        "Name"          "Invade"
-			        "Aggression"    "100.0"
-			        "Avoidance"     "0.0"
-			        "Support"       "0.0"
-			        "RoamDistance"  "0.0"
-			    }
-			}
       	}          
 	}
 
@@ -879,15 +869,15 @@
         "AttackDamageMax"       "48.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 
-        "BountyGoldMin"         "26.0"
-        "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyGoldMin"         "10.0"
+        "BountyGoldMax"         "11.0"
+        "BountyXP"				"0.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -921,7 +911,7 @@
         //----------------------------------------------------------------
         "BaseClass"             "npc_dota_creature"
         "Model"                 "models/heroes/treant_protector/treant_protector.vmdl"
-        "ModelScale"            "2.0"
+        "ModelScale"            "1.5"
         "Level"                 "1"
 
         "StatusHealth"          "12810"
@@ -937,7 +927,7 @@
         "AttackDamageMax"       "180.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -945,7 +935,7 @@
 
         "BountyGoldMin"         "26.0"
         "BountyGoldMax"         "38.0"
-        "BountyXP"				"10.0"
+        "BountyXP"				"237.0"
 
         "BoundsHullName"        "DOTA_HULL_SIZE_HERO"
         "RingRadius"            "70"
@@ -958,6 +948,7 @@
         // Generic
         //----------------------------------------------------------------
         "Ability1"              "tgarri_first_split"
+        "Ability2"              "tgarri_gold"
        	"HealthBarOffset"       "140"
        	"AttackDamageType"      "DAMAGE_TYPE_ArmorPhysical"
        	"MovementCapabilities"  "DOTA_UNIT_CAP_MOVE_GROUND"
@@ -967,6 +958,7 @@
         "CombatClassAttack"     "DOTA_COMBAT_CLASS_ATTACK_BASIC"
         "CombatClassDefend"     "DOTA_COMBAT_CLASS_DEFEND_STRONG"
         "UnitRelationShipClass" "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+        "vscripts"              "pathing.lua"
 
 
         "Creature"
@@ -1008,7 +1000,7 @@
         "AttackDamageMax"       "38.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1067,7 +1059,7 @@
         "AttackDamageMax"       "27.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1126,7 +1118,7 @@
         "AttackDamageMax"       "24.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1185,7 +1177,7 @@
         "AttackDamageMax"       "180.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1243,7 +1235,7 @@
         "AttackDamageMax"       "42.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1301,7 +1293,7 @@
         "AttackDamageMax"       "0.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1359,7 +1351,7 @@
         "AttackDamageMax"       "49.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1417,7 +1409,7 @@
         "AttackDamageMax"       "93.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1475,7 +1467,7 @@
         "AttackDamageMax"       "128.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1533,7 +1525,7 @@
         "AttackDamageMax"       "56.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1591,7 +1583,7 @@
         "AttackDamageMax"       "160.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1649,7 +1641,7 @@
         "AttackDamageMax"       "0.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1707,7 +1699,7 @@
         "AttackDamageMax"       "76.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1766,7 +1758,7 @@
         "AttackDamageMax"       "57.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1824,7 +1816,7 @@
         "AttackDamageMax"       "88.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1883,7 +1875,7 @@
         "AttackDamageMax"       "348.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -1942,7 +1934,7 @@
         "AttackDamageMax"       "118.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2001,7 +1993,7 @@
         "AttackDamageMax"       "32.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2075,7 +2067,7 @@
         "AttackDamageMax"       "78.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2134,7 +2126,7 @@
         "AttackDamageMax"       "1.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2193,7 +2185,7 @@
         "AttackDamageMax"       "1.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2251,7 +2243,7 @@
         "AttackDamageMax"       "134.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2310,7 +2302,7 @@
         "AttackDamageMax"       "104.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2369,7 +2361,7 @@
         "AttackDamageMax"       "72.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2428,7 +2420,7 @@
         "AttackDamageMax"       "88.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"		""
@@ -2672,7 +2664,7 @@
         "AttackDamageMax"       "11.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"		"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"
@@ -2750,7 +2742,7 @@
         "AttackDamageMax"       "11.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"		"particles/units/heroes/hero_clinkz/clinkz_base_attack.vpcf"
@@ -2827,7 +2819,7 @@
         "AttackDamageMax"       "120"
         "AttackRate"            "1.0"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"       "particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
@@ -2899,7 +2891,7 @@
         "AttackDamageMax"       "210.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"       "particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
@@ -2972,7 +2964,7 @@
         "AttackDamageMax"       "105.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "600"
 
         "ProjectileModel"       "particles/units/heroes/hero_pugna/pugna_base_attack.vpcf"
@@ -3046,7 +3038,7 @@
         "AttackDamageMax"       "11.0"
         "AttackRate"            "1.35"
         "AttackAnimationPoint"  "0.5"
-        "AttackAcquisitionRange" "500"
+        "AttackAcquisitionRange" "600"
         "AttackRange"           "90"
 
         "ProjectileModel"       ""

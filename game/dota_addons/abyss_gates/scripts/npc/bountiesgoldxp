@@ -6,10 +6,18 @@ Grasper				20				25
 G Grapser			35				30
 Mervian				30				25
 R Merv				50				30
-Kerrang								190
+Kerrang				400 (+2400 global)				190
 Dryad				65				40
 Huntress			65				70
-
+H Spider			50				40
+Arachness			70				60
+Spiderling			11				--
+Tgarri								237
+Tgarri 1st			100				60
+Tgarri 2nd			60				40
+Tgarri 3rd			40				40
+G Turtle			70				60
+A Turtle			120 				85
 
 
 PER LEVEL			XP
@@ -25,3 +33,36 @@ PER LEVEL			XP
 9					3199
 10					3992
 11					4907
+12					5957
+13					7154
+14					8515
+15					10054
+16					11791
+17					13744
+
+
+150 gold start
+
+
+
+				Q			W			E				R
+1				Learn		--			--				--
+2				--			Learn		--				--
+3				Upgrade		Upgrade		--				--
+4				--			--			--				--
+5				Upgrade		Upgrade		Learn			--
+6				--			--			--				--
+7				Upgrade		Upgrade		Upgrade			--
+8				--			--			--				--
+9				Upgrade		Upgrade		Upgrade			--
+10				--			--			--				Learn
+11				Up			Up			Up				--
+12				--			--			--				--
+13				Up			Up			Up				Up
+14				--			--			--				--
+15				Up			Up			Up				Up			Learn
+16				--			--			--				--			--
+17				Up			Up			Up				--			--
+18				--			--			--				--			--
+19				Up			Up			Up				Up			Up
+20

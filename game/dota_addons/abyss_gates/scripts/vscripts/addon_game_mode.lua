@@ -38,6 +38,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("creature_harlequin_spider", context)
 	PrecacheUnitByNameSync("creature_arachnesser", context)
 	PrecacheUnitByNameSync("the_creature", context)
+	PrecacheUnitByNameSync("npc_dota_hero_juggernaut", context)
 	PrecacheModel("models/creeps/neutral_creeps/n_creep_troll_skeleton/n_creep_troll_skeleton_fx.vmdl", context) --[[Returns:void
 	( modelName, context ) - Manually precache a single model
 	]]
@@ -79,7 +80,21 @@ function Precache( context )
 	PrecacheResource("particle", "particles/units/heroes/hero_warlock/warlock_rain_of_chaos_explosion.vpcf", context)
 	PrecacheResource("particle", "particles/econ/items/earthshaker/egteam_set/hero_earthshaker_egset/earthshaker_echoslam_start_fallback_mid_egset.vpcf", context)
 	PrecacheResource("particle", "particles/econ/events/ti5/cyclone_ti5.vpcf", context)
-
+	PrecacheResource("particle", "particles/units/heroes/hero_bounty_hunter/bounty_hunter_windwalk.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_venomancer/venomancer_poison_debuff_nova.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_pugna/pugna_life_drain_beam.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_undying/undying_decay.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_lich/lich_frost_nova.vpcf", context)
+	PrecacheResource("particle", "particles/status_fx/status_effect_frost_lich.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_dragon_knight/dragon_knight_elder_dragon_frost.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_zuus/zuus_arc_lightning.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_wings.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_jakiro/jakiro_macropyre.vpcf", context)
+	PrecacheResource("particle", "particles/neutral_fx/mini_rosh_fire.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_juggernaut/juggernaut_blade_fury_ground.vpcf", context)
+	PrecacheResource("particle", "particles/units/heroes/hero_ember_spirit/ember_spirit_flameguard.vpcf", context)
+	PrecacheResource("particle", "particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_arc_lightning.vpcf", context)
 	-- Models can also be precached by folder or individually
 	--PrecacheModel should generally used over PrecacheResource for individual models
 	--PrecacheResource("model_folder", "particles/heroes/antimage", context)
@@ -87,6 +102,7 @@ function Precache( context )
 	--PrecacheModel("models/heroes/viper/viper.vmdl", context)
 
 	-- Sounds can precached here like anything else
+
 
 	-- Entire items can be precached by name
 	-- Abilities can also be precached in this way despite the name

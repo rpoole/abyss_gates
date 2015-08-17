@@ -6,5 +6,15 @@ function ManaDrain ( event )
 
 	currentMana = caster:GetMana()
 
-	caster:SetMana(currentMana - mana_per_second)
+	if currentMana > mana_per_second then
+		caster:SetMana(currentMana - mana_per_second)
+	else
+		ability:ToggleAbility()
+	end
+end
+
+function ToggleOn ( event )
+	local caster = event.caster
+	local currentMana = caster:GetMana() 
+	caster:SetMana(currentMana - 35)
 end
