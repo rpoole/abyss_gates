@@ -14,7 +14,20 @@ function SpiritStack ( event )
 	end
 
 	if current_stack < max_spirits then
+		
 		caster:SetModifierStackCount( modifier, ability, current_stack + 1)
+
+		if current_stack == 0 then
+			particleOne = ParticleManager:CreateParticle("particles/parent_charge_one.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+		end
+
+		if current_stack == 1 then
+			particleTwo = ParticleManager:CreateParticle("particles/parent_charge_two.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+		end
+
+		if current_stack == 2 then
+			particleThree = ParticleManager:CreateParticle("particles/parent_charge_three.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+		end
 	end
 end
 
@@ -65,14 +78,20 @@ function SpiritCheck ( event )
 			ability:ApplyDataDrivenModifier(caster, caster, modifier_one, {})
 			current_stack = 0
 			caster:SetModifierStackCount("modifier_spirit_charge", ability, 0)
+			ParticleManager:DestroyParticle(particleOne, true)
 		elseif current_stack == 2 then
 			ability:ApplyDataDrivenModifier(caster, caster, modifier_two, {})
 			current_stack = 0
 			caster:SetModifierStackCount("modifier_spirit_charge", ability, 0)
+			ParticleManager:DestroyParticle(particleOne, true)
+			ParticleManager:DestroyParticle(particleTwo, true)
 		elseif current_stack == 3 then
 			ability:ApplyDataDrivenModifier(caster, caster, modifier_three, {})
 			current_stack = 0
 			caster:SetModifierStackCount("modifier_spirit_charge", ability, 0)
+			ParticleManager:DestroyParticle(particleOne, true)
+			ParticleManager:DestroyParticle(particleTwo, true)
+			ParticleManager:DestroyParticle(particleThree, true)
 		else
 			print("what the fuck")
 			caster:GiveMana(manaCost)

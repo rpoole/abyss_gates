@@ -51,6 +51,7 @@ USE_CUSTOM_XP_VALUES = true             -- Should we use custom XP values to lev
 --[[XP_PER_LEVEL_TABLE = {115, 225, 453, 713, 1042, 1447, 1936, 2517, 3199, 3992, 4907, 5957, 7154, 8515, 10054, 11791, 13744}]]--
 
 
+
 Testing = true
 OutOfWorldVector = Vector(11000, 11000, -200)
 
@@ -132,7 +133,7 @@ function Abyss_Gates:OnHeroInGame(hero)
 		-- At this point a player now has a hero spawned in your map.
 		
 	    local firstLine = ColorIt("Welcome to ", "green") .. ColorIt("Abyss_Gates! ", "magenta") .. ColorIt("v0.1", "blue");
-	    local secondLine = ColorIt("Developer: ", "green") .. ColorIt("XXX", "orange")
+	    local secondLine = ("Open Spellshop to train Spells. Item Shop is global.")
 		-- Send the first greeting in 4 secs.
 		Timers:CreateTimer(4, function()
 	        GameRules:SendCustomMessage(firstLine, 0, 0)
@@ -155,7 +156,6 @@ function Abyss_Gates:OnHeroInGame(hero)
 
 
 	-- Show a popup with game instructions.
-    ShowGenericPopupToPlayer(hero.player, "#abyss_gates_instructions_title", "#abyss_gates_instructions_body", "", "", DOTA_SHOWGENERICPOPUP_TINT_SCREEN )
 
 	-- This line for example will set the starting gold of every hero to 500 unreliable gold
 	hero:SetGold(150, false)
@@ -474,6 +474,103 @@ function Abyss_Gates:OnGameInProgress()
 		WaveTenRoundEight()
 	end)
 
+	Timers:CreateTimer(1134, function()
+		WaveElevenRoundOne()
+	end)
+
+	Timers:CreateTimer(1146, function()
+		WaveElevenRoundTwo()
+	end)
+
+	Timers:CreateTimer(1158, function()
+		WaveElevenRoundThree()
+	end)
+
+	Timers:CreateTimer(1171, function()
+		WaveElevenRoundFour()
+	end)
+
+	Timers:CreateTimer(1183, function()
+		WaveElevenRoundFive()
+	end)
+
+	Timers:CreateTimer(1195, function()
+		WaveElevenRoundSix()
+	end)
+
+	Timers:CreateTimer(1208, function()
+		WaveElevenRoundSeven()
+	end)
+
+	Timers:CreateTimer(1220, function()
+		WaveElevenRoundEight()
+	end)
+
+	Timers:CreateTimer(1258, function()
+		WaveElevenRoundNine()
+	end)
+
+	Timers:CreateTimer(1268, function()
+		WaveElevenRoundTen()
+	end)
+
+	Timers:CreateTimer(1278, function()
+		WaveElevenRoundEleven()
+	end)
+
+	Timers:CreateTimer(1288, function()
+		WaveElevenRoundTwelve()
+	end)
+
+	Timers:CreateTimer(1298, function()
+		WaveElevenRoundThirteen()
+	end)
+
+	Timers:CreateTimer(1308, function()
+		WaveElevenRoundFourteen()
+	end)
+
+	Timers:CreateTimer(1318, function()
+		WaveElevenRoundFifteen()
+	end)
+
+	Timers:CreateTimer(1328, function()
+		WaveElevenRoundSixteen()
+	end)
+
+	Timers:CreateTimer(1338, function()
+		WaveElevenRoundSeventeen()
+	end)
+
+	Timers:CreateTimer(1348, function()
+		WaveElevenRoundEightteen()
+	end)
+
+	Timers:CreateTimer(1358, function()
+		WaveElevenRoundNineteen()
+	end)
+
+	Timers:CreateTimer(1368, function()
+		WaveElevenRoundTwenty()
+	end)
+
+	Timers:CreateTimer(1378, function()
+		WaveElevenRoundTwentyone()
+	end)
+
+	Timers:CreateTimer(1388, function()
+		WaveElevenRoundTwentytwo()
+	end)
+
+	Timers:CreateTimer(1398, function()
+		WaveElevenRoundTwentythree()
+	end)
+
+	Timers:CreateTimer(1408, function()
+		WaveElevenRoundTwentyfour()
+	end)
+
+
 end
 
 
@@ -494,6 +591,7 @@ function WaveOneRoundOne()
 	local unit = CreateUnitByName("creature_boar", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
 
 	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
 	local unit = CreateUnitByName("creature_boar", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
@@ -1434,6 +1532,477 @@ function WaveNineRoundEight()
 	local unit = CreateUnitByName("creature_tauren_cleanser", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
 end
 
+function WaveTenRoundOne()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundTwo()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundThree()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundFour()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundFive()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundSix()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundSeven()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveTenRoundEight()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_urmgot", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_megremoros", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundOne()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwo()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundThree()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundFour()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundFive()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundSix()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundSeven()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundEight()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+	
+	--[[Spawns 5 Boars in the bottom spawner]]
+	local unit = CreateUnitByName("creature_fire_priest", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundNine()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	--[[Spawns 5 Boars in the top spawner]]
+	local unit = CreateUnitByName("creature_pyramourn", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+
+
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundEleven()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwelve()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundThirteen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundFourteen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundFifteen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundSixteen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundSeventeen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundEightteen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundNineteen()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwenty()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwentyone()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwentytwo()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwentythree()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+function WaveElevenRoundTwentyfour()
+	local spawnerTop = Entities:FindByName( nil, 'spawner_two'):GetAbsOrigin()
+	local spawnerBot = Entities:FindByName( nil, 'spawner_one'):GetAbsOrigin()
+	
+	local unit = CreateUnitByName("creature_enfrit", spawnerTop, true, nil, nil, DOTA_TEAM_NEUTRALS)
+	local unit = CreateUnitByName("creature_enfrit", spawnerBot, true, nil, nil, DOTA_TEAM_NEUTRALS)
+end
+
+
 function Abyss_Gates:PlayerSay( keys )
 	local ply = keys.ply
 	local hero = ply:GetAssignedHero()
@@ -1537,7 +2106,7 @@ end
 -- An item was purchased by a player
 function Abyss_Gates:OnItemPurchased( keys )
     --print ( '[ABYSS_GATES] OnItemPurchased' )
-    --PrintTable(keys)
+    DeepPrintTable(keys)
  
     -- The playerID of the hero who is buying something
     local plyID = keys.PlayerID
@@ -1558,6 +2127,13 @@ function Abyss_Gates:OnItemPurchased( keys )
     print(offHandCheck)
     print(twoHandCheck)
     print(chestCheck)
+
+    for i=0,5 do
+    	local item = hero:GetItemInSlot(i)
+    	if item then
+    		item:SetPurchaseTime(100000)
+    	end
+    end
 
     if mainHandCheck > 1 then
         local foundMainHandItem = false
@@ -1736,7 +2312,32 @@ function Abyss_Gates:OnPlayerLevelUp(keys)
 	--PrintTable(keys)
 
 	local player = EntIndexToHScript(keys.player)
+    local hero = player:GetAssignedHero()
 	local level = keys.level
+	if level == 1 then
+		hero:SetAbilityPoints(0)
+	end
+
+	if level == 2 then
+		hero:SetAbilityPoints(0)
+	end
+
+	if level == 5 then
+		local currentAbilityPoints = hero:GetAbilityPoints()
+		hero:SetAbilityPoints(currentAbilityPoints - 1)
+	end
+
+	if level == 10 then
+		local currentAbilityPoints = hero:GetAbilityPoints()
+		hero:SetAbilityPoints(currentAbilityPoints - 1)
+	end
+
+	if level == 15 then
+		local currentAbilityPoints = hero:GetAbilityPoints()
+		hero:SetAbilityPoints(currentAbilityPoints - 1)
+	end
+
+
 
 
 end
@@ -1820,12 +2421,53 @@ function Abyss_Gates:OnEntityKilled( keys )
 
 	-- The Unit that was Killed
 	local killedUnit = EntIndexToHScript( keys.entindex_killed )
-	-- The Killing entity
+	local killedUnitName = killedUnit:GetUnitName()
+	print(killedUnitName)
 	local killerEntity = nil
 
 	if keys.entindex_attacker ~= nil then
 		killerEntity = EntIndexToHScript( keys.entindex_attacker )
 	end
+	local killerEntityTeam = killerEntity:GetTeamNumber()
+	if killerEntity:IsRealHero() == true then
+		killerEntityPID = killerEntity:GetPlayerID()
+		playerNumber = PlayerResource:GetPlayerCountForTeam(killerEntityTeam)
+	end
+	
+
+	-- The Killing entity
+	if killedUnitName == "creature_kerrang" then
+		GameRules:SendCustomMessage("Kerrang has been killed! 2400 Gold has been awarded to the killing team!", 0, 0)
+		for i = 1, playerNumber, 1 do
+			local giveGold = PlayerResource:GetNthPlayerIDOnTeam(killerEntityTeam, i)
+			PlayerResource:ModifyGold(giveGold, 2400, true, 13)
+		end
+	end
+
+	if killedUnitName == "creature_tgarri" then
+		GameRules:SendCustomMessage("T'garri has been killed! 4000 Gold has been awarded to the killing team!", 0, 0)
+		for i = 1, playerNumber, 1 do
+			local giveGold = PlayerResource:GetNthPlayerIDOnTeam(killerEntityTeam, i)
+			PlayerResource:ModifyGold(giveGold, 4000, true, 13)
+		end
+	end
+
+	if killedUnitName == "creature_oghmar_grayskin" then
+		GameRules:SendCustomMessage("Oghmar Grayskin has been killed! 6400 Gold has been awarded to the killing team!", 0, 0)
+		for i = 1, playerNumber, 1 do
+			local giveGold = PlayerResource:GetNthPlayerIDOnTeam(killerEntityTeam, i)
+			PlayerResource:ModifyGold(giveGold, 6400, true, 13)
+		end
+	end
+
+	if killedUnitName == "creature_pyramourn" then
+		GameRules:SendCustomMessage("Pyramourn has been killed! 10000 Gold has been awarded to the killing team!", 0, 0)
+		for i = 1, playerNumber, 1 do
+			local giveGold = PlayerResource:GetNthPlayerIDOnTeam(killerEntityTeam, i)
+			PlayerResource:ModifyGold(giveGold, 10000, true, 13)
+		end
+	end
+		
 
 
 	if killedUnit:IsRealHero() then
@@ -1856,6 +2498,7 @@ function Abyss_Gates:OnEntityKilled( keys )
 	Timers:CreateTimer(1, function() 
 	if LeavesCorpse( killedUnit ) then
 			-- Create and set model
+
 			local corpse = CreateUnitByName("dummy_unit", killedUnit:GetAbsOrigin(), true, nil, nil, killedUnit:GetTeamNumber())
 			corpse:SetModel(CORPSE_MODEL)
 
@@ -1909,6 +2552,9 @@ function Abyss_Gates:InitAbyss_Gates()
 	GameRules:SetCreepMinimapIconScale( MINIMAP_CREEP_ICON_SIZE )
 	GameRules:SetRuneMinimapIconScale( MINIMAP_RUNE_ICON_SIZE )
 	GameRules:GetGameModeEntity():SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 3)
+	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
+	GameRules:GetGameModeEntity():SetTopBarTeamValue(DOTA_TEAM_GOODGUYS, 30)
 	--print('[ABYSS_GATES] GameRules set')
 
 	InitLogFile( "log/abyss_gates.txt","")

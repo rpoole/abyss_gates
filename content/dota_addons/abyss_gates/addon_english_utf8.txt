@@ -1,0 +1,1590 @@
+﻿"lang"
+{
+	"Language"		"English"
+	"Tokens"
+	{		
+		"game_mode_15"				"ABYSS_GATES"
+		"addon_game_name"			"ABYSS_GATES"
+		
+		"abyss_gates_instructions_title"					"Abyss_Gates"
+		"abyss_gates_instructions_body"					"<font color='#00BFFF'>Welcome to Abyss_Gates!</font>\nYou can edit this message in game/dota_addons/abyss_gates/resource/addon_english.txt"
+		
+		// ******************** HEROES ********************
+		"npc_dota_hero_ancient_apparition"                                                "Ancient Apparition"
+
+		// ******************** UNITS ********************
+		"npc_dummy_unit"                                                                  "Dummy Unit"
+		"npc_dummy_blank"                                                                 "Dummy Blank"
+		"npc_precache_everything"                                                         "Precache Everything"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_channel_start"                                             "Channel Start"
+		"DOTA_Tooltip_modifier_channel_start_Description"                                 ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_modifier_item_shield"                                               "Item Shield"
+		"DOTA_Tooltip_modifier_item_shield_Description"                                   ""
+
+
+		// ******************** ABILITIES ********************
+
+		// ******************** ITEMS ********************
+
+		// ******************** HEROES ********************
+		"npc_dota_hero_crystal_maiden"                                                    "Test Subject One"
+		"npc_dota_hero_lion"                                                              "Scott"
+		"npc_dota_hero_kunkka"                                                            "Scotttwo"
+		"npc_dota_hero_pudge"                                                             "Scottthree"
+		"npc_dota_hero_pugna"                                                             "Grim Magus"
+		"npc_dota_hero_dazzle"                                                            "Grim Magus Demonology"
+		"npc_dota_hero_leshrac"                                                           "Grim Magus Affliction"
+		"npc_dota_hero_sven"                                                              "Spirit Warrior Arts of Self"
+		"npc_dota_hero_juggernaut"                                                        "Spirit Warrior"
+		"npc_dota_hero_dragon_knight"                                                     "Spirit Warrior Arts of Spirit"
+		"npc_dota_hero_omniknight"                                                        "Paladin"
+		"npc_dota_hero_vengefulspirit"                                                    "Paladin Support Aura Skills"
+		"npc_dota_hero_enigma"                                                            "Paladin Offensive Aura Skills"
+		"npc_dota_hero_rubick"															  "Grim Magus"
+
+		// ******************** UNITS ********************
+		"creature_boar"                                                                   "Boar"
+		"creature_corrupted_boar"                                                         "Corrupted Boar"
+		"creature_grasper"                                                                "Grasper"
+		"creature_grasper_venomancer"                                                     "Grasper Venomancer"
+		"creature_mervian_clasper"                                                        "Mervian Clasper"
+		"creature_mervian_mauler"                                                         "Mervian Mauler"
+		"creature_kerrang"                                                                "Kerrang"
+		"creature_dryad"                                                                  "Dryad"
+		"creature_nightshade_huntress"                                                    "Nightshade Huntress"
+		"creature_harlequin_spider"                                                       "Harlequin Spider"
+		"creature_arachnesser"                                                            "Arachnesser"
+		"creature_spiderling"                                                             "Spiderling"
+		"creature_tgarri"                                                                 "Tgarri"
+		"creature_tgarri_first_split"                                                     "Tgarri First Split"
+		"creature_tgarri_second_split"                                                    "Tgarri Second Split"
+		"creature_tgarri_third_split"                                                     "Tgarri Third Split"
+		"creature_tgarri_fourth_split"                                                    "Tgarri Fourth Split"
+		"creature_great_turtle"                                                           "Great Turtle"
+		"creature_ancient_turtle"                                                         "Ancient Turtle"
+		"creature_centaur_hunter"                                                         "Centaur Hunter"
+		"creature_centaur_shaman"                                                         "Centaur Shaman"
+		"creature_oghmar_grayskin"                                                        "Oghmar Grayskin"
+		"creature_tauren_warrior"                                                         "Tauren Warrior"
+		"creature_tauren_cleanser"                                                        "Tauren Cleanser"
+		"creature_urmgot"                                                                 "Urmgot"
+		"creature_megremoros"                                                             "Megremoros"
+		"creature_enfrit"                                                                 "Enfrit"
+		"creature_mervian_clasper"                                                        "Mervian Clasper"
+		"creature_mervian_clasper"                                                        "Mervian Clasper"
+		"creature_greater_fire_priest"                                                    "Greater Fire Priest"
+		"creature_corrupt_troll"                                                          "Corrupt Troll"
+		"creature_troll_shadowpriest"                                                     "Troll Shadowpriest"
+		"creature_vggngg"                                                                 "Vggngg"
+		"creature_zggzgg"                                                                 "Zggzgg"
+		"creature_purnecros"                                                              "Purnecros"
+		"creature_gurgmoth"                                                               "Gurgmoth"
+		"creature_reanimated"                                                             "Reanimated"
+		"creature_reanimator"                                                             "Reanimator"
+		"undead_skeleton_warrior"                                                         "Skeleton Warrior"
+		"undead_burning_skeleton_warrior"                                                 "Burning Skeleton Warrior"
+		"undead_skeleton_archer"                                                          "Skeleton Archer"
+		"undead_burning_skeleton_archer"                                                  "Burning Skeleton Archer"
+		"undead_skeleton_fire_mage"                                                       "Fire Skeleton Mage"
+		"undead_skeleton_lightning_mage"                                                  "Lightning Skeleton Mage"
+		"undead_skeleton_frost_mage"                                                      "Frost Skeleton Mage"
+		"the_creature"                                                                    "The Creature"
+		"dummy_unit"                                                                      "Corpse"
+
+		// ******************** ABILITY MODIFIERS ********************
+		"DOTA_Tooltip_modifier_crystal_nova_slow_datadriven"                              "Crystal Nova Slow Datadriven"
+		"DOTA_Tooltip_modifier_crystal_nova_slow_datadriven_Description"                  ""
+
+		"DOTA_Tooltip_modifier_light_strike_array_datadriven"                             "Light Strike Array Datadriven"
+		"DOTA_Tooltip_modifier_light_strike_array_datadriven_Description"                 ""
+
+		"DOTA_Tooltip_modifier_test"                                                      "Test"
+		"DOTA_Tooltip_modifier_test_Description"                                          ""
+
+		"DOTA_Tooltip_modifier_heartstopper_debuff_visibility"                            "Heartstopper Debuff Visibility"
+		"DOTA_Tooltip_modifier_heartstopper_debuff_visibility_Description"                ""
+
+		"DOTA_Tooltip_modifier_invul_aura"                                                "Invul Aura"
+		"DOTA_Tooltip_modifier_invul_aura_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_invul_aura_buff"                                           "Invul Aura Buff"
+		"DOTA_Tooltip_modifier_invul_aura_buff_Description"                               ""
+
+		"DOTA_Tooltip_modifier_root"                                                      "Root"
+		"DOTA_Tooltip_modifier_root_Description"                                          ""
+
+		"DOTA_Tooltip_modifier_debuff"                                                    "Debuff"
+		"DOTA_Tooltip_modifier_debuff_Description"                                        ""
+
+		"DOTA_Tooltip_modifier_curse"                                                     "Curse"
+		"DOTA_Tooltip_modifier_curse_Description"                                         ""
+
+		"DOTA_Tooltip_modifier_heal_per_second"                                           "Heal Per Second"
+		"DOTA_Tooltip_modifier_heal_per_second_Description"                               ""
+
+		"DOTA_Tooltip_modifier_volcano_thinker"                                           "Volcano Thinker"
+		"DOTA_Tooltip_modifier_volcano_thinker_Description"                               ""
+
+		"DOTA_Tooltip_modifier_volcano_thinker_two"                                       "Volcano Thinker Two"
+		"DOTA_Tooltip_modifier_volcano_thinker_two_Description"                           ""
+
+		"DOTA_Tooltip_modifier_volcano"                                                   "Volcano"
+		"DOTA_Tooltip_modifier_volcano_Description"                                       ""
+
+		"DOTA_Tooltip_modifier_volcano_spawner"                                           "Volcano Spawner"
+		"DOTA_Tooltip_modifier_volcano_spawner_Description"                               ""
+
+		"DOTA_Tooltip_modifier_reflect"                                                   "Reflect"
+		"DOTA_Tooltip_modifier_reflect_Description"                                       ""
+
+		"DOTA_Tooltip_modifier_reflect_success"                                           "Reflect Success"
+		"DOTA_Tooltip_modifier_reflect_success_Description"                               ""
+
+		"DOTA_Tooltip_modifier_stone_fist"                                                "Stone Fist Stun"
+		"DOTA_Tooltip_modifier_stone_fist_Description"                                    "Stunned for 12 seconds"
+
+		"DOTA_Tooltip_modifier_stone_fist_aoe"                                            "Stone Fist AOE Stun"
+		"DOTA_Tooltip_modifier_stone_fist_aoe_Description"                                "Stunned for 4 seconds"
+
+		"DOTA_Tooltip_modifier_bloodshed"                                                 "Bloodshed"
+		"DOTA_Tooltip_modifier_bloodshed_Description"                                     "Bleeding for damage over time."
+
+		"DOTA_Tooltip_modifier_bolt_hit"                                                  "Darkbolt"
+		"DOTA_Tooltip_modifier_bolt_hit_Description"                                      "Stunned"
+
+		"DOTA_Tooltip_modifier_bleed_earth_thinker"                                       "Bleed Earth Thinker"
+		"DOTA_Tooltip_modifier_bleed_earth_thinker_Description"                           ""
+
+		"DOTA_Tooltip_modifier_bleed_earth"                                               "Bleed Earth"
+		"DOTA_Tooltip_modifier_bleed_earth_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_bleed_earth_spawner"                                       "Bleed Earth Spawner"
+		"DOTA_Tooltip_modifier_bleed_earth_spawner_Description"                           ""
+
+		"DOTA_Tooltip_modifier_skeleton_count"                                            "Skeleton Count"
+		"DOTA_Tooltip_modifier_skeleton_count_Description"                                "You have THIS many!"
+
+		"DOTA_Tooltip_modifier_skeleton_mage_count"                                       "Skeleton Mage Count"
+		"DOTA_Tooltip_modifier_skeleton_mage_count_Description"                           "You have THIS many!"
+
+		"DOTA_Tooltip_modifier_corpse_stack"                                              "Corpse Stack"
+		"DOTA_Tooltip_modifier_corpse_stack_Description"                                  "Number of Corpses consumed."
+
+		"DOTA_Tooltip_modifier_fear_debuff"                                               "Fear Debuff"
+		"DOTA_Tooltip_modifier_fear_debuff_Description"                                   "Chance to miss increased by 20&#37;"
+
+		"DOTA_Tooltip_modifier_amplify_damage_debuff"                                     "Amplify Damage Debuff"
+		"DOTA_Tooltip_modifier_amplify_damage_debuff_Description"                         "Increases physical damage taken by 160&#37;"
+
+		"DOTA_Tooltip_modifier_life_tap_debuff"                                           "Life Tap Debuff"
+		"DOTA_Tooltip_modifier_life_tap_debuff_Description"                               "Heals attacker for 25&#37; of unit's maximum HP on death"
+
+		"DOTA_Tooltip_modifier_mana_rip_debuff"                                           "Mana Rip Debuff"
+		"DOTA_Tooltip_modifier_mana_rip_debuff_Description"                               "Regenerates mana equal to 5&#37; of unit's maximum HP on death"
+
+		"DOTA_Tooltip_modifier_taint_resistance_debuff"                                   "Taint Resistance Debuff"
+		"DOTA_Tooltip_modifier_taint_resistance_debuff_Description"                       "Increases magical damage taken by 200&#37;"
+
+		"DOTA_Tooltip_modifier_block"                                                     "Hardened Skin"
+		"DOTA_Tooltip_modifier_block_Description"                                         "Reduces each instance of physical damage by a flat amount."
+
+		"DOTA_Tooltip_modifier_blade_dance"                                               "Blade Dance"
+		"DOTA_Tooltip_modifier_blade_dance_Description"                                   "Gives a chance to critically strike."
+
+		"DOTA_Tooltip_modifier_blade_dance_crit"                                          "Blade Dance Crit"
+		"DOTA_Tooltip_modifier_blade_dance_crit_Description"                              "CRIT BABY"
+
+		"DOTA_Tooltip_modifier_vampirism"                                                 "Vampirism"
+		"DOTA_Tooltip_modifier_vampirism_Description"                                     "Grants attack lifesteal and reduces physical armour"
+
+		"DOTA_Tooltip_modifier_true_focus_debuff"                                         "True Focus Debuff"
+		"DOTA_Tooltip_modifier_true_focus_debuff_Description"                             "Stunned and armour reduced."
+
+		"DOTA_Tooltip_modifier_hidden_strike"                                             "Hidden Strike"
+		"DOTA_Tooltip_modifier_hidden_strike_Description"                                 "Invisible. On attack grants 1 Spirit Charge"
+
+		"DOTA_Tooltip_modifier_spirit_charge"                                             "Spirit Charge"
+		"DOTA_Tooltip_modifier_spirit_charge_Description"                                 "I HAVE THE POWER"
+
+		"DOTA_Tooltip_modifier_spirit_mechanic"                                           "Spirit Mechanic"
+		"DOTA_Tooltip_modifier_spirit_mechanic_Description"                               "BY THE POWER OF GREYSKULL"
+
+		"DOTA_Tooltip_modifier_one_charge"                                                "One Charge"
+		"DOTA_Tooltip_modifier_one_charge_Description"                                    "One Spirit Charge"
+
+		"DOTA_Tooltip_modifier_two_charge"                                                "Two Charge"
+		"DOTA_Tooltip_modifier_two_charge_Description"                                    "Two Spirit Charges"
+
+		"DOTA_Tooltip_modifier_three_charge"                                              "Three Charge"
+		"DOTA_Tooltip_modifier_three_charge_Description"                                  "Three Spirit Charges"
+
+		"DOTA_Tooltip_modifier_poison_sting"                                              "Poison Sting"
+		"DOTA_Tooltip_modifier_poison_sting_Description"                                  "Taking damage over time."
+
+		"DOTA_Tooltip_modifier_firestorm_aoe"                                             "Firestorm Aoe"
+		"DOTA_Tooltip_modifier_firestorm_aoe_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_firestorm"                                                 "Firestorm"
+		"DOTA_Tooltip_modifier_firestorm_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_retribution_mechanic"                                      "Retribution Mechanic"
+		"DOTA_Tooltip_modifier_retribution_mechanic_Description"                          ""
+
+		"DOTA_Tooltip_modifier_retribution_stack"                                         "Retribution"
+		"DOTA_Tooltip_modifier_retribution_stack_Description"                             "At 100 stacks, grants 1 Strength."
+
+		"DOTA_Tooltip_modifier_retribution_buff"                                          "Retribution Buff"
+		"DOTA_Tooltip_modifier_retribution_buff_Description"                              "+1 Strength per stack"
+
+		"DOTA_Tooltip_modifier_salvation_mechanic"                                        "Salvation"
+		"DOTA_Tooltip_modifier_salvation_mechanic_Description"                            "Heals self on unit kill"
+
+		"DOTA_Tooltip_modifier_purification_mechanic"                                     "Purification"
+		"DOTA_Tooltip_modifier_purification_mechanic_Description"                         ""
+
+		"DOTA_Tooltip_modifier_purification_stack"                                        "Purification"
+		"DOTA_Tooltip_modifier_purification_stack_Description"                            "At 100 stacks, grants 1 Agility"
+
+		"DOTA_Tooltip_modifier_purification_buff"                                         "Purification Buff"
+		"DOTA_Tooltip_modifier_purification_buff_Description"                             "+1 Agility per stack"
+
+		"DOTA_Tooltip_modifier_conversion_mechanic"                                       "Conversion"
+		"DOTA_Tooltip_modifier_conversion_mechanic_Description"                           "Bring me your dead!"
+
+		"DOTA_Tooltip_modifier_tel_qeres"                                                 "Tel Qeres"
+		"DOTA_Tooltip_modifier_tel_qeres_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_zeal_boost"                                                "Zeal Boost"
+		"DOTA_Tooltip_modifier_zeal_boost_Description"                                    "Greatly increased attack speed"
+
+		"DOTA_Tooltip_modifier_charge_buff"                                               "Charge"
+		"DOTA_Tooltip_modifier_charge_buff_Description"                                   "Charging toward your target"
+
+		"DOTA_Tooltip_modifier_charge_stun"                                               "Charge Stun"
+		"DOTA_Tooltip_modifier_charge_stun_Description"                                   "Stunned"
+
+		"DOTA_Tooltip_modifier_cleave_buff"                                               "Purified Hammer"
+		"DOTA_Tooltip_modifier_cleave_buff_Description"                                   "Grants the Paladin Cleave"
+
+		"DOTA_Tooltip_modifier_regen_mechanic"                                            "Regen Mechanic"
+		"DOTA_Tooltip_modifier_regen_mechanic_Description"                                ""
+
+		"DOTA_Tooltip_modifier_regen_aura"                                                "Regeneration Aura"
+		"DOTA_Tooltip_modifier_regen_aura_Description"                                    "Increased Health Regeneration"
+
+		"DOTA_Tooltip_modifier_stoneskin_mechanic"                                        "Stoneskin Mechanic"
+		"DOTA_Tooltip_modifier_stoneskin_mechanic_Description"                            ""
+
+		"DOTA_Tooltip_modifier_stoneskin_aura"                                            "Stoneskin Aura"
+		"DOTA_Tooltip_modifier_stoneskin_aura_Description"                                "Increased Physical Armour"
+
+		"DOTA_Tooltip_modifier_might_mechanic"                                            "Might Mechanic"
+		"DOTA_Tooltip_modifier_might_mechanic_Description"                                ""
+
+		"DOTA_Tooltip_modifier_might_aura"                                                "Might Aura"
+		"DOTA_Tooltip_modifier_might_aura_Description"                                    "Increased Attack Damage"
+
+		"DOTA_Tooltip_modifier_warmth_mechanic"                                           "Warmth Mechanic"
+		"DOTA_Tooltip_modifier_warmth_mechanic_Description"                               ""
+
+		"DOTA_Tooltip_modifier_warmth_aura"                                               "Warmth Aura"
+		"DOTA_Tooltip_modifier_warmth_aura_Description"                                   "Increased Mana Regeneration"
+
+		"DOTA_Tooltip_modifier_swiftness_mechanic"                                        "Swiftness Mechanic"
+		"DOTA_Tooltip_modifier_swiftness_mechanic_Description"                            ""
+
+		"DOTA_Tooltip_modifier_swiftness_aura"                                            "Swiftness Aura"
+		"DOTA_Tooltip_modifier_swiftness_aura_Description"                                "Increased Movement and Attack Speed"
+
+		"DOTA_Tooltip_modifier_weakness_mechanic"                                         "Weakness Mechanic"
+		"DOTA_Tooltip_modifier_weakness_mechanic_Description"                             ""
+
+		"DOTA_Tooltip_modifier_weakness_aura"                                             "Weakness Aura"
+		"DOTA_Tooltip_modifier_weakness_aura_Description"                                 "Reduced Attack Damage"
+
+		"DOTA_Tooltip_modifier_frailty_mechanic"                                          "Frailty Mechanic"
+		"DOTA_Tooltip_modifier_frailty_mechanic_Description"                              ""
+
+		"DOTA_Tooltip_modifier_frailty_aura"                                              "Frailty Aura"
+		"DOTA_Tooltip_modifier_frailty_aura_Description"                                  "Reduced Physical Armour"
+
+		"DOTA_Tooltip_modifier_fire_mechanic"                                             "Fire Aura"
+		"DOTA_Tooltip_modifier_fire_mechanic_Description"                                 "Dealing damage per second around the caster. Draining mana"
+
+		"DOTA_Tooltip_modifier_blinding_light_mechanic"                                   "Blinding Light"
+		"DOTA_Tooltip_modifier_blinding_light_mechanic_Description"                       "Every 8 seconds, has a chance to stun a number of targets within range"
+
+		"DOTA_Tooltip_modifier_blinding_light_debuff"                                     "Blinding Light Debuff"
+		"DOTA_Tooltip_modifier_blinding_light_debuff_Description"                         "MY EYES!"
+
+		"DOTA_Tooltip_modifier_cold_mechanic"                                             "Cold Mechanic"
+		"DOTA_Tooltip_modifier_cold_mechanic_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_cold_aura"                                                 "Cold Aura"
+		"DOTA_Tooltip_modifier_cold_aura_Description"                                     "Reduced Movement and Attack Speed"
+
+		"DOTA_Tooltip_modifier_red_color"                                                 "Red Color"
+		"DOTA_Tooltip_modifier_red_color_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_poison_mechanic"                                           "Poison Mechanic"
+		"DOTA_Tooltip_modifier_poison_mechanic_Description"                               ""
+
+		"DOTA_Tooltip_modifier_poison"                                                    "Poison"
+		"DOTA_Tooltip_modifier_poison_Description"                                        "You should probably avoid getting hit by this"
+
+		"DOTA_Tooltip_modifier_crippling_poison_mechanic"                                 "Crippling Poison Mechanic"
+		"DOTA_Tooltip_modifier_crippling_poison_mechanic_Description"                     ""
+
+		"DOTA_Tooltip_modifier_crippling_poison"                                          "Crippling Poison"
+		"DOTA_Tooltip_modifier_crippling_poison_Description"                              "SO SLOW"
+
+		"DOTA_Tooltip_modifier_passive_invis_mechanic"                                    "Passive Invis Mechanic"
+		"DOTA_Tooltip_modifier_passive_invis_mechanic_Description"                        ""
+
+		"DOTA_Tooltip_modifier_remove_invis"                                              "Remove Invis"
+		"DOTA_Tooltip_modifier_remove_invis_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_invis"                                                     "Invis"
+		"DOTA_Tooltip_modifier_invis_Description"                                         "u will never see this"
+
+		"DOTA_Tooltip_modifier_burning"                                                   "Burning"
+		"DOTA_Tooltip_modifier_burning_Description"                                       ""
+
+		"DOTA_Tooltip_modifier_bash_stun"                                                 "Bash Stun"
+		"DOTA_Tooltip_modifier_bash_stun_Description"                                     "Stunned"
+
+		"DOTA_Tooltip_modifier_first_split"                                               "First Split"
+		"DOTA_Tooltip_modifier_first_split_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_chain_lightning"                                           "Chain Lightning"
+		"DOTA_Tooltip_modifier_chain_lightning_Description"                               ""
+
+		"DOTA_Tooltip_modifier_frost_attack"                                              "Frost Attack"
+		"DOTA_Tooltip_modifier_frost_attack_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_frost_attack_debuff"                                       "Frost Attack Debuff"
+		"DOTA_Tooltip_modifier_frost_attack_debuff_Description"                           ""
+
+		"DOTA_Tooltip_dummy_modifier"                                                     "Dummy Modifier"
+		"DOTA_Tooltip_dummy_modifier_Description"                                         ""
+
+
+		// ******************** ITEM MODIFIERS ********************
+		"DOTA_Tooltip_modifier_weapon_stack"                                              "Weapon Stack"
+		"DOTA_Tooltip_modifier_weapon_stack_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_main_hand"                                                 ""
+		"DOTA_Tooltip_modifier_main_hand_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_off_hand"                                                  ""
+		"DOTA_Tooltip_modifier_off_hand_Description"                                      ""
+
+		"DOTA_Tooltip_modifier_example_damage_crit"                                       "Example Damage Crit"
+		"DOTA_Tooltip_modifier_example_damage_crit_Description"                           ""
+
+		"DOTA_Tooltip_modifier_example_crit_buff"                                         "Example Crit Buff"
+		"DOTA_Tooltip_modifier_example_crit_buff_Description"                             ""
+
+		"DOTA_Tooltip_modifier_example_armor_block"                                       "Example Armor Block"
+		"DOTA_Tooltip_modifier_example_armor_block_Description"                           ""
+
+		"DOTA_Tooltip_modifier_two_hand"                                                  ""
+		"DOTA_Tooltip_modifier_two_hand_Description"                                      ""
+
+		"DOTA_Tooltip_modifier_ascension_sword"                                           "Ascension Sword"
+		"DOTA_Tooltip_modifier_ascension_sword_Description"                               ""
+
+		"DOTA_Tooltip_modifier_ascension_sword_debuff"                                    "Ascension Sword"
+		"DOTA_Tooltip_modifier_ascension_sword_debuff_Description"                        "Brrrr!"
+
+		"DOTA_Tooltip_modifier_war_claws"                                                 "War Claws"
+		"DOTA_Tooltip_modifier_war_claws_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_war_claws_debuff"                                          "War Claws"
+		"DOTA_Tooltip_modifier_war_claws_debuff_Description"                              "Armour reduced by 5"
+
+		"DOTA_Tooltip_modifier_moon_glaive"                                               "Moon Glaive"
+		"DOTA_Tooltip_modifier_moon_glaive_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_serpent_blade"                                             "Serpent Blade"
+		"DOTA_Tooltip_modifier_serpent_blade_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_serpent_blade_debuff"                                      "Serpent Blade"
+		"DOTA_Tooltip_modifier_serpent_blade_debuff_Description"                          "Movement Speed slowed by 33&#37;"
+
+		"DOTA_Tooltip_modifier_pickaxe"                                                   "Pickaxe"
+		"DOTA_Tooltip_modifier_pickaxe_Description"                                       ""
+
+		"DOTA_Tooltip_modifier_long_sword"                                                "Long Sword"
+		"DOTA_Tooltip_modifier_long_sword_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_battle_hammer"                                             "Battle Hammer"
+		"DOTA_Tooltip_modifier_battle_hammer_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_battle_hammer_bash"                                        "Battle Hammer Bash"
+		"DOTA_Tooltip_modifier_battle_hammer_bash_Description"                            "Stunned"
+
+		"DOTA_Tooltip_modifier_kheragian_axe"                                             "Kheragian Axe"
+		"DOTA_Tooltip_modifier_kheragian_axe_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_kheragian_axe_crit"                                        "Kheragian Axe Crit"
+		"DOTA_Tooltip_modifier_kheragian_axe_crit_Description"                            ""
+
+		"DOTA_Tooltip_modifier_warhammer"                                                 "Warhammer"
+		"DOTA_Tooltip_modifier_warhammer_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_warhammer_crit"                                            "Warhammer Crit"
+		"DOTA_Tooltip_modifier_warhammer_crit_Description"                                ""
+
+		"DOTA_Tooltip_modifier_warhammer_bash"                                            "Warhammer"
+		"DOTA_Tooltip_modifier_warhammer_bash_Description"                                "Stunned"
+
+		"DOTA_Tooltip_modifier_warhammer_debuff"                                          "Warhammer"
+		"DOTA_Tooltip_modifier_warhammer_debuff_Description"                              "Armour reduced by 5"
+
+		"DOTA_Tooltip_modifier_celestial_blade"                                           "Celestial Blade"
+		"DOTA_Tooltip_modifier_celestial_blade_Description"                               ""
+
+		"DOTA_Tooltip_modifier_celestial_blade_crit"                                      "Celestial Blade Crit"
+		"DOTA_Tooltip_modifier_celestial_blade_crit_Description"                          ""
+
+		"DOTA_Tooltip_modifier_war_fork"                                                  "War Fork"
+		"DOTA_Tooltip_modifier_war_fork_Description"                                      ""
+
+		"DOTA_Tooltip_modifier_war_fork_crit"                                             "War Fork Crit"
+		"DOTA_Tooltip_modifier_war_fork_crit_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_war_fork_debuff"                                           "War Fork Debuff"
+		"DOTA_Tooltip_modifier_war_fork_debuff_Description"                               "Movement Speed reduced by 30&#37;"
+
+		"DOTA_Tooltip_modifier_erament_staff"                                             "Erament Staff"
+		"DOTA_Tooltip_modifier_erament_staff_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_erament_staff_debuff"                                      "Erament Staff Debuff"
+		"DOTA_Tooltip_modifier_erament_staff_debuff_Description"                          ""
+
+		"DOTA_Tooltip_modifier_icecrown_staff"                                            "Icecrown Staff"
+		"DOTA_Tooltip_modifier_icecrown_staff_Description"                                ""
+
+		"DOTA_Tooltip_modifier_icecrown_staff_buff"                                       "Glacial Armour"
+		"DOTA_Tooltip_modifier_icecrown_staff_buff_Description"                           "Grants 10 armour. When attacked, 10&#37; chance to freeze the attacker for 4 seconds."
+
+		"DOTA_Tooltip_modifier_icecrown_staff_debuff"                                     "Frozen"
+		"DOTA_Tooltip_modifier_icecrown_staff_debuff_Description"                         "Frozen"
+
+		"DOTA_Tooltip_modifier_marrenwood_staff"                                          "Marrenwood Staff"
+		"DOTA_Tooltip_modifier_marrenwood_staff_Description"                              ""
+
+		"DOTA_Tooltip_modifier_mesa_staff"                                                "Mesa Staff"
+		"DOTA_Tooltip_modifier_mesa_staff_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_staff_of_perseus"                                          "Staff Of Perseus"
+		"DOTA_Tooltip_modifier_staff_of_perseus_Description"                              ""
+
+		"DOTA_Tooltip_modifier_alistair_shield"                                           "Alistair Shield"
+		"DOTA_Tooltip_modifier_alistair_shield_Description"                               ""
+
+		"DOTA_Tooltip_modifier_corog_shield"                                              "Corog Shield"
+		"DOTA_Tooltip_modifier_corog_shield_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_storm_shield"                                              "Storm Shield"
+		"DOTA_Tooltip_modifier_storm_shield_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_guldans_orb"                                               "Guldans Orb"
+		"DOTA_Tooltip_modifier_guldans_orb_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_marichald_orb"                                             "Marichald Orb"
+		"DOTA_Tooltip_modifier_marichald_orb_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_sirrus_orb"                                                "Sirrus Orb"
+		"DOTA_Tooltip_modifier_sirrus_orb_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_small_shield"                                              "Small Shield"
+		"DOTA_Tooltip_modifier_small_shield_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_large_shield"                                              "Large Shield"
+		"DOTA_Tooltip_modifier_large_shield_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_reinforced_shield"                                         "Reinforced Shield"
+		"DOTA_Tooltip_modifier_reinforced_shield_Description"                             ""
+
+		"DOTA_Tooltip_modifier_ring_of_the_blessed"                                       "Ring Of The Blessed"
+		"DOTA_Tooltip_modifier_ring_of_the_blessed_Description"                           ""
+
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_test_subject_test_ability1"                                 "Test Subject Test Ability1"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_Description"                     ""
+		"DOTA_Tooltip_ability_test_subject_test_ability1_duration"                        "DURATION:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_radius"                          "RADIUS:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_movespeed_slow"                  "MOVESPEED SLOW:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_attackspeed_slow"                "ATTACKSPEED SLOW:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_vision_duration"                 "VISION DURATION:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_vision_radius"                   "VISION RADIUS:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_light_strike_array_aoe"          "LIGHT STRIKE ARRAY AOE:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_light_strike_array_delay_time"   "LIGHT STRIKE ARRAY DELAY TIME:"
+		"DOTA_Tooltip_ability_test_subject_test_ability1_light_strike_array_stun_duration"		"LIGHT STRIKE ARRAY STUN DURATION:"
+
+		"DOTA_Tooltip_ability_test_subject_test_ability2"                                 "Test Subject Test Ability2"
+		"DOTA_Tooltip_ability_test_subject_test_ability2_Description"                     ""
+		"DOTA_Tooltip_ability_test_subject_test_ability2_duration"                        "DURATION:"
+		"DOTA_Tooltip_ability_test_subject_test_ability2_radius"                          "RADIUS:"
+		"DOTA_Tooltip_ability_test_subject_test_ability2_buff_interval"                   "BUFF INTERVAL:"
+
+		"DOTA_Tooltip_ability_test_subject_test_ability3"                                 "Test Subject Test Ability3"
+		"DOTA_Tooltip_ability_test_subject_test_ability3_Description"                     ""
+		"DOTA_Tooltip_ability_test_subject_test_ability3_aura_radius"                     "AURA RADIUS:"
+		"DOTA_Tooltip_ability_test_subject_test_ability3_aura_heal"                       "AURA HEAL:"
+		"DOTA_Tooltip_ability_test_subject_test_ability3_aura_heal_interval"              "AURA HEAL INTERVAL:"
+
+		"DOTA_Tooltip_ability_test_subject_test_ability4"                                 "Test Subject Test Ability4"
+		"DOTA_Tooltip_ability_test_subject_test_ability4_Description"                     ""
+		"DOTA_Tooltip_ability_test_subject_test_ability4_duration"                        "DURATION:"
+		"DOTA_Tooltip_ability_test_subject_test_ability4_radius"                          "RADIUS:"
+		"DOTA_Tooltip_ability_test_subject_test_ability4_buff_interval"                   "BUFF INTERVAL:"
+
+		"DOTA_Tooltip_ability_scott_ability1"                                             "Scott Ability1"
+		"DOTA_Tooltip_ability_scott_ability1_Description"                                 ""
+		"DOTA_Tooltip_ability_scott_ability1_duration"                                    "DURATION:"
+		"DOTA_Tooltip_ability_scott_ability1_damage_per_second"                           "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_scott_ability1_treant_damage"                               "TREANT DAMAGE:"
+		"DOTA_Tooltip_ability_scott_ability1_treant_duration"                             "TREANT DURATION:"
+
+		"DOTA_Tooltip_ability_scott_ability2"                                             "Scott Ability2"
+		"DOTA_Tooltip_ability_scott_ability2_Description"                                 ""
+		"DOTA_Tooltip_ability_scott_ability2_duration"                                    "DURATION:"
+		"DOTA_Tooltip_ability_scott_ability2_damage_per_second"                           "DAMAGE PER SECOND:"
+
+		"DOTA_Tooltip_ability_scott_ability3"                                             "Scott Ability3"
+		"DOTA_Tooltip_ability_scott_ability3_Description"                                 ""
+		"DOTA_Tooltip_ability_scott_ability3_duration"                                    "DURATION:"
+		"DOTA_Tooltip_ability_scott_ability3_heal_per_second"                             "HEAL PER SECOND:"
+
+		"DOTA_Tooltip_ability_scott_ability4"                                             "Scott Ability4"
+		"DOTA_Tooltip_ability_scott_ability4_Description"                                 ""
+		"DOTA_Tooltip_ability_scott_ability4_duration"                                    "DURATION:"
+		"DOTA_Tooltip_ability_scott_ability4_heal_per_second"                             "HEAL PER SECOND:"
+
+		"DOTA_Tooltip_ability_scotttwo_ability1"                                          "Scotttwo Ability1"
+		"DOTA_Tooltip_ability_scotttwo_ability1_Description"                              ""
+		"DOTA_Tooltip_ability_scotttwo_ability1_heal_amount"                              "HEAL AMOUNT:"
+		"DOTA_Tooltip_ability_scotttwo_ability1_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_scotttwo_ability2"                                          "Scotttwo Ability2"
+		"DOTA_Tooltip_ability_scotttwo_ability2_Description"                              ""
+		"DOTA_Tooltip_ability_scotttwo_ability2_duration"                                 "DURATION:"
+		"DOTA_Tooltip_ability_scotttwo_ability2_damage_per_second"                        "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_scotttwo_ability2_radius_min"                               "RADIUS MIN:"
+		"DOTA_Tooltip_ability_scotttwo_ability2_radius_max"                               "RADIUS MAX:"
+		"DOTA_Tooltip_ability_scotttwo_ability2_damage_interval"                          "DAMAGE INTERVAL:"
+		"DOTA_Tooltip_ability_scotttwo_ability2_debuff_duration"                          "DEBUFF DURATION:"
+
+		"DOTA_Tooltip_ability_scotttwo_ability3"                                          "Scotttwo Ability3"
+		"DOTA_Tooltip_ability_scotttwo_ability3_Description"                              ""
+		"DOTA_Tooltip_ability_scotttwo_ability3_duration"                                 "DURATION:"
+		"DOTA_Tooltip_ability_scotttwo_ability3_reflect_damage"                           "REFLECT DAMAGE:"
+		"DOTA_Tooltip_ability_scotttwo_ability3_armor_bonus"                              "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_scotttwo_ability3_reflect_chance"                           "REFLECT CHANCE:"
+		"DOTA_Tooltip_ability_scotttwo_ability3_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_scotttwo_ability4"                                          "Scotttwo Ability4"
+		"DOTA_Tooltip_ability_scotttwo_ability4_Description"                              ""
+		"DOTA_Tooltip_ability_scotttwo_ability4_duration_main"                            "DURATION MAIN:"
+		"DOTA_Tooltip_ability_scotttwo_ability4_duration_aoe"                             "DURATION AOE:"
+		"DOTA_Tooltip_ability_scotttwo_ability4_damage"                                   "DAMAGE:"
+		"DOTA_Tooltip_ability_scotttwo_ability4_reflect_chance"                           "REFLECT CHANCE:"
+		"DOTA_Tooltip_ability_scotttwo_ability4_radius"                                   "RADIUS:"
+
+		"DOTA_Tooltip_ability_grim_magus_bloodshed_tier_1"                                       "Bloodshed"
+		"DOTA_Tooltip_ability_grim_magus_bloodshed_tier_1_Description"                           "Ruptures the target, dealing significant damage over time."
+		"DOTA_Tooltip_ability_grim_magus_bloodshed_tier_1_damage_per_second"                     "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_grim_magus_bloodshed_tier_1_duration"                              "DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_darkbolt_tier_2"                                        "Darkbolt"
+		"DOTA_Tooltip_ability_grim_magus_darkbolt_tier_2_Description"                            "Deals damage and stuns the target on impact."
+		"DOTA_Tooltip_ability_grim_magus_darkbolt_tier_2_damage"                                 "DAMAGE:"
+		"DOTA_Tooltip_ability_grim_magus_darkbolt_tier_2_stun_duration"                          "STUN DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_skull_spear_tier_3"                                     "Skull Spear"
+		"DOTA_Tooltip_ability_grim_magus_skull_spear_tier_3_Description"                         "Shoots a skull in a line, dealing damage to all units in its path."
+		"DOTA_Tooltip_ability_grim_magus_skull_spear_tier_3_damage"                              "DAMAGE:"
+		"DOTA_Tooltip_ability_grim_magus_skull_spear_tier_3_range"                               "RANGE:"
+
+		"DOTA_Tooltip_ability_grim_magus_bleed_earth_tier_4"                                     "Bleed Earth"
+		"DOTA_Tooltip_ability_grim_magus_bleed_earth_tier_4_Description"                         "Channel to release blood from the earth to deal damage per second over 7 seconds. Spawns corpses."
+		"DOTA_Tooltip_ability_grim_magus_bleed_earth_tier_4_damage_per_second"                   "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_grim_magus_bleed_earth_tier_4_radius"                              "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_bleed_earth_tier_4_corpse_number"                       "CORPSE NUMBER:"
+		"DOTA_Tooltip_ability_grim_magus_bleed_earth_tier_4_duration"                            "DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_shatter_bones_tier_5"                                   "Shatter Bones"
+		"DOTA_Tooltip_ability_grim_magus_shatter_bones_tier_5_Description"                       "Reduces the current life of basic creatures in a target area by 33&#37;, and unique creatures by 75&#37;"
+		"DOTA_Tooltip_ability_grim_magus_shatter_bones_tier_5_radius"                            "RADIUS:"
+
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_tier_1"                                  "Raise Skeleton"
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_tier_1_Description"                      "Raises a skeletal warrior. \nSkeleton Warriors have a chance to spawn as Skeleton Archers. Both Warriors and Archers have a chance to be burning. \nMaximum number of Skeleton Warriors increases with level."
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_tier_1_max_skeletons"                    "MAX SKELETONS:"
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_tier_1_archer_chance"                    "ARCHER CHANCE:"
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_tier_1_burning_chance"                   "BURNING CHANCE:"
+
+		"DOTA_Tooltip_ability_grim_magus_skeleton_mastery_tier_2"                                "Skeleton Mastery"
+		"DOTA_Tooltip_ability_grim_magus_skeleton_mastery_tier_2_Description"                    "Increases skeleton max HP, damage, and increases the chance to spawn burning skeletons."
+		"DOTA_Tooltip_ability_grim_magus_skeleton_mastery_tier_2_bonus_health"                   "BONUS HEALTH PERCENTAGE:"
+		"DOTA_Tooltip_ability_grim_magus_skeleton_mastery_tier_2_bonus_damage"                   "BONUS DAMAGE PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_grim_magus_corpse_explosion_tier_3"                                "Corpse Explosion"
+		"DOTA_Tooltip_ability_grim_magus_corpse_explosion_tier_3_Description"                    "Explodes the corpse closest to the center of the targetted area, dealing damage based on that corpse's maximum HP"
+		"DOTA_Tooltip_ability_grim_magus_corpse_explosion_tier_3_radius"                         "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_corpse_explosion_tier_3_damage_multiplier"              "DAMAGE MULTIPLIER:"
+
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_mage_tier_4"                             "Raise Skeleton Mage"
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_mage_tier_4_Description"                 "Raise a skeletal mage. \nSkeleton Mages can have an affinty for Fire, Frost or Lightning. \nMaximum number of Skeleton Mages increases with level."
+		"DOTA_Tooltip_ability_grim_magus_raise_skeleton_mage_tier_4_max_skeletons"               "MAX SKELETONS:"
+
+		"DOTA_Tooltip_ability_grim_magus_the_creature_tier_5"                                    "The Creature"
+		"DOTA_Tooltip_ability_grim_magus_the_creature_tier_5_Description"                        "Summon The Creature. The Creature's level is based off the number of corpses in the targetted area up to a certain amount. The Creature can consume additional corpses to heal itself and increase its level."
+		"DOTA_Tooltip_ability_grim_magus_the_creature_tier_5_max_level"                          "MAX LEVEL:"
+
+		"DOTA_Tooltip_ability_grim_magus_fear_tier_1"                                            "Fear"
+		"DOTA_Tooltip_ability_grim_magus_fear_tier_1_Description"                                "Instills fear into a group of enemies, causing them to miss attacks 20&#37; of the time."
+		"DOTA_Tooltip_ability_grim_magus_fear_tier_1_radius"                                     "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_fear_tier_1_miss_chance"                                "MISS CHANCE:"
+		"DOTA_Tooltip_ability_grim_magus_fear_tier_1_duration"                                   "DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_amplify_damage_tier_2"                                  "Amplify Damage"
+		"DOTA_Tooltip_ability_grim_magus_amplify_damage_tier_2_Description"                      "Causes enemies in a target area to take 160&#37; damage from physical attacks."
+		"DOTA_Tooltip_ability_grim_magus_amplify_damage_tier_2_radius"                           "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_amplify_damage_tier_2_amplify_damage"                   "AMPLIFY DAMAGE PERCENTAGE:"
+		"DOTA_Tooltip_ability_grim_magus_amplify_damage_tier_2_duration"                         "DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_life_tap_tier_3"                                        "Life Tap"
+		"DOTA_Tooltip_ability_grim_magus_life_tap_tier_3_Description"                            "Curses the enemy with powerful magic that allows heroes to gain 25&#37; of the enemies max life when killed."
+		"DOTA_Tooltip_ability_grim_magus_life_tap_tier_3_radius"                                 "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_life_tap_tier_3_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_mana_rip_tier_4"                                        "Mana Rip"
+		"DOTA_Tooltip_ability_grim_magus_mana_rip_tier_4_Description"                            "Curses enemies in a target area. On death, regenerates 5&#37; of the units maximum life as mana."
+		"DOTA_Tooltip_ability_grim_magus_mana_rip_tier_4_radius"                                 "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_mana_rip_tier_4_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_grim_magus_taint_resistance_tier_5"                                "Taint Resistance"
+		"DOTA_Tooltip_ability_grim_magus_taint_resistance_tier_5_Description"                    "Lowers the magical resistance of all targets in an area, causing spells to deal 200&#37; of their normal damage."
+		"DOTA_Tooltip_ability_grim_magus_taint_resistance_tier_5_radius"                         "RADIUS:"
+		"DOTA_Tooltip_ability_grim_magus_taint_resistance_tier_5_duration"                       "DURATION:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_hardened_skin_tier_1"                               "Hardened Skin"
+		"DOTA_Tooltip_ability_spirit_warrior_hardened_skin_tier_1_Description"                   "Reduces damage taken by attacks by a flat amount."
+		"DOTA_Tooltip_ability_spirit_warrior_hardened_skin_tier_1_damage_reduction"              "DAMAGE REDUCTION:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_critical_strike_tier_2"                             "Critical Strike"
+		"DOTA_Tooltip_ability_spirit_warrior_critical_strike_tier_2_Description"                 "Grants a chance to critically strike."
+		"DOTA_Tooltip_ability_spirit_warrior_critical_strike_tier_2_crit_chance"                 "CRIT CHANCE:"
+		"DOTA_Tooltip_ability_spirit_warrior_critical_strike_tier_2_crit_multiplier"             "CRIT MULTIPLIER:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_vampirism_tier_3"                                   "Vampirism"
+		"DOTA_Tooltip_ability_spirit_warrior_vampirism_tier_3_Description"                       "Grants lifesteal on attack but reduces armour."
+		"DOTA_Tooltip_ability_spirit_warrior_vampirism_tier_3_lifesteal_percentage"              "LIFESTEAL PERCENTAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_vampirism_tier_3_armor_reduction"                   "ARMOR REDUCTION:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image"                                "Spirit Image"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_Description"                    "Spawns images of the Spirit Warrior. These images deal up to 100 damage."
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_image_count"                    "IMAGE COUNT:"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_duration"                       "DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_outgoing_damage"                "OUTGOING DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_incoming_damage"                "INCOMING DAMAGE:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_true_focus_tier_5"                                  "True Focus"
+		"DOTA_Tooltip_ability_spirit_warrior_true_focus_tier_5_Description"                      "Knockback all enemy units around a target enemy or ally. Also reduces armour of enemy units affected."
+		"DOTA_Tooltip_ability_spirit_warrior_true_focus_tier_5_damage"                           "DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_true_focus_tier_5_armor_reduction"                  "ARMOR REDUCTION:"
+		"DOTA_Tooltip_ability_spirit_warrior_true_focus_tier_5_radius"                           "RADIUS:"
+		"DOTA_Tooltip_ability_spirit_warrior_true_focus_tier_5_duration"                         "DURATION:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_hidden_strike_tier_1"                               "Hidden Strike"
+		"DOTA_Tooltip_ability_spirit_warrior_hidden_strike_tier_1_Description"                   "Grants invisibility and increased movement speed. On attack deal bonus damage and gain 1 Spirit Charge."
+		"DOTA_Tooltip_ability_spirit_warrior_hidden_strike_tier_1_damage"                        "DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_hidden_strike_tier_1_duration"                      "DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_hidden_strike_tier_1_movement_speed_bonus"          "MOVEMENT SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_serpent_strike_tier_2"                              "Serpent Strike"
+		"DOTA_Tooltip_ability_spirit_warrior_serpent_strike_tier_2_Description"                  "<font color='#FF99CC'>One Charge:</font>\n  On attack, apply a poison DoT to the target \n\n<font color='#FF70B8'>Two Charges:</font>\n  On attack, steal life equal to a percentage of the Spirit Warrior's maximum health from the target</font>\n\n<font color='#FF3399'>Three Charges:</font>\n  On attack, apply a poison DoT in an area around the target\n"
+		"DOTA_Tooltip_ability_spirit_warrior_serpent_strike_tier_2_poison_damage"                "POISON DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_serpent_strike_tier_2_poison_duration"              "POISON DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_serpent_strike_tier_2_radius"                       "RADIUS:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3"                             "Freezing Strike"
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3_Description"                 "<font color='#FF99CC'>One Charge:</font>\n  On attack, deal magic damage to the target and apply a movement speed slow \n\n<font color='#FF70B8'>Two Charges:</font>\n  On attack, deal severe magic damage to the target and apply a movement speed slow</font>\n\n<font color='#FF3399'>Three Charges:</font>\n  On attack, deal magic damage and apply a movement speed slow in an area around the target\n"
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3_damage_one_charge"           "DAMAGE ONE CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3_damage_two_charge"           "DAMAGE TWO CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3_damage_three_charge"         "DAMAGE THREE CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3_radius"                      "RADIUS:"
+		"DOTA_Tooltip_ability_spirit_warrior_freezing_strike_tier_3_movement_speed_slow"		 "MOVEMENT SPEED SLOW:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_storm_strike_tier_4"                                "Storm Strike"
+		"DOTA_Tooltip_ability_spirit_warrior_storm_strike_tier_4_Description"                    "<font color='#FF99CC'>One Charge:</font>\n  One stack \n\n<font color='#FF70B8'>Two Charges:</font>\n  Two stacks</font>\n\n<font color='#FF3399'>Three Charges:</font>\n  Four stacks\n\n On attack, consume a Storm Strike charge to create a Chain Lightning. Damage decreases by 10&#37; per target hit\n"
+		"DOTA_Tooltip_ability_spirit_warrior_storm_strike_tier_4_damage"                         "DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_storm_strike_tier_4_bounces"                        "BOUNCES:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike"                            "Firestorm Strike"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_Description"                "Calls upon the burning fury of the pheonix to unleash its wrath upon a victim."
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_damage_one_charge"          "DAMAGE ONE CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_damage_two_charge"          "DAMAGE TWO CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_damage_three_charge"        "DAMAGE THREE CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_duration"                   "DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_movement_speed_bonus"       "MOVEMENT SPEED BONUS:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_fire_duration"              "FIRE DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_fire_damage"                "FIRE DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_fire_interval"              "FIRE INTERVAL:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_radius"                     "RADIUS:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_tier_5_strike_poison_instant_damage"      "POISON INSTANT DAMAGE:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_retribution_tier_1"                                 "Retribution"
+		"DOTA_Tooltip_ability_spirit_warrior_retribution_tier_1_Description"                     "Gain stacks per unit killed. At 100 stacks, gain +1 strength."
+
+		"DOTA_Tooltip_ability_spirit_warrior_salvation_tier_2"                                   "Salvation"
+		"DOTA_Tooltip_ability_spirit_warrior_salvation_tier_2_Description"                       "Persevere from harm after each enemy execution."
+		"DOTA_Tooltip_ability_spirit_warrior_salvation_tier_2_heal_amount"                       "HEAL AMOUNT:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_purification_tier_3"                                "Purification"
+		"DOTA_Tooltip_ability_spirit_warrior_purification_tier_3_Description"                    "The Spirit Warrior's arcane knowledge of the ethereal allows him to sap the essence of his opponents, increasing his combat prowess."
+
+		"DOTA_Tooltip_ability_spirit_warrior_conversion_tier_4"                                  "Conversion"
+		"DOTA_Tooltip_ability_spirit_warrior_conversion_tier_4_Description"                      "After defeating an enemy in hand to hand combat, the Spirit Warrior looks deep within himself for a chance to raise his foe as friend."
+		"DOTA_Tooltip_ability_spirit_warrior_conversion_tier_4_res_chance"                       "RES CHANCE:"
+		"DOTA_Tooltip_ability_spirit_warrior_conversion_tier_4_duration"                         "DURATION:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5"                                   "Tel Qeres"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_Description"                       "Deal damage around the Spirit Warrior for 1 second. Units under a certain health threshold are killed instantly and heal the Spirit Warrior"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_damage"                            "DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_duration"                          "DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_kill_threshold"                    "KILL THRESHOLD:"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_heal_amount"                       "HEAL AMOUNT:"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_radius"                            "RADIUS:"
+		"DOTA_Tooltip_ability_spirit_warrior_tel_qeres_tier_5_Lore"							  "Legends have told that the Spirit Warriors of Rethe'Ka are able to cull their enemies in one mighty swing, absorbing the life force of their enemies into their On'kekong." 
+
+
+		"DOTA_Tooltip_ability_paladin_divine_light_tier_2"                                       "Divine Light"
+		"DOTA_Tooltip_ability_paladin_divine_light_tier_2_Description"                           "Heals friendly units in an area around the Paladin"
+		"DOTA_Tooltip_ability_paladin_divine_light_tier_2_heal_amount"                           "HEAL AMOUNT:"
+		"DOTA_Tooltip_ability_paladin_divine_light_tier_2_radius"                                "RADIUS:"
+		"DOTA_Tooltip_ability_paladin_divine_light_tier_2_Lore0"                                 "The Paladin, an ever vigilant hand of Malnassus, bestows his holy light upon his allies, mending all wounds."
+
+		"DOTA_Tooltip_ability_paladin_stone_fist_tier_1"                                         "Stone Fist"
+		"DOTA_Tooltip_ability_paladin_stone_fist_tier_1_Description"                             "Smash an enemy with his fists stunning the targetted unit and all other units in an area."
+		"DOTA_Tooltip_ability_paladin_stone_fist_tier_1_duration_main"                           "DURATION MAIN:"
+		"DOTA_Tooltip_ability_paladin_stone_fist_tier_1_duration_aoe"                            "DURATION AOE:"
+		"DOTA_Tooltip_ability_paladin_stone_fist_tier_1_damage"                                  "DAMAGE:"
+		"DOTA_Tooltip_ability_paladin_stone_fist_tier_1_radius"                                  "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_zeal_tier_3"                                               "Zeal"
+		"DOTA_Tooltip_ability_paladin_zeal_tier_3_Description"                                   "Grants the Paladin a great burst of energy for short period of time, allowing him to rapidly vanquish foes."
+		"DOTA_Tooltip_ability_paladin_zeal_tier_3_duration"                                      "DURATION:"
+		"DOTA_Tooltip_ability_paladin_zeal_tier_3_attack_speed"                                  "ATTACK SPEED:"
+
+		"DOTA_Tooltip_ability_paladin_charge_tier_4"                                             "Charge"
+		"DOTA_Tooltip_ability_paladin_charge_tier_4_Description"                                 "The Paladin charges, striking and stunning an enemy for increased base damage."
+		"DOTA_Tooltip_ability_paladin_charge_tier_4_damage_increase"                             "BASE DAMAGE INCREASE:"
+		"DOTA_Tooltip_ability_paladin_charge_tier_4_duration"                                    "DURATION:"
+
+		"DOTA_Tooltip_ability_paladin_purify_hammer_tier_5"                                      "Purify Hammer"
+		"DOTA_Tooltip_ability_paladin_purify_hammer_tier_5_Description"                          "The Paladin strikes all nearby targets in an area around him for reduced damage as well as passively increasing his armor."
+		"DOTA_Tooltip_ability_paladin_purify_hammer_tier_5_cleave_percent"                       "CLEAVE PERCENT:"
+		"DOTA_Tooltip_ability_paladin_purify_hammer_tier_5_armor_bonus"                          "ARMOR BONUS:"
+
+		"DOTA_Tooltip_ability_paladin_regeneration_aura_tier_1"                                  "Regeneration Aura"
+		"DOTA_Tooltip_ability_paladin_regeneration_aura_tier_1_Description"                      "Grants an aura that strengthens nearby friendly units, giving them increased health regeneration."
+		"DOTA_Tooltip_ability_paladin_regeneration_aura_tier_1_health_regen"                     "HEALTH REGEN:"
+		"DOTA_Tooltip_ability_paladin_regeneration_aura_tier_1_radius"                           "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_stoneskin_aura_tier_2"                                     "Stoneskin Aura"
+		"DOTA_Tooltip_ability_paladin_stoneskin_aura_tier_2_Description"                         "Grants an aura that strengthens nearby friendly units, giving them increased armor."
+		"DOTA_Tooltip_ability_paladin_stoneskin_aura_tier_2_armor_bonus"                         "ARMOR BONUS:"
+		"DOTA_Tooltip_ability_paladin_stoneskin_aura_tier_2_radius"                              "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_might_aura_tier_3"                                         "Might Aura"
+		"DOTA_Tooltip_ability_paladin_might_aura_tier_3_Description"                             "Grants an aura that strengthens nearby friendly units, giving them increased damage."
+		"DOTA_Tooltip_ability_paladin_might_aura_tier_3_percent_damage_bonus"                    "PERCENT DAMAGE BONUS:"
+		"DOTA_Tooltip_ability_paladin_might_aura_tier_3_radius"                                  "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_warmth_aura_tier_4"                                        "Warmth Aura"
+		"DOTA_Tooltip_ability_paladin_warmth_aura_tier_4_Description"                            "Grants an aura that strengthens nearby friendly units, giving them increased mana regeneration."
+		"DOTA_Tooltip_ability_paladin_warmth_aura_tier_4_mana_regen"                             "MANA REGEN:"
+		"DOTA_Tooltip_ability_paladin_warmth_aura_tier_4_radius"                                 "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_swiftness_aura_tier_5"                                     "Swiftness Aura"
+		"DOTA_Tooltip_ability_paladin_swiftness_aura_tier_5_Description"                         "Grants an aura that strengthens nearby friendly units, giving them increased attack speed."
+		"DOTA_Tooltip_ability_paladin_swiftness_aura_tier_5_attack_speed_bonus"                  "ATTACK SPEED BONUS:"
+		"DOTA_Tooltip_ability_paladin_swiftness_aura_tier_5_radius"                              "RADIUS:"
+		"DOTA_Tooltip_ability_paladin_swiftness_aura_tier_5_move_speed_bonus"                    "MOVE SPEED BONUS:"
+
+		"DOTA_Tooltip_ability_paladin_weakness_aura_tier_1"                                      "Weakness Aura"
+		"DOTA_Tooltip_ability_paladin_weakness_aura_tier_1_Description"                          "Grants an aura that weakens nearby enemy units, giving them reduced attack damage by a percentage."
+		"DOTA_Tooltip_ability_paladin_weakness_aura_tier_1_attack_damage_reduction"              "PERCENTAGE ATTACK DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_paladin_weakness_aura_tier_1_radius"                               "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_frailty_aura_tier_2"                                       "Frailty Aura"
+		"DOTA_Tooltip_ability_paladin_frailty_aura_tier_2_Description"                           "Grants an aura that weakens nearby enemy units, giving them reduced armor."
+		"DOTA_Tooltip_ability_paladin_frailty_aura_tier_2_armor_reduction"                       "ARMOR REDUCTION:"
+		"DOTA_Tooltip_ability_paladin_frailty_aura_tier_2_radius"                                "RADIUS:"
+
+		"DOTA_Tooltip_ability_paladin_fire_aura_tier_3"                                          "Fire Aura"
+		"DOTA_Tooltip_ability_paladin_fire_aura_tier_3_Description"                              "Grants an aura that weakens nearby enemy units, dealing fire damage each second."
+		"DOTA_Tooltip_ability_paladin_fire_aura_tier_3_damage_per_second"                        "DAMAGE PER SECOND:"
+		"DOTA_Tooltip_ability_paladin_fire_aura_tier_3_radius"                                   "RADIUS:"
+		"DOTA_Tooltip_ability_paladin_fire_aura_tier_3_initial_mana_cost"                        "INITIAL MANA COST:"
+		"DOTA_Tooltip_ability_paladin_fire_aura_tier_3_mana_per_second"                          "MANA PER SECOND:"
+
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4"                                "Blinding Light Aura"
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4_Description"                    "Grants an aura that, every 8 seconds, has a percent chance of stunning and dealing damage equal to 25&#37; of their current health to a number of targets"
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4_max_targets"                    "MAX TARGETS:"
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4_damage_percentage"              "DAMAGE PERCENTAGE:"
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4_percent_chance"                 "PERCENT CHANCE:"
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4_radius"                         "RADIUS:"
+		"DOTA_Tooltip_ability_paladin_blinding_light_aura_tier_4_Lore0"                    	 	 "The Paladin is said to be the son of Malnassus herself. The Abyss's dark enemies can't stand against her radiant light."
+
+		"DOTA_Tooltip_ability_paladin_cold_aura_tier_5"                                          "Cold Aura"
+		"DOTA_Tooltip_ability_paladin_cold_aura_tier_5_Description"                              "Grants an aura that weakens nearby enemy units, giving them reduced movement and attack speed."
+		"DOTA_Tooltip_ability_paladin_cold_aura_tier_5_attack_speed_bonus"                       "ATTACK SPEED REDUCTION:"
+		"DOTA_Tooltip_ability_paladin_cold_aura_tier_5_radius"                                   "RADIUS:"
+		"DOTA_Tooltip_ability_paladin_cold_aura_tier_5_move_speed_bonus"                         "MOVE SPEED REDUCTION:"
+
+		"DOTA_Tooltip_ability_corrupted_boar_aura"                                        "Corrupted Boar Aura"
+		"DOTA_Tooltip_ability_corrupted_boar_aura_Description"                            "Grants 5 increased health regen to friendly units in an 800 radius"
+
+		"DOTA_Tooltip_ability_color_red"                                                  "Color Red"
+		"DOTA_Tooltip_ability_color_red_Description"                                      ""
+
+		"DOTA_Tooltip_ability_non_lethal_poison"                                          "Non Lethal Poison"
+		"DOTA_Tooltip_ability_non_lethal_poison_Description"                              "On attack, applies a non-lethal poison that deals 100 damage per second for 30 seconds"
+
+		"DOTA_Tooltip_ability_crippling_poison"                                           "Crippling Poison"
+		"DOTA_Tooltip_ability_crippling_poison_Description"                               "On attack, applies a poison that slows movement speed by 70&#37; for 10 seconds"
+
+		"DOTA_Tooltip_ability_passive_invisibility"                                       "Passive Invisibility"
+		"DOTA_Tooltip_ability_passive_invisibility_Description"                           "When not attacking, this unit is invisible. 3 second fade time"
+
+		"DOTA_Tooltip_ability_magic_immunity"                                             "Magic Immunity"
+		"DOTA_Tooltip_ability_magic_immunity_Description"                                 "Immune to magic"
+
+		"DOTA_Tooltip_ability_spawn_spiderlings"                                          "Spawn Spiderlings"
+		"DOTA_Tooltip_ability_spawn_spiderlings_Description"                              "Spawns two spiderlings"
+
+		"DOTA_Tooltip_ability_skeleton_burning"                                           "Skeleton Burning"
+		"DOTA_Tooltip_ability_skeleton_burning_Description"                               "Has increased health and attack damage"
+
+		"DOTA_Tooltip_ability_skeleton_mastery"                                           "Skeleton Mastery"
+		"DOTA_Tooltip_ability_skeleton_mastery_Description"                               ""
+		"DOTA_Tooltip_ability_skeleton_mastery_bash_chance"                               "BASH CHANCE:"
+		"DOTA_Tooltip_ability_skeleton_mastery_damage_block"                              "DAMAGE BLOCK:"
+		"DOTA_Tooltip_ability_skeleton_mastery_bash_damage"                               "BASH DAMAGE:"
+
+		"DOTA_Tooltip_ability_mervian_bash"                                               "Mervian Bash"
+		"DOTA_Tooltip_ability_mervian_bash_Description"                                   "25&#37; chance on attack to bash for 1.5 seconds"
+
+		"DOTA_Tooltip_ability_kerrang_bash"                                               "Kerrang Bash"
+		"DOTA_Tooltip_ability_kerrang_bash_Description"                                   "100&#37; chance on attack to bash for 1.5 seconds"
+
+		"DOTA_Tooltip_ability_tgarri_first_split"                                         "Tgarri First Split"
+		"DOTA_Tooltip_ability_tgarri_first_split_Description"                             "On death, splits into smaller Tgarri's"
+
+		"DOTA_Tooltip_ability_tgarri_second_split"                                        "Tgarri Second Split"
+		"DOTA_Tooltip_ability_tgarri_second_split_Description"                            "On death, splits into smaller Tgarri's"
+
+		"DOTA_Tooltip_ability_tgarri_third_split"                                         "Tgarri Third Split"
+		"DOTA_Tooltip_ability_tgarri_third_split_Description"                             "On death, splits into smaller Tgarri's"
+
+		"DOTA_Tooltip_ability_tgarri_fourth_split"                                        "Tgarri Fourth Split"
+		"DOTA_Tooltip_ability_tgarri_fourth_split_Description"                            "On death, splits into smaller Tgarri's"
+
+		"DOTA_Tooltip_ability_the_creature_devour"                                        "The Devour"
+		"DOTA_Tooltip_ability_the_creature_devour_Description"                            "If a corpse is available, heals The Creature for full health and increases his level by 1, up to the maximum level"
+
+		"DOTA_Tooltip_ability_the_creature_carrion_swarm"                                 "The Carrion Swarm"
+		"DOTA_Tooltip_ability_the_creature_carrion_swarm_Description"                     "Deals 500 damage in a frontal cone"
+
+		"DOTA_Tooltip_ability_chain_lightning"                                            "Chain Lightning"
+		"DOTA_Tooltip_ability_chain_lightning_Description"                                ""
+
+		"DOTA_Tooltip_ability_frost_attack"                                               "Frost Attack"
+		"DOTA_Tooltip_ability_frost_attack_Description"                                   ""
+
+		"DOTA_Tooltip_ability_ascension_sword"                                            "Ascension Sword"
+		"DOTA_Tooltip_ability_ascension_sword_Description"                                ""
+
+		"DOTA_Tooltip_ability_war_claws"                                                  "War Claws"
+		"DOTA_Tooltip_ability_war_claws_Description"                                      ""
+
+		"DOTA_Tooltip_ability_moon_glaive"                                                "Moon Glaive"
+		"DOTA_Tooltip_ability_moon_glaive_Description"                                    ""
+
+		"DOTA_Tooltip_ability_serpent_blade"                                              "Serpent Blade"
+		"DOTA_Tooltip_ability_serpent_blade_Description"                                  ""
+
+		"DOTA_Tooltip_ability_storm_shield"                                               "Storm Shield"
+		"DOTA_Tooltip_ability_storm_shield_Description"                                   ""
+
+		"DOTA_Tooltip_ability_dummy_passive"                                              "Dummy Passive"
+		"DOTA_Tooltip_ability_dummy_passive_Description"                                  ""
+
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_second_sword_main_hand"                                "Second Sword"
+		"DOTA_Tooltip_ability_item_second_sword_main_hand_Description"                    ""
+
+		"DOTA_Tooltip_ability_item_test_off_hand"                                         "Test"
+		"DOTA_Tooltip_ability_item_test_off_hand_Description"                             ""
+
+		"DOTA_Tooltip_ability_item_potion_of_healing"                                     "Potion Of Healing"
+		"DOTA_Tooltip_ability_item_potion_of_healing_Description"                         "Heals you\n 5 charges"
+		"DOTA_Tooltip_ability_item_potion_of_healing_heal_amount"                         "HEAL AMOUNT:"
+		"DOTA_Tooltip_ability_item_potion_of_healing_Lore0:"							  "Made from a root of Malnassus, a little bit of a heat and poof! You'll be as good as new! -Restur, Grand Alchemist of Malno."
+
+		"DOTA_Tooltip_ability_item_example_main_hand"                                     "Example"
+		"DOTA_Tooltip_ability_item_example_main_hand_Description"                         ""
+
+		"DOTA_Tooltip_ability_item_example_off_hand"                                      "Example"
+		"DOTA_Tooltip_ability_item_example_off_hand_Description"                          ""
+
+		"DOTA_Tooltip_ability_item_example_two_hand"                                      "Example"
+		"DOTA_Tooltip_ability_item_example_two_hand_Description"                          ""
+
+		"DOTA_Tooltip_ability_item_ascension_sword_main_hand"                             "Ascension Sword"
+		"DOTA_Tooltip_ability_item_ascension_sword_main_hand_Description"                 "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+45</font> attack damage. \n10&#37; chance on attack to cast <font color='#008AE6'>Frost Nova</font>."
+
+		"DOTA_Tooltip_ability_item_war_claws_main_hand"                                   "War Claws"
+		"DOTA_Tooltip_ability_item_war_claws_main_hand_Description"                       "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+80</font> attack damage. \nOn attack, reduces enemy armor by <font color='#FF3300'>-5</font>."
+
+		"DOTA_Tooltip_ability_item_moon_glaive_main_hand"                                 "Moon Glaive"
+		"DOTA_Tooltip_ability_item_moon_glaive_main_hand_Description"                     "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+100</font> attack damage \n<fontcolor='#33CC33'>+20 attack speed</font>."
+		"DOTA_Tooltip_ability_item_moon_glaive_main_hand_Lore"							  "T'azz was taken aback in his final breaths.  The Moon Glaive, coated with his freshly spilled blood, created a beautiful crimson light. Surprising, the things that cross 																					one's mind in those last moments."
+
+		"DOTA_Tooltip_ability_item_serpent_blade_main_hand"                               "Serpent Blade"
+		"DOTA_Tooltip_ability_item_serpent_blade_main_hand_Description"                   "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+160</font> attack damage. \n30&#37; chance on attack to slow the enemy by 33&#37;."
+		"DOTA_Tooltip_ability_item_serpent_blade_main_hand_Lore"                          "The serpent blade was crafted deep in subterranean jungle caverns. It's brutish appearance belies it's perfect balance and razor sharp edges."
+
+		"DOTA_Tooltip_ability_item_pickaxe_main_hand"                                     "Pickaxe"
+		"DOTA_Tooltip_ability_item_pickaxe_main_hand_Description"                         "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+8</font> attack damage."
+
+		"DOTA_Tooltip_ability_item_long_sword_main_hand"                                  "Long Sword"
+		"DOTA_Tooltip_ability_item_long_sword_main_hand_Description"                      "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+16</font> attack damage."
+
+		"DOTA_Tooltip_ability_item_battle_hammer_main_hand"                               "Battle Hammer"
+		"DOTA_Tooltip_ability_item_battle_hammer_main_hand_Description"                   "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+28</font> attack damage. \n15&#37; chance on attack to stun the target for <font color='#FFFF66'>1.5</font> seconds."
+
+		"DOTA_Tooltip_ability_item_kheragian_axe_two_hand"                                "Kheragian Axe"
+		"DOTA_Tooltip_ability_item_kheragian_axe_two_hand_Description"                    "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+28</font> attack damage. \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage."
+
+		"DOTA_Tooltip_ability_item_warhammer_two_hand"                                    "Warhammer"
+		"DOTA_Tooltip_ability_item_warhammer_two_hand_Description"                        "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+160</font> attack damage. \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage.\n15&#37; chance on attack to stun the target for <font color='#FFFF66'>1.5</font> seconds."
+
+		"DOTA_Tooltip_ability_item_celestial_blade_two_hand"                              "Celestial Blade"
+		"DOTA_Tooltip_ability_item_celestial_blade_two_hand_Description"                  "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+300</font> attack damage. \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage."
+
+		"DOTA_Tooltip_ability_item_war_fork_two_hand"                                     "War Fork"
+		"DOTA_Tooltip_ability_item_war_fork_two_hand_Description"                         "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+360</font> attack damage. \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage."
+
+		"DOTA_Tooltip_ability_item_erament_staff_two_hand"                                "Erament Staff"
+		"DOTA_Tooltip_ability_item_erament_staff_two_hand_Description"                    "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+40</font> attack damage.\nOn use\n   Heals self and allies for <font color='#33CC33'>300</font>\n   Regenerates self and allies mana by <font color='#0066FF'>220</font>."
+
+		"DOTA_Tooltip_ability_item_widow_staff_two_hand"                                  "Widow Staff"
+		"DOTA_Tooltip_ability_item_widow_staff_two_hand_Description"                      "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+65</font> attack damage\nOn use\n   Strangles target unit until its death, dealing <font color='#FF3300'>100</font> damage per second and applying <font color='#996633'>Rooted</font>."
+
+		"DOTA_Tooltip_ability_item_icecrown_staff_two_hand"                               "Icecrown Staff"
+		"DOTA_Tooltip_ability_item_icecrown_staff_two_hand_Description"                   "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+65</font> attack damage\nOn use\n   Applies <font color='#008AE6'>Glacial Armour</font> to a friendly target. \n   When attacked, \n10&#37; to freeze attacker for <font color='#FFFF66'>4</font> seconds."
+
+		"DOTA_Tooltip_ability_item_marrenwood_staff_two_hand"                             "Marrenwood Staff"
+		"DOTA_Tooltip_ability_item_marrenwood_staff_two_hand_Description"                 "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+8</font> attack damage\n<font color='#0066FF'>+3</font> Mana / Second"
+
+		"DOTA_Tooltip_ability_item_mesa_staff_two_hand"                                   "Mesa Staff"
+		"DOTA_Tooltip_ability_item_mesa_staff_two_hand_Description"                       "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+28</font> attack damage\n<font color='#0066FF'>+5</font> Mana / Second"
+
+		"DOTA_Tooltip_ability_item_staff_of_perseus_two_hand"                             "Staff Of Perseus"
+		"DOTA_Tooltip_ability_item_staff_of_perseus_two_hand_Description"                 "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+40</font> attack damage\n<font color='#0066FF'>+8</font> Mana / Second"
+
+		"DOTA_Tooltip_ability_item_alistair_shield_off_hand"                              "Alistair Shield"
+		"DOTA_Tooltip_ability_item_alistair_shield_off_hand_Description"                  "<font color='#B82EE6'>Off Hand</font> \n<font color='#CCCCCC'>+8</font> armour\n<font color='#FFFF66'>+34&#37;</font> evasion"
+
+		"DOTA_Tooltip_ability_item_corog_shield_off_hand"                                 "Corog Shield"
+		"DOTA_Tooltip_ability_item_corog_shield_off_hand_Description"                     "<font color='#B82EE6'>Off Hand</font> \n<font color='#CCCCCC'>+2</font> armour\n<font color='#FFFF66'>+40&#37;</font> evasion"
+
+		"DOTA_Tooltip_ability_item_storm_shield_off_hand"                                 "Storm Shield"
+		"DOTA_Tooltip_ability_item_storm_shield_off_hand_Description"                     "<font color='#B82EE6'>Off Hand</font> \n<font color='#CCCCCC'>+2</font> armour\nWhen attacked, reflect <font color='#FF3300'>50</font> damage to attacker"
+
+		"DOTA_Tooltip_ability_item_guldans_orb_off_hand"                                  "Guldans Orb"
+		"DOTA_Tooltip_ability_item_guldans_orb_off_hand_Description"                      "<font color='#B82EE6'>Off Hand</font> \n"
+
+		"DOTA_Tooltip_ability_item_marichald_orb_off_hand"                                "Marichald Orb"
+		"DOTA_Tooltip_ability_item_marichald_orb_off_hand_Description"                    "<font color='#B82EE6'>Off Hand</font> \n"
+
+		"DOTA_Tooltip_ability_item_sirrus_orb_off_hand"                                   "Sirrus Orb"
+		"DOTA_Tooltip_ability_item_sirrus_orb_off_hand_Description"                       "<font color='#B82EE6'>Off Hand</font> \n"
+
+		"DOTA_Tooltip_ability_item_small_shield_off_hand"                                 "Small Shield"
+		"DOTA_Tooltip_ability_item_small_shield_off_hand_Description"                     "<font color='#B82EE6'>Off Hand</font> \n<font color='#CCCCCC'>+1</font> armour\n<font color='#FFFF66'>+20&#37;</font> evasion"
+
+		"DOTA_Tooltip_ability_item_large_shield_off_hand"                                 "Large Shield"
+		"DOTA_Tooltip_ability_item_large_shield_off_hand_Description"                     "<font color='#B82EE6'>Off Hand</font> \n<font color='#CCCCCC'>+3</font> armour\n<font color='#FFFF66'>+28&#37;</font> evasion"
+
+		"DOTA_Tooltip_ability_item_reinforced_shield_off_hand"                            "Reinforced Shield"
+		"DOTA_Tooltip_ability_item_reinforced_shield_off_hand_Description"                "<font color='#B82EE6'>Off Hand</font> \n<font color='#CCCCCC'>+5</font> armour\n<font color='#FFFF66'>+32&#37;</font> evasion"
+
+		"DOTA_Tooltip_ability_item_ring_of_the_blessed"                                   "Ring Of The Blessed"
+		"DOTA_Tooltip_ability_item_ring_of_the_blessed_Description"                       "<font color='#2EB82E'>Accessory</font> \n Heals 20 Health on unit kill\n Does not stack"
+
+
+		"DOTA_Tooltip_Passive"                                                            "Passive"
+		"DOTA_Tooltip_Passive_Description"                                                ""
+
+		"DOTA_Tooltip_modifier_battle_claws"                                              "Battle Claws"
+		"DOTA_Tooltip_modifier_battle_claws_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_terra_blade"                                               "Terra Blade"
+		"DOTA_Tooltip_modifier_terra_blade_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_terra_blade_crit"                                          "Terra Blade Crit"
+		"DOTA_Tooltip_modifier_terra_blade_crit_Description"                              ""
+
+		"DOTA_Tooltip_modifier_battleaxe"                                                 "Battleaxe"
+		"DOTA_Tooltip_modifier_battleaxe_Description"                                     ""
+
+		"DOTA_Tooltip_modifier_battleaxe_crit"                                            "Battleaxe Crit"
+		"DOTA_Tooltip_modifier_battleaxe_crit_Description"                                ""
+
+		"DOTA_Tooltip_modifier_venus_blade"                                               "Venus Blade"
+		"DOTA_Tooltip_modifier_venus_blade_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_venus_blade_crit"                                          "Venus Blade Crit"
+		"DOTA_Tooltip_modifier_venus_blade_crit_Description"                              ""
+
+		"DOTA_Tooltip_modifier_trident"                                                   "Trident"
+		"DOTA_Tooltip_modifier_trident_Description"                                       ""
+
+		"DOTA_Tooltip_modifier_trident_crit"                                              "Trident Crit"
+		"DOTA_Tooltip_modifier_trident_crit_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_widow_staff"                                               "Widow Staff"
+		"DOTA_Tooltip_modifier_widow_staff_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_widow_staff_debuff"                                        "Widow Staff Debuff"
+		"DOTA_Tooltip_modifier_widow_staff_debuff_Description"                            ""
+
+		"DOTA_Tooltip_modifier_fury_gauntlets"                                            "Fury Gauntlets"
+		"DOTA_Tooltip_modifier_fury_gauntlets_Description"                                ""
+
+		"DOTA_Tooltip_modifier_mortred_amulet"                                            "Mortred Amulet"
+		"DOTA_Tooltip_modifier_mortred_amulet_Description"                                ""
+
+		"DOTA_Tooltip_modifier_dark_elven_charm"                                          "Dark Elven Charm"
+		"DOTA_Tooltip_modifier_dark_elven_charm_Description"                              ""
+
+		"DOTA_Tooltip_modifier_dark_elven_charm_buff"                                     "Dark Elven Charm Buff"
+		"DOTA_Tooltip_modifier_dark_elven_charm_buff_Description"                         ""
+
+		"DOTA_Tooltip_modifier_dark_elven_charm_crit_buff"                                "Dark Elven Charm Crit Buff"
+		"DOTA_Tooltip_modifier_dark_elven_charm_crit_buff_Description"                    ""
+
+		"DOTA_Tooltip_modifier_cryptic_charm"                                             "Cryptic Charm"
+		"DOTA_Tooltip_modifier_cryptic_charm_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_ruby_heart"                                                "Ruby Heart"
+		"DOTA_Tooltip_modifier_ruby_heart_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_sapphire_heart"                                            "Sapphire Heart"
+		"DOTA_Tooltip_modifier_sapphire_heart_Description"                                ""
+
+		"DOTA_Tooltip_modifier_sapphire_heart_debuff"                                     "Sapphire Heart Debuff"
+		"DOTA_Tooltip_modifier_sapphire_heart_debuff_Description"                         ""
+
+		"DOTA_Tooltip_modifier_obsidian_heart"                                            "Obsidian Heart"
+		"DOTA_Tooltip_modifier_obsidian_heart_Description"                                ""
+
+		"DOTA_Tooltip_modifier_ring_of_power"                                             "Ring Of Power"
+		"DOTA_Tooltip_modifier_ring_of_power_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_ring_of_dominance"                                         "Ring Of Dominance"
+		"DOTA_Tooltip_modifier_ring_of_dominance_Description"                             ""
+
+		"DOTA_Tooltip_modifier_anklet_of_dexterity"                                       "Anklet Of Dexterity"
+		"DOTA_Tooltip_modifier_anklet_of_dexterity_Description"                           ""
+
+		"DOTA_Tooltip_modifier_anklet_of_quickness"                                       "Anklet Of Quickness"
+		"DOTA_Tooltip_modifier_anklet_of_quickness_Description"                           ""
+
+		"DOTA_Tooltip_modifier_ring_of_intelligence"                                      "Ring Of Intelligence"
+		"DOTA_Tooltip_modifier_ring_of_intelligence_Description"                          ""
+
+		"DOTA_Tooltip_modifier_ring_of_the_archmagi"                                      "Ring Of The Archmagi"
+		"DOTA_Tooltip_modifier_ring_of_the_archmagi_Description"                          ""
+
+		"DOTA_Tooltip_modifier_stone_ring"                                                "Stone Ring"
+		"DOTA_Tooltip_modifier_stone_ring_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_bracers_of_triumph"                                        "Bracers Of Triumph"
+		"DOTA_Tooltip_modifier_bracers_of_triumph_Description"                            ""
+
+		"DOTA_Tooltip_modifier_gloves_of_haste"                                           "Gloves Of Haste"
+		"DOTA_Tooltip_modifier_gloves_of_haste_Description"                               ""
+
+		"DOTA_Tooltip_modifier_beryl_gauntlets"                                           "Beryl Gauntlets"
+		"DOTA_Tooltip_modifier_beryl_gauntlets_Description"                               ""
+
+		"DOTA_Tooltip_modifier_ruby_gauntlets"                                            "Ruby Gauntlets"
+		"DOTA_Tooltip_modifier_ruby_gauntlets_Description"                                ""
+
+		"DOTA_Tooltip_modifier_cursed_gauntlets"                                          "Cursed Gauntlets"
+		"DOTA_Tooltip_modifier_cursed_gauntlets_Description"                              ""
+
+		"DOTA_Tooltip_modifier_movement_speed"                                            "Movement Speed"
+		"DOTA_Tooltip_modifier_movement_speed_Description"                                ""
+
+
+		// ******************** ABILITIES ********************
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_greater_potion_of_healing"                             "Greater Potion Of Healing"
+		"DOTA_Tooltip_ability_item_greater_potion_of_healing_Description"                 "Heals you\n 5 charges"
+
+		"DOTA_Tooltip_ability_item_stone_of_healing"                                      "Stone Of Healing"
+		"DOTA_Tooltip_ability_item_stone_of_healing_Description"                          "Heals you\n Infinite charges"
+
+		"DOTA_Tooltip_ability_item_potion_of_mana"                                        "Potion Of Mana"
+		"DOTA_Tooltip_ability_item_potion_of_mana_Description"                            "Grants mana\n 3 charges"
+
+		"DOTA_Tooltip_ability_item_stone_of_mana"                                         "Stone Of Mana"
+		"DOTA_Tooltip_ability_item_stone_of_mana_Description"                             "Grants mana\n Infinite charges"
+
+		"DOTA_Tooltip_ability_item_ascension_sword_main_hand_strength_required"           "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_ascension_sword_main_hand_frost_nova_damage"			  "FROST NOVA DAMAGE:"
+		"DOTA_Tooltip_ability_item_ascension_sword_main_hand_Lore"						  "USA USA USA"
+
+		"DOTA_Tooltip_ability_item_battle_claws_main_hand"                                "Battle Claws"
+		"DOTA_Tooltip_ability_item_battle_claws_main_hand_Description"                    "<font color='#FF3333'>Main Hand</font> \n<font color='#E65C00'>+80</font> attack damage"
+
+		"DOTA_Tooltip_ability_item_terra_blade_two_hand"                                  "Terra Blade"
+		"DOTA_Tooltip_ability_item_terra_blade_two_hand_Description"                      "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+20</font> attack damage \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage"
+
+		"DOTA_Tooltip_ability_item_battleaxe_two_hand"                                    "Battleaxe"
+		"DOTA_Tooltip_ability_item_battleaxe_two_hand_Description"                        "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+40</font> attack damage \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage"
+
+		"DOTA_Tooltip_ability_item_venus_blade_two_hand"                                  "Venus Blade"
+		"DOTA_Tooltip_ability_item_venus_blade_two_hand_Description"                      "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+84</font> attack damage \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage"
+
+		"DOTA_Tooltip_ability_item_trident_two_hand"                                      "Trident"
+		"DOTA_Tooltip_ability_item_trident_two_hand_Description"                          "<font color='#DF3184'>Two Hand</font> \n<font color='#E65C00'>+40</font> attack damage \n15&#37; chance on attack to critically strike for <font color='#FF3300'>2.0x</font> damage"
+
+		"DOTA_Tooltip_ability_item_fury_gauntlets"                                        "Fury Gauntlets"
+		"DOTA_Tooltip_ability_item_fury_gauntlets_Description"                            "<font color='#2EB82E'>Accessory</font>\nOn use, grants one spirit charge to the Spirit Warrior\n<font color='#CC0000'>+12</font> strength \n<font color='#009900'>+16</font> agility"
+
+		"DOTA_Tooltip_ability_item_mortred_amulet"                                        "Mortred Amulet"
+		"DOTA_Tooltip_ability_item_mortred_amulet_Description"                            "<font color='#2EB82E'>Accessory</font>\nPeriodically absorbs a nearby corpse, restoring <font color='#33CC33'>12&#37;</font> of the heroes maximum Health / Mana\n<font color='#E65C00'>+16</font> attack damage \n<font color='#0000CC'>+16</font> intelligence\nDoes not stack"
+
+		"DOTA_Tooltip_ability_item_dark_elven_charm"                                      "Dark Elven Charm"
+		"DOTA_Tooltip_ability_item_dark_elven_charm_Description"                          "<font color='#2EB82E'>Accessory</font>\nAll summoned units gain:\n   <font color='#FFFF66'>+15&#37;</font> evasion\n   +15&#37; chance to critically strike for <font color='#FF3300'>2.0x</font> attack damage \n<font color='#CC0000'>+4</font> strength \n<font color='#009900'>+4</font> agility\n<font color='#0000CC'>+4</font> intelligence\nDoes not stack"
+
+		"DOTA_Tooltip_ability_item_cryptic_charm"                                         "Cryptic Charm"
+		"DOTA_Tooltip_ability_item_cryptic_charm_Description"                             "<font color='#2EB82E'>Accessory</font>\nIncreases chance of burning skeletons by 50&#37;\n +20 int\n +45 attack damage"
+
+		"DOTA_Tooltip_ability_item_ruby_heart"                                            "Ruby Heart"
+		"DOTA_Tooltip_ability_item_ruby_heart_Description"                                "<font color='#2EB82E'>Accessory</font>\nGRIM MAGUS THE CREATURE ONLY\n +30&#37; movement speed\n +20&#37; attack speed\n +2 armour"
+
+		"DOTA_Tooltip_ability_item_sapphire_heart"                                        "Sapphire Heart"
+		"DOTA_Tooltip_ability_item_sapphire_heart_Description"                            "<font color='#2EB82E'>Accessory</font>\nGRIM MAGUS THE CREATURE ONLY\n +20&#37; magic resist\n Attack and movement speed slow on attack\n +5 armour"
+
+		"DOTA_Tooltip_ability_item_obsidian_heart"                                        "Obsidian Heart"
+		"DOTA_Tooltip_ability_item_obsidian_heart_Description"                            "<font color='#2EB82E'>Accessory</font>\nGRIM MAGUS THE CREATURE ONLY\n 15&#37; chance to critically strike for 2.0x damage on attack\n Grants the ability: Carrion Swarm\n +7 armour"
+
+		"DOTA_Tooltip_ability_item_ring_of_power"                                         "Ring Of Power"
+		"DOTA_Tooltip_ability_item_ring_of_power_Description"                             "<font color='#2EB82E'>Accessory</font>\n +4 attack damage\n +3 strength"
+
+		"DOTA_Tooltip_ability_item_ring_of_dominance"                                     "Ring Of Dominance"
+		"DOTA_Tooltip_ability_item_ring_of_dominance_Description"                         "<font color='#2EB82E'>Accessory</font>\n +8 strength"
+
+		"DOTA_Tooltip_ability_item_anklet_of_dexterity"                                   "Anklet Of Dexterity"
+		"DOTA_Tooltip_ability_item_anklet_of_dexterity_Description"                       "<font color='#2EB82E'>Accessory</font>\n +3 agility"
+
+		"DOTA_Tooltip_ability_item_anklet_of_quickness"                                   "Anklet Of Quickness"
+		"DOTA_Tooltip_ability_item_anklet_of_quickness_Description"                       "<font color='#2EB82E'>Accessory</font>\n +8 agility"
+
+		"DOTA_Tooltip_ability_item_ring_of_intelligence"                                  "Ring Of Intelligence"
+		"DOTA_Tooltip_ability_item_ring_of_intelligence_Description"                      "<font color='#2EB82E'>Accessory</font>\n +6 intelligence"
+
+		"DOTA_Tooltip_ability_item_ring_of_the_archmagi"                                  "Ring Of The Archmagi"
+		"DOTA_Tooltip_ability_item_ring_of_the_archmagi_Description"                      "<font color='#2EB82E'>Accessory</font>\n +14 intelligence"
+
+		"DOTA_Tooltip_ability_item_stone_ring"                                            "Stone Ring"
+		"DOTA_Tooltip_ability_item_stone_ring_Description"                                "<font color='#2EB82E'>Accessory</font>\n +50 hp\n +2 armour"
+
+		"DOTA_Tooltip_ability_item_bracers_of_triumph"                                    "Bracers Of Triumph"
+		"DOTA_Tooltip_ability_item_bracers_of_triumph_Description"                        "<font color='#2EB82E'>Accessory</font>\n Grants 10 Mana on unit kill\n Does not stack"
+
+		"DOTA_Tooltip_ability_item_gloves_of_haste"                                       "Gloves Of Haste"
+		"DOTA_Tooltip_ability_item_gloves_of_haste_Description"                           "<font color='#2EB82E'>Accessory</font>\n +15&#37; attack speed"
+
+		"DOTA_Tooltip_ability_item_beryl_gauntlets"                                       "Beryl Gauntlets"
+		"DOTA_Tooltip_ability_item_beryl_gauntlets_Description"                           "<font color='#2EB82E'>Accessory</font>\n +16 attack damage\n +3 strength"
+
+		"DOTA_Tooltip_ability_item_ruby_gauntlets"                                        "Ruby Gauntlets"
+		"DOTA_Tooltip_ability_item_ruby_gauntlets_Description"                            "<font color='#2EB82E'>Accessory</font>\n +8 attack damage\n 12&#37; chance to bash on attack for 1.5 seconds"
+
+		"DOTA_Tooltip_ability_item_cursed_gauntlets"                                      "Cursed Gauntlets"
+		"DOTA_Tooltip_ability_item_cursed_gauntlets_Description"                          "<font color='#2EB82E'>Accessory</font>\n +6 strength \n+10 agility \n -10 intelligence"
+
+		"DOTA_Tooltip_ability_item_boots_of_haste"                                        "Boots Of Haste"
+		"DOTA_Tooltip_ability_item_boots_of_haste_Description"                            "<font color='#2EB82E'>Accessory</font>\n +70 movement speed\n Does not stack with other movement speed items"
+
+		"DOTA_Tooltip_ability_item_ninja_slippers"                                        "Ninja Slippers"
+		"DOTA_Tooltip_ability_item_ninja_slippers_Description"                            "<font color='#2EB82E'>Accessory</font>\n +110 movement speed\n +8 agility\n Does not stack with other movement speed items"
+
+		"DOTA_Tooltip_modifier_guardian_helm"                                             "Guardian Helm"
+		"DOTA_Tooltip_modifier_guardian_helm_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_hood_of_cunning"                                           "Hood Of Cunning"
+		"DOTA_Tooltip_modifier_hood_of_cunning_Description"                               ""
+
+		"DOTA_Tooltip_modifier_egrons_hold"                                               "Egrons Hold"
+		"DOTA_Tooltip_modifier_egrons_hold_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_chest"                                                     ""
+		"DOTA_Tooltip_modifier_chest_Description"                                         ""
+
+		"DOTA_Tooltip_modifier_aegis_plating"                                             "Aegis Plating"
+		"DOTA_Tooltip_modifier_aegis_plating_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_choromeir_scales"                                          "Choromeir Scales"
+		"DOTA_Tooltip_modifier_choromeir_scales_Description"                              ""
+
+		"DOTA_Tooltip_modifier_zirklumm_robes"                                            "Zirklumm Robes"
+		"DOTA_Tooltip_modifier_zirklumm_robes_Description"                                ""
+
+		"DOTA_Tooltip_modifier_celestial_robes"                                           "Celestial Robes"
+		"DOTA_Tooltip_modifier_celestial_robes_Description"                               ""
+
+		"DOTA_Tooltip_modifier_cloak_of_the_apprentice"                                   "Cloak Of The Apprentice"
+		"DOTA_Tooltip_modifier_cloak_of_the_apprentice_Description"                       ""
+
+		"DOTA_Tooltip_modifier_magi_robes"                                                "Magi Robes"
+		"DOTA_Tooltip_modifier_magi_robes_Description"                                    ""
+
+		"DOTA_Tooltip_modifier_magi_mantle"                                               "Magi Mantle"
+		"DOTA_Tooltip_modifier_magi_mantle_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_leather_armor"                                             "Leather Armor"
+		"DOTA_Tooltip_modifier_leather_armor_Description"                                 ""
+
+		"DOTA_Tooltip_modifier_studded_leather_armor"                                     "Studded Leather Armor"
+		"DOTA_Tooltip_modifier_studded_leather_armor_Description"                         ""
+
+		"DOTA_Tooltip_modifier_lizard_scale"                                              "Lizard Scale"
+		"DOTA_Tooltip_modifier_lizard_scale_Description"                                  ""
+
+		"DOTA_Tooltip_modifier_splint_mail"                                               "Splint Mail"
+		"DOTA_Tooltip_modifier_splint_mail_Description"                                   ""
+
+		"DOTA_Tooltip_modifier_scale_mail"                                                "Scale Mail"
+		"DOTA_Tooltip_modifier_scale_mail_Description"                                    ""
+
+
+		// ******************** ABILITIES ********************
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_war_claws_main_hand_strength_required"                 "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_war_claws_main_hand_agility_required"                  "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_war_claws_main_hand_intellect_required"                "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_moon_glaive_main_hand_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_moon_glaive_main_hand_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_moon_glaive_main_hand_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_serpent_blade_main_hand_strength_required"             "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_serpent_blade_main_hand_agility_required"              "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_serpent_blade_main_hand_intellect_required"            "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_pickaxe_main_hand_strength_required"                   "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_pickaxe_main_hand_agility_required"                    "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_pickaxe_main_hand_intellect_required"                  "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_long_sword_main_hand_strength_required"                "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_long_sword_main_hand_agility_required"                 "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_long_sword_main_hand_intellect_required"               "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_battle_hammer_main_hand_strength_required"             "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_battle_hammer_main_hand_agility_required"              "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_battle_hammer_main_hand_intellect_required"            "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_battle_claws_main_hand_strength_required"              "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_battle_claws_main_hand_agility_required"               "AGILITY REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_guardian_helm"                                         "Guardian Helm"
+		"DOTA_Tooltip_ability_item_guardian_helm_Description"                             "<font color='#2EB82E'>Accessory</font>\n +10 strength\n +4 HP / sec"
+
+		"DOTA_Tooltip_ability_item_hood_of_cunning"                                       "Hood Of Cunning"
+		"DOTA_Tooltip_ability_item_hood_of_cunning_Description"                           "<font color='#2EB82E'>Accessory</font>\n +40 attack damage\n +2 strength\n +12 agility\n +2 intelligence"
+
+		"DOTA_Tooltip_ability_item_egrons_hold"                                           "Egrons Hold"
+		"DOTA_Tooltip_ability_item_egrons_hold_Description"                               "<font color='#2EB82E'>Accessory</font>\n +2 strength\n +2 agility\n +2 intelligence\n +20&#37; spell damage reduction"
+
+		"DOTA_Tooltip_ability_item_aegis_plating_chest"                                   "Aegis Plating"
+		"DOTA_Tooltip_ability_item_aegis_plating_chest_Description"                       "<font color='#0029A6'>Chest</font>\n +1250 Health\n +300 Mana\n +7 armour"
+		"DOTA_Tooltip_ability_item_aegis_plating_chest_strength_required"                 "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_aegis_plating_chest_agility_required"                  "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_aegis_plating_chest_intellect_required"                "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_opal_scales_chest"                                     "Opal Scales"
+		"DOTA_Tooltip_ability_item_opal_scales_chest_Description"                         "<font color='#0029A6'>Chest</font>\n +1800 Health\n +11 armour\n +10 HP / sec"
+		"DOTA_Tooltip_ability_item_opal_scales_chest_strength_required"                   "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_opal_scales_chest_agility_required"                    "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_opal_scales_chest_intellect_required"                  "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_choromeir_scales_chest"                                "Choromeir Scales"
+		"DOTA_Tooltip_ability_item_choromeir_scales_chest_Description"                    "<font color='#0029A6'>Chest</font>\n +2000 Health\n +16 armour\n +8&#37; evasion\n -15&#37; movement speed"
+		"DOTA_Tooltip_ability_item_choromeir_scales_chest_strength_required"              "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_choromeir_scales_chest_agility_required"               "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_choromeir_scales_chest_intellect_required"             "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_salamander_skin_chest"                                 "Salamander Skin"
+		"DOTA_Tooltip_ability_item_salamander_skin_chest_Description"                     "<font color='#0029A6'>Chest</font>\n +2600 Health\n +14 armour\n +12 HP / sec"
+		"DOTA_Tooltip_ability_item_salamander_skin_chest_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_salamander_skin_chest_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_salamander_skin_chest_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_zirklumm_robes_chest"                                  "Zirklumm Robes"
+		"DOTA_Tooltip_ability_item_zirklumm_robes_chest_Description"                      "<font color='#0029A6'>Chest</font>\n +500 Health\n +600 Mana \n +5 Armour"
+		"DOTA_Tooltip_ability_item_zirklumm_robes_chest_strength_required"                "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_zirklumm_robes_chest_agility_required"                 "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_zirklumm_robes_chest_intellect_required"               "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_celestial_robes_chest"                                 "Celestial Robes"
+		"DOTA_Tooltip_ability_item_celestial_robes_chest_Description"                     "<font color='#0029A6'>Chest</font>\n +800 Health\n +850 Mana\n +8 Armour"
+		"DOTA_Tooltip_ability_item_celestial_robes_chest_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_celestial_robes_chest_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_celestial_robes_chest_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_cloak_of_the_apprentice_chest"                         "Cloak Of The Apprentice"
+		"DOTA_Tooltip_ability_item_cloak_of_the_apprentice_chest_Description"             "<font color='#0029A6'>Chest</font>\n +60 Mana\n +1 Armour"
+		"DOTA_Tooltip_ability_item_cloak_of_the_apprentice_chest_strength_required"       "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_cloak_of_the_apprentice_chest_agility_required"        "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_cloak_of_the_apprentice_chest_intellect_required"      "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_magi_robes_chest"                                      "Magi Robes"
+		"DOTA_Tooltip_ability_item_magi_robes_chest_Description"                          "<font color='#0029A6'>Chest</font>\n +50 Health\n +220 Mana\n +4 Armour"
+		"DOTA_Tooltip_ability_item_magi_robes_chest_strength_required"                    "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_magi_robes_chest_agility_required"                     "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_magi_robes_chest_intellect_required"                   "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_magi_mantle_chest"                                     "Magi Mantle"
+		"DOTA_Tooltip_ability_item_magi_mantle_chest_Description"                         "<font color='#0029A6'>Chest</font>\n +360 Health\n +400 Mana\n +5 Armour"
+		"DOTA_Tooltip_ability_item_magi_mantle_chest_strength_required"                   "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_magi_mantle_chest_agility_required"                    "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_magi_mantle_chest_intellect_required"                  "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_leather_armor_chest"                                   "Leather Armor"
+		"DOTA_Tooltip_ability_item_leather_armor_chest_Description"                       "<font color='#0029A6'>Chest</font>\n +50 Health \n +3 Armour\n +2 HP / sec"
+		"DOTA_Tooltip_ability_item_leather_armor_chest_strength_required"                 "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_leather_armor_chest_agility_required"                  "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_leather_armor_chest_intellect_required"                "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_studded_leather_armor_chest"                           "Studded Leather Armor"
+		"DOTA_Tooltip_ability_item_studded_leather_armor_chest_Description"               "<font color='#0029A6'>Chest</font>\n +180 Health \n +5 Armour\n +4 HP / sec"
+		"DOTA_Tooltip_ability_item_studded_leather_armor_chest_strength_required"         "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_studded_leather_armor_chest_agility_required"          "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_studded_leather_armor_chest_intellect_required"        "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_lizard_scale_chest"                                    "Lizard Scale"
+		"DOTA_Tooltip_ability_item_lizard_scale_chest_Description"                        "<font color='#0029A6'>Chest</font>\n +500 Health \n +8 Armour\n +6 HP / sec"
+		"DOTA_Tooltip_ability_item_lizard_scale_chest_strength_required"                  "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_lizard_scale_chest_agility_required"                   "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_lizard_scale_chest_intellect_required"                 "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_splint_mail_chest"                                     "Splint Mail"
+		"DOTA_Tooltip_ability_item_splint_mail_chest_Description"                         "<font color='#0029A6'>Chest</font>\n +1250 Health \n +9 Armour\n +8 HP / sec"
+		"DOTA_Tooltip_ability_item_splint_mail_chest_strength_required"                   "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_splint_mail_chest_agility_required"                    "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_splint_mail_chest_intellect_required"                  "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_scale_mail_chest"                                      "Scale Mail"
+		"DOTA_Tooltip_ability_item_scale_mail_chest_Description"                          "<font color='#0029A6'>Chest</font>\n +3500 Health \n +7 Armour\n +4 Damage reduction\n -15&#37; attack speed"
+		"DOTA_Tooltip_ability_item_scale_mail_chest_strength_required"                    "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_scale_mail_chest_agility_required"                     "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_scale_mail_chest_intellect_required"                   "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_kheragian_axe_two_hand_strength_required"              "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_kheragian_axe_two_hand_agility_required"               "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_kheragian_axe_two_hand_intellect_required"             "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_warhammer_two_hand_strength_required"                  "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_warhammer_two_hand_agility_required"                   "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_warhammer_two_hand_intellect_required"                 "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_celestial_blade_two_hand_strength_required"            "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_celestial_blade_two_hand_agility_required"             "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_celestial_blade_two_hand_intellect_required"           "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_war_fork_two_hand_strength_required"                   "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_war_fork_two_hand_agility_required"                    "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_war_fork_two_hand_intellect_required"                  "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_terra_blade_two_hand_strength_required"                "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_terra_blade_two_hand_agility_required"                 "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_terra_blade_two_hand_intellect_required"               "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_battleaxe_two_hand_strength_required"                  "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_battleaxe_two_hand_agility_required"                   "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_battleaxe_two_hand_intellect_required"                 "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_venus_blade_two_hand_strength_required"                "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_venus_blade_two_hand_agility_required"                 "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_venus_blade_two_hand_intellect_required"               "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_trident_two_hand_strength_required"                    "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_trident_two_hand_agility_required"                     "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_trident_two_hand_intellect_required"                   "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_erament_staff_two_hand_strength_required"              "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_erament_staff_two_hand_agility_required"               "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_erament_staff_two_hand_intellect_required"             "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_widow_staff_two_hand_strength_required"                "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_widow_staff_two_hand_agility_required"                 "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_widow_staff_two_hand_intellect_required"               "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_icecrown_staff_two_hand_strength_required"             "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_icecrown_staff_two_hand_agility_required"              "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_icecrown_staff_two_hand_intellect_required"            "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_marrenwood_staff_two_hand_strength_required"           "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_marrenwood_staff_two_hand_agility_required"            "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_marrenwood_staff_two_hand_intellect_required"          "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_mesa_staff_two_hand_strength_required"                 "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_mesa_staff_two_hand_agility_required"                  "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_mesa_staff_two_hand_intellect_required"                "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_alistair_shield_off_hand_strength_required"            "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_alistair_shield_off_hand_agility_required"             "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_alistair_shield_off_hand_intellect_required"           "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_corog_shield_off_hand_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_corog_shield_off_hand_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_corog_shield_off_hand_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_storm_shield_off_hand_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_storm_shield_off_hand_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_storm_shield_off_hand_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_guldans_orb_off_hand_strength_required"                "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_guldans_orb_off_hand_agility_required"                 "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_guldans_orb_off_hand_intellect_required"               "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_marichald_orb_off_hand_strength_required"              "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_marichald_orb_off_hand_agility_required"               "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_marichald_orb_off_hand_intellect_required"             "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_sirrus_orb_off_hand_strength_required"                 "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_sirrus_orb_off_hand_agility_required"                  "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_sirrus_orb_off_hand_intellect_required"                "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_small_shield_off_hand_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_small_shield_off_hand_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_small_shield_off_hand_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_large_shield_off_hand_strength_required"               "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_large_shield_off_hand_agility_required"                "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_large_shield_off_hand_intellect_required"              "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_item_reinforced_shield_off_hand_strength_required"          "STRENGTH REQUIRED:"
+		"DOTA_Tooltip_ability_item_reinforced_shield_off_hand_agility_required"           "AGILITY REQUIRED:"
+		"DOTA_Tooltip_ability_item_reinforced_shield_off_hand_intellect_required"         "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_modifier_true_focus_stun"                                           "True Focus Stun"
+		"DOTA_Tooltip_modifier_true_focus_stun_Description"                               "Stunned!"
+
+		"DOTA_Tooltip_modifier_freezing_strike_debuff"                                    "Freezing Strike Debuff"
+		"DOTA_Tooltip_modifier_freezing_strike_debuff_Description"                        "Slowed movement speed"
+
+		"DOTA_Tooltip_modifier_storm_strike_charge"                                       "Storm Strike Charge"
+		"DOTA_Tooltip_modifier_storm_strike_charge_Description"                           "On attack, consumes one charge and casts Chain Lightning"
+
+
+		// ******************** ITEM MODIFIERS ********************
+
+		// ******************** ABILITIES ********************
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_tier_4"                         "Spirit Warrior Spirit Image Tier 4"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_tier_4_Description"             "Spawns images of the Spirit Warrior. These images deal up to 100&#37; damage."
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_tier_4_image_count"             "IMAGE COUNT:"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_tier_4_duration"                "DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_tier_4_outgoing_damage"         "OUTGOING DAMAGE PERCENTAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_spirit_image_tier_4_incoming_damage"         "INCOMING DAMAGE PERCENTAGE:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_strike_tier_5"                     "Spirit Warrior Firestorm Strike Tier 5"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_strike_tier_5_Description"         "<font color='#FF99CC'>One Charge:</font>\n  On attack, deal magic damage to the target \n\n<font color='#FF70B8'>Two Charges:</font>\n  On attack, deal magic damage in an area around the target\n\n<font color='#FF3399'>Three Charges:</font>\n  On attack, deal magic damage in an area around the target and create a fire patch on the ground that deals magic damage per second\n"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_strike_tier_5_damage_one_charge"   "DAMAGE ONE CHARGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_strike_tier_5_fire_damage"         "FIRE DAMAGE:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_strike_tier_5_fire_duration"       "FIRE DURATION:"
+		"DOTA_Tooltip_ability_spirit_warrior_firestorm_strike_tier_5_radius"              "RADIUS:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_retribution_tier_1_per_stack"                "PER STACK:"
+
+		"DOTA_Tooltip_ability_spirit_warrior_purification_tier_3_per_stack"               "PER STACK:"
+
+		"DOTA_Tooltip_ability_skeleton_count"                                             "Skeleton Count"
+		"DOTA_Tooltip_ability_skeleton_count_Description"                                 "You have this many"
+
+		"DOTA_Tooltip_ability_skeleton_mage_count"                                        "Skeleton Mage Count"
+		"DOTA_Tooltip_ability_skeleton_mage_count_Description"                            "This many!"
+
+
+		// ******************** ITEMS ********************
+		"DOTA_Tooltip_ability_item_battle_claws_main_hand_intellect_required"             "INTELLECT REQUIRED:"
+
+		"DOTA_Tooltip_ability_grim_magus_the_creature_tier_5_radius"                      "RADIUS:"
+		"DOTA_Tooltip_ability_item_potion_of_healing_Heal"                                "HEAL:"
+
+		"DOTA_Tooltip_ability_item_greater_potion_of_healing_heal"                        "HEAL:"
+
+		"DOTA_Tooltip_ability_item_stone_of_healing_heal"                                 "HEAL:"
+
+		"DOTA_Tooltip_ability_item_potion_of_mana_mana"                                   "MANA:"
+		"DOTA_Tooltip_ability_item_potion_of_mana_duration"                               "DURATION:"
+
+		"DOTA_Tooltip_ability_oghmar_regen_aura"                                          "Regen Aura"
+		"DOTA_Tooltip_ability_oghmar_regen_aura_Description"                              "Increases the health regen of nearby friendly units by 50"
+
+		"DOTA_Tooltip_ability_immolate_aura"                                              "Immolate Aura"
+		"DOTA_Tooltip_ability_immolate_aura_Description"                                  "Deals 25 damage per second in a 200 unit radius around the Fire Priest"
+
+		"DOTA_Tooltip_ability_spawn_enfrit"                                               "Spawn Enfrit"
+		"DOTA_Tooltip_ability_spawn_enfrit_Description"                                   "Spawns two Enfrits"
+
+		"DOTA_Tooltip_ability_spawn_enfrit_area"                                          "Spawn Enfrit Area"
+		"DOTA_Tooltip_ability_spawn_enfrit_area_Description"                              "Spawns ten Enfrits"
+
+		"DOTA_Tooltip_ability_summon_greater_priest"                                      "Summon Greater Fire Priest"
+		"DOTA_Tooltip_ability_summon_greater_priest_Description"                          "Summons four Greater Fire Priests"
+
+		"DOTA_Tooltip_ability_tgarri_illusion"                                            "Tgarri Illusion"
+		"DOTA_Tooltip_ability_tgarri_illusion_Description"                                "At 70&#37; health, T'garri spawns two illusions"
+
+
+		"DOTA_Tooltip_ability_mana_burn"                                                  "Mana Burn"
+		"DOTA_Tooltip_ability_mana_burn_Description"                                      "Burns 120 mana from the target. Deals damage equal to mana burned"
+
+		"DOTA_Tooltip_ability_faerie_fire"                                                "Faerie Fire"
+		"DOTA_Tooltip_ability_faerie_fire_Description"                                    "Reduces targets armor by 10"
+
+		"DOTA_Tooltip_ability_centaur_zeal"                                               "Centaur Zeal"
+		"DOTA_Tooltip_ability_centaur_zeal_Description"                                   "Greatly increases attack and movement speed for 10 seconds"
+
+		"DOTA_Tooltip_ability_centaur_resurrect"                                          "Summon Centaur Hunter"
+		"DOTA_Tooltip_ability_centaur_resurrect_Description"                              "Summon two Centaur Hunters"
+
+
+
+
+
+	}
+}

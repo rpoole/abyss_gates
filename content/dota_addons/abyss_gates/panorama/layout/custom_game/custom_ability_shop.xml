@@ -9,7 +9,7 @@
     <Panel class="AbilityShop" hittest="false">
         <Panel id="AbilityShopContainer" class="hidden" hittest="true" />
         <Button id="AbilityShopButton" onactivate="ToggleAbilityShop()">
-            <Label text="Shop" />
+            <Label text="SpellShop" />
         </Button>
     </Panel>
 </root>

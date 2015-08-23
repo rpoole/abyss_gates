@@ -1,0 +1,18 @@
+"AddonInfo"
+{
+  "TeamCount" "1"
+  "maps"      "abyss_gates"
+  "IsPlayable"  "1"
+  "abyss_gates"
+  {
+          "MaxPlayers"                    "3"
+  }
+//  "desert_duo"
+//  {
+//          "MaxPlayers"                    "10"
+//  }
+//  "forest_solo"
+//  {
+//          "MaxPlayers"                    "10"
+//  }
+}

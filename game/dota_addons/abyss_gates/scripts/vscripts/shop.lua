@@ -5,7 +5,8 @@ function onBuyAbility(_, args)
 	local player = PlayerResource:GetPlayer(playerID)
 	local hero = player:GetAssignedHero()
 
-	hero:AddAbility(purchasedAbility)
+	local ability = hero:AddAbility(purchasedAbility)
+	ability:SetLevel(1)
 end
 
 function addAbility(playerId, hero, sourceHero)

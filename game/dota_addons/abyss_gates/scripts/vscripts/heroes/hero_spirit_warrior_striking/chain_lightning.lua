@@ -25,7 +25,7 @@ function LightningJump ( event )
 				units = FindUnitsInRadius(caster:GetTeamNumber(), target:GetOrigin(), caster, 1200, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_CREEP, 0, 0, true) -- again, cast range not documented. these tooltips suck
 				PrintTable(units)
 	-- end the spell if there are no valid targets
-				if #units < 1 then
+				if #units < 2 then
 					return
 				end
 	-- particle stuff. the bounding box stuff is so that the lightning shoots out of the middle. it still attaches to the feet so it's a bit weird but it's mostly fine. 

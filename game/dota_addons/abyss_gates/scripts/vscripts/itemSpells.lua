@@ -12,9 +12,8 @@ function MortredAmulet ( event )
 		caster:GiveMana(maxMana * 0.12)
 
 		print("Success!")
+		ParticleManager:CreateParticle("particles/units/heroes/hero_undying/undying_decay.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	end
-
-	ParticleManager:CreateParticle("particles/units/heroes/hero_undying/undying_decay.vpcf", PATTACH_ABSORIGIN_FOLLOW, closestUnit)
 end
 
 
@@ -70,6 +69,12 @@ function attributeCheck ( event )
 		if heroStrength < strengthRequirement then
 			caster:SellItem(ability)
 		end
+		if heroAgility < agilityRequirement then
+			caster:SellItem(ability)
+		end
+		if heroIntellect < intellectRequirement then
+			caster:SellItem(ability)
+		end
 	end
 end
 
@@ -111,4 +116,20 @@ function AscensionSword ( keys )
 
 	ParticleManager:CreateParticle("particles/units/heroes/hero_lich/lich_frost_nova.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
 	target:EmitSound("Ability.FrostNova")
+end
+
+function ObsidianHeartEquip ( event )
+	local caster = event.caster
+
+	if caster:GetUnitName() == "the_creature" then
+		local ability = caster:AddAbility("the_creature_carrion_swarm")
+		ability:SetLevel(1)
+
+	end
+end
+
+function ObsidianHeartUnequip ( event )
+	local caster = event.caster
+
+	caster:RemoveAbility("the_creature_carrion_swarm")
 end

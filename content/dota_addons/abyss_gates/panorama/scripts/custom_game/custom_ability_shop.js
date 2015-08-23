@@ -176,7 +176,7 @@ function UpdateAbilityShopMenu()
             });
         }
         
-        if (heroLevel == 9)
+        if (heroLevel == 5)
         {
             for (var ability of GrimMagusAbilitiesTier3) {
             var childCount = $('#AbilityShopContainer').GetChildCount();
@@ -199,7 +199,7 @@ function UpdateAbilityShopMenu()
             });
         }
 
-        if (heroLevel == 12)
+        if (heroLevel == 10)
         {
             for (var ability of GrimMagusAbilitiesTier4) {
             var childCount = $('#AbilityShopContainer').GetChildCount();
@@ -271,7 +271,7 @@ function UpdateAbilityShopMenu()
             });
         }
         
-        if (heroLevel == 9)
+        if (heroLevel == 5)
         {
             for (var ability of SpiritWarriorAbilitiesTier3) {
             var childCount = $('#AbilityShopContainer').GetChildCount();
@@ -294,7 +294,7 @@ function UpdateAbilityShopMenu()
             });
         }
 
-        if (heroLevel == 12)
+        if (heroLevel == 10)
         {
             for (var ability of SpiritWarriorAbilitiesTier4) {
             var childCount = $('#AbilityShopContainer').GetChildCount();
@@ -365,7 +365,7 @@ function UpdateAbilityShopMenu()
             });
         }
         
-        if (heroLevel == 9)
+        if (heroLevel == 5)
         {
             for (var ability of PaladinAbilitiesTier3) {
             var childCount = $('#AbilityShopContainer').GetChildCount();
@@ -388,7 +388,7 @@ function UpdateAbilityShopMenu()
             });
         }
 
-        if (heroLevel == 12)
+        if (heroLevel == 10)
         {
             for (var ability of PaladinAbilitiesTier4) {
             var childCount = $('#AbilityShopContainer').GetChildCount();
